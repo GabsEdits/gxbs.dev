@@ -6,8 +6,8 @@
   },
   "dependencies": {
     "@fontsource/noto-color-emoji": "^5.0.19",
-    "@fontsource-variable/noto-emoji": "^5.0.17",
-    "@fontsource-variable/source-code-pro": "^5.0.17",
+    "@fontsource/noto-emoji": "^5.0.17",
+    "@fontsource/source-code-pro": "^5.0.16",
     "inter-ui": "^4.0.1",
     "vitepress": "1.0.0-rc.36"
   },
