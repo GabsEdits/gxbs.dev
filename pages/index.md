@@ -15,8 +15,8 @@ In May 2023, I started working on my first-ever project that is not for myself. 
 
 In my free time, I enjoy exploring new technologies and learning new skills to make a positive impact on the world through my work :D
 
+</div>
+
 ::: warning
 This is a potential new version of my [current personal website](https://gabs.eu.org). So keep this a secret as it's unrelesed stuff 🤫
 :::
-
-</div>

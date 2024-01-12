@@ -1,6 +1,6 @@
 # Find Me
 
-Here, where I live it's currently **{{ timeInMd }}**, just so you know ;)\
+Here, where I live it's currently **{{ TimeForMe }}**, just so you know ;)\
 I am available on the following platforms:
 
 <div class="socials-container">
@@ -53,17 +53,19 @@ If you want to explore my projects, check on GitHub! As all of my current work i
 :::
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const timeInMd = ref('');
+const TimeForMe = ref('');
 
-function getTimeInMoldova() {
+function TimeForMeFunction() {
     const now = new Date();
-    const options = { timeZone: 'Europe/Chisinau', hour: 'numeric', minute: 'numeric' };
-    return now.toLocaleTimeString('ro-MD', options);
+    const chisinauTime = now.toLocaleTimeString("en-US", { timeZone: "Europe/Chisinau", hour12: false, hour: "numeric", minute: "numeric" });
+    return chisinauTime;
 }
 
-setInterval(() => {
-    timeInMd.value = getTimeInMoldova();
-}, 1);
+onMounted(() => {
+    setInterval(() => {
+        TimeForMe.value = TimeForMeFunction();
+    }, 100);
+});
 </script>

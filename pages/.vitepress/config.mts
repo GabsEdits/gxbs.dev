@@ -55,9 +55,9 @@ export default defineConfig({
         content: "Gabs' Personal Website. Explore my world: About me, My Projects, and more. Connect and collaborate",
       },
     ],
-    ["meta", { name: "twitter:url", content: "https://gabs.eu.org" }],
+    ["meta", { name: "twitter:url", content: "https://next.gxbs.me" }],
   ],
   sitemap: {
-    hostname: "https://gabs.eu.org",
+    hostname: "https://next.gxbs.me",
   },
 });

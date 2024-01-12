@@ -5,13 +5,11 @@
     "pages:preview": "vitepress preview pages"
   },
   "dependencies": {
-    "@fontsource/noto-color-emoji": "^5.0.19",
+    "@fontsource/noto-color-emoji": "^5.0.20",
     "@fontsource/noto-emoji": "^5.0.17",
     "@fontsource/source-code-pro": "^5.0.16",
     "inter-ui": "^4.0.1",
+    "sass": "^1.69.7",
     "vitepress": "1.0.0-rc.36"
-  },
-  "devDependencies": {
-    "sass": "^1.69.7"
   }
 }
