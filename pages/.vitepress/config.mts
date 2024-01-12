@@ -61,9 +61,4 @@ export default defineConfig({
   sitemap: {
     hostname: "https://next.gxbs.me",
   },
-  vite: {
-    plugins: [
-      pluginPurgeCss(),
-    ],
-  }
 });
