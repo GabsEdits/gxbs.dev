@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import pluginPurgeCss from "@mojojoejo/vite-plugin-purgecss";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -60,4 +61,9 @@ export default defineConfig({
   sitemap: {
     hostname: "https://next.gxbs.me",
   },
+  vite: {
+    plugins: [
+      pluginPurgeCss(),
+    ],
+  }
 });
