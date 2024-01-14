@@ -32,7 +32,7 @@ This page showcases a collection of my professional work, projects and contribut
     </a>
     <a class="projects projects-special" href="https://aplos.gxbs.me">
         <h3>Aplos</h3>
-        <p>A sleek VitePress theme & template.</p>
+        <p>A sleek VitePress theme & template</p>
     </a>
     <a class="projects projects-special" href="https://vanillaos.org">
         <h3>Vanilla OS</h3>
@@ -72,7 +72,7 @@ This page showcases a collection of my professional work, projects and contribut
         <p>A really simple Vite website to store Quick links.</p>
     </a>
     <a class="projects"  v-bind:href="$frontmatter.mygit + 'Eisfores'">
-        <h3>Eisfores</h3>
+        <h3>Eisforés</h3>
         <p>Powerful script that gets all the contributors across a organization.</p>
     </a>
     <a class="projects"  v-bind:href="$frontmatter.mygit + 'deb-gnome'">
@@ -96,7 +96,7 @@ All of my projects source code can be found on [GitHub](/findme)
 <div class="projects-container">
     <a class="projects projects-special" href="https://vanillaos.org">
         <h3>Vanilla OS</h3>
-        <p>Vanilla OS is an Linux Distribution built with simplicity in mind</p>
+        <p>Vanilla OS is an Linux Distribution built with simplicity in mind.</p>
     </a>
     <a class="projects" href="https://vuejs.org">
         <h3>Vue.js</h3>
@@ -112,15 +112,15 @@ All of my projects source code can be found on [GitHub](/findme)
     </a>
     <a class="projects" href="https://github.com/InstallerLegacy/virtualhub">
         <h3>VirtualHub</h3>
-        <p>Install old operating systems</p>
+        <p>Tutorials installing age-old operating systems and software.</p>
     </a>
     <a class="projects" href="https://github.com/vixalien/sticky">
         <h3>Sticky Notes</h3>
-        <p>Old concept of my website.</p>
+        <p> A simple sticky notes app for GNOME.</p>
     </a>
     <a class="projects" href="https://github.com/vikdevelop/timer">
         <h3>Timer</h3>
-        <p>A Simple Timer for GNOME.</p>
+        <p>A simple Countdown Timer for GNOME.</p>
     </a>
     <a class="projects" href="https://github.com/mjakeman/extension-manager">
         <h3>Extension Manager</h3>

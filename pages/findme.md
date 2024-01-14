@@ -1,6 +1,6 @@
 # Find Me
 
-Here, where I live it's currently <mark>{{ TimeForMe }}<noscript>Enable JS to see it</noscript></mark>, just so you know ;)\
+Here, in my part of the world, it's currently <mark>{{ TimeForMe }}<noscript>Enable JS to see it</noscript></mark>, just so you're aware ;)\
 I am available on the following platforms:
 
 <div class="socials-container">
@@ -27,7 +27,7 @@ Feel free to message me on any of these platforms - I'd love to hear from you!
 --- 
 
 ## Contributions
-You can find me on the following Git hosting services:
+You can find me on the following Git Services:
 
 <div class="git-container">
     <a class="git git-special" href="https://github.com/GabsEdits">
@@ -59,7 +59,8 @@ const TimeForMe = ref('');
 
 function TimeForMeFunction() {
     const now = new Date();
-    const chisinauTime = now.toLocaleTimeString("en-US", { timeZone: "Europe/Chisinau", hour12: false, hour: "numeric", minute: "numeric" });
+    const userLocale = navigator.language || "en-US";
+    const chisinauTime = now.toLocaleTimeString(userLocale, { timeZone: "Europe/Chisinau", hour12: !(userLocale.startsWith("en") || userLocale.startsWith("en-US")), hour: "numeric", minute: "numeric" });
     return chisinauTime;
 }
 

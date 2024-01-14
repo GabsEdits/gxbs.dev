@@ -20,7 +20,7 @@ posts:
 
 # Blog
 
-This is my blog, where I post about my projects, and other things I find interesting.
+Welcome to my blog, a space where I share updates on my latest projects and delve into topics that captivate my interest.
 
   <div class="blog-posts">
     <div class="filter-tags">
