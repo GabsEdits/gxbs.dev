@@ -1,6 +1,6 @@
 ---
 projects: true
-host: next.gxbs.me
+host: gabs.eu.org
 mygit: https://github.com/GabsEdits/
 ---
 
