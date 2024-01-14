@@ -47,7 +47,7 @@ I also made a new Blog using Aplós, so I moved the blog into the main repositor
 
 | Component | Location             |
 | --------- | -------------------- |
-| About Me  | `pages`, about.md    |
+| About Me  | `pages`, index.md    |
 | Projects  | `pages`, projects.me |
 | Find Me   | `pages`, findme.me   |
 | Blog      | `pages`, /blog/      |
