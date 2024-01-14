@@ -2,10 +2,22 @@
 
 $color-accent: #f17755;
 
-$bg-color-d: #191515;
+$bg-color-d: color.scale($color-accent, $lightness: -86%, $saturation: -86%);
+
+$bg-color-l: color.scale($color-accent, $lightness: 90%, $saturation: -75%);
+
+$bg-color-s-d: mix($color-accent, $bg-color-d, 15%);
+
+$text-color-secondary-d: color.scale($bg-color-l, $alpha: -50%, $saturation: -90%);
 
 .home h1 {
   text-align: center;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.home h1:hover {
+  transform: scale3d(1.15, 1.15, 1.25) rotate3d(0, 0, 1, 1deg) skewX(5deg);
+  color: var(--color-accent);
 }
 
 .home h1 sub {
@@ -155,6 +167,10 @@ main {
   nav ul li a {
     white-space: nowrap;
   }
+
+  .home h1 {
+    font-size: 36px;
+  }
 }
 
 @media screen and (max-width: 338px){
@@ -170,4 +186,101 @@ main {
 
 body {
   font-family: "Inter", sans-serif !important;
+}
+
+/* Blog */
+
+.blog-posts {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.post-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px;
+}
+
+.post {
+  background-color: var(--color-background-second);
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: scale(1.05);
+}
+
+.post h3 {
+  margin: 0px;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.post p {
+  margin: 0px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.post .date {
+  text-align: right;
+}
+
+.filter-tags {
+  margin-bottom: 20px;
+}
+
+.filter-tags button {
+  margin-right: 10px;
+  background-color: var(--color-background-second);
+  border-radius: 20px;
+  padding: .25rem .75rem;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.filter-tags button:hover {
+  transform: scale(1.05);
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tags span {
+  margin-right: 5px;
+  color: var(--color-text-secondary);
+  background-color: var(--color-background);
+  padding: .15rem .45rem;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .post-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+a mark {
+  text-decoration: underline;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+a mark:hover {
+  transform: scale(1.2);
+}
+
+p a {
+  transition: all 0.3s ease;
+}
+
+p a:hover {
+  color: var(--color-text);
+  text-decoration: dotted underline var(--color-text-secondary) !important;
 }

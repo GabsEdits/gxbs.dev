@@ -11,12 +11,12 @@ Salut! I'm a human person, but also a designer and developer with a passion for 
 
 ---
 
-In May 2023, I started working on my first-ever project that is not for myself. I spent about 3 months developing a website for the company Boekestijn in Moldova, and that marked the beginning of my new product Aeolus. Currently, it's built with Vue.js 3 & Vite. The website was a big success and a milestone for my career. Following that, I began my more professional work and started working for other companies that need websites. **If you are looking for a website contact me.** You can also check out more or almost all of my projects on my [Projects page](/projects).
+In May 2023, I started working on my first-ever project that is not for myself. I spent about 3 months developing a website for the company Boekestijn in Moldova, and that marked the beginning of my new product [Aeolus](https://gabs.eu.org/aeolus). Currently, it's built with Vue.js 3 & Vite. The website was a big success and a milestone for my career. Following that, I began my more professional work and started working for other companies that need websites. **If you are looking for a website contact me.** You can also check out more or almost all of my projects on my [Projects page](/projects).
 
 In my free time, I enjoy exploring new technologies and learning new skills to make a positive impact on the world through my work :D
 
 </div>
 
 ::: warning
-This is a potential new version of my [current personal website](https://gabs.eu.org). So keep this a secret as it's unrelesed stuff 🤫
+This is a potential new version of my [current personal website](https://gabs.eu.org). So it's not yet fully done, there are still some stuff that have to be done.
 :::

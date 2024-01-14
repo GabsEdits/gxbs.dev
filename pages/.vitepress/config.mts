@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import pluginPurgeCss from "@mojojoejo/vite-plugin-purgecss";
+import { genFeed } from "./rss.ts";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,14 +12,15 @@ export default defineConfig({
   cleanUrls: true,
 
   themeConfig: {
-    author: "Gabriel Cozma",
+    author: "Gabriel Cozma/Gabs",
     nav: {
       links: [
         { text: "Projects", link: "/projects" },
         { text: "Find Me", link: "/findme" },
-        { text: "Blog", link: "https://blog.gabs.eu.org" },
+        { text: "Blog", link: "/blog/" },
       ],
       git: "https://github.com/GabsEdits/gabs.eu.org",
+      rss: "/feed.rss",
     },
     footer: {
       copyright: true,
@@ -61,4 +62,5 @@ export default defineConfig({
   sitemap: {
     hostname: "https://next.gxbs.me",
   },
+  buildEnd: genFeed,
 });

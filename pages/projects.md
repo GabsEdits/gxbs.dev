@@ -27,10 +27,10 @@ This page showcases a collection of my professional work, projects and contribut
         <p>Company Website</p>
     </a>
     <a class="projects projects-special" href="https://gabs.eu.org/keimeno">
-        <h3>Keimeno</h3>
+        <h3>Keímeno</h3>
         <p>Just Text. Just Notes. Save</p>
     </a>
-    <a class="projects projects-special" href="https://vanillaos.org">
+    <a class="projects projects-special" href="https://aplos.gxbs.me">
         <h3>Aplos</h3>
         <p>A sleek VitePress theme & template.</p>
     </a>
@@ -44,7 +44,7 @@ This page showcases a collection of my professional work, projects and contribut
 
 <div class="projects-container">
     <a class="projects" href="https://semantichtml.github.io">
-        <h3>Semantic HTML:</h3>
+        <h3>Semantic HTML</h3>
         <p>A website about Semantic HTML.</p>
     </a>
     <a class="projects"  v-bind:href="'https://' + $frontmatter.host">
@@ -53,7 +53,7 @@ This page showcases a collection of my professional work, projects and contribut
     </a>
     <a class="projects" href="https://fed-jet.vercel.app">
         <h3>Fed</h3>
-        <p>A postsetup script for Fedora.</p>
+        <p>A postsetup script for Fedora Workstation.</p>
     </a>
         <a class="projects"  v-bind:href="$frontmatter.mygit + 'vanilla'">
         <h3>🛌  Vanilla</h3>
@@ -81,7 +81,7 @@ This page showcases a collection of my professional work, projects and contribut
     </a>
     <a class="projects"  v-bind:href="$frontmatter.mygit + 'ubu'">
         <h3>🕸️  Ubu</h3>
-        <p>A postsetup script for Ubuntu.</p>
+        <p>A postsetup script for Ubuntu with all my personal preferences.</p>
     </a>
     <a class="projects"  v-bind:href="$frontmatter.mygit + 'deb'">
         <h3>🕸️  Deb</h3>

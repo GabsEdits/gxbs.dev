@@ -1,6 +1,6 @@
 # Find Me
 
-Here, where I live it's currently **{{ TimeForMe }}**, just so you know ;)\
+Here, where I live it's currently <mark>{{ TimeForMe }}<noscript>Enable JS to see it</noscript></mark>, just so you know ;)\
 I am available on the following platforms:
 
 <div class="socials-container">
@@ -12,9 +12,9 @@ I am available on the following platforms:
         <h3>Telegram:</h3>
         <p>/gabsedits</p>
     </a>
-    <a class="socials" href="mailto:me@gabs.eu.org">
+    <a class="socials" href="mailto:&#109;&#101;&#64;&#103;&#97;&#98;&#115;&#46;&#101;&#117;&#46;&#111;&#114;&#103;">
         <h3>Email</h3>
-        <p>me@gabs.eu.org</p>
+        <p>&#109;&#101;[at]&#103;&#97;&#98;&#115;&#46;&#101;&#117;&#46;&#111;&#114;&#103;</p>
     </a>
     <a class="socials" href="https://fosstodon.org/@gabs">
         <h3>Mastodon</h3>
