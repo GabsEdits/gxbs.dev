@@ -18,7 +18,3 @@ Feel free to explore additional or nearly all of my projects on the [Projects pa
 In my free time, I enjoy exploring new technologies and learning new skills to make a positive impact on the world through my work :D
 
 </div>
-
-::: warning
-This will be the new version of my [current personal website](https://gabs.eu.org). So it's not yet fully done, there are still some stuff that have to be done.
-:::

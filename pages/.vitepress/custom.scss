@@ -17,6 +17,7 @@ $text-color-secondary-d: color.scale($bg-color-l, $alpha: -50%, $saturation: -90
 
 .home h1:hover {
   transform: scale3d(1.15, 1.15, 1.25) rotate3d(0, 0, 1, 1deg) skewX(5deg);
+  -webkit-transform: scale3d(1.15, 1.15, 1.25) rotate3d(0, 0, 1, 1deg) skewX(5deg);
   color: var(--color-accent);
 }
 
