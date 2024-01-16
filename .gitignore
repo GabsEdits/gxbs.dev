@@ -10,3 +10,5 @@ Thumbs.db
 
 # Ignore log files
 *.log
+
+pages/.vitepress/cache/

@@ -42,7 +42,7 @@ You can find me on the following Git Services:
         <h3>GNOME GitLab</h3>
         <p>@gabs</p>
     </a>
-    <a class="git" href="https://codeberg.org/@gxbs">
+    <a class="git" href="https://codeberg.org/gxbs">
         <h3>Codeberg</h3>
         <p>@gxbs</p>
     </a>

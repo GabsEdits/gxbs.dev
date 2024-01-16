@@ -21,14 +21,17 @@ $text-color-secondary-d: color.scale($bg-color-l, $alpha: -50%, $saturation: -90
   color: var(--color-accent);
 }
 
-.home h1 sub {
+.home h1 small {
   font-size: 1.2rem;
   color: var(--color-text-secondary);
+  display: block;
+  margin-top: 0px;
 }
 
-.home figcaption {
+.home small {
   margin-top: -1.5rem;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 main {
