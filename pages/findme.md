@@ -1,6 +1,6 @@
 # Find Me
 
-Here, in my part of the world, it's currently <mark>{{ TimeForMe }}<noscript>Enable JS to see it</noscript></mark>, just so you're aware ;)\
+Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time>, just so you're aware ;)\
 I am available on the following platforms:
 
 <div class="socials-container">
