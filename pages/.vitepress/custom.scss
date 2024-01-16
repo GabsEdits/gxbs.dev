@@ -30,6 +30,7 @@ $text-color-secondary-d: color.scale($bg-color-l, $alpha: -50%, $saturation: -90
 
 .home small {
   margin-top: -1.5rem;
+  display: block;
   font-size: 0.9rem;
   text-align: center;
 }

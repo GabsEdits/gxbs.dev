@@ -20,7 +20,7 @@ export default defineConfig({
         { text: "Blog", link: "/blog/" },
       ],
       git: "https://github.com/GabsEdits/gabs.eu.org",
-      rss: "/feed.rss",
+      rss: "https://gabs.eu.org/feed.rss",
     },
     footer: {
       copyright: true,

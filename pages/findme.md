@@ -1,6 +1,6 @@
 # Find Me
 
-Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time>, just so you're aware ;)\
+Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ UTCOffset }})</small>, just so you're aware ;)\
 I am available on the following platforms:
 
 <div class="socials-container">
@@ -56,6 +56,7 @@ If you want to explore my projects, check on GitHub! As all of my current work i
 import { ref, onMounted } from 'vue';
 
 const TimeForMe = ref('');
+const UTCOffset = ref('');
 
 function TimeForMeFunction() {
     const now = new Date();
@@ -64,9 +65,16 @@ function TimeForMeFunction() {
     return chisinauTime;
 }
 
+function getUTCOffset() {
+    const now = new Date();
+    const timeZoneAbbreviation = now.toLocaleTimeString('en', { timeZoneName: 'short', timeZone: 'Europe/Chisinau' }).split(' ')[2];
+    UTCOffset.value = `${timeZoneAbbreviation.replace('GMT', 'UTC')}`;
+}
+
 onMounted(() => {
     setInterval(() => {
         TimeForMe.value = TimeForMeFunction();
     }, 100);
+    getUTCOffset();
 });
 </script>
