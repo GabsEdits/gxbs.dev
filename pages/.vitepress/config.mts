@@ -20,7 +20,7 @@ export default defineConfig({
         { text: "Blog", link: "/blog/" },
       ],
       git: "https://github.com/GabsEdits/gabs.eu.org",
-      rss: "https://gabs.eu.org/feed.rss",
+      rss: "feed.rss",
     },
     footer: {
       copyright: true,
@@ -45,16 +45,17 @@ export default defineConfig({
   head: [
     ["meta", { name: "author", content: "Gabriel Cozma" }],
     ["link", { rel: "icon", href: "/favicon.ico" }],
-    ["meta", { name: "theme-color", content: "#f17755" }], 
+    ["meta", { name: "theme-color", content: "#f17755" }],
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
-    ["meta", { name: "og:site_name", content: "Gabs | Gabriel Cozma" }], 
+    ["meta", { name: "og:site_name", content: "Gabs | Gabriel Cozma" }],
     ["meta", { name: "twitter:title", content: "Gabs | Gabriel Cozma" }],
     [
       "meta",
       {
         name: "twitter:description",
-        content: "Gabs' Personal Website. Explore my world: About me, My Projects, and more. Connect and collaborate",
+        content:
+          "Gabs' Personal Website. Explore my world: About me, My Projects, and more. Connect and collaborate",
       },
     ],
     ["meta", { name: "twitter:url", content: "https://next.gxbs.me" }],
