@@ -31,7 +31,7 @@ This page showcases a collection of my professional work, projects and contribut
         <p>Just Text. Just Notes. Save</p>
     </a>
     <a class="projects projects-special" href="https://aplos.gxbs.me">
-        <h3>Aplos</h3>
+        <h3>Aplós</h3>
         <p>A sleek VitePress theme & template</p>
     </a>
     <a class="projects projects-special" href="https://vanillaos.org">
@@ -88,8 +88,9 @@ This page showcases a collection of my professional work, projects and contribut
         <p>A postsetup script for Debian.</p>
     </a>
 </div>
+<br>
 
-All of my projects source code can be found on [GitHub](/findme)
+> All of my projects source code can be found on [GitHub](/findme)
 
 ## Contributions
 

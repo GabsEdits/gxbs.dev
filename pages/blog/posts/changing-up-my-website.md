@@ -48,8 +48,8 @@ I also made a new Blog using Aplós, so I moved the blog into the main repositor
 | Component | Location             |
 | --------- | -------------------- |
 | About Me  | `pages`, index.md    |
-| Projects  | `pages`, projects.me |
-| Find Me   | `pages`, findme.me   |
+| Projects  | `pages`, projects.md |
+| Find Me   | `pages`, findme.md   |
 | Blog      | `pages`, /blog/      |
 
 Way better than the old:
@@ -63,6 +63,11 @@ Way better than the old:
 
 - `pages` = main repository
 - `blog` = old blog repository
+
+<br />
+
+> The blog folder keeps it straightforward: `/blog/index.md` is the main page, and `/blogs/posts/` is where I have all the posts.
+> > Sadly I am still figuring out how to auto-list projects on the main page. For now, I've made up a simple way to show the latest posts using the `formatter`.
 
 ## Design
 

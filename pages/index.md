@@ -7,14 +7,14 @@ layout: home
 <small>Human, Front-end Developer & Open Source Contributor.</small>
 
 
-Salut! I'm a human person, but also a designer and developer with a passion for creating beautiful and intuitive experiences. My name is Gabriel, also known as Gabs, and I am located in Moldova. I specialize in Web Development and am currently trying out other things that I might also enjoy. Since I contribute to a lot of other things, why not check out my open-source projects and profile on my [My Git Profiles](/findme#contributions). **GitHub** is the main area where you'll find me, as almost, if not everything I do, is based there. With time, I started working on more and more things.
+Salut! I'm **Gabriel**, also known as **Gabs** in my digital world. Yeah, I'm a human person, but also a designer and developer with a passion for creating beautiful and intuitive experiences. Proudly navigating the world of development here, in Moldova. Creating visually stunning and user-friendly web experiences is my thing. You can peek into my coding on [My Git Profiles](/findme#contributions), mainly on **GitHub**.
+
+> GitHub is basically my home, but for code! It's like my coding playground, I might be a little too attached to it. But hey, can you blame me?
 
 ---
 
-In May of 2023, I started working on my first-ever project that is not for myself. I spent about 3 months developing a website for the company Boekestijn in Moldova, and that marked the beginning of my new product [Aeolus](https://gabs.eu.org/aeolus). It's built with Vue.js 3 & Vite and the website was a big success and a milestone for my career. Following that, I began my more professional work and started working for other companies that need websites. **If you are looking for a website [contact me](/findme).** 
+Let's go to May 2023. That's the moment when I took a look into creating something beyond my personal space. The result? [Aeolus](https://gabs.eu.org/aeolus) – a nice website created using Vue.js 3 & Vite, For Boekestijn in Moldova. The success of this project made me want to do more professional work, mainly for other companies. **If you need a website feel free to [contact me](/findme).** For a deeper dive, check out my projects on the [Projects page](/projects) Yes, it's not just about lines of code; it's a showcase of my passion.
 
-Feel free to explore additional or nearly all of my projects on the [Projects page](/projects).
-
-In my free time, I enjoy exploring new technologies and learning new skills to make a positive impact on the world through my work :D
+Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work :D 🚀
 
 </div>
