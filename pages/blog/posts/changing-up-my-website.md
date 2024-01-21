@@ -20,7 +20,7 @@ You might wonder, why not just tweak the old one (Gabs Website 3.0)? Well, it's 
 
 <video src="/assets/posts/2/oldsite-screencast.webm" controls="" alt="A screencast of the my Old Website on Firefox showing how laggy the transictions were" />
 
-<figcaption>A screencast of the my Old Website on Firefox showing how laggy the transictions were</figcaption>
+<figcaption>A screencast of the my Old Website on Firefox Desktop showing how laggy the transictions were</figcaption>
 
 It took me too long to sort out the mess and figure out what the website was even telling its visitors. So, I figured, why not start fresh with a new website that's:
 
@@ -37,7 +37,7 @@ the looks. The cool thing was, I only had to set up the `config.mts` the way I l
 
 ![Screenshot of me writing this blog](/assets/posts/2/screenshot.png)
 
-<figcaption>Screenshot of me writing this blog</figcaption>
+<figcaption>Screenshot of me writing this blog in Apostrophe Dark Mode</figcaption>
 
 ## A Fresh Structure
 
