@@ -3,6 +3,7 @@ node_modules/
 
 # Ignore build output directory
 dist/
+cache/
 
 # Ignore temporary files
 .DS_Store
@@ -10,5 +11,3 @@ Thumbs.db
 
 # Ignore log files
 *.log
-
-pages/.vitepress/cache/
