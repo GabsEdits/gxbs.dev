@@ -29,7 +29,7 @@ export default defineConfig({
       madeby: {
         show: true,
         name: "Gabs",
-        link: "#",
+        link: "https://gabs.eu.org",
       },
     },
   },

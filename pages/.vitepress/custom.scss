@@ -257,6 +257,7 @@ body {
 
   button {
     margin-right: 10px;
+    margin-bottom: 3px;
     background-color: var(--color-background-second);
     border-radius: 20px;
     padding: 0.25rem 0.75rem;
@@ -266,6 +267,10 @@ body {
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.8);
     }
   }
 }

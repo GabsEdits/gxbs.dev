@@ -1,6 +1,6 @@
 # Find Me
 
-Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ UTCOffset }})</small>, just so you're aware ;)\
+Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ UTCOffset }})<noscript>UTC+2</noscript></small>, just so you're aware ;)\
 I am available on the following platforms:
 
 <div class="socials-container">
