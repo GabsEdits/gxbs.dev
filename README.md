@@ -3,7 +3,7 @@
   <h1>My Personal Website</h1>
   <p>This is the main website were you are going to find my projects, about me and how to find me.<p>
     
-![website-screenshot-of-web](https://github.com/GabsEdits/gabs.eu.org/assets/110247388/eff72e10-6a79-40f8-bd06-bd43d91935bf)
+![per-web-screenshot](https://github.com/GabsEdits/gabs.eu.org/assets/110247388/e1f2c8ab-790d-4032-b1ca-efede90db566)
 </div>
 
 ## Story
