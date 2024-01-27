@@ -16,7 +16,7 @@ I am available on the following platforms:
         <h3>Email</h3>
         <p>&#109;&#101;[at]&#103;&#97;&#98;&#115;&#46;&#101;&#117;&#46;&#111;&#114;&#103;</p>
     </a>
-    <a class="socials" href="https://fosstodon.org/@gabs">
+    <a class="socials" rel="me" href="https://fosstodon.org/@gabs">
         <h3>Mastodon</h3>
         <p>@gabs@fosstodon.org</p>
     </a>

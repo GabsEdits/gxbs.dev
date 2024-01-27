@@ -20,7 +20,7 @@ export default defineConfig({
         { text: "Blog", link: "/blog/" },
       ],
       git: "https://github.com/GabsEdits/gabs.eu.org",
-      rss: "feed.rss",
+      rss: "/feed.rss",
     },
     footer: {
       copyright: true,
@@ -45,6 +45,7 @@ export default defineConfig({
   head: [
     ["meta", { name: "author", content: "Gabriel Cozma" }],
     ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["link", { rel: "me", href: "https://fosstodon.org/@gxbs" }],
     ["meta", { name: "theme-color", content: "#f17755" }],
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
