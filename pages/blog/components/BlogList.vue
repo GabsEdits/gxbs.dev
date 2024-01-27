@@ -94,7 +94,9 @@ export default {
 
     .date {
       text-align: right;
-      font-family: "Source Code Pro", monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-feature-settings: "zero", "tnum", "cv03", "cv02";
     }
   }
 }
