@@ -5,14 +5,14 @@
     "pages:preview": "vitepress preview pages"
   },
   "dependencies": {
-    "@fontsource/noto-color-emoji": "^5.0.20",
+    "@fontsource/noto-color-emoji": "^5.0.21",
     "@fontsource/noto-emoji": "^5.0.17",
     "@fontsource/source-code-pro": "^5.0.16",
-    "@types/node": "^20.11.0",
+    "@types/node": "^20.11.8",
     "feed": "^4.2.2",
     "inter-ui": "^4.0.1",
-    "sass": "^1.69.7",
-    "vitepress": "1.0.0-rc.36"
+    "sass": "^1.70.0",
+    "vitepress": "1.0.0-rc.40"
   },
   "pnpm": {
     "peerDependencyRules": {

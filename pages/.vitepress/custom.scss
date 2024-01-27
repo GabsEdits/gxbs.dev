@@ -205,90 +205,8 @@ body {
   font-family: "Inter", sans-serif !important;
 }
 
-/* Blog */
+/* Other */
 
-.blog-posts {
-  margin: 0 auto;
-}
-
-.post-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 10px;
-
-  @media screen and (max-width: 600px) {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-
-  .post {
-    background-color: var(--color-background-second);
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-
-    &:active {
-      transform: scale(0.9);
-    }
-
-    h3 {
-      margin: 0px;
-      font-weight: 900;
-      font-size: 24px;
-    }
-
-    p {
-      margin: 0px;
-      color: var(--color-text-secondary);
-      font-weight: 500;
-    }
-
-    .date {
-      text-align: right;
-      font-family: "Source Code Pro", monospace;
-    }
-  }
-}
-
-.filter-tags {
-  margin-bottom: 20px;
-
-  button {
-    margin-right: 10px;
-    margin-bottom: 3px;
-    background-color: var(--color-background-second);
-    border-radius: 20px;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-
-    &:active {
-      transform: scale(0.8);
-    }
-  }
-}
-
-.tags {
-  margin-top: 10px;
-
-  span {
-    margin-right: 5px;
-    color: var(--color-text-secondary);
-    background-color: var(--color-background);
-    padding: 0.15rem 0.45rem;
-    border-radius: 20px;
-    font-size: 12px;
-  }
-}
 
 a mark {
   text-decoration: underline;
@@ -308,8 +226,6 @@ p a {
     text-decoration: dotted underline var(--color-text-secondary) !important;
   }
 }
-
-/* Other */
 
 blockquote {
   border-radius: 8px 25px 25px 8px !important;

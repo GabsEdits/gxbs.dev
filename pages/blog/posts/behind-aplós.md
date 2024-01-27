@@ -2,7 +2,7 @@
 title: "Behind Aplós"
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
-description: My awesome post description
+description: A new way to make websites, with VitePress.
 date: 2024-01-04T21:26:00+02:00
 ---
 
@@ -24,9 +24,9 @@ Initially, I began the project with HTML & CSS, creating a template with styles.
 
 This approach simplified the process of building websites in minutes. However, I realized there was an even better option for creating such websites.
 
-## Vitepress
+## VitePress
 
-While I've known about Vitepress for a while, I never fully explored it. With the new project, incorporating Vitepress seemed like one of the best decisions. Markdown is easy to use, and Vitepress simplified website configuration compared to the 100 files you had to change in the old Vite version. The structure was straightforward:
+While I've known about VitePress for a while, I never fully explored it. With the new project, incorporating VitePress seemed like one of the best decisions. Markdown is easy to use, and VitePress simplified website configuration compared to the 100 files you had to change in the old Vite version. The structure was straightforward:
 
 ```
 .
@@ -41,14 +41,15 @@ While I've known about Vitepress for a while, I never fully explored it. With th
             └── all-theme-stuff
 ```
 
-To build a website with Vitepress, all you need to know is that `config.mts` exists, where you'll spend your time configuring the website. Just create a Markdown file inside the `pages` folder, and you're good to go.\
+To build a website with VitePress, all you need to know is that `config.mts` exists, where you'll spend your time configuring the website. Just create a Markdown file inside the `pages` folder, and you're good to go.\
 Well, yes, you do have to do some work inside `config.mts`, but it's not that hard.
 
-So, I moved my project to Vitepress. It wasn't that hard, as Aplós acted as custom stylesheet for the default Vitepress themes. I could use cool `Custom Containers` & `pre`'s without having to configure them.
+So, I moved my project to VitePress. It wasn't that hard, as Aplós acted as custom stylesheet for the default VitePress themes. I could use cool `Custom Containers` & `pre`'s without having to configure them.
 
-Everything was fun, but there was one issue: Some parts of the theme you **can't** configure through our unified `config.mts` file.  I got the great idea of making the Vue.js Components (Navigation & Footer) fully changeable inside the `config.mts` file, using the `{ useData }` feature provided by Vitepress. For the Navigation, it wasn't that hard:
+Everything was fun, but there was one issue: Some parts of the theme you **can't** configure through our unified `config.mts` file.  I got the great idea of making the Vue.js Components (Navigation & Footer) fully changeable inside the `config.mts` file, using the `{ useData }` feature provided by VitePress. For the Navigation, it wasn't that hard:
 
-```html
+```vue
+<template>
 <nav>
     <ul>
         <li class="h1-nav">
@@ -68,6 +69,7 @@ Everything was fun, but there was one issue: Some parts of the theme you **can't
         </li>
     </ul>
 </nav>
+</template>
 ```
 
 It was quite easy, as I was just taking the required data. With that done, this is how your configuration looked:
