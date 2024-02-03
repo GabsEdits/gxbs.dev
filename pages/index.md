@@ -2,6 +2,10 @@
 layout: home
 ---
 
+<noscript style="text-align: center;">
+<small>It seems like you have JavaScript disabled, sadly, you are missing on some stuff, but don't worry! Not much - you just can't see the time in my country, and that's it!</small>
+</noscript>
+
 <div class="home">
 <h1>Gabriel Cozma <small>Gabs</small></h1>
 <small>Human, Front-end Developer & Open Source Contributor.</small>
