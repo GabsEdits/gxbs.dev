@@ -34,7 +34,7 @@ export default defineConfig({
 
       copyleft: {
         show: true,
-        licence: "MIT License",
+        license: "MIT License",
         info: "https://opensource.org/license/mit/",
       },
     },
