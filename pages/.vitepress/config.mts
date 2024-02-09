@@ -31,6 +31,12 @@ export default defineConfig({
         name: "Gabs",
         link: "https://gabs.eu.org",
       },
+
+      copyleft: {
+        show: true,
+        license: "MIT License",
+        info: "https://opensource.org/license/mit/",
+      },
     },
   },
 
