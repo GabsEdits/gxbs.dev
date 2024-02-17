@@ -1,6 +1,6 @@
 # Find Me
 
-Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>(UTC{{ UTCOffset }})</small>, just so you're aware ;)\
+Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ timezone }})</small>, just so you're aware ;)\
 I am available on the following platforms:
 
 <div class="socials-container">
@@ -55,7 +55,7 @@ You can find me on the following Git Services:
 import { ref, onMounted } from 'vue';
 
 const TimeForMe = ref('');
-const UTCOffset = ref('');
+const timezone = ref('');
 
 function TimeForMeFunction() {
   const now = new Date();
@@ -64,13 +64,15 @@ function TimeForMeFunction() {
   return chisinauTime;
 }
 
-async function getUTCOffset() {
+function getTimezone() {
   try {
-    const response = await fetch("http://worldtimeapi.org/api/timezone/Europe/Chisinau");
-    const data = await response.json();
-    UTCOffset.value = data.utc_offset;
+    const now = new Date();
+    const options = { timeZone: "Europe/Chisinau", timeZoneName: "longOffset" };
+    const gmtOffset = new Intl.DateTimeFormat(undefined, options).formatToParts(now).find(part => part.type === 'timeZoneName').value;
+
+    timezone.value = `${gmtOffset}`;
   } catch (error) {
-    console.error("Error fetching UTC offset:", error);
+    console.error("Error fetching GMT offset:", error);
   }
 }
 
@@ -78,6 +80,6 @@ onMounted(() => {
   setInterval(() => {
     TimeForMe.value = TimeForMeFunction();
   }, 100);
-  getUTCOffset();
+  getTimezone();
 });
 </script>
