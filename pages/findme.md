@@ -1,6 +1,6 @@
 # Find Me
 
-Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ UTCOffset }})<noscript>UTC+2</noscript></small>, just so you're aware ;)\
+Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>(UTC{{ UTCOffset }})</small>, just so you're aware ;)\
 I am available on the following platforms:
 
 <div class="socials-container">
@@ -58,22 +58,26 @@ const TimeForMe = ref('');
 const UTCOffset = ref('');
 
 function TimeForMeFunction() {
-    const now = new Date();
-    const userLocale = navigator.language || "en-US";
-    const chisinauTime = now.toLocaleTimeString(userLocale, { timeZone: "Europe/Chisinau", hour12: !(userLocale.startsWith("en") || userLocale.startsWith("en-US")), hour: "numeric", minute: "numeric" });
-    return chisinauTime;
+  const now = new Date();
+  const userLocale = navigator.language || "en-US";
+  const chisinauTime = now.toLocaleTimeString(userLocale, { timeZone: "Europe/Chisinau", hour12: !(userLocale.startsWith("en") || userLocale.startsWith("en-US")), hour: "numeric", minute: "numeric" });
+  return chisinauTime;
 }
 
-function getUTCOffset() {
-    const now = new Date();
-    const timeZoneAbbreviation = now.toLocaleTimeString('en', { timeZoneName: 'short', timeZone: 'Europe/Chisinau' }).split(' ')[2];
-    UTCOffset.value = `${timeZoneAbbreviation.replace('GMT', 'UTC')}`;
+async function getUTCOffset() {
+  try {
+    const response = await fetch("http://worldtimeapi.org/api/timezone/Europe/Chisinau");
+    const data = await response.json();
+    UTCOffset.value = data.utc_offset;
+  } catch (error) {
+    console.error("Error fetching UTC offset:", error);
+  }
 }
 
 onMounted(() => {
-    setInterval(() => {
-        TimeForMe.value = TimeForMeFunction();
-    }, 100);
-    getUTCOffset();
+  setInterval(() => {
+    TimeForMe.value = TimeForMeFunction();
+  }, 100);
+  getUTCOffset();
 });
 </script>

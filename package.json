@@ -12,7 +12,7 @@
     "feed": "^4.2.2",
     "inter-ui": "^4.0.1",
     "sass": "^1.70.0",
-    "vitepress": "1.0.0-rc.40"
+    "vitepress": "1.0.0-rc.42"
   },
   "pnpm": {
     "peerDependencyRules": {

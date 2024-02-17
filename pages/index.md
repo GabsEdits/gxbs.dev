@@ -3,11 +3,12 @@ layout: home
 ---
 
 <noscript>
-<small style="text-align: center;">It seems like you have JavaScript disabled, sadly, you are missing on some stuff, but don't worry! Not much - you just can't see the time in my country, and that's it!</small>
+<small style="text-align: center;">It seems like you have JavaScript disabled, sadly, you are missing on some stuff, but don't worry! Not much - you just can't see the time in my country, and that's it! <br>If you are intrested in the time in my country check <a href="https://time.is/Moldova#time_zone">time.is</a>, you will see all the info needed about my timezone.</small>
 </noscript>
 
 <div class="home">
-<h1>Gabriel Cozma <small>Gabs</small></h1>
+
+# Gabriel Cozma <small>Gabs</small>
 <small>Human, Front-end Developer & Open Source Contributor.</small>
 
 

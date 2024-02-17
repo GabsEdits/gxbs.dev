@@ -2,11 +2,11 @@
 
 $color-accent: #f17755;
 
-$color-accent-l: color.scale($color-accent, $lightness: -40%);
+$color-accent-l: color.scale($color-accent, $lightness: -60%);
 
 $bg-color-d: color.scale($color-accent, $lightness: -88%, $saturation: -76%);
 
-$bg-color-l: color.scale($color-accent, $lightness: 90%, $saturation: -75%);
+$bg-color-l: color.scale($color-accent, $lightness: 95%, $saturation: -65%);
 
 $bg-color-s-d: mix($color-accent, $bg-color-d, 15%);
 
@@ -84,9 +84,9 @@ main {
     height: 100%;
     background: linear-gradient(
       90deg,
-      transparent,
-      var(--color-border),
-      transparent
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.621),
+      rgba(255, 255, 255, 0)
     );
     transform: skewX(-20deg);
     animation: shining 3s linear infinite;
@@ -95,12 +95,12 @@ main {
       display: none;
     }
 
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
       background: linear-gradient(
         90deg,
-        transparent,
-        rgba(255, 255, 255, 0.5),
-        transparent
+        rgba(255, 255, 255, 0),
+        #ababab40,
+        rgba(255, 255, 255, 0)
       );
     }
   }
@@ -195,12 +195,7 @@ main {
   margin-right: 35px !important;
 }
 
-body {
-  font-family: "Inter", sans-serif !important;
-}
-
 /* Other */
-
 
 a mark {
   text-decoration: underline;
@@ -218,4 +213,8 @@ blockquote {
 
 footer {
   max-width: 663px !important;
+}
+
+blockquote {
+  background-color: transparent !important;
 }
