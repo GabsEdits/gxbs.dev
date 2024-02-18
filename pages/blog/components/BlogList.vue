@@ -81,13 +81,13 @@ export default {
     }
 
     h3 {
-      margin: 0px;
+      margin: 0 !important;
       font-weight: 900;
       font-size: 24px;
     }
 
     p {
-      margin: 0px;
+      margin: 0 !important;
       color: var(--color-text-secondary);
       font-weight: 500;
     }
