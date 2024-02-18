@@ -1,5 +1,4 @@
 ---
-projects: true
 host: gabs.eu.org
 mygit: https://github.com/GabsEdits/
 ---
@@ -43,49 +42,49 @@ This page showcases a collection of my professional work, projects and contribut
 ---
 
 <div class="projects-container">
-    <a class="projects" href="https://semantichtml.github.io">
-        <h3>Semantic HTML</h3>
-        <p>A website about Semantic HTML.</p>
+    <a class="projects" v-bind:href="$frontmatter.mygit + 'deb'">
+        <h3>🕸️  Deb</h3>
+        <p>A postsetup script for Debian with all my personal preferences.</p>
     </a>
-    <a class="projects"  v-bind:href="'https://' + $frontmatter.host">
-        <h3>{{ $frontmatter.host }}</h3>
-        <p>My personal website.</p>
+    <a class="projects" v-bind:href="$frontmatter.mygit + 'deb-gnome'">
+        <h3>🕸️ Deb GNOME</h3>
+        <p>A postsetup script for Debian GNOME.</p>
+    </a>
+    <a class="projects" v-bind:href="$frontmatter.mygit + 'Eisfores'">
+        <h3>Eisforés</h3>
+        <p>Powerful script that gets all the contributors across an organization.</p>
     </a>
     <a class="projects" href="https://fed-jet.vercel.app">
         <h3>Fed</h3>
         <p>A postsetup script for Fedora Workstation.</p>
     </a>
-        <a class="projects"  v-bind:href="$frontmatter.mygit + 'vanilla'">
-        <h3>🛌  Vanilla</h3>
-        <p>A postsetup script for my Vanilla OS Installation.</p>
+    <a class="projects"  v-bind:href="'https://' + $frontmatter.host">
+        <h3>{{ $frontmatter.host }}</h3>
+        <p>My personal website.</p>
     </a>
     <a class="projects"  v-bind:href="$frontmatter.mygit + 'mastodonprofile'">
         <h3>Mastodon Profile</h3>
         <p>A website to list your Mastodon and GitHub profile (fork of XProfile).</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'weather'">
-        <h3>🛌 Simple Weather</h3>
-        <p>A website to show the weather where you are.</p>
-    </a>
     <a class="projects"  v-bind:href="$frontmatter.mygit + 'sl'">
         <h3>Quick Links (ql/sl)</h3>
         <p>A really simple Vite website to store Quick links.</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'Eisfores'">
-        <h3>Eisforés</h3>
-        <p>Powerful script that gets all the contributors across a organization.</p>
+    <a class="projects" href="https://semantichtml.github.io">
+        <h3>Semantic HTML</h3>
+        <p>Am informal website about Semantic HTML.</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'deb-gnome'">
-        <h3>🕸️ Deb GNOME</h3>
-        <p>A postsetup script for Debian GNOME.</p>
+    <a class="projects"  v-bind:href="$frontmatter.mygit + 'weather'">
+        <h3>🗃️ Simple Weather</h3>
+        <p>A website to show the weather where you are.</p>
     </a>
     <a class="projects"  v-bind:href="$frontmatter.mygit + 'ubu'">
-        <h3>🕸️  Ubu</h3>
+        <h3>🕸️ Ubu</h3>
         <p>A postsetup script for Ubuntu with all my personal preferences.</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'deb'">
-        <h3>🕸️  Deb</h3>
-        <p>A postsetup script for Debian.</p>
+    <a class="projects"  v-bind:href="$frontmatter.mygit + 'vanilla'">
+        <h3>🛌 Vanilla</h3>
+        <p>A postsetup script for my Vanilla OS Installation.</p>
     </a>
 </div>
 <br>
@@ -97,23 +96,19 @@ This page showcases a collection of my professional work, projects and contribut
 <div class="projects-container">
     <a class="projects projects-special" href="https://vanillaos.org">
         <h3>Vanilla OS</h3>
-        <p>Vanilla OS is an Linux Distribution built with simplicity in mind.</p>
+        <p>An Linux Distribution built with simplicity in mind.</p>
     </a>
     <a class="projects" href="https://vuejs.org">
         <h3>Vue.js</h3>
         <p>The Progressive JavaScript Framework.</p>
     </a>
-        <a class="projects" href="https://vitejs.dev/">
+    <a class="projects" href="https://vitejs.dev/">
         <h3>Vite</h3>
         <p>Accelerating Web Development with Speed.</p>
     </a>
     <a class="projects" href="https://github.com/hugolabe/Wike">
         <h3>Wike</h3>
         <p>Wikipedia Reader for the GNOME Desktop.</p>
-    </a>
-    <a class="projects" href="https://github.com/InstallerLegacy/virtualhub">
-        <h3>VirtualHub</h3>
-        <p>Tutorials installing age-old operating systems and software.</p>
     </a>
     <a class="projects" href="https://github.com/vixalien/sticky">
         <h3>Sticky Notes</h3>
@@ -127,8 +122,21 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Extension Manager</h3>
         <p> A utility for browsing and installing GNOME Extensions.</p>
     </a>
-    <a class="projects" href="https://github.com/amit9838/weather">
-        <h3>Weather</h3>
+    <a class="projects" href="https://github.com/amit9838/mousam">
+        <h3>Mousam</h3>
         <p>A Beautiful and lightweight weather app build for GNOME.</p>
+    </a>
+</div>
+
+## Translations
+
+<div class="projects-container">
+    <a class="projects" href="https://vanillaos.org">
+        <h3>Vanilla OS</h3>
+        <p>An Linux Distribution built with simplicity in mind.</p>
+    </a>
+    <a class="projects" href="https://github.com/hugolabe/Wike">
+        <h3>Wike</h3>
+        <p>Wikipedia Reader for the GNOME Desktop.</p>
     </a>
 </div>

@@ -1,7 +1,10 @@
+<noscript>
+<small style="text-align: center;">It seems like you have JavaScript disabled, if you are intrested in the time in my country check <a href="https://time.is/Moldova#time_zone">time.is</a>, you will see all the info needed about my timezone.</small>
+</noscript>
+
 # Find Me
 
-Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ timezone }})</small>, just so you're aware ;)\
-I am available on the following platforms:
+Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ timezone }})</small>, so take that into consideration if I don’t respond immediately. I am available on the following platforms:
 
 <div class="socials-container">
     <a class="socials" href="mailto:me@gabs.eu.org">
@@ -22,7 +25,7 @@ I am available on the following platforms:
     </a>
 </div>
 
-Feel free to message me on any of these platforms - I'd love to hear from you!
+Feel free to message me on any of these platforms - I'd love to hear from you! :D
 
 --- 
 
