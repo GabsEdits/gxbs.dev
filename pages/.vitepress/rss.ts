@@ -30,16 +30,12 @@ export async function genFeed(config: SiteConfig) {
   );
 
   for (const { url, excerpt, frontmatter, html } of posts) {
-    const contentWithoutTitle = html?.replace(
-      /{{ \$frontmatter\.title }}/g,
-      ""
-    );
     feed.addItem({
       title: frontmatter.title,
       id: `${baseUrl}${url}`,
       link: `${baseUrl}${url}`,
       description: excerpt,
-      content: contentWithoutTitle?.replace(/&ZeroWidthSpace;/g, ""),
+      content: html?.replace(/&ZeroWidthSpace;/g, ""),
       author: [
         {
           name: frontmatter.author,
