@@ -1,12 +1,16 @@
 ---
+layout: blog
 title: Changing Up My Website
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: Why I'm redoing my website.
 date: 2024-01-13T11:28:00+02:00
+tags:
+ - tech
+ - web
+ - personal
+ - devlog
 ---
-
-# {{ $frontmatter.title }}
 
 I had a bunch of problems with my old website, and I thought it's time for something new, something simpler.
 

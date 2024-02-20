@@ -1,12 +1,16 @@
 ---
+layout: blog
 title: "Behind Aplós"
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: A new way to make websites, with VitePress.
 date: 2024-01-04T21:26:00+02:00
+tags:
+ - tech
+ - web
+ - devlog
+ - oss
 ---
-
-# {{ $frontmatter.title }}
 
 For the past two weeks, I've been working on a new project called "Aplós"! I had a lot of fun making this project, and here's what I learned:
 
