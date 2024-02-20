@@ -8,7 +8,7 @@
       <a v-for="post in filteredPosts" :key="post.title" :href="`posts/${post.title.toLowerCase().replace(/\s+/g, '-')}.html`" class="post">
         <h3>{{ post.title }}</h3>
         <p>{{ post.desc }}</p>
-        <p class="date">{{ post.date }}</p>
+        <p class="date">{{ formatDate(post.date) }}</p>
         <div class="tags">
           <span v-if="typeof post.tags === 'string'" :key="post.tags">#{{ post.tags }}</span>
           <span v-else v-for="tag in post.tags" :key="tag">#{{ tag }}</span>
@@ -46,6 +46,11 @@ export default {
   methods: {
     filterPosts(tag) {
       this.selectedTag = tag === '' ? null : tag;
+    },
+    formatDate(dateString) {
+      const options = { day: '2-digit', month: 'long', year: 'numeric' };
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-GB', options);
     },
   },
 };
