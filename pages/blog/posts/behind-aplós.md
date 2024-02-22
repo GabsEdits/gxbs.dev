@@ -3,7 +3,7 @@ layout: blog
 title: "Behind Aplós"
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
-description: A new way to make websites, with VitePress.
+description: The development journey of Aplós with all the work and thinking behind it.
 date: 2024-01-04T21:26:00+02:00
 tags:
  - tech
