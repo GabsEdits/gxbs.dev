@@ -1,11 +1,12 @@
 <template>
-      <div class="blog-posts">
+  <div class="blog-posts">
     <div class="filter-tags">
       <button @click="filterPosts('')">All</button>
       <button v-for="tag in uniqueTags" :key="tag" @click="filterPosts(tag)">#{{ tag }}</button>
     </div>
     <div class="post-container">
-      <a v-for="post in filteredPosts" :key="post.title" :href="`posts/${post.title.toLowerCase().replace(/\s+/g, '-')}.html`" class="post">
+      <a v-for="post in filteredPosts" :key="post.title"
+        :href="`posts/${post.title.toLowerCase().replace(/\s+/g, '-')}.html`" class="post">
         <h3>{{ post.title }}</h3>
         <p>{{ post.desc }}</p>
         <p class="date">{{ formatDate(post.date) }}</p>
@@ -39,8 +40,8 @@ export default {
       return this.selectedTag === null
         ? this.$frontmatter.posts
         : this.$frontmatter.posts.filter(post =>
-            Array.isArray(post.tags) ? post.tags.includes(this.selectedTag) : post.tags === this.selectedTag
-          );
+          Array.isArray(post.tags) ? post.tags.includes(this.selectedTag) : post.tags === this.selectedTag
+        );
     },
   },
   methods: {
