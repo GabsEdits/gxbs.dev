@@ -16,6 +16,9 @@ export async function genFeed(config: SiteConfig) {
     image: "https://blog.gabs.eu.org/android-chrome-512x512.png",
     favicon: `${baseUrl}/favicon.ico`,
     copyright: "Copyright (c) 2024-present, Gabriel Cozma/Gabs",
+    feedLinks: {
+      atom: `${baseUrl}/atom.xml`,
+    },
   });
 
   const posts = await createContentLoader("blog/posts/*.md", {
@@ -35,7 +38,7 @@ export async function genFeed(config: SiteConfig) {
       id: `${baseUrl}${url}`,
       link: `${baseUrl}${url}`,
       description: excerpt,
-      content: html?.replace(/&ZeroWidthSpace;/g, ""),
+      content: html?.replace(/​/g, ""),
       author: [
         {
           name: frontmatter.author,
@@ -48,5 +51,5 @@ export async function genFeed(config: SiteConfig) {
     });
   }
 
-  writeFileSync(path.join(config.outDir, "feed.rss"), feed.rss2());
+  writeFileSync(path.join(config.outDir, "atom.xml"), feed.atom1());
 }

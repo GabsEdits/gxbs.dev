@@ -5,6 +5,7 @@ titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: The development journey of Aplós with all the work and thinking behind it.
 date: 2024-01-04T21:26:00+02:00
+next: Changing Up My Website
 tags:
  - tech
  - web
