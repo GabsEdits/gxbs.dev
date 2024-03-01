@@ -106,6 +106,10 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Vite</h3>
         <p>Accelerating Web Development with Speed.</p>
     </a>
+    <a class="projects" href="https://github.com/amit9838/mousam">
+        <h3>Welcome to GNOME</h3>
+        <p>A landing site for people wanting to contribute to the GNOME project.</p>
+    </a>
     <a class="projects" href="https://github.com/hugolabe/Wike">
         <h3>Wike</h3>
         <p>Wikipedia Reader for the GNOME Desktop.</p>
