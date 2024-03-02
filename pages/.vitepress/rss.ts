@@ -38,7 +38,7 @@ export async function genFeed(config: SiteConfig) {
       id: `${baseUrl}${url}`,
       link: `${baseUrl}${url}`,
       description: excerpt,
-      content: html?.replace(/​/g, ""),
+      content: html?.replace(/&ZeroWidthSpace;/g, ""),
       author: [
         {
           name: frontmatter.author,
