@@ -22,8 +22,8 @@ export default defineConfig({
     },
     nav: {
       links: [
-        { text: "Projects", link: "/projects" },
         { text: "Find Me", link: "/findme" },
+        { text: "Projects", link: "/projects" },
         { text: "Blog", link: "/blog/" },
       ],
       git: "https://github.com/GabsEdits/gabs.eu.org",
