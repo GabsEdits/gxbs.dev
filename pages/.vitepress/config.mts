@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { genFeed } from "./rss.ts";
+import { genFeed } from "./feed.ts";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({

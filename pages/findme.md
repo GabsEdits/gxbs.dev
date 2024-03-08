@@ -20,7 +20,7 @@ Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span>
         <p>gabsme</p>
     </a>
     <a class="socials" href="https://t.me/gabsedits">
-        <h3>Telegram:</h3>
+        <h3>Telegram</h3>
         <p>/gabsedits</p>
     </a>
 </div>
@@ -33,7 +33,7 @@ Feel free to message me on any of these platforms - I'd love to hear from you! :
 You can find me on the following Git Services:
 
 <div class="git-container">
-    <a class="git git-special" href="https://github.com/GabsEdits">
+    <a class="git git-special" href="https://github.com/GabsEdits" title="My main Git Service">
         <h3>GitHub</h3>
         <p>@GabsEdits</p>
     </a>
@@ -41,7 +41,7 @@ You can find me on the following Git Services:
         <h3>GitLab:</h3>
         <p>@gxbs</p>
     </a>
-    <a class="git" href="https://gitlab.gnome.org/gabs">
+    <a class="git" href="https://gitlab.gnome.org/gabs" title="GNOME GitLab for all my GNOME contributions">
         <h3>GNOME GitLab</h3>
         <p>@gabs</p>
     </a>
@@ -51,7 +51,7 @@ You can find me on the following Git Services:
     </a>
 </div>
 
-> [!TIP]
+> [!TIP] 💡 Tip
 > If you want to explore my projects, check on GitHub! As all of my current work is hosted there. Feel free to check out my repositories for a great view of what I've been working on :+1:
 
 <script setup lang="ts">
