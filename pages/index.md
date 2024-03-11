@@ -17,3 +17,7 @@ Salut! I'm **Gabriel**, also known as **Gabs** in my digital world. Yeah, I'm a 
 Let's go to May 2023. That's the moment when I took a look into creating something beyond my personal space. The result? [Aeolus](https://gabs.eu.org/aeolus) – a nice website created using Vue.js 3 & Vite, For Boekestijn in Moldova. The success of this project made me want to do more professional work, mainly for other companies. **If you need a website feel free to [contact me](/findme).** For a deeper dive, check out my projects on the [Projects page](/projects) Yes, it's not just about lines of code; it's a showcase of my passion. Sometimes you also might find me [translating](/projects#translations) a project to another, but not that much.
 
 Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work :D 🚀
+
+<br>
+
+[![Protect Migratory Birds and their Habitats in Moldova](public/assets/birds.png)](https://chng.it/5d9gpgmW7c)

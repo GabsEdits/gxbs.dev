@@ -25,7 +25,7 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Boekestijn Moldova Website</h3>
         <p>Company Website</p>
     </a>
-    <a class="projects projects-special" href="https://gabs.eu.org/keimeno">
+    <a class="projects projects-special" href="https://gxbs.me/keimeno">
         <h3>Keímeno</h3>
         <p>Just Text. Just Notes. Save</p>
     </a>
