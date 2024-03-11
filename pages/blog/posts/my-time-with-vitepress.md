@@ -19,7 +19,7 @@ Until then, I wasn't a fan of Zola, Jekyll, VuePress, and all these 'blog' stati
 
 I understood that it's actually amazing! I've become a genuine fan of VitePress. It offers a fresh approach to website development. Coming from building Vue & Vite websites, I found it clean and simple. Unlike the complexity of writing in HTML/Vue Template, VitePress provides a simpler yet powerful way to create websites. By using VitePress as with the option "custom theme", I had the flexibility of any other Vue app but in a much simpler manner! I even tried converting the [Semantic HTML Website](https://semantichtml.github.io) into VitePress.
 
-::: details Spoliler
+::: details Spoiler
 It worked!
 :::
 
