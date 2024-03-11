@@ -15,7 +15,7 @@ tags:
 
 As you may know, I recently launched a new project named "Aplós" – a VitePress theme that introduced me to the world of "Markdown" on the web.
 
-Until then, I wasn't a fan of Zola, Jekyll, VuePress, and all these 'blog' static engines. In fact, I wasn't fond of VitePress initially; it seemed confusing. However, Aplós changed my perspective on static engines and led me to the point where I [rebuilt my website]() using both VitePress and Aplós.
+Until then, I wasn't a fan of Zola, Jekyll, VuePress, and all these 'blog' static engines. In fact, I wasn't fond of VitePress initially; it seemed confusing. However, Aplós changed my perspective on static engines and led me to the point where I [rebuilt my website](changing-up-my-website) using both VitePress and Aplós.
 
 I understood that it's actually amazing! I've become a genuine fan of VitePress. It offers a fresh approach to website development. Coming from building Vue & Vite websites, I found it clean and simple. Unlike the complexity of writing in HTML/Vue Template, VitePress provides a simpler yet powerful way to create websites. By using VitePress as with the option "custom theme", I had the flexibility of any other Vue app but in a much simpler manner! I even tried converting the [Semantic HTML Website](https://semantichtml.github.io) into VitePress.
 
