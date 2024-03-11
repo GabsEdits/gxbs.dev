@@ -18,6 +18,7 @@ Let's go to May 2023. That's the moment when I took a look into creating somethi
 
 Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work :D 🚀
 
-<br>
+::: details Protect Migratory Birds and their Habitats
 
 [![Protect Migratory Birds and their Habitats in Moldova](public/assets/birds.png)](https://chng.it/5d9gpgmW7c)
+:::

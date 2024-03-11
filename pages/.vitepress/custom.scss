@@ -48,6 +48,10 @@ $bg-color-s-d: mix($color-accent, $bg-color-d, 15%);
       margin: 0;
     }
   }
+  
+  details {
+    width: 100%;
+  }
 }
 
 main {
