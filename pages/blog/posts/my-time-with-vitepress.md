@@ -17,13 +17,14 @@ As you may know, I recently launched a new project named "Aplós" – a VitePres
 
 Until then, I wasn't a fan of Zola, Jekyll, VuePress, and all these 'blog' static engines. In fact, I wasn't fond of VitePress initially; it seemed confusing. However, Aplós changed my perspective on static engines and led me to the point where I [rebuilt my website](changing-up-my-website) using both VitePress and Aplós.
 
-I understood that it's actually amazing! I've become a genuine fan of VitePress. It offers a fresh approach to website development. Coming from building Vue & Vite websites, I found it clean and simple. Unlike the complexity of writing in HTML/Vue Template, VitePress provides a simpler yet powerful way to create websites. By using VitePress as with the option "custom theme", I had the flexibility of any other Vue app but in a much simpler manner! I even tried converting the [Semantic HTML Website](https://semantichtml.github.io) into VitePress.
+I understood that it's actually amazing! I've become a genuine fan of VitePress. It offers a fresh approach to website development. Coming from building Vue & Vite websites, I found it clean and simple. Unlike the complexity of writing in <abbr title="Hyper Text Markup Language">HTML</abbr>/Vue Template, VitePress provides a simpler yet powerful way to create websites. By using VitePress as with the option "custom theme", I had the flexibility of any other Vue app but in a much simpler manner! I even tried converting the [Semantic HTML Website](https://semantichtml.github.io) into VitePress.
 
 ::: details Spoiler
 It worked!
 :::
 
 ## Semantic HTML
+
 If you're not aware, I have a small project called "Semantic HTML Documentation." It's a one-page website that explains the core concepts of Semantic HTML alongside other links for further reading.
 
 Until recently, I used Vue & Vite to build the website and GitHub Pages to host it. And it was a big mess.
@@ -34,9 +35,11 @@ Until recently, I used Vue & Vite to build the website and GitHub Pages to host 
 
 It was more complicated than necessary. So, just minutes before going to sleep yesterday, I had a great idea: to rebuild the website from Vue & Vite to VitePress. And I got to work!
 
-Surprisingly, it didn't take long. Since the project already used Vue, I simply copied and pasted to bring all the components to my new branch. Additionally, I moved to SCSS for its ease of use. In about 30 minutes, the [Pull Request](https://github.com/semantichtml/semantichtml.github.io/pull/81) was ready!
+Surprisingly, it didn't take long. Since the project already used Vue, I simply copied and pasted to bring all the components to my new branch. Additionally, I moved to <abbr title="Sassy Cascading Style Sheets">SCSS</abbr> for its ease of use. In about 30 minutes, the [Pull Request](https://github.com/semantichtml/semantichtml.github.io/pull/81) was ready!
 
 This demonstrates how easy VitePress is: you can migrate from Vue & Vite to VitePress in about 30 minutes (including converting HTML into Markdown using a nice online tool). The new VitePress version is live at [semantichtml.github.io](https://semantichtml.github.io/).
+
+> **Update:** *After receiving multiple suggestions to simplify the webpage design, similar to the design that multiple [GNOME project webpages have](https://mutter.gnome.org), I decided to rebuild <abbr title="the Semantic HTML Documentation">Semantic's</abbr> website using Aplós. I was pleased with the result, so I switched to the new version. Of course, the process was quick and straightforward.*
 
 ## Conclusion
 

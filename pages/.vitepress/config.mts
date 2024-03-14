@@ -72,10 +72,10 @@ export default defineConfig({
           "Gabs' Personal Website. Explore my world: About me, My Projects, and more. Connect and collaborate",
       },
     ],
-    ["meta", { name: "twitter:url", content: "https://next.gxbs.me" }],
+    ["meta", { name: "twitter:url", content: "https://gabs.eu.org" }],
   ],
   sitemap: {
-    hostname: "https://next.gxbs.me",
+    hostname: "https://gabs.eu.org",
   },
   buildEnd: genFeed,
 });

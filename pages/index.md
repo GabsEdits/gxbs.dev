@@ -20,5 +20,5 @@ Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving w
 
 ::: details Protect Migratory Birds and their Habitats
 
-[![Protect Migratory Birds and their Habitats in Moldova](public/assets/birds.png)](https://chng.it/5d9gpgmW7c)
+[![Protect Migratory Birds and their Habitats in Moldova](/assets/birds.png)](https://chng.it/5d9gpgmW7c)
 :::
