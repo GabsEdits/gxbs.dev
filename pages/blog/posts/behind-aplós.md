@@ -7,10 +7,10 @@ description: The development journey of Aplós with all the work and thinking be
 date: 2024-01-04T21:26:00+02:00
 next: Changing Up My Website
 tags:
- - tech
- - web
- - devlog
- - oss
+  - tech
+  - web
+  - devlog
+  - oss
 ---
 
 For the past two weeks, I've been working on a new project called "Aplós"! I had a lot of fun making this project, and here's what I learned:
@@ -51,29 +51,33 @@ Well, yes, you do have to do some work inside `config.mts`, but it's not that ha
 
 So, I moved my project to VitePress. It wasn't that hard, as Aplós acted as custom stylesheet for the default VitePress themes. I could use cool `Custom Containers` & `pre`'s without having to configure them.
 
-Everything was fun, but there was one issue: Some parts of the theme you **can't** configure through our unified `config.mts` file.  I got the great idea of making the Vue.js Components (Navigation & Footer) fully changeable inside the `config.mts` file, using the `{ useData }` feature provided by VitePress. For the Navigation, it wasn't that hard:
+Everything was fun, but there was one issue: Some parts of the theme you **can't** configure through our unified `config.mts` file. I got the great idea of making the Vue.js Components (Navigation & Footer) fully changeable inside the `config.mts` file, using the `{ useData }` feature provided by VitePress. For the Navigation, it wasn't that hard:
 
 ```vue
 <template>
-<nav>
+  <nav>
     <ul>
-        <li class="h1-nav">
-            <a href="/" @click="setActive('/')">
-                <h1>{{ site.title }}</h1>
-            </a>
-        </li>
-        <li v-for="(navItem, index) in navigation" :key="index">
-            <a :href="navItem.link" :class="{ 'active': isActive(navItem.link) }" @click="setActive(navItem.link)">
-                {{ navItem.text }}
-            </a>
-        </li>
-        <li v-if="theme.nav.git">
-            <a :href="theme.nav.git">
-                <GitAlt />
-            </a>
-        </li>
+      <li class="h1-nav">
+        <a href="/" @click="setActive('/')">
+          <h1>{{ site.title }}</h1>
+        </a>
+      </li>
+      <li v-for="(navItem, index) in navigation" :key="index">
+        <a
+          :href="navItem.link"
+          :class="{ active: isActive(navItem.link) }"
+          @click="setActive(navItem.link)"
+        >
+          {{ navItem.text }}
+        </a>
+      </li>
+      <li v-if="theme.nav.git">
+        <a :href="theme.nav.git">
+          <GitAlt />
+        </a>
+      </li>
     </ul>
-</nav>
+  </nav>
 </template>
 ```
 
@@ -86,7 +90,7 @@ themeConfig: {
       { text: "Something", link: "/something" },
       // And you can add the same
     ],
-     git: "https://github.com/GabsEdits/blog", 
+     git: "https://github.com/GabsEdits/blog",
   },
 },
 ```
@@ -115,6 +119,7 @@ Again, I was searching for options to not have an issue like this. While looking
 Sadly, I didn't find an option, so I got the idea (also from Duckquill) to make a `custom.scss` file where we will have the accent color **and** other custom styles not from the theme. I did that, for now, we will keep this as it is, maybe in the future we will be able to connect an SCSS file to a TypeScript/Javascript file.
 
 ## The rest
+
 After two weeks of building this project during the winter holidays, I am happy to announce that we reached the stable version, and we will continue making this project even better.
 
 I want to thank every project that helped make this come true, special thanks to [Duckquill](https://daudix.codeberg.page/duckquill/).

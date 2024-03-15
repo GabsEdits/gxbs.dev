@@ -5,12 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@fontsource/noto-color-emoji':
-    specifier: ^5.0.23
-    version: 5.0.23
-  '@fontsource/noto-emoji':
-    specifier: ^5.0.17
-    version: 5.0.17
   '@fontsource/source-code-pro':
     specifier: ^5.0.16
     version: 5.0.16
@@ -447,14 +441,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /@fontsource/noto-color-emoji@5.0.23:
-    resolution: {integrity: sha512-A9JMorLXCyY1AZFObupuERznSftCe4IOoabQwyX7RJj/Lu/QEzFHH7YzvC/nwngZEqLc9gxbVE/vxpqa40XPBA==}
-    dev: false
-
-  /@fontsource/noto-emoji@5.0.17:
-    resolution: {integrity: sha512-Yn8+Z/+xxAxkzDYq3HjcLEwhA0lVPgTb6NXPwlxEH8AolrXToPVDrcvtXU5ySpMc1GjnVmS+5ZephVU4aFnExw==}
-    dev: false
 
   /@fontsource/source-code-pro@5.0.16:
     resolution: {integrity: sha512-ErErGXjKo9/fAJE49fyU8M6DuJUpdqR5YLM8jGJOC5ZcKIDSTQ5m+R3DTa0VYHAGGFbk2qLWVWD/r5sfCLA/jQ==}

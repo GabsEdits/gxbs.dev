@@ -27,9 +27,10 @@ Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span>
 
 Feel free to message me on any of these platforms - I'd love to hear from you! :D
 
---- 
+---
 
 ## Contributions
+
 You can find me on the following Git Services:
 
 <div class="git-container">

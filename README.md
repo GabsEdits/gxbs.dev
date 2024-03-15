@@ -7,4 +7,5 @@
 </div>
 
 ## Story
+
 Check the story behind this website on my [blog](https://gabs.eu.org/blog/posts/changing-up-my-website).

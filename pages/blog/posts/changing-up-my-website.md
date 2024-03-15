@@ -8,10 +8,10 @@ date: 2024-01-13T11:28:00+02:00
 prev: Behind Aplós
 next: My Time with VitePress
 tags:
- - tech
- - web
- - personal
- - devlog
+  - tech
+  - web
+  - personal
+  - devlog
 ---
 
 I had a bunch of problems with my old website, and I thought it's time for something new, something simpler.
@@ -73,6 +73,7 @@ Way better than the old:
 <br />
 
 > The blog folder keeps it straightforward: `/blog/index.md` is the main page, and `/blogs/posts/` is where I have all the posts.
+>
 > > Sadly I am still figuring out how to auto-list projects on the main page. For now, I've made up a simple way to show the latest posts using the `formatter`.
 
 ## Design

@@ -5,8 +5,6 @@
     "pages:preview": "vitepress preview pages"
   },
   "dependencies": {
-    "@fontsource/noto-color-emoji": "^5.0.23",
-    "@fontsource/noto-emoji": "^5.0.17",
     "@fontsource/source-code-pro": "^5.0.16",
     "@types/node": "^20.11.24",
     "feed": "^4.2.2",

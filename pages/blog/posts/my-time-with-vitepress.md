@@ -7,10 +7,10 @@ description: My personal experience with VitePress and how it transformed my web
 date: 2024-01-13T11:28:00+02:00
 prev: Changing Up My Website
 tags:
- - tech
- - web
- - personal
- - experience
+  - tech
+  - web
+  - personal
+  - experience
 ---
 
 As you may know, I recently launched a new project named "Aplós" – a VitePress theme that introduced me to the world of "Markdown" on the web.
@@ -39,7 +39,7 @@ Surprisingly, it didn't take long. Since the project already used Vue, I simply 
 
 This demonstrates how easy VitePress is: you can migrate from Vue & Vite to VitePress in about 30 minutes (including converting HTML into Markdown using a nice online tool). The new VitePress version is live at [semantichtml.github.io](https://semantichtml.github.io/).
 
-> **Update:** *After receiving multiple suggestions to simplify the webpage design, similar to the design that multiple [GNOME project webpages have](https://mutter.gnome.org), I decided to rebuild <abbr title="the Semantic HTML Documentation">Semantic's</abbr> website using Aplós. I was pleased with the result, so I switched to the new version. Of course, the process was quick and straightforward.*
+> **Update:** _After receiving multiple suggestions to simplify the webpage design, similar to the design that multiple [GNOME project webpages have](https://mutter.gnome.org), I decided to rebuild <abbr title="the Semantic HTML Documentation">Semantic's</abbr> website using Aplós. I was pleased with the result, so I switched to the new version. Of course, the process was quick and straightforward._
 
 ## Conclusion
 

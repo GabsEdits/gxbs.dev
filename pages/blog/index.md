@@ -9,7 +9,7 @@ posts:
       - web
       - personal
       - experience
-  - title: Changing Up My Website 
+  - title: Changing Up My Website
     desc: Why and how I'm redoing my website.
     date: 2024-01-13T11:28:00+02:00
     tags:

@@ -5,8 +5,8 @@ pageClass: home
 ---
 
 # Gabriel Cozma <small>Gabs</small>
-<small>Human, Front-end Developer & Open Source Contributor.</small>
 
+<small>Human, Front-end Developer & Open Source Contributor.</small>
 
 Salut! I'm **Gabriel**, also known as **Gabs** in my digital world. Yeah, I'm a human person, but also a designer and developer with a passion for creating beautiful and intuitive experiences. Proudly navigating the world of development here, in Moldova. Creating visually stunning and user-friendly web experiences is my thing. You can peek into my coding on [My Git Profiles](/findme#contributions), mainly on **GitHub**.
 

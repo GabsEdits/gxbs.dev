@@ -9,12 +9,12 @@ This page showcases a collection of my professional work, projects and contribut
 
 <div class="small">
 
-| Emoji   |   Meaning    |
-| ------- | :----------: |
-| 🕸️      | Unmaintained |
-| 🗃️      | Archived     |
-| 🛌      | On Hold      |
-| None    | Maintained   |
+| Emoji |   Meaning    |
+| ----- | :----------: |
+| 🕸️    | Unmaintained |
+| 🗃️    |   Archived   |
+| 🛌    |   On Hold    |
+| None  |  Maintained  |
 
 </div>
 

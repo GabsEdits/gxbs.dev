@@ -12,7 +12,7 @@ export default defineConfig({
   cleanUrls: true,
 
   themeConfig: {
-    author: "Gabriel Cozma/Gabs",
+    author: "Gabriel Cozma",
     blog: {
       data: {
         repo: "GabsEdits/gabs.eu.org",
@@ -34,7 +34,7 @@ export default defineConfig({
       poweredBy: true,
 
       madeby: {
-        show: true,
+        show: false,
         name: "Gabs",
         link: "https://gabs.eu.org",
       },
