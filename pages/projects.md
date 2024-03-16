@@ -1,6 +1,7 @@
 ---
 host: gabs.eu.org
 mygit: https://github.com/GabsEdits/
+github: https://github.com/
 ---
 
 # Projects
@@ -106,27 +107,31 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Vite</h3>
         <p>Accelerating Web Development with Speed.</p>
     </a>
-    <a class="projects" href="https://github.com/amit9838/mousam">
+    <a class="projects" href="https://gitlab.gnome.org/Teams/Websites/welcome.gnome.org/">
         <h3>Welcome to GNOME</h3>
         <p>A landing site for people wanting to contribute to the GNOME project.</p>
     </a>
-    <a class="projects" href="https://github.com/hugolabe/Wike">
+    <a class="projects" href="https://distrobox.it">
+        <h3>Distrobox</h3>
+        <p>A landing site for people wanting to contribute to the GNOME project.</p>
+    </a>
+    <a class="projects" v-bind:href="$frontmatter.github + 'hugolabe/Wike'">
         <h3>Wike</h3>
         <p>Wikipedia Reader for the GNOME Desktop.</p>
     </a>
-    <a class="projects" href="https://github.com/vixalien/sticky">
+    <a class="projects"v-bind:href="$frontmatter.github + 'vixalien/sticky'">
         <h3>Sticky Notes</h3>
         <p> A simple sticky notes app for GNOME.</p>
     </a>
-    <a class="projects" href="https://github.com/vikdevelop/timer">
+    <a class="projects" v-bind:href="$frontmatter.github + 'vikdevelop/timer'">
         <h3>Timer</h3>
         <p>A simple Countdown Timer for GNOME.</p>
     </a>
-    <a class="projects" href="https://github.com/mjakeman/extension-manager">
+    <a class="projects"v-bind:href="$frontmatter.github + 'mjakeman/extension-manager'">
         <h3>Extension Manager</h3>
         <p> A utility for browsing and installing GNOME Extensions.</p>
     </a>
-    <a class="projects" href="https://github.com/amit9838/mousam">
+    <a class="projects" v-bind:href="$frontmatter.github + 'amit9838/mousam'">
         <h3>Mousam</h3>
         <p>A Beautiful and lightweight weather app build for GNOME.</p>
     </a>
