@@ -29,9 +29,13 @@ If you're not aware, I have a small project called "Semantic HTML Documentation.
 
 Until recently, I used Vue & Vite to build the website and GitHub Pages to host it. And it was a big mess.
 
-[![A screenshot of the old files of the Semantic HTML Website on GitHub](/assets/blog/my-experience-with-vitepress/image.png)](https://github.com/semantichtml/semantichtml.github.io/tree/8e9c5c9972e86b98888084bd86419982d94c8ca6)
-
-<figcaption>A screenshot of the old files of the Semantic HTML Website on GitHub</figcaption>
+<a href="https://github.com/semantichtml/semantichtml.github.io/tree8e9c5c9972e86b98888084bd86419982d94c8ca6">
+<picture>
+<source srcset="/assets/blog/my-experience-with-vitepress/image.png" media="(prefers-color-scheme:dark)">
+<img src="/assets/blog/my-experience-with-vitepress/image-light.png" alt="A screenshot of the old files of the Semantic HTML Website on GitHub">
+</picture>
+</a>
+<figcaption style="margin-top: 10px">A screenshot of the old files of the Semantic HTML Website on GitHub</figcaption>
 
 It was more complicated than necessary. So, just minutes before going to sleep yesterday, I had a great idea: to rebuild the website from Vue & Vite to VitePress. And I got to work!
 

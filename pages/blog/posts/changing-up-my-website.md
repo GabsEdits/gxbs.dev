@@ -41,9 +41,14 @@ Sure, it's not the most original idea, but I'm all about readability > originali
 Surprisingly (or not), Aplós made things a breeze. Most of the time spend was on making the content, not
 the looks. The cool thing was, I only had to set up the `config.mts` the way I liked it and then just create the pages I needed using something as simple as Markdown (`index.md`, `projects.md`, & `findme.md`). When thinking about how to show my projects, I thought, why not reuse the style I used for the Posts List on the blog? Seemed easy, and got it working, and boom.
 
-[![Screenshot of me writing this blog](/assets/blog/changing-up-my-website/screenshot.png)](/assets/blog/changing-up-my-website/screenshot.png)
+<a href="https://github.com/semantichtml/semantichtml.github.io/tree8e9c5c9972e86b98888084bd86419982d94c8ca6">
+<picture>
+<source srcset="/assets/blog/changing-up-my-website/screenshot-dark.png" media="(prefers-color-scheme:dark)">
+<img src="/assets/blog/changing-up-my-website/screenshot.png" alt="Screenshot of me writing this blog in Apostrophe">
+</picture>
+</a>
 
-<figcaption>Screenshot of me writing this blog in Apostrophe Dark Mode</figcaption>
+<figcaption>Screenshot of me writing this blog in Apostrophe</figcaption>
 
 ## A Fresh Structure
 

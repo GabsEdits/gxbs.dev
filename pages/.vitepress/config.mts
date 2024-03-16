@@ -6,7 +6,7 @@ export default defineConfig({
   lang: "en-US",
   title: "Gabs",
   description:
-    "Gabs' Personal Website. Explore my world: About me, My Projects, and more. Connect and collaborate.",
+    "Human, Front-end Developer & Open Source Contributor",
 
   lastUpdated: true,
   cleanUrls: true,
@@ -22,9 +22,9 @@ export default defineConfig({
     },
     nav: {
       links: [
+        { text: "Blog", link: "/blog/" },
         { text: "Find Me", link: "/findme" },
         { text: "Projects", link: "/projects" },
-        { text: "Blog", link: "/blog/" },
       ],
       git: "https://github.com/GabsEdits/gabs.eu.org",
       rss: "/atom.xml",
@@ -62,6 +62,7 @@ export default defineConfig({
     ["meta", { name: "theme-color", content: "#f17755" }],
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
+    ["meta", { name: "og:description", content: "Human, Front-end Developer & Open Source Contributor." }],
     ["meta", { name: "og:site_name", content: "Gabs | Gabriel Cozma" }],
     ["meta", { name: "twitter:title", content: "Gabs | Gabriel Cozma" }],
     [
@@ -69,7 +70,7 @@ export default defineConfig({
       {
         name: "twitter:description",
         content:
-          "Gabs' Personal Website. Explore my world: About me, My Projects, and more. Connect and collaborate",
+          "Human, Front-end Developer & Open Source Contributor.",
       },
     ],
     ["meta", { name: "twitter:url", content: "https://gabs.eu.org" }],
