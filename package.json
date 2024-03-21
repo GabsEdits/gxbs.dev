@@ -6,11 +6,11 @@
   },
   "dependencies": {
     "@fontsource/source-code-pro": "^5.0.17",
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.11.30",
     "feed": "^4.2.2",
     "inter-ui": "^4.0.2",
     "sass": "^1.72.0",
-    "vitepress": "1.0.0-rc.45"
+    "vitepress": "^1.0.0"
   },
   "pnpm": {
     "peerDependencyRules": {
