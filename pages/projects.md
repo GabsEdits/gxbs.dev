@@ -43,15 +43,15 @@ This page showcases a collection of my professional work, projects and contribut
 ---
 
 <div class="projects-container">
-    <a class="projects" v-bind:href="$frontmatter.mygit + 'deb'">
+    <a class="projects":href="$frontmatter.mygit + 'deb'">
         <h3>🕸️  Deb</h3>
         <p>A postsetup script for Debian with all my personal preferences.</p>
     </a>
-    <a class="projects" v-bind:href="$frontmatter.mygit + 'deb-gnome'">
+    <a class="projects":href="$frontmatter.mygit + 'deb-gnome'">
         <h3>🕸️ Deb GNOME</h3>
         <p>A postsetup script for Debian GNOME.</p>
     </a>
-    <a class="projects" v-bind:href="$frontmatter.mygit + 'Eisfores'">
+    <a class="projects":href="$frontmatter.mygit + 'Eisfores'">
         <h3>Eisforés</h3>
         <p>Powerful script that gets all the contributors across an organization.</p>
     </a>
@@ -59,15 +59,15 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Fed</h3>
         <p>A postsetup script for Fedora Workstation.</p>
     </a>
-    <a class="projects"  v-bind:href="'https://' + $frontmatter.host">
+    <a class="projects" :href="'https://' + $frontmatter.host">
         <h3>{{ $frontmatter.host }}</h3>
         <p>My personal website.</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'mastodonprofile'">
+    <a class="projects" :href="$frontmatter.mygit + 'mastodonprofile'">
         <h3>Mastodon Profile</h3>
         <p>A website to list your Mastodon and GitHub profile (fork of XProfile).</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'sl'">
+    <a class="projects" :href="$frontmatter.mygit + 'sl'">
         <h3>Quick Links (ql/sl)</h3>
         <p>A really simple Vite website to store Quick links.</p>
     </a>
@@ -75,15 +75,15 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Semantic HTML</h3>
         <p>Am informal website about Semantic HTML.</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'weather'">
+    <a class="projects" :href="$frontmatter.mygit + 'weather'">
         <h3>🗃️ Simple Weather</h3>
         <p>A website to show the weather where you are.</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'ubu'">
+    <a class="projects" :href="$frontmatter.mygit + 'ubu'">
         <h3>🕸️ Ubu</h3>
         <p>A postsetup script for Ubuntu with all my personal preferences.</p>
     </a>
-    <a class="projects"  v-bind:href="$frontmatter.mygit + 'vanilla'">
+    <a class="projects" :href="$frontmatter.mygit + 'vanilla'">
         <h3>🛌 Vanilla</h3>
         <p>A postsetup script for my Vanilla OS Installation.</p>
     </a>
@@ -115,23 +115,23 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Distrobox</h3>
         <p>A landing site for people wanting to contribute to the GNOME project.</p>
     </a>
-    <a class="projects" v-bind:href="$frontmatter.github + 'hugolabe/Wike'">
+    <a class="projects":href="$frontmatter.github + 'hugolabe/Wike'">
         <h3>Wike</h3>
         <p>Wikipedia Reader for the GNOME Desktop.</p>
     </a>
-    <a class="projects"v-bind:href="$frontmatter.github + 'vixalien/sticky'">
+    <a class="projects" :href="$frontmatter.github + 'vixalien/sticky'">
         <h3>Sticky Notes</h3>
         <p> A simple sticky notes app for GNOME.</p>
     </a>
-    <a class="projects" v-bind:href="$frontmatter.github + 'vikdevelop/timer'">
+    <a class="projects":href="$frontmatter.github + 'vikdevelop/timer'">
         <h3>Timer</h3>
         <p>A simple Countdown Timer for GNOME.</p>
     </a>
-    <a class="projects"v-bind:href="$frontmatter.github + 'mjakeman/extension-manager'">
+    <a class="projects" :href="$frontmatter.github + 'mjakeman/extension-manager'">
         <h3>Extension Manager</h3>
         <p> A utility for browsing and installing GNOME Extensions.</p>
     </a>
-    <a class="projects" v-bind:href="$frontmatter.github + 'amit9838/mousam'">
+    <a class="projects" :href="$frontmatter.github + 'amit9838/mousam'">
         <h3>Mousam</h3>
         <p>A Beautiful and lightweight weather app build for GNOME.</p>
     </a>
