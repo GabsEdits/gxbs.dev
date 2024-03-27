@@ -22,7 +22,7 @@ I recently did a project called **Aplós**, and you can check out the blog about
 
 **TL;DR**: Made it with VitePress, and it was a breeze to use. Got me thinking, why not redo my website with a focus on making it easy to read? As I didn't really pay attention to that when I built the old one about 2 years ago.
 
-You might wonder, why not just tweak the old one (Gabs Website 3.0)? Well, it's not that good of an idea. Plus, it's a pain to add new stuff, being a Vue Single Page thingy, and even worse, Vue CDN, which I never understood how to make use of. Tried fixing just the backend, but no luck.
+You might wonder, why not just tweak the old one (Gabs Website 3.0)? Well, it's not that good of an idea. Plus, it's a pain to add new stuff, being a Vue Single Page thingy, and even worse, Vue <abbr title="Content Delivery Network">CDN</abbr>, which I never understood how to make use of. Tried fixing just the backend, but no luck.
 
 <video src="/assets/blog/changing-up-my-website/oldsite-screencast.webm" controls="" alt="A screencast of the my Old Website on Firefox showing how laggy the transictions were" />
 

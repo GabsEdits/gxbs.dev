@@ -148,4 +148,16 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Wike</h3>
         <p>Wikipedia Reader for the GNOME Desktop.</p>
     </a>
+    <a class="projects" href="https://github.com/SeaDve/Breathing">
+        <h3>Breathing</h3>
+        <p>A simple application that guides your breathing pattern.</p>
+    </a>
+    <a class="projects" href="https://github.com/SeaDve/Kooha">
+        <h3>Kooha</h3>
+        <p> Elegantly record your screen.</p>
+    </a>
+    <a class="projects" href="https://github.com/SeaDve/Mousai">
+        <h3>Mousai</h3>
+        <p> Identify songs in seconds.</p>
+    </a>
 </div>

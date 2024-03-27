@@ -17,11 +17,11 @@ For the past two weeks, I've been working on a new project called "Aplós"! I ha
 
 ## Why?
 
-In the last week of December, I came across a fun project by Daudix called [Duckquill](https://daudix.codeberg.page/duckquill/). It inspired me to create something similar but for CSS & Vue.js.
+In the last week of December, I came across a fun project by Daudix called [Duckquill](https://daudix.codeberg.page/duckquill/). It inspired me to create something similar but for <abbr title="Cascading Style Sheets">CSS</abbr> & Vue.js.
 
 ## The Start
 
-Initially, I began the project with HTML & CSS, creating a template with styles. Later, I decided to switch to **Vue.js & Vite** to leverage the powerful Vue.js Components system. This is how Cards/Custom Containers became a thing, making website creation a breeze:
+Initially, I began the project with <abbr title="HyperText Markup Language">HTML</abbr> & CSS, creating a template with styles. Later, I decided to switch to **Vue.js & Vite** to leverage the powerful Vue.js Components system. This is how Cards/Custom Containers became a thing, making website creation a breeze:
 
 ```vue
 <Warning warning="Your warning here" />
@@ -49,7 +49,7 @@ While I've known about VitePress for a while, I never fully explored it. With th
 To build a website with VitePress, all you need to know is that `config.mts` exists, where you'll spend your time configuring the website. Just create a Markdown file inside the `pages` folder, and you're good to go.\
 Well, yes, you do have to do some work inside `config.mts`, but it's not that hard.
 
-So, I moved my project to VitePress. It wasn't that hard, as Aplós acted as custom stylesheet for the default VitePress themes. I could use cool `Custom Containers` & `pre`'s without having to configure them.
+So, I moved my project to VitePress. It wasn't that hard, as Aplós acted as custom stylesheet for the default VitePress themes. I could use cool `Custom Containers` & <abbr title="Preformatted text">`pre`</abbr>'s without having to configure them.
 
 Everything was fun, but there was one issue: Some parts of the theme you **can't** configure through our unified `config.mts` file. I got the great idea of making the Vue.js Components (Navigation & Footer) fully changeable inside the `config.mts` file, using the `{ useData }` feature provided by VitePress. For the Navigation, it wasn't that hard:
 
@@ -114,7 +114,7 @@ Now that can easily be changed in the config. There is one more issue: The Color
 
 While looking for ideas on how these can be configured, I got the idea to make a script that takes the accent data from the `config.mts` and creates it into a `<style>` tag. Somehow, I made it come true, but I got mad when I saw that it made the website slower and added a script that is run when you open the page.
 
-Again, I was searching for options to not have an issue like this. While looking through the [Duckquill](https://daudix.codeberg.page/duckquill/) source code, I saw an `SCSS` file that created the color palette, and I saw how powerful `SCSS` is. That's when I got the idea to also do something like this, so instead of having to make background-color (dark & light), background-color-second (dark & light), background-color-mute (dark & light), and color-accent, you now will need just a color-accent, and even that is optional! Then, I moved all of my stylesheets to SCSS. But still, we had one issue, the same issue why all of this started, to have the accent color inside the `config.mts`.
+Again, I was searching for options to not have an issue like this. While looking through the [Duckquill](https://daudix.codeberg.page/duckquill/) source code, I saw an <abbr title="Syntactically Awesome Style Sheets">SASS</abbr> file that created the color palette, and I saw how powerful SCSS is. That's when I got the idea to also do something like this, so instead of having to make background-color (dark & light), background-color-second (dark & light), background-color-mute (dark & light), and color-accent, you now will need just a color-accent, and even that is optional! Then, I moved all of my stylesheets to SCSS. But still, we had one issue, the same issue why all of this started, to have the accent color inside the `config.mts`.
 
 Sadly, I didn't find an option, so I got the idea (also from Duckquill) to make a `custom.scss` file where we will have the accent color **and** other custom styles not from the theme. I did that, for now, we will keep this as it is, maybe in the future we will be able to connect an SCSS file to a TypeScript/Javascript file.
 
