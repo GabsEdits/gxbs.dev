@@ -42,7 +42,7 @@ export default defineConfig({
       copyleft: {
         show: true,
         license: "MIT License",
-        info: "https://opensource.org/license/mit/",
+        info: "https://github.com/GabsEdits/gabs.eu.org/blob/main/LICENSE",
       },
     },
   },
