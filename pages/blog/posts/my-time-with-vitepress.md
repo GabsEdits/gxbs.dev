@@ -29,7 +29,7 @@ If you're not aware, I have a small project called "Semantic HTML Documentation.
 
 Until recently, I used Vue & Vite to build the website and GitHub Pages to host it. And it was a big mess.
 
-<a href="https://github.com/semantichtml/semantichtml.github.io/tree8e9c5c9972e86b98888084bd86419982d94c8ca6">
+<a href="https://github.com/semantichtml/semantichtml.github.io/tree/8e9c5c9972e86b98888084bd86419982d94c8ca6">
 <picture>
 <source srcset="/assets/blog/my-experience-with-vitepress/image.png" media="(prefers-color-scheme:dark)">
 <img src="/assets/blog/my-experience-with-vitepress/image-light.png" alt="A screenshot of the old files of the Semantic HTML Website on GitHub">

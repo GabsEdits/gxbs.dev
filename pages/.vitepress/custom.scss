@@ -69,6 +69,10 @@ main {
 .projects-special,
 .git-special {
   background-color: var(--color-background-mute) !important;
+
+  &:hover {
+    background-color: var(--color-accent-alpha) !important;
+  }
 }
 
 .shining-effect {
@@ -137,14 +141,18 @@ main {
   text-decoration: none;
   padding: 20px;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    text-decoration 0.3s ease, color 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
+    text-decoration: none;
+    background-color: var(--color-background-mute);
   }
 
   &:active {
     transform: scale(0.9);
+    text-decoration: none;
   }
 
   h3 {

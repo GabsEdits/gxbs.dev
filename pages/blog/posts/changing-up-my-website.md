@@ -24,7 +24,7 @@ I recently did a project called **Aplós**, and you can check out the blog about
 
 You might wonder, why not just tweak the old one (Gabs Website 3.0)? Well, it's not that good of an idea. Plus, it's a pain to add new stuff, being a Vue Single Page thingy, and even worse, Vue <abbr title="Content Delivery Network">CDN</abbr>, which I never understood how to make use of. Tried fixing just the backend, but no luck.
 
-<video src="/assets/blog/changing-up-my-website/oldsite-screencast.webm" controls="" alt="A screencast of the my Old Website on Firefox showing how laggy the transictions were" />
+<video src="/assets/blog/changing-up-my-website/oldsite-screencast.webm" controls="true" alt="A screencast of the my Old Website on Firefox showing how laggy the transictions were" />
 
 <figcaption>A screencast of the my Old Website on Firefox Desktop showing how laggy the transictions were</figcaption>
 
@@ -41,12 +41,10 @@ Sure, it's not the most original idea, but I'm all about readability > originali
 Surprisingly (or not), Aplós made things a breeze. Most of the time spend was on making the content, not
 the looks. The cool thing was, I only had to set up the `config.mts` the way I liked it and then just create the pages I needed using something as simple as Markdown (`index.md`, `projects.md`, & `findme.md`). When thinking about how to show my projects, I thought, why not reuse the style I used for the Posts List on the blog? Seemed easy, and got it working, and boom.
 
-<a href="https://github.com/semantichtml/semantichtml.github.io/tree8e9c5c9972e86b98888084bd86419982d94c8ca6">
 <picture>
 <source srcset="/assets/blog/changing-up-my-website/screenshot-dark.png" media="(prefers-color-scheme:dark)">
 <img src="/assets/blog/changing-up-my-website/screenshot.png" alt="Screenshot of me writing this blog in Apostrophe">
 </picture>
-</a>
 
 <figcaption>Screenshot of me writing this blog in Apostrophe</figcaption>
 

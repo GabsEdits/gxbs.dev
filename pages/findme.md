@@ -7,6 +7,10 @@
 Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ timezone }})</small>, so take that into consideration if I don’t respond immediately. I am available on the following platforms:
 
 <div class="socials-container">
+    <a class="socials" href="https://discord.com/users/841649648606249021">
+        <h3>Discord</h3>
+        <p>gabsme</p>
+    </a>
     <a class="socials" href="mailto:me@gabs.eu.org">
         <h3>Email</h3>
         <p>&#109;&#101;[at]&#103;&#97;&#98;&#115;&#46;&#101;&#117;&#46;&#111;&#114;&#103;</p>
@@ -14,10 +18,6 @@ Here, in my part of the world, it's currently <time><span>{{ TimeForMe }}</span>
     <a class="socials" rel="me" href="https://fosstodon.org/@gabs">
         <h3>Mastodon</h3>
         <p>@gabs@fosstodon.org</p>
-    </a>
-    <a class="socials" href="https://discord.com/users/841649648606249021">
-        <h3>Discord</h3>
-        <p>gabsme</p>
     </a>
     <a class="socials" href="https://t.me/gabsedits">
         <h3>Telegram</h3>
@@ -38,6 +38,10 @@ You can find me on the following Git Services:
         <h3>GitHub</h3>
         <p>@GabsEdits</p>
     </a>
+      <a class="git" href="https://codeberg.org/gxbs">
+        <h3>Codeberg</h3>
+        <p>@gxbs</p>
+    </a>
     <a class="git" href="https://gitlab.com/gxbs">
         <h3>GitLab:</h3>
         <p>@gxbs</p>
@@ -45,10 +49,6 @@ You can find me on the following Git Services:
     <a class="git" href="https://gitlab.gnome.org/gabs" title="GNOME GitLab for all my GNOME contributions">
         <h3>GNOME GitLab</h3>
         <p>@gabs</p>
-    </a>
-    <a class="git" href="https://codeberg.org/gxbs">
-        <h3>Codeberg</h3>
-        <p>@gxbs</p>
     </a>
 </div>
 
