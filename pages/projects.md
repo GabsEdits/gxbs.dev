@@ -67,9 +67,9 @@ This page showcases a collection of my professional work, projects and contribut
         <h3>Mastodon Profile</h3>
         <p>A website to list your Mastodon and GitHub profile (fork of XProfile).</p>
     </a>
-    <a class="projects" :href="$frontmatter.mygit + 'sl'">
-        <h3>Quick Links (ql/sl)</h3>
-        <p>A really simple Vite website to store Quick links.</p>
+    <a class="projects" :href="$frontmatter.mygit + 'quick-links'">
+        <h3>Quick Links</h3>
+        <p>An easy way to access your quick links from anywhere in the world.</p>
     </a>
     <a class="projects" href="https://semantichtml.github.io">
         <h3>Semantic HTML</h3>
