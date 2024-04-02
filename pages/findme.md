@@ -52,6 +52,8 @@ You can find me on the following Git Services:
     </a>
 </div>
 
+**If you want to verify all of my accounts, you can check out my [Keyoxide](https://keyoxide.org/me%40gabs.eu.org) profile**.
+
 > [!TIP] 💡 Tip
 > If you want to explore my projects, check on GitHub! As all of my current work is hosted there. Feel free to check out my repositories for a great view of what I've been working on :+1:
 
