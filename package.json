@@ -6,11 +6,7 @@
   },
   "dependencies": {
     "@fontsource/source-code-pro": "^5.0.17",
-    "@types/node": "^20.11.30",
-    "feed": "^4.2.2",
-    "inter-ui": "^4.0.2",
-    "sass": "^1.72.0",
-    "vitepress": "^1.0.1"
+    "inter-ui": "^4.0.2"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -19,5 +15,11 @@
         "search-insights"
       ]
     }
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "feed": "^4.2.2",
+    "sass": "^1.72.0",
+    "vitepress": "^1.0.1"
   }
 }
