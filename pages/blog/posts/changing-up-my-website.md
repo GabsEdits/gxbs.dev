@@ -4,6 +4,7 @@ title: Changing Up My Website
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: Rebuilding my personal website with Aplós, prioritizing simplicity and readability.
+shortDescription: Why and how I'm redoing my website.
 date: 2024-01-13T11:28:00+02:00
 prev: Behind Aplós
 next: My Time with VitePress

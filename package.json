@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "pages:dev": "vitepress dev pages",
     "pages:build": "vitepress build pages",

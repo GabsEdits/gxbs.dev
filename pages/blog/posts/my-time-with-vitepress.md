@@ -4,7 +4,8 @@ title: My Time with VitePress
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: My personal experience with VitePress and how it transformed my website development process.
-date: 2024-01-13T11:28:00+02:00
+shortDescription: My personal experience with VitePress.
+date: 2024-03-11T13:19:00+02:00
 prev: Changing Up My Website
 tags:
   - tech
