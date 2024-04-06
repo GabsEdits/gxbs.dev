@@ -4,7 +4,6 @@ title: "Behind Aplós"
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: The development journey of Aplós with all the work and thinking behind it.
-shortDescription: A new way to make websites, with VitePress.
 date: 2024-01-04T21:26:00+02:00
 next: Changing Up My Website
 tags:
@@ -13,6 +12,8 @@ tags:
   - devlog
   - oss
 ---
+
+[[toc]]
 
 For the past two weeks, I've been working on a new project called "Aplós"! I had a lot of fun making this project, and here's what I learned:
 
