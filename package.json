@@ -6,8 +6,8 @@
     "pages:preview": "vitepress preview pages"
   },
   "dependencies": {
-    "@fontsource/source-code-pro": "^5.0.17",
-    "inter-ui": "^4.0.2"
+    "inter-ui": "^4.0.2",
+    "non.geist": "^1.0.2"
   },
   "pnpm": {
     "peerDependencyRules": {
