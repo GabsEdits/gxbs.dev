@@ -14,8 +14,8 @@ dependencies:
 
 devDependencies:
   '@types/node':
-    specifier: ^20.12.5
-    version: 20.12.5
+    specifier: ^20.12.7
+    version: 20.12.7
   feed:
     specifier: ^4.2.2
     version: 4.2.2
@@ -24,7 +24,7 @@ devDependencies:
     version: 1.74.1
   vitepress:
     specifier: ^1.0.2
-    version: 1.0.2(@types/node@20.12.5)(sass@1.74.1)
+    version: 1.0.2(@types/node@20.12.7)(sass@1.74.1)
 
 packages:
 
@@ -613,8 +613,8 @@ packages:
     resolution: {integrity: sha512-6L6VymKTzYSrEf4Nev4Xa1LCHKrlTlYCBMTlQKFuddo1CvQcE52I0mwfOJayueUC7MJuXOeHTcIU683lzd0cUA==}
     dev: true
 
-  /@types/node@20.12.5:
-    resolution: {integrity: sha512-BD+BjQ9LS/D8ST9p5uqBxghlN+S42iuNxjsUGjeZobe/ciXzk2qb1B6IXc6AnRLS+yFJRpN2IPEHMzwspfDJNw==}
+  /@types/node@20.12.7:
+    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -630,7 +630,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.2.6(@types/node@20.12.5)(sass@1.74.1)
+      vite: 5.2.6(@types/node@20.12.7)(sass@1.74.1)
       vue: 3.4.21
     dev: true
 
@@ -1126,7 +1126,7 @@ packages:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
-  /vite@5.2.6(@types/node@20.12.5)(sass@1.74.1):
+  /vite@5.2.6(@types/node@20.12.7)(sass@1.74.1):
     resolution: {integrity: sha512-FPtnxFlSIKYjZ2eosBQamz4CbyrTizbZ3hnGJlh/wMtCrlp1Hah6AzBLjGI5I2urTfNnpovpHdrL6YRuBOPnCA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -1154,7 +1154,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.13.2
@@ -1163,7 +1163,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.0.2(@types/node@20.12.5)(sass@1.74.1):
+  /vitepress@1.0.2(@types/node@20.12.7)(sass@1.74.1):
     resolution: {integrity: sha512-bEj9yTEdWyewJFOhEREZF+mXuAgOq27etuJZT6DZSp+J3XpQstXMJc5piSVwhZBtuj8OfA0iXy+jdP1c71KMYQ==}
     hasBin: true
     peerDependencies:
@@ -1188,7 +1188,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.3.0
       shiki: 1.2.1
-      vite: 5.2.6(@types/node@20.12.5)(sass@1.74.1)
+      vite: 5.2.6(@types/node@20.12.7)(sass@1.74.1)
       vue: 3.4.21
     transitivePeerDependencies:
       - '@algolia/client-search'
