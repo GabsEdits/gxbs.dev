@@ -20,11 +20,11 @@ devDependencies:
     specifier: ^4.2.2
     version: 4.2.2
   sass:
-    specifier: ^1.74.1
-    version: 1.74.1
+    specifier: ^1.75.0
+    version: 1.75.0
   vitepress:
     specifier: ^1.0.2
-    version: 1.0.2(@types/node@20.12.5)(sass@1.74.1)
+    version: 1.0.2(@types/node@20.12.5)(sass@1.75.0)
 
 packages:
 
@@ -630,7 +630,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.2.6(@types/node@20.12.5)(sass@1.74.1)
+      vite: 5.2.6(@types/node@20.12.5)(sass@1.75.0)
       vue: 3.4.21
     dev: true
 
@@ -1076,8 +1076,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /sass@1.74.1:
-    resolution: {integrity: sha512-w0Z9p/rWZWelb88ISOLyvqTWGmtmu2QJICqDBGyNnfG4OUnPX9BBjjYIXUpXCMOOg5MQWNpqzt876la1fsTvUA==}
+  /sass@1.75.0:
+    resolution: {integrity: sha512-ShMYi3WkrDWxExyxSZPst4/okE9ts46xZmJDSawJQrnte7M1V9fScVB+uNXOVKRBt0PggHOwoZcn8mYX4trnBw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -1126,7 +1126,7 @@ packages:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
-  /vite@5.2.6(@types/node@20.12.5)(sass@1.74.1):
+  /vite@5.2.6(@types/node@20.12.5)(sass@1.75.0):
     resolution: {integrity: sha512-FPtnxFlSIKYjZ2eosBQamz4CbyrTizbZ3hnGJlh/wMtCrlp1Hah6AzBLjGI5I2urTfNnpovpHdrL6YRuBOPnCA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -1158,12 +1158,12 @@ packages:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.13.2
-      sass: 1.74.1
+      sass: 1.75.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.0.2(@types/node@20.12.5)(sass@1.74.1):
+  /vitepress@1.0.2(@types/node@20.12.5)(sass@1.75.0):
     resolution: {integrity: sha512-bEj9yTEdWyewJFOhEREZF+mXuAgOq27etuJZT6DZSp+J3XpQstXMJc5piSVwhZBtuj8OfA0iXy+jdP1c71KMYQ==}
     hasBin: true
     peerDependencies:
@@ -1188,7 +1188,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.3.0
       shiki: 1.2.1
-      vite: 5.2.6(@types/node@20.12.5)(sass@1.74.1)
+      vite: 5.2.6(@types/node@20.12.5)(sass@1.75.0)
       vue: 3.4.21
     transitivePeerDependencies:
       - '@algolia/client-search'
