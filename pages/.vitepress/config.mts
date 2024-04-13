@@ -1,12 +1,12 @@
 import { defineConfig } from "vitepress";
 import { genFeed } from "./feed.ts";
+import postsData from "./theme/posts.data.ts";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "en-US",
   title: "Gabs",
-  description:
-    "Human, Front-end Developer & Open Source Contributor",
+  description: "Human, Front-end Developer & Open Source Contributor",
 
   lastUpdated: true,
   cleanUrls: true,
@@ -62,21 +62,42 @@ export default defineConfig({
     ["meta", { name: "theme-color", content: "#f17755" }],
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
-    ["meta", { name: "og:description", content: "Human, Front-end Developer & Open Source Contributor." }],
+    [
+      "meta",
+      {
+        name: "og:description",
+        content: "Human, Front-end Developer & Open Source Contributor.",
+      },
+    ],
     ["meta", { name: "og:site_name", content: "Gabs | Gabriel Cozma" }],
     ["meta", { name: "twitter:title", content: "Gabs | Gabriel Cozma" }],
     [
       "meta",
       {
         name: "twitter:description",
-        content:
-          "Human, Front-end Developer & Open Source Contributor.",
+        content: "Human, Front-end Developer & Open Source Contributor.",
       },
     ],
     ["meta", { name: "twitter:url", content: "https://gabs.eu.org" }],
   ],
   sitemap: {
     hostname: "https://gabs.eu.org",
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+          @use "sass:color";
+          $color-accent: #f17755;
+          $color-accent-l: color.scale($color-accent, $lightness: -60%);
+          $bg-color-d: color.scale($color-accent, $lightness: -88%, $saturation: -70%);
+          $bg-color-l: color.scale($color-accent, $lightness: 95%, $saturation: -65%);
+          $bg-color-s-d: mix($color-accent, $bg-color-d, 18%);
+          `,
+        },
+      },
+    },
   },
   buildEnd: genFeed,
 });
