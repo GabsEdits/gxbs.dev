@@ -58,7 +58,7 @@ export default defineConfig({
   head: [
     ["meta", { name: "author", content: "Gabriel Cozma" }],
     ["link", { rel: "icon", href: "/favicon.ico" }],
-    ["link", { rel: "me", href: "https://fosstodon.org/@gxbs" }],
+    ["link", { rel: "me", href: "https://fosstodon.org/@gabs" }],
     ["meta", { name: "theme-color", content: "#f17755" }],
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
