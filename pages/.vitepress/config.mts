@@ -1,8 +1,9 @@
 import { defineConfig } from "vitepress";
 import { genFeed } from "./feed.ts";
-import postsData from "./theme/posts.data.ts";
+const accent = "#f17755";
 
 // https://vitepress.dev/reference/site-config
+
 export default defineConfig({
   lang: "en-US",
   title: "Gabs",
@@ -89,11 +90,11 @@ export default defineConfig({
         scss: {
           additionalData: `
           @use "sass:color";
-          $color-accent: #f17755;
+          $color-accent: ${accent};
           $color-accent-l: color.scale($color-accent, $lightness: -60%);
           $bg-color-d: color.scale($color-accent, $lightness: -88%, $saturation: -70%);
           $bg-color-l: color.scale($color-accent, $lightness: 95%, $saturation: -65%);
-          $bg-color-s-d: mix($color-accent, $bg-color-d, 18%);
+          $bg-color-s-d: mix($color-accent, $bg-color-d, 20%);
           `,
         },
       },

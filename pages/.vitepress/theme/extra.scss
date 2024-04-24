@@ -13,8 +13,7 @@
 
     &:hover {
       transform: scale3d(1.15, 1.15, 1.25) rotate3d(0, 0, 1, 1deg) skewX(5deg);
-      -webkit-transform: scale3d(1.15, 1.15, 1.25) rotate3d(0, 0, 1, 1deg)
-        skewX(5deg);
+      -webkit-transform: scale3d(1.15, 1.15, 1.25) rotate3d(0, 0, 1, 1deg) skewX(5deg);
       color: var(--color-accent);
     }
 
@@ -84,12 +83,10 @@ main {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.621),
-      rgba(255, 255, 255, 0)
-    );
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.621),
+        rgba(255, 255, 255, 0));
     transform: skewX(-20deg);
     animation: shining 3s linear infinite;
 
@@ -98,12 +95,10 @@ main {
     }
 
     @media (prefers-color-scheme: dark) {
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0),
-        #ababab40,
-        rgba(255, 255, 255, 0)
-      );
+      background: linear-gradient(90deg,
+          rgba(255, 255, 255, 0),
+          #ababab40,
+          rgba(255, 255, 255, 0));
     }
   }
 
@@ -111,9 +106,11 @@ main {
     0% {
       left: -100%;
     }
+
     50% {
       left: 100%;
     }
+
     100% {
       left: 100%;
     }
@@ -174,6 +171,7 @@ main {
 }
 
 @media screen and (max-width: 600px) {
+
   .projects-container,
   .socials-container,
   .git-container {
@@ -233,4 +231,57 @@ h4,
 h5,
 h6 {
   margin: 0.625rem 0 !important;
+}
+
+.spoiler {
+  font-weight: 600;
+
+  span {
+    filter: blur(4px);
+    transition: filter 0.3s ease;
+    font-weight: normal;
+    animation: glow 1.5s infinite linear alternate-reverse;
+
+    &:hover {
+      filter: none;
+      animation: none;
+    }
+
+    &:active {
+      font-style: italic;
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 0 var(--color-accent);
+    }
+
+    20% {
+      text-shadow: 0 0 4px var(--color-accent);
+    }
+
+    40% {
+      text-shadow: 0 0 6px var(--color-accent);
+    }
+
+    60% {
+      text-shadow: 0 0 8px var(--color-accent);
+    }
+
+    80% {
+      text-shadow: 0 0 10px var(--color-accent);
+    }
+
+    100% {
+      text-shadow: 0 0 15px var(--color-accent);
+    }
+  }
+}
+
+.edits {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
 }

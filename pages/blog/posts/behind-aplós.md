@@ -116,12 +116,22 @@ Now that can easily be changed in the config. There is one more issue: The Color
 
 While looking for ideas on how these can be configured, I got the idea to make a script that takes the accent data from the `config.mts` and creates it into a `<style>` tag. Somehow, I made it come true, but I got mad when I saw that it made the website slower and added a script that is run when you open the page.
 
-Again, I was searching for options to not have an issue like this. While looking through the [Duckquill](https://daudix.codeberg.page/duckquill/) source code, I saw an <abbr title="Syntactically Awesome Style Sheets">SASS</abbr> file that created the color palette, and I saw how powerful SCSS is. That's when I got the idea to also do something like this, so instead of having to make background-color (dark & light), background-color-second (dark & light), background-color-mute (dark & light), and color-accent, you now will need just a color-accent, and even that is optional! Then, I moved all of my stylesheets to SCSS. But still, we had one issue, the same issue why all of this started, to have the accent color inside the `config.mts`.
+Again, I was searching for options to not have an issue like this. While looking through the [Duckquill](https://daudix.codeberg.page/duckquill/) source code, I saw an <abbr title="Syntactically Awesome Style Sheets">SASS</abbr> file that created the color palette, and I saw how powerful SCSS is. That's when I got the idea to also do something like this, so instead of having to make `background-`color (dark & light), `background-color-second` (dark & light), `background-color-mute` (dark & light), and `color-accent`, you now will need just a `color-accent`, and even that is optional! Then, I moved all of my stylesheets to SCSS. ~~But still, we had one issue, the same issue why all of this started, to have the accent color inside the `config.mts`.~~
 
 Sadly, I didn't find an option, so I got the idea (also from Duckquill) to make a `custom.scss` file where we will have the accent color **and** other custom styles not from the theme. I did that, for now, we will keep this as it is, maybe in the future we will be able to connect an SCSS file to a TypeScript/Javascript file.
+
+> **Update:**\
+> It turns out, you can edit standard styles directly from the `config.mts` file, using Vite's `style` option. The documentation is already available [here](https://aplos.gxbs.me/guide/).
 
 ## The rest
 
 After two weeks of building this project during the winter holidays, I am happy to announce that we reached the stable version, and we will continue making this project even better.
 
+> **Update:**\
+> The project has become an NPM package, and you can find it [here](https://www.npmjs.com/package/aplos). In the future, I will make an updated blog post about this :wink:.
+
 I want to thank every project that helped make this come true, special thanks to [Duckquill](https://daudix.codeberg.page/duckquill/).
+
+---
+
+**Edit 1** (24/04/2024): Updated the post with the new way to configure the theme colors, and added an link to the documentation. {.edits}
