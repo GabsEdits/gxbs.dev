@@ -35,7 +35,7 @@ You can find me on the following Git Services:
 
 </section>
 
-> [!TIP] 💡 Tip
+> [!TIP] Tip
 > If you want to explore my projects, check on GitHub! As all of my current work is hosted there. Feel free to check out my repositories for a great view of what I've been working on :+1:
 
 <script setup lang="ts">
