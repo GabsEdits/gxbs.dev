@@ -16,3 +16,16 @@ Let's fast forward to May 2023. That's when something amazing happened. I went b
 Take a closer look at my projects on the [Projects page](/projects). It's not just about lines of code; it's a showcase of my passion. Every now and then, you might even catch me [translating](/projects) one project to another, although not too often.
 
 Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work \:D :rocket:
+
+<div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div>
+
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    const script = document.createElement('script');
+    script.src = 'https://status.cafe/current-status.js?name=gabs';
+    script.defer = true;
+    document.body.appendChild(script);
+});
+</script>
