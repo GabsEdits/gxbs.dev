@@ -4,6 +4,7 @@ title: "Behind Aplós"
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: The development journey of Aplós with all the work and thinking behind it.
+comments: giscus
 date: 2024-01-04T21:26:00+02:00
 next: Changing Up My Website
 tags:
@@ -35,7 +36,7 @@ This approach simplified the process of building websites in minutes. However, I
 
 While I've known about VitePress for a while, I never fully explored it. With the new project, incorporating VitePress seemed like one of the best decisions. Markdown is easy to use, and VitePress simplified website configuration compared to the 100 files you had to change in the old Vite version. The structure was straightforward:
 
-```
+```txt
 .
 ├── package.json
 ├── package-lock.json
