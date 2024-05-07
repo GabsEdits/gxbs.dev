@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       aplos:
-        specifier: 1.4.0
-        version: 1.4.0
+        specifier: 1.4.1
+        version: 1.4.1
       inter-ui:
         specifier: ^4.0.2
         version: 4.0.2
@@ -279,9 +279,6 @@ packages:
   '@jridgewell/sourcemap-codec@1.4.15':
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
-  '@oom/mastodon-comments@0.2.2':
-    resolution: {integrity: sha512-OxVglTylzcisUZ8ibx6R3196C0qpqM0vPD6jJ5FfKb0WLM7pePDG/2dVMpmhRdJE2cqnA8nqEAa3Y2E3SXwYCw==}
-
   '@rollup/rollup-android-arm-eabi@4.17.2':
     resolution: {integrity: sha512-NM0jFxY8bB8QLkoKxIQeObCaDlJKewVlIEkuyYKm5An1tdVZ966w2+MPQ2l8LBZLjR+SgyV+nRkTIunzOYBMLQ==}
     cpu: [arm]
@@ -490,8 +487,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  aplos@1.4.0:
-    resolution: {integrity: sha512-Y3YzaoeOv2KXVzOHD2CaXsduh+1yR6j3uVp9WucQrzLHR4bUPSc5SzxDYFF4nnLHQ0GPY+yK+dCqsQmsS0Azzw==}
+  aplos@1.4.1:
+    resolution: {integrity: sha512-lJcGZgERy7wMt4l2Xr/Ilvca9SB6xBQZ1/zWA1mpWUmmXQsZPSoqR6SlFsa7oLSvyFnBsiglHs703ZKpnBnVMw==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -935,8 +932,6 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.4.15': {}
 
-  '@oom/mastodon-comments@0.2.2': {}
-
   '@rollup/rollup-android-arm-eabi@4.17.2':
     optional: true
 
@@ -1138,10 +1133,9 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  aplos@1.4.0:
+  aplos@1.4.1:
     dependencies:
       '@csstools/normalize.css': 12.1.1
-      '@oom/mastodon-comments': 0.2.2
       inter-ui: 4.0.2
       non.geist: 1.0.3
       sass: 1.76.0
