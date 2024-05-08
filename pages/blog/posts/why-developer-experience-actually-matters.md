@@ -5,11 +5,11 @@ titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: A significant issue in open-source projects is the lack of a proper good developer experience; this blog looks into why and how it matters.
 comments: giscus
-date: 2024-05-07T16:00:00+03:00
+date: 2024-05-08T12:05:00+03:00
 prev: My Time with VitePress
 tags:
   - tech
-  - open-source
+  - devex
   - oss
 ---
 
@@ -53,9 +53,12 @@ To have a better understanding, let's look into how developers create new GNOME 
 
 1. Before anything, they get started with the [amazing documentation](https://developer.gnome.org/) built by GNOME, where you can find what your first steps should be.
 	- Including an introduction to the app you will use to build it (GNOME Builder). That allows them to start off easily.
-2. Choosing the Programming Languages: With the power of a great community, GNOME provides a long list of programming languages that can be used to build the applications. That already makes it easy for the developer to build an app with their language of choice.
-3. Design: [The GNOME Human Interface Guidelines](https://developer.gnome.org/hig/) offer step-by-step guides on how you can build your application easily and efficiently, not only improving the DevEx, but also the <abbr title="User Experience">UserEx</abbr>.
-4. Distribution: With Flatpak, it allows the Developer to have an easy experience to publish their package to the world.
+
+2. **Choosing the right Programming Language**: With the power of a great community, GNOME provides a long list of programming languages that can be used to build the applications. That already makes it easy for the developer to build an app with their language of choice.
+
+3. **Design**: [The GNOME Human Interface Guidelines](https://developer.gnome.org/hig/) offer step-by-step guides on how you can build your application easily and efficiently, not only improving the DevEx, but also the <abbr title="User Experience">UserEx</abbr>.
+
+4. **Distribution**: With Flatpak, it allows the Developer to have an easy experience to publish their package to the world.
 
 These 4 steps allow the developer to easily build the application and also make it easy for new contributors to join in on the project. Which means that GNOME has created a great DevEx for everyone.
 
@@ -69,8 +72,10 @@ Of course, not everything is perfect, which is why there are complaints of the l
 
 ## Conclusion
 
-In conclusion, I'd like to say that yes, DevEx matters for a sustainability of projects, especially within the open-source community. As developers, maintainers, and contributors, it's important that we recognize the impact that DevEx has on project accessibility, collaboration, and longevity. 
+In conclusion, I'd like to say that yes, **DevEx matters for a sustainability of projects, especially within the open-source community**. As developers, maintainers, and contributors, it's important that we recognize the impact that DevEx has on project accessibility, collaboration, and longevity.
 
 It's important to start the project with a great DevEx, by using up to date technologies and follow the documentation given by the source right. It's good to follow what GNOME is trying to do in arias like Web Development, where DevEx is really bad. The good part is that good DevEx is gaining popularity, and starting to be seen in other general projects.
 
 As open source gains more collaborators, it's important to maintain DevEx at it's highest levels, to make sure that the projects we are starting can be continued and developed for as long as possible.
+
+> This my first non-devlog blog post, and I hope you enjoyed it. If you have any feedback, feel free to [open an issue](https://github.com/GabsEdits/gabs.eu.org/issues/new), I will be happy to hear it.

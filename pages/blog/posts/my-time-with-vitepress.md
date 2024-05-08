@@ -7,6 +7,7 @@ description: My personal experience with VitePress and how it transformed my web
 comments: giscus
 date: 2024-03-11T13:19:00+02:00
 prev: Changing Up My Website
+next: Why Developer Experience Actually Matters
 tags:
   - tech
   - web
