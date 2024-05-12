@@ -71,6 +71,19 @@ export default defineConfig({
       },
     ],
     ["meta", { name: "og:site_name", content: "Gabs | Gabriel Cozma" }],
+    ["meta", { name: "og:url", content: "https://gabs.eu.org" }],
+    [
+      "meta",
+      { name: "og:image", content: "https://gabs.eu.org/assets/cover.png" },
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:image",
+        content: "https://gabs.eu.org/assets/cover.png",
+      },
+    ],
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
     ["meta", { name: "twitter:title", content: "Gabs | Gabriel Cozma" }],
     [
       "meta",
