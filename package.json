@@ -6,7 +6,7 @@
     "pages:preview": "vitepress preview pages"
   },
   "dependencies": {
-    "aplos": "1.4.1",
+    "aplos": "1.5.0",
     "inter-ui": "^4.0.2"
   },
   "pnpm": {

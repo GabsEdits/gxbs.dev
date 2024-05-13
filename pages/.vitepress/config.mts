@@ -1,6 +1,6 @@
 import { defineConfig } from "vitepress";
 import { genFeed } from "./feed.ts";
-const accent = "#f17755";
+const accent = "#DA6944";
 
 // https://vitepress.dev/reference/site-config
 
@@ -71,6 +71,7 @@ export default defineConfig({
       },
     ],
     ["meta", { name: "og:site_name", content: "Gabs | Gabriel Cozma" }],
+    ["meta", { name: "og:title", content: "Gabs | Gabriel Cozma" }],
     ["meta", { name: "og:url", content: "https://gabs.eu.org" }],
     [
       "meta",
@@ -105,7 +106,7 @@ export default defineConfig({
           @use "sass:color";
           $color-accent: ${accent};
           $color-accent-l: color.scale($color-accent, $lightness: -60%);
-          $bg-color-d: color.scale($color-accent, $lightness: -88%, $saturation: -70%);
+          $bg-color-d: color.scale($color-accent, $lightness: -86%, $saturation: -60%);
           $bg-color-l: color.scale($color-accent, $lightness: 95%, $saturation: -65%);
           $bg-color-s-d: mix($color-accent, $bg-color-d, 20%);
           `,

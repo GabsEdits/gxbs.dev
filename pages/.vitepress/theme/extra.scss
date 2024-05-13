@@ -264,7 +264,7 @@ h6 {
 
   #statuscafe-username {
     color: var(--color-text-secondary);
-    
+
     a {
       color: var(--color-accent);
       font-weight: 800;
@@ -276,4 +276,11 @@ h6 {
     color: var(--color-accent);
     font-style: italic;
   }
+}
+
+.wip-card a {
+  background-image: linear-gradient(transparent, transparent), repeating-linear-gradient(45deg, #000, #000 10px, #ffdd00 10px, #ffdd00 17px);
+  background-size: calc(100% - 1.56rem) 100%, 1.56rem 100%;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
 }

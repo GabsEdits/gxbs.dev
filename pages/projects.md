@@ -14,7 +14,7 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Boekestijn Moldova Website** Company Website](https://boekestijn.md) { .special .important }
 
-- [**Keímeno** <span>Just Text. Just Notes. Save</span>](https://gxbs.me/keimeno) { .special }
+- [**Keímeno** <span>Just Text. Just Notes. Save</span>](https://gxbs.me/keimeno) { .special .wip-card }
 
 - [**Aplós** <span>A sleek VitePress theme & template</span>](https://aplos.gxbs.me) { .special }
 
@@ -26,6 +26,8 @@ This page showcases a collection of my professional work, projects, and contribu
 
 <section class="cards">
 
+- [**Aplóe** Lightweight Vue.js components and styles for informational websites <mark>New</mark>](https://aploe.gxbs.me)
+
 - [**Deb** A postsetup script for Debian with all my personal preferences. <mark>Unmaintained</mark>](https://github.com/GabsEdits/deb)
 
 - [**Deb GNOME** A postsetup script for Debian GNOME with all my old personal preferences. <mark>Unmaintained</mark>](https://github.com/GabsEdits/deb-gnome)
@@ -34,7 +36,7 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Fed** A postsetup script for Fedora Workstation.](https://fed-jet.vercel.app)
 
-- [**{{ $frontmatter.host }}** My personal website.](https://gabs.eu.org)
+- [**{{ $frontmatter.host }}** My personal website. <mark>Here</mark>](https://gabs.eu.org)
 
 - [**Mastodon Profile** A website to list your Mastodon and GitHub profile (fork of XProfile).](https://github.com/GabsEdits/mastodonprofile)
 
@@ -79,7 +81,7 @@ Here are some projects that I've contributed to, ranging from small edits and tr
 
 - [**Extension Manager** A utility for browsing and installing GNOME Extensions.](https://github.com/mjakeman/extension-manager)
 
-- [**Mousam** A Beautiful and lightweight weather app build for GNOME.](https://github.com/amit9838/mousam)
+- [**Mousam** A Beautiful and lightweight weather app build for GNOME. <mark>Translations & More</mark>](https://github.com/amit9838/mousam)
 
 - [**Breathing** A simple application that guides your breathing pattern. <mark>Translations</mark>](https://github.com/SeaDve/Breathing)
 

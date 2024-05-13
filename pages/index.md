@@ -17,9 +17,27 @@ Take a closer look at my projects on the [Projects page](/projects). It's not ju
 
 Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work \:D :rocket:
 
+<Crt>
+
+```txt
+{
+  "name": "Gabriel Cozma",
+  "username": "Gabs",
+  "location": "Moldova",
+  "about": "Human",
+  "interests": ["Web Development", "Technology", "Open Source", "Linux"],
+  "github": "https://github.com/GabsEdits",
+  "mastodon": "https://fosstodon.org/@gabs",
+  "other": "https://gabs.eu.org/findme",
+}
+```
+
+</Crt>
+
 <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div>
 
 <script setup>
+import Crt from './.vitepress/theme/Crt.vue';
 import { onMounted } from 'vue';
 
 onMounted(() => {
