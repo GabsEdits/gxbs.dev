@@ -42,7 +42,7 @@ And here comes the issue, DevEx isn't something widely used across projects, inc
 
 DevEx is important to allow potential new collaborators to find the bad piece of code faster and understand it better, even if they don't know the language that was used to build the project.
 
-Big projects happen to not provide good DevEx, which leads to the contributor having to do extra work to understand the code. We can take a big project like [Next.js](https://nextjs.com) as an example. Surfing its source code, we can see that much of the code is actually hard to understand, including a big mess of files, objects, and other code that doesn't mix well. And I am not picking specifically on Next.js; don't get me wrong, it's a great project, but its DevEx - it's bad. There are countless more projects that have an even worse DevEx than Next.js, which need to find a fix.
+Big projects happen to not provide good DevEx, which leads to the contributor having to do extra work to understand the code. We can take a big project like [Next.js](https://nextjs.org) as an example. Surfing its source code, we can see that much of the code is actually hard to understand, including a big mess of files, objects, and other code that doesn't mix well. And I am not picking specifically on Next.js; don't get me wrong, it's a great project, but its DevEx - it's bad. There are countless more projects that have an even worse DevEx than Next.js, which need to find a fix.
 
 ## How to Prevent Bad Developer Experience?
 
