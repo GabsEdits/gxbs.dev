@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   aplos:
-    specifier: 1.5.0
-    version: 1.5.0
+    specifier: 1.5.1
+    version: 1.5.1
   inter-ui:
     specifier: ^4.0.2
     version: 4.0.2
@@ -848,8 +848,8 @@ packages:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  /aplos@1.5.0:
-    resolution: {integrity: sha512-X4bQcRtzJzhFF4NIM6yaadUPagD45kBm54Hg5nSFZJl93HjmFnKaXPwku5fq8Cpv/JCLfCtHCkZNBgcCN5DHNQ==}
+  /aplos@1.5.1:
+    resolution: {integrity: sha512-TKH+afyML717E+2GrU6OwpU9glboXUEbn1bEtpsoKnOyAPNYsJk90xA1sCLCWcoWOaxEdocHahulRaVlEoaBxA==}
     dependencies:
       '@csstools/normalize.css': 12.1.1
       inter-ui: 4.0.2
