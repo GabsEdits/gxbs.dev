@@ -14,7 +14,7 @@ tags:
   - nuxt
 ---
 
-It's been more then 4 months since I released the blog ["Behind Aplós"](./), since then, a lot has changed for Aplós, including adding special layouts, better styles and most importantly **it became an NPM Package**.
+It's been more then 4 months since I released the blog "Behind Aplós", since then, a lot has changed for Aplós, including adding special layouts, better styles and most importantly **it became an NPM Package**.
 
 While this groth is really nice, it started to block what could I *actually* do with this project. I first decided to make Aplós an VitePress theme because this was the only good "SSG" I really knew back then, but now, I started to find more SSGs that could maybe be an alternative to VitePress, don't give me wrong, VitePress *is* great, but it has some limitations, as it's *for* docs, not really blogs, and others.
 
