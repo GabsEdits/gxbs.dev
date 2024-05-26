@@ -17,7 +17,7 @@ Take a closer look at my projects on the [Projects page](/projects). It's not ju
 
 > I love to contribute to open-source projects, and I'm always on the lookout for new opportunities to help out. If you have a project that needs a little extra love, feel free to [reach out](/findme).
 
-I occasionally write about my experiences and thoughts on my [blog](/blog). It's a mix of tech, development, and open-source. I'm always looking for new ways to share my knowledge and experiences with the world. So, if you're interested in learning more about my journey, be sure to check it out.
+I occasionally write about my experiences and thoughts on my [blog](/blog/). It's a mix of tech, development, and open-source. I'm always looking for new ways to share my knowledge and experiences with the world. So, if you're interested in learning more about my journey, be sure to check it out.
 
 I also sometimes take some photos, which you can find on my [Photography Gallery](https://photo.gxbs.me) - it's a small collection of my favorite shots <small>(mostly taken with my phone in the nature)</small>.
 
