@@ -14,7 +14,9 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Boekestijn Moldova Website** Company Website](https://boekestijn.md) { .special .important }
 
-- [**Keímeno** <span>Just Text. Just Notes. Save</span>](https://gxbs.me/keimeno) { .special .wip-card }
+- [**Keímeno** <span>Just Text. Just Notes. Save</span>](https://gxbs.me/keimeno) { .special }
+
+- [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.me) { .special .wip-card }
 
 - [**Aplós** <span>A sleek VitePress theme & template</span>](https://aplos.gxbs.me) { .special }
 
