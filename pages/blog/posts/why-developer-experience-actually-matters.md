@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: Why Developer Experience Actually Matters
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma

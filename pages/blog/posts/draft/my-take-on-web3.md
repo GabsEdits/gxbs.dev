@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: My Take on Web3
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma

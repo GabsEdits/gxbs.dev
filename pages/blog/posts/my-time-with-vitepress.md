@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: My Time with VitePress
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma

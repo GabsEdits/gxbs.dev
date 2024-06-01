@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: Changing Up My Website
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma

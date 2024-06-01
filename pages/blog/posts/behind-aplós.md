@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: "Behind Aplós"
 titleTemplate: Gabs' Blog
 author: Gabriel Cozma
