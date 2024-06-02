@@ -47,6 +47,6 @@ This demonstrates how easy VitePress is: you can migrate from Vue & Vite to Vite
 
 ## Conclusion
 
-It's been over three months since I delved into VitePress, and I have no regrets. I haven't encountered any serious issues with VitePress, and it supports all the features we enjoy with both Vite and Vue. The intresting part is that it hasn't even reached a stable release yet (as of the time of writing, it's on version `1.0.0-rc.45`)! I highly recommend anyone to try VitePress, whether you're coming from Zola/Jekyll, and especially if you're still using VuePress (spoiler: VitePress is waaay better).
+It's been over three months since I delved into VitePress, and I have no regrets. I haven't encountered any serious issues with VitePress, and it supports all the features we enjoy with both Vite and Vue. The intresting part is that it hasn't even reached a stable release yet (as of the time of writing, it's on version `1.0.0-rc.45`)! I highly recommend anyone to try VitePress, whether you're coming from Zola/Jekyll, and especially if you're still using VuePress (spoiler: <spoiler>VitePress is waaay better</spoiler>).
 
 Lastly, I want to thank the team at VitePress for making such a good project. **Looking forward to the stable release!**

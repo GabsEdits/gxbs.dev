@@ -56,7 +56,7 @@ const filteredPosts = computed(() => {
     : posts.filter((post) =>
         Array.isArray(post.tags)
           ? post.tags.includes(selectedTag.value)
-          : post.tags === selectedTag.value
+          : post.tags === selectedTag.value,
       );
 });
 

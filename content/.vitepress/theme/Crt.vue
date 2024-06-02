@@ -32,7 +32,8 @@
 
 .crt {
   margin: 2rem 0;
-  box-shadow: 0 0 0 0 var(--color-accent),
+  box-shadow:
+    0 0 0 0 var(--color-accent),
     0 2px 6px 2px var(--color-accent-alpha),
     0 4px 24px 4px var(--color-accent-alpha);
   border-radius: 10px;
@@ -46,7 +47,9 @@
     border: 0;
     background-color: unset;
     padding: 1rem;
-    text-shadow: var(--color-accent-alpha) 0 0 4px, var(--color-accent) 0 0 12px;
+    text-shadow:
+      var(--color-accent-alpha) 0 0 4px,
+      var(--color-accent) 0 0 12px;
 
     code {
       color: var(--color-accent) !important;

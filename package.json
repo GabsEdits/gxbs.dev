@@ -1,9 +1,10 @@
 {
   "type": "module",
   "scripts": {
-    "pages:dev": "vitepress dev pages",
-    "pages:build": "vitepress build pages",
-    "pages:preview": "vitepress preview pages"
+    "dev": "vitepress dev content",
+    "build": "vitepress build content",
+    "preview": "vitepress preview content",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "aplos": "2.0.0-0",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/node": "^20.12.13",
     "feed": "^4.2.2",
+    "prettier": "3.2.5",
     "sass": "^1.77.4",
     "vitepress": "^1.2.2"
   }

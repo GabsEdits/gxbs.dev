@@ -29,7 +29,7 @@ export async function genFeed(config: SiteConfig) {
   posts.sort(
     (a, b) =>
       +new Date(b.frontmatter.date as string) -
-      +new Date(a.frontmatter.date as string)
+      +new Date(a.frontmatter.date as string),
   );
 
   for (const { url, excerpt, frontmatter, html } of posts) {

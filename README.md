@@ -9,3 +9,27 @@
 ## Story
 
 Check the story behind this website on my [blog](https://gabs.eu.org/blog/posts/changing-up-my-website).
+
+---
+
+## Development
+
+Make sure you have [Node.js](https://nodejs.org) and [PNPM](https://pnpm.io) installed.
+
+Install the dependencies:
+
+```bash
+pnpm install
+```
+
+Then start the development server:
+
+```bash
+pnpm dev
+```
+
+To build the website:
+
+```bash
+pnpm build
+```

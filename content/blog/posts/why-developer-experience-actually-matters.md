@@ -32,7 +32,7 @@ tags:
   - oss
 ---
 
-Before we dive deep, what even *is* Developer Experience? Well, as mentioned by [Gwen Davis](https://github.blog/2023-06-08-developer-experience-what-is-it-and-why-should-you-care/): It "refers to the systems, technology, process, and culture that influence the effectiveness of software development". Of course, it's important for the average developer to maintain their project while having a basic level of <abbr title="Developer Experience">DevEx</abbr> to allow easy modifications to the already built project, and to make the code easy on the eye.
+Before we dive deep, what even _is_ Developer Experience? Well, as mentioned by [Gwen Davis](https://github.blog/2023-06-08-developer-experience-what-is-it-and-why-should-you-care/): It "refers to the systems, technology, process, and culture that influence the effectiveness of software development". Of course, it's important for the average developer to maintain their project while having a basic level of <abbr title="Developer Experience">DevEx</abbr> to allow easy modifications to the already built project, and to make the code easy on the eye.
 
 ## The Issue
 
@@ -71,7 +71,8 @@ As I mentioned, it's not only about how you code your project, but also how you 
 To have a better understanding, let's look into how developers create new GNOME apps:
 
 1. Before anything, they get started with the [amazing documentation](https://developer.gnome.org/) built by GNOME, where you can find what your first steps should be.
-	- Including an introduction to the app you will use to build it (GNOME Builder). That allows them to start off easily.
+
+   - Including an introduction to the app you will use to build it (GNOME Builder). That allows them to start off easily.
 
 2. **Choosing the right Programming Language**: With the power of a great community, GNOME provides a long list of programming languages that can be used to build the applications. That already makes it easy for the developer to build an app with their language of choice.
 

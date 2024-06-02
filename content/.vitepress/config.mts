@@ -14,8 +14,8 @@ export default defineConfig({
 
   themeConfig: {
     author: "Gabriel Cozma",
-    blog: {
-      data: {
+    articles: {
+      giscus: {
         repo: "GabsEdits/gabs.eu.org",
         repoid: "R_kgDOLDBscA",
         categoryid: "DIC_kwDOLDBscM4CdfK8",
