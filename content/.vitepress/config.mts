@@ -19,6 +19,7 @@ export default defineConfig({
         repo: "GabsEdits/gabs.eu.org",
         repoid: "R_kgDOLDBscA",
         categoryid: "DIC_kwDOLDBscM4CdfK8",
+        category: "Blog Comments",
       },
     },
     nav: {
