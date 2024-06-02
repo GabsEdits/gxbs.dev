@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       aplos:
-        specifier: 2.0.0-1
-        version: 2.0.0-1
+        specifier: 2.0.0-2
+        version: 2.0.0-2
       inter-ui:
         specifier: ^4.0.2
         version: 4.0.2
@@ -493,8 +493,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  aplos@2.0.0-1:
-    resolution: {integrity: sha512-7ZYj3Op8uHC/EZhe+uSZwImpSrvOHj49vj8wS+3Vkig8c6e027ermyFmRH5s2q7lHS5Xoy++3IQDwByXJjWTBg==}
+  aplos@2.0.0-2:
+    resolution: {integrity: sha512-Va6+FNkRqpvBBFVibVRERrY5baVvUMtAhqmxXd8CGh/Gs9k6dOJJfKTRBpsPd+NqThZiLg959Kzud1mxSsTWtA==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -1144,7 +1144,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  aplos@2.0.0-1:
+  aplos@2.0.0-2:
     dependencies:
       '@csstools/normalize.css': 12.1.1
       inter-ui: 4.0.2
