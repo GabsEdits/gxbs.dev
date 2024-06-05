@@ -11,7 +11,7 @@ Here, in my part of the world, it's currently <time><span :title="'The current t
 - [**Keyoxide <mark>Identity claims</mark>** Pretty much all of my socials](https://keyoxide.org/me%40gabs.eu.org) { .special }
 - [**Discord** gabsme](https://discord.com/users/841649648606249021)
 - [**Email** me[at]gabs.eu.org](mailto:me@gabs.eu.org)
-- [**Mastodon** @gabs@fosstodon.org](https://fosstodon.org/@gabs)
+- [**Mastodon** @gabs@vmst.io](https://vmst.io/@gabs)
 - [**Matrix <mark>Not Active</mark>** @gxbs:matrix.org](https://matrix.to/#/@gxbs:matrix.org)
 - [**Telegram** @GabsEdits](https://t.me/gabsedits)
 
