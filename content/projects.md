@@ -14,13 +14,13 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Boekestijn Moldova Website** Company Website](https://boekestijn.md) { .special .important }
 
-- [**Keímeno** <span>Just Text. Just Notes. Save</span>](https://gxbs.me/keimeno) { .special }
+- [**Keímeno** Just Text. Just Notes. Save](https://gxbs.me/keimeno) { .special }
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.me) { .special .wip-card }
 
-- [**Aplós** <span>A sleek VitePress theme & template</span>](https://aplos.gxbs.me) { .special }
+- [**Aplós** A sleek VitePress theme & template](https://aplos.gxbs.me) { .special }
 
-- [**Vanilla OS** <span>An immutable Linux distribution</span>](https://vanillaos.org) { .special }
+- [**Vanilla OS** An immutable Linux distribution](https://vanillaos.org) { .special }
 
 </section>
 
@@ -34,7 +34,7 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Deb GNOME** A postsetup script for Debian GNOME with all my old personal preferences. <mark>Unmaintained</mark>](https://github.com/GabsEdits/deb-gnome)
 
-- [**Eisforés** Powerful script that gets all the contributors across an organization.](https://github.com/GabsEdits/Eisfores)
+- [**Eisforés** Powerful script that gets all the contributors across an organization. <mark><abbr title="Replaced by a JavaScript script ">Replaced</abbr></mark>](https://github.com/GabsEdits/Eisfores)
 
 - [**Fed** A postsetup script for Fedora Workstation.](https://fed-jet.vercel.app)
 
