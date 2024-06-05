@@ -14,10 +14,40 @@ tags:
   - nuxt
 ---
 
-It's been more then 4 months since I released the blog "Behind Aplós", since then, a lot has changed for Aplós, including adding special layouts, better styles and most importantly **it became an NPM Package**.
+Aplós has been a project that I have been working on for a while now. It has been a great learning experience for me, and I have learned a lot from it. Since the start of the project, a lot has changed in terms of how the general structure of the project is, and it's next steps.
 
-While this groth is really nice, it started to block what could I _actually_ do with this project. I first decided to make Aplós an VitePress theme because this was the only good "SSG" I really knew back then, but now, I started to find more SSGs that could maybe be an alternative to VitePress, don't give me wrong, VitePress _is_ great, but it has some limitations, as it's _for_ docs, not really blogs, and others.
+Recently, I've released the second major version of Aplós, which brought a lot of changes to the project. The project is now more modular, and it's easier to add new features to it. The project is now more stable, and it's easier to maintain.
 
-Which took me to **Nuxt Themes**, I recently found out about these by looking at <https://docs.vmst.io>, and it felt that it was what I wanted all along. It seems that Nuxt Themes have way more freedom in what you could do, while still providing what I loved the most about VitePress, Configuration files. Another thing is that Nuxt Themes are meant to be an NPM Package, rather then me trying to build a package full of files, and then trying to import them (while that works too, it's not as easy and quite annoying). Another issue is that VitePress (at least to my knowledge) doesn't offer custom views and other useful options by default. Another issue was that it felt really hard to develop an package without having a proper demo app inside it (that might be possible with VitePress too using PNPM Workspaces).
+Since my last blog about Aplós, [Behind Aplós](/blog/posts/behind-aplós), a lot has changed:
 
-That's why, I am introducing a project (under the Aplós project) called **Safi** - Aplós, but as an Nuxt Theme, that might offer in the future more options and a better user experience for the reader then what Aplós provides, that could lead to the two project switching roles. Of course, Safi is still an _experiment_ as it is, and might not even fully take off.
+- Became an NPM package
+- Support for articles and comments
+- More customization options
+- The `minimal` and `basic` layouts
+- Various bug fixes and improvements
+- Various new elements and components
+- Image customization options through the URL
+- Way better accessibility
+- **And much more!**
+
+Aplós has come a long way since the start of the project, and I am quite happy with how it has turned out. However, there are still some things that I want to do with the project.
+
+## Next Steps
+
+The next steps for Aplós are quite simple. I want to make the project more modular and easier to use. I want to make it easier to add new features to the project, and I want to make it easier to maintain.
+
+That comes with the limitation of VitePress, the current static site generator that Aplós is a theme for. VitePress is a great static site generator, but it has some limitations. And I was thinking about moving to a new base, made from scrath, for Aplós.
+
+### Safi
+
+Safi will be the successor of Aplós. It will be a new base for Aplós, and it will be made from scratch. Safi will use Nuxt as the base, and it will be more modular and easier to use. 
+
+Nuxt already provides [Nuxt Content](https://content.nuxtjs.org/), which is a great way to manage content in a Nuxt project. Safi will use Nuxt Content as the base for managing content, and it will be easier to add new features to the project.
+
+Safi will also be more customizable, and it will be easier to maintain. It will be easier to add new features to the project, and it will be easier to maintain.
+
+If Safi is successful, Safi will become the new Aplós. The current Aplós will be archived, and Safi will take the name "Aplós". The current Aplós will still be available, but it will not receive any new features or updates.
+
+Of course, all of this is still just an idea, and didn't get to the point to actually start working on it. But I am quite excited about the idea of Safi, and I am looking forward to working on it.
+
+I will write more posts about it if it turns into a reality. Till then, stay tuned! 🚀

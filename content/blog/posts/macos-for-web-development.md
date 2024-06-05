@@ -34,7 +34,7 @@ I found that MacOS' workflow isn't as bad as it seems. Over time, I have become 
 
 One great advantage of MacOS is that it is Unix-based (and [Unix Certifed](https://www.opengroup.org/openbrand/register/brand3700.htm)), so the terminal experience is on par with Linux.
 
-In terms of workflow, MacOS is generally satisfactory. However, there are areas where GNOME excels, such as window management. I have addressed this by using a third-party app called Rectangle.
+In terms of workflow, MacOS is generally satisfactory. However, there are areas where GNOME excels, such as window management. I have addressed this by using a third-party app called [Rectangle](https://github.com/rxhanson/Rectangle), a great open source app that fixes the window management issue on MacOS. With Rectangle, I can easily manage my windows, similar to GNOME's window management, and even better in some cases.
 
 Another area that I don't quite like about MacOS is the constant popups for simple permissions like Visual Studio Code wanting to access the Downloads folder. This can get quite annoying, while it's good for security, it can be quite intrusive.
 
