@@ -23,6 +23,17 @@
       transparent 3px,
       transparent 4px
     );
+
+    @media (prefers-color-scheme: light) {
+      background: repeating-linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.25) 1px,
+        transparent 3px,
+        transparent 4px
+      );
+    }
+
     width: 100%;
     height: calc(100% + 0.5rem);
     pointer-events: none;
@@ -40,6 +51,14 @@
   background: radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
     var(--color-accent);
 
+  @media (prefers-color-scheme: light) {
+    background: radial-gradient(
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.85)
+      ),
+      var(--color-accent);
+  }
+
   pre {
     animation: flicker 0.25s alternate infinite;
     margin: unset;
@@ -50,6 +69,12 @@
     text-shadow:
       var(--color-accent-alpha) 0 0 4px,
       var(--color-accent) 0 0 12px;
+
+    @media (prefers-color-scheme: light) {
+      text-shadow:
+        var(--color-accent-alpha) 0 0 4px,
+        var(--color-accent-alpha) 0 0 12px;
+    }
 
     code {
       color: var(--color-accent) !important;
