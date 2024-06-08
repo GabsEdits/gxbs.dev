@@ -19,16 +19,16 @@ Gabriels-MacBook-Air:~ gabs$ curl -L https://gxbs.me/me.json
   "username": "gabs",
   "status": "Working on Aplóe, Tipps and other projects",
   "about": "Human",
-  "interests": "Web Development", "Technology", "Open Source", "Linux", "History"],
+  "interests": ["Web Development", "Technology", "Open Source", "Linux", "History"],
   "technologies": {
-    "frontend": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "Nuxt.js", "Vite", "React", "Next.js", "Tailwind CSS", "Sass", "Node.js",],
+    "frontend": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "Nuxt.js", "Vite", "React", "Next.js", "Tailwind CSS", "Sass", "Node.js"],
     "wip": ["Deno", "Docker"],
-    "other": ["Git", "Linux", "Bash", "Java"],
+    "other": ["Git", "Linux", "Bash", "Java"]
   },
   "github": "https://github.com/GabsEdits",
   "mastodon": "https://vmst.io/@gabs",
   "blog": "https://gabs.eu.org/blog",
-  "other": "https://gabs.eu.org/findme",
+  "other": "https://gabs.eu.org/findme"
 }
 
 Gabriels-MacBook-Air:~ gabs$ _
