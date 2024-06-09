@@ -26,6 +26,7 @@ head:
     - name: twitter:title
       content: Why Developer Experience Actually Matters | Gabs' Blog
 prev: My Time with VitePress
+next: MacOS for Web Development
 tags:
   - tech
   - devex

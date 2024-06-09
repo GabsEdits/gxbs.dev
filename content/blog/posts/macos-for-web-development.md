@@ -12,6 +12,26 @@ tags:
   - oss
   - personal
   - experience
+prev: Why Developer Experience Actually Matters
+head:
+  - - meta
+    - property: og:image
+      content: /assets/blog/macos-for-web-development/cover.png
+  - - meta
+    - name: og:description
+      content: My experience with MacOS for web development, coming from a GNOME Linux environment.
+  - - meta
+    - name: og:site_name
+      content: MacOS for Web Development | Gabs' Blog
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:image
+      content: /assets/blog/macos-for-web-development/cover.png
+  - - meta
+    - name: twitter:title
+      content: MacOS for Web Development | Gabs' Blog
 ---
 
 **Notes:**

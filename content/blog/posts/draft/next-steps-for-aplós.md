@@ -5,8 +5,9 @@ titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: The future of Aplós and what's next for the project.
 comments: giscus
-date: 2024-05-06T10:08:00+03:00
-prev: Changing Up My Website
+date: undefined # YYYY-MM-DDTHH:MM:SSTZD (ISO 8601) format
+prev: undefined
+next: undefined
 tags:
   - tech
   - web

@@ -4,3 +4,7 @@ node_modules
 # Ignore build output directory
 dist
 cache
+
+# MacOS why you do this?
+
+.DS_Store

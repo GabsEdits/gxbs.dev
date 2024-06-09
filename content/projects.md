@@ -67,7 +67,7 @@ Here are some projects that I've contributed to, ranging from small edits and tr
 
 - [**Vue.js** The Progressive JavaScript Framework.](https://vuejs.org)
 
-- [**Vite** Accelerating Web Development with Speed.](https://vitejs.dev/)
+- [**Vite** Next Generation Frontend Tooling.](https://vitejs.dev/)
 
 - [**VitePress** Vite & Vue powered static site generator.](https://vitepress.dev/)
 

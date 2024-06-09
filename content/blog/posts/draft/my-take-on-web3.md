@@ -5,8 +5,9 @@ titleTemplate: Gabs' Blog
 author: Gabriel Cozma
 description: My thoughts on Web3 and what it means for the future of the internet.
 comments: giscus
-date: 0000-00-00T00:00:00+00:00
-prev: Why Developer Experience Actually Matters
+date: undefined # YYYY-MM-DDTHH:MM:SSTZD (ISO 8601) format
+prev: undefined
+next: undefined
 tags:
   - tech
   - web
