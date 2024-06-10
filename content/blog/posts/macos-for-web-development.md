@@ -66,7 +66,7 @@ As a web developer, I have found MacOS to be quite good. The terminal experience
 
 ### Applications
 
-As for the day to day applications, it's not a major issue. I found plenty of alternatives for the applications I used on Linux. For example, the [TomatoBar](https://github.com/ivoronin/TomatoBar) is a good alternative for the [Pomodoro](https://flathub.org/) app I used on Linux.
+As for the day to day applications, it's not a major issue. I found plenty of alternatives for the applications I used on Linux. For example, the [TomatoBar](https://github.com/ivoronin/TomatoBar) is a good alternative for the [Pomodoro](https://flathub.org/apps/org.gnome.Solanum) app I used on Linux.
 
 ## Conclusion
 
