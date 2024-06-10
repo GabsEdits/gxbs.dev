@@ -41,7 +41,7 @@ That comes with the limitation of VitePress, the current static site generator t
 
 ### Safi
 
-Safi will be the successor of Aplós. It will be a new base for Aplós, and it will be made from scratch. Safi will use Nuxt as the base, and it will be more modular and easier to use. 
+Safi will be the successor of Aplós. It will be a new base for Aplós, and it will be made from scratch. Safi will use Nuxt as the base, and it will be more modular and easier to use.
 
 Nuxt already provides [Nuxt Content](https://content.nuxtjs.org/), which is a great way to manage content in a Nuxt project. Safi will use Nuxt Content as the base for managing content, and it will be easier to add new features to the project.
 
