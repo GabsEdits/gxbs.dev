@@ -12,9 +12,13 @@ tags:
   - web
   - devlog
   - oss
+  - aplos
 ---
 
 [[toc]]
+
+> **Update:**\
+> I've wrote a new blog post about the future of Aplós, you can find it [here](/blog/posts/next-steps-for-aplós)
 
 For the past two weeks, I've been working on a new project called "Aplós"! I had a lot of fun making this project, and here's what I learned:
 
@@ -129,7 +133,7 @@ Sadly, I didn't find an option, so I got the idea (also from Duckquill) to make 
 After two weeks of building this project during the winter holidays, I am happy to announce that we reached the stable version, and we will continue making this project even better.
 
 > **Update:**\
-> The project has become an NPM package, and you can find it [here](https://www.npmjs.com/package/aplos). In the future, I will make an updated blog post about this :wink:.
+> The project has become an NPM package, and you can find it [here](https://www.npmjs.com/package/aplos). ~~In the future, I will make an updated blog post about this :wink:.~~ You can find the new blog post [here](/blog/posts/next-steps-for-aplós).
 
 I want to thank every project that helped make this come true, special thanks to [Duckquill](https://daudix.codeberg.page/duckquill/).
 

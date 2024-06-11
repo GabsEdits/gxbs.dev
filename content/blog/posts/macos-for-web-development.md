@@ -13,6 +13,7 @@ tags:
   - personal
   - experience
 prev: Why Developer Experience Actually Matters
+next: Next Steps for Aplós
 head:
   - - meta
     - property: og:image
