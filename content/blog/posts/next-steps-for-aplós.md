@@ -69,4 +69,6 @@ If Safí is successful, Safí will become the new Aplós. The current Aplós wil
 
 Of course, all of this is still just an idea, and didn't get to the point to actually start working on it. But I am quite excited about the idea of Safí, and I am looking forward to working on it.
 
+If everything goes well, inital development will take place on [aplosdev/safi](https://github.com/aplosdev/safi) repository. We will see how it goes from there.
+
 I will write more posts about it if it turns into a reality. Till then, stay tuned! 🚀
