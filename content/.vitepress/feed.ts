@@ -15,7 +15,7 @@ export async function genFeed(config: SiteConfig) {
     language: "en",
     image: "https://blog.gabs.eu.org/android-chrome-512x512.png",
     favicon: `${baseUrl}/favicon.ico`,
-    copyright: "Copyright (c) 2024-present, Gabriel Cozma/Gabs",
+    copyright: "Copyright (c) 2024-present, Gabriel Cozma",
     feedLinks: {
       atom: `${baseUrl}/atom.xml`,
     },

@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       aplos:
-        specifier: 2.0.2
-        version: 2.0.2
+        specifier: 2.1.0-0
+        version: 2.1.0-0
       inter-ui:
         specifier: ^4.0.2
         version: 4.0.2
@@ -32,7 +32,7 @@ importers:
         version: 1.77.4
       vitepress:
         specifier: ^1.2.2
-        version: 1.2.3(@types/node@20.14.2)(sass@1.77.4)
+        version: 1.2.3(@algolia/client-search@4.23.3)(@types/node@20.14.2)(postcss@8.4.38)(sass@1.77.4)(search-insights@2.14.0)
 
 packages:
 
@@ -43,27 +43,18 @@ packages:
     resolution: {integrity: sha512-a/yTUkcO/Vyy+JffmAnTWbr4/90cLzw+CC3bRbhnULr/EM0fGNvM13oQQ14f2moLMcVDyAx/leczLlAOovhSZg==}
     peerDependencies:
       search-insights: '>= 1 < 3'
-    peerDependenciesMeta:
-      search-insights:
-        optional: true
 
   '@algolia/autocomplete-preset-algolia@1.9.3':
     resolution: {integrity: sha512-d4qlt6YmrLMYy95n5TB52wtNDr6EgAIPH81dvvvW8UmuWRgxEtY0NJiPwl/h95JtG2vmRM804M0DSwMCNZlzRA==}
     peerDependencies:
       '@algolia/client-search': '>= 4.9.1 < 6'
       algoliasearch: '>= 4.9.1 < 6'
-    peerDependenciesMeta:
-      '@algolia/client-search':
-        optional: true
 
   '@algolia/autocomplete-shared@1.9.3':
     resolution: {integrity: sha512-Wnm9E4Ye6Rl6sTTqjoymD+l8DjSTHsHboVRYrKgEt8Q7UHm9nYbqhN/i0fhUYA3OAEH7WA8x3jfpnmJm3rKvaQ==}
     peerDependencies:
       '@algolia/client-search': '>= 4.9.1 < 6'
       algoliasearch: '>= 4.9.1 < 6'
-    peerDependenciesMeta:
-      '@algolia/client-search':
-        optional: true
 
   '@algolia/cache-browser-local-storage@4.23.3':
     resolution: {integrity: sha512-vRHXYCpPlTDE7i6UOy2xE03zHF2C8MEFjPN2v7fRbqVpcOvAUQK81x3Kc21xyb5aSIpYCjWCZbYZuz8Glyzyyg==}
@@ -502,8 +493,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  aplos@2.0.2:
-    resolution: {integrity: sha512-2CyOKL2D2OQSWky/p6ft0tX7r7l/5UyOGKfJxBCZjd7m9LAZHTvzFEaK0qsx1M2L7J/OmkjMinrkv4mQr/ocKA==}
+  aplos@2.1.0-0:
+    resolution: {integrity: sha512-ANoZMO41NWCj24dEt7krFE+eVJNEgCc8nVBarY6vDEbUz7g3MdfbcaoN76YptQuRv7cVI5JzPczmrR1Krscs2w==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -644,6 +635,9 @@ packages:
   sax@1.4.1:
     resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
 
+  search-insights@2.14.0:
+    resolution: {integrity: sha512-OLN6MsPMCghDOqlCtsIsYgtsC0pnwVTyT9Mu6A3ewOj1DxvzZF6COrn2g86E/c05xbktB0XN04m/t1Z+n+fTGw==}
+
   shiki@1.6.4:
     resolution: {integrity: sha512-X88chM7w8jnadoZtjPTi5ahCJx9pc9f8GfEkZAEYUTlcUZIEw2D/RY86HI/LkkE7Nj8TQWkiBfaFTJ3VJT6ESg==}
 
@@ -734,29 +728,32 @@ packages:
 
 snapshots:
 
-  '@algolia/autocomplete-core@1.9.3(algoliasearch@4.23.3)':
+  '@algolia/autocomplete-core@1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)(search-insights@2.14.0)':
     dependencies:
-      '@algolia/autocomplete-plugin-algolia-insights': 1.9.3(algoliasearch@4.23.3)
-      '@algolia/autocomplete-shared': 1.9.3(algoliasearch@4.23.3)
+      '@algolia/autocomplete-plugin-algolia-insights': 1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)(search-insights@2.14.0)
+      '@algolia/autocomplete-shared': 1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - algoliasearch
       - search-insights
 
-  '@algolia/autocomplete-plugin-algolia-insights@1.9.3(algoliasearch@4.23.3)':
+  '@algolia/autocomplete-plugin-algolia-insights@1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)(search-insights@2.14.0)':
     dependencies:
-      '@algolia/autocomplete-shared': 1.9.3(algoliasearch@4.23.3)
+      '@algolia/autocomplete-shared': 1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)
+      search-insights: 2.14.0
     transitivePeerDependencies:
       - '@algolia/client-search'
       - algoliasearch
 
-  '@algolia/autocomplete-preset-algolia@1.9.3(algoliasearch@4.23.3)':
+  '@algolia/autocomplete-preset-algolia@1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)':
     dependencies:
-      '@algolia/autocomplete-shared': 1.9.3(algoliasearch@4.23.3)
+      '@algolia/autocomplete-shared': 1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)
+      '@algolia/client-search': 4.23.3
       algoliasearch: 4.23.3
 
-  '@algolia/autocomplete-shared@1.9.3(algoliasearch@4.23.3)':
+  '@algolia/autocomplete-shared@1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)':
     dependencies:
+      '@algolia/client-search': 4.23.3
       algoliasearch: 4.23.3
 
   '@algolia/cache-browser-local-storage@4.23.3':
@@ -853,9 +850,9 @@ snapshots:
 
   '@docsearch/css@3.6.0': {}
 
-  '@docsearch/js@3.6.0':
+  '@docsearch/js@3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)':
     dependencies:
-      '@docsearch/react': 3.6.0
+      '@docsearch/react': 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)
       preact: 10.22.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -864,12 +861,14 @@ snapshots:
       - react-dom
       - search-insights
 
-  '@docsearch/react@3.6.0':
+  '@docsearch/react@3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)':
     dependencies:
-      '@algolia/autocomplete-core': 1.9.3(algoliasearch@4.23.3)
-      '@algolia/autocomplete-preset-algolia': 1.9.3(algoliasearch@4.23.3)
+      '@algolia/autocomplete-core': 1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)(search-insights@2.14.0)
+      '@algolia/autocomplete-preset-algolia': 1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)
       '@docsearch/css': 3.6.0
       algoliasearch: 4.23.3
+    optionalDependencies:
+      search-insights: 2.14.0
     transitivePeerDependencies:
       - '@algolia/client-search'
 
@@ -1015,7 +1014,7 @@ snapshots:
 
   '@types/web-bluetooth@0.0.20': {}
 
-  '@vitejs/plugin-vue@5.0.5(vite@5.2.13)(vue@3.4.27)':
+  '@vitejs/plugin-vue@5.0.5(vite@5.2.13(@types/node@20.14.2)(sass@1.77.4))(vue@3.4.27)':
     dependencies:
       vite: 5.2.13(@types/node@20.14.2)(sass@1.77.4)
       vue: 3.4.27
@@ -1106,8 +1105,9 @@ snapshots:
     dependencies:
       '@vueuse/core': 10.10.0(vue@3.4.27)
       '@vueuse/shared': 10.10.0(vue@3.4.27)
-      focus-trap: 7.5.4
       vue-demi: 0.14.8(vue@3.4.27)
+    optionalDependencies:
+      focus-trap: 7.5.4
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -1144,15 +1144,11 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  aplos@2.0.2:
+  aplos@2.1.0-0:
     dependencies:
       '@csstools/normalize.css': 12.1.1
       inter-ui: 4.0.2
       non.geist: 1.0.3
-      sass: 1.77.4
-      vue: 3.4.27
-    transitivePeerDependencies:
-      - typescript
 
   binary-extensions@2.3.0: {}
 
@@ -1309,6 +1305,8 @@ snapshots:
 
   sax@1.4.1: {}
 
+  search-insights@2.14.0: {}
+
   shiki@1.6.4:
     dependencies:
       '@shikijs/core': 1.6.4
@@ -1329,22 +1327,22 @@ snapshots:
 
   vite@5.2.13(@types/node@20.14.2)(sass@1.77.4):
     dependencies:
-      '@types/node': 20.14.2
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
-      sass: 1.77.4
     optionalDependencies:
+      '@types/node': 20.14.2
       fsevents: 2.3.3
+      sass: 1.77.4
 
-  vitepress@1.2.3(@types/node@20.14.2)(sass@1.77.4):
+  vitepress@1.2.3(@algolia/client-search@4.23.3)(@types/node@20.14.2)(postcss@8.4.38)(sass@1.77.4)(search-insights@2.14.0):
     dependencies:
       '@docsearch/css': 3.6.0
-      '@docsearch/js': 3.6.0
+      '@docsearch/js': 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)
       '@shikijs/core': 1.6.4
       '@shikijs/transformers': 1.6.4
       '@types/markdown-it': 14.1.1
-      '@vitejs/plugin-vue': 5.0.5(vite@5.2.13)(vue@3.4.27)
+      '@vitejs/plugin-vue': 5.0.5(vite@5.2.13(@types/node@20.14.2)(sass@1.77.4))(vue@3.4.27)
       '@vue/devtools-api': 7.2.1(vue@3.4.27)
       '@vue/shared': 3.4.27
       '@vueuse/core': 10.10.0(vue@3.4.27)
@@ -1355,6 +1353,8 @@ snapshots:
       shiki: 1.6.4
       vite: 5.2.13(@types/node@20.14.2)(sass@1.77.4)
       vue: 3.4.27
+    optionalDependencies:
+      postcss: 8.4.38
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/node'

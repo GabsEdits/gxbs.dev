@@ -42,7 +42,7 @@ Salut! I'm **Gabriel**, also known as **Gabs** in my digital world. Yeah, I'm a 
 
 > GitHub is basically my home, but for code! It's like my coding playground, I might be a little too attached to it. But hey, can you blame me? <small>~~Maybe just a bit, I am looking at [Forgejo](https://forgejo.org/) for the future~~</small>
 
-Let's fast forward to May 2023. That's when something amazing happened. I went beyond my personal space and created something truly remarkable. [Aeolus](https://gabs.eu.org/aeolus) – a powerful framework built with Vue.js 3 & Vite, exclusively for Boekestijn in Moldova. The success of this project fueled my desire to take on more professional work, especially for other companies. But Aeolus didn't quite take off and wasn't easy enough to reproduce the components on a shiny new webpage. I decided to start an new adventure called [Aplóe](https://aploe.gxbs.me), aimed at solving the main issue with Aeolus – the lack of unified styles and **If you need a website, don't hesitate to [contact me](/findme).**
+Let's fast forward to May 2023. That's when something amazing happened. I went beyond my personal space and created something truly remarkable. Aeolus – a powerful framework built with Vue.js 3 & Vite, exclusively for Boekestijn in Moldova. The success of this project fueled my desire to take on more professional work, especially for other companies. But Aeolus didn't quite take off and wasn't easy enough to reproduce the components on a shiny new webpage. I decided to start an new adventure called [Aplóe](https://aploe.gxbs.me), aimed at solving the main issue with Aeolus – the lack of unified styles and **If you need a website, don't hesitate to [contact me](/findme).**
 
 Take a closer look at my projects on the [Projects page](/projects). It's not just about lines of code; it's a showcase of my passion. Every now and then, you might even catch me translating one project to another, although not too often.
 
@@ -56,7 +56,10 @@ For web development enthusiasts, I have a dedicated [web page](https://tips.gxbs
 
 Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work \:D :rocket:
 
-<div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div>
+<div id="statuscafe">
+  <div id="statuscafe-username"></div>
+  <div id="statuscafe-content"></div>
+</div>
 
 <script setup>
 import Crt from './.vitepress/theme/Crt.vue';
