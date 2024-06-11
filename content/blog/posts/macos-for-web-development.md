@@ -78,4 +78,4 @@ In conclusion, me, as a long time GNOME user, I can say that MacOS is a good opt
 I will anyway switch to Asahi Linux when the support for Thunderbolt is there, but till then, I will stick with MacOS.
 
 > **Update:**
-> Why my experience with MacOS is good, I am starting to miss GNOME back, as I *love* the workflow on GNOME. I am starting to start the "Asahi Plan" earlier than I thought, and integrating Asahi Linux in my [post-install Fedora Linux Script](https://fed.tools.gxbs.me/), even without the Thunderbolt support. Once the migration is done, I will write an article about it. Stay tuned! :wink:
+> Why my experience with MacOS is good, I am starting to miss GNOME back, as I _love_ the workflow on GNOME. I am starting to start the "Asahi Plan" earlier than I thought, and integrating Asahi Linux in my [post-install Fedora Linux Script](https://fed.tools.gxbs.me/), even without the Thunderbolt support. Once the migration is done, I will write an article about it. Stay tuned! :wink:
