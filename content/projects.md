@@ -12,13 +12,15 @@ This page showcases a collection of my professional work, projects, and contribu
 
 <section class="cards">
 
-- [**Boekestijn Moldova Website** Company Website](https://boekestijn.md) { .special .important }
+- [**Boekestijn Moldova Website** Local Company Website](https://boekestijn.md) { .special .important }
 
-- [**Keímeno** Just Text. Just Notes. Save](https://gxbs.me/keimeno) { .special }
+- [**Aplóe** Sleek Vue.js components and styles](https://aploe.gxbs.me) { .special }
+
+- [**Aplós** A sleek VitePress theme & template](https://aplos.gxbs.me) { .special }
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.me) { .special .wip-card }
 
-- [**Aplós** A sleek VitePress theme & template](https://aplos.gxbs.me) { .special }
+- [**Keímeno** Just Text. Just Notes. Save](https://gxbs.me/keimeno) { .special }
 
 - [**Vanilla OS** An immutable Linux distribution](https://vanillaos.org) { .special }
 
@@ -28,8 +30,6 @@ This page showcases a collection of my professional work, projects, and contribu
 
 <section class="cards">
 
-- [**Aplóe** Lightweight Vue.js components and styles for informational websites <mark>New</mark>](https://aploe.gxbs.me)
-
 - [**Deb** A postsetup script for Debian with all my personal preferences. <mark>Unmaintained</mark>](https://github.com/GabsEdits/deb)
 
 - [**Deb GNOME** A postsetup script for Debian GNOME with all my old personal preferences. <mark>Unmaintained</mark>](https://github.com/GabsEdits/deb-gnome)
@@ -38,13 +38,13 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Fed** A postsetup script for Fedora Workstation.](https://fed-jet.vercel.app)
 
-- [**{{ $frontmatter.host }}** My personal website. <mark>Here</mark>](https://gabs.eu.org)
+- [**{{ $frontmatter.host }}** My personal website, powered by Aplós <mark>Here</mark>](https://gabs.eu.org)
 
 - [**Mastodon Profile** A website to list your Mastodon and GitHub profile (fork of XProfile).](https://github.com/GabsEdits/mastodonprofile)
 
 - [**Quick Links** An easy way to access your quick links from anywhere in the world.](https://github.com/GabsEdits/quick-links)
 
-- [**Semantic HTML** An informal website about Semantic HTML.](https://semantichtml.github.io)
+- [**Semantic HTML** An informal website about Semantic HTML. <mark>Powered by Aplós</mark>](https://semantichtml.github.io)
 
 - [**Simple Weather** A website to show the weather where you are. <mark>Archived</mark>](https://github.com/GabsEdits/weather)
 
