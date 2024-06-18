@@ -35,6 +35,13 @@ export default defineConfig({
       copyright: true,
       poweredBy: true,
 
+      links: [
+        { text: "Photos", link: "https://photo.gxbs.me" },
+        { text: "Tips", link: "https://tips.gxbs.me" },
+        { text: "GitHub", link: "https://github.com/GabsEdits" },
+        { text: "Mastodon", link: "https://vmst.io/@gabs" },
+      ],
+
       madeby: {
         show: false,
         name: "Gabs",

@@ -7,7 +7,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "aplos": "2.1.0",
+    "aplos": "2.2.0-0",
     "inter-ui": "^4.0.2",
     "vue": "^3.4.28"
   },
