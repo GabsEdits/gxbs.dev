@@ -31,8 +31,8 @@ Until recently, I used Vue & Vite to build the website and GitHub Pages to host 
 
 <a href="https://github.com/semantichtml/semantichtml.github.io/tree/8e9c5c9972e86b98888084bd86419982d94c8ca6">
 <picture>
-<source srcset="/assets/blog/my-experience-with-vitepress/image.png" media="(prefers-color-scheme:dark)">
-<img src="/assets/blog/my-experience-with-vitepress/image-light.png" alt="A screenshot of the old files of the Semantic HTML Website on GitHub">
+<source srcset="/assets/blog/my-experience-with-vitepress/screenshot.png" media="(prefers-color-scheme:dark)">
+<img src="/assets/blog/my-experience-with-vitepress/screenshot-light.png" alt="A screenshot of the old files of the Semantic HTML Website on GitHub">
 </picture>
 </a>
 <figcaption style="margin-top: 10px">A screenshot of the old files of the Semantic HTML Website on GitHub</figcaption>
