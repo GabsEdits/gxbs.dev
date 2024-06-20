@@ -140,3 +140,5 @@ I want to thank every project that helped make this come true, special thanks to
 ---
 
 **Edit 1** (24/04/2024): Updated the post with the new way to configure the theme colors, and added an link to the documentation. {.edits}
+
+**Edit 2** (24/04/2024): Added the information about the new NPM package. {.edits}

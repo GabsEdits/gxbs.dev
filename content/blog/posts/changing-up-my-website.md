@@ -21,15 +21,15 @@ I had a bunch of problems with my old website, and I thought it's time for somet
 
 ## Getting Started
 
-I recently did a project called **Aplós**, and you can check out the blog about it [here](https://gabs.eu.org/blog/posts/behind-apl%C3%B3s).
+I recently did a project called [Aplós](https://aplos.gxbs.me/), and you can check out the blog about it [here](https://gabs.eu.org/blog/posts/behind-apl%C3%B3s).
 
 **TL;DR**: Made it with VitePress, and it was a breeze to use. Got me thinking, why not redo my website with a focus on making it easy to read? As I didn't really pay attention to that when I built the old one about 2 years ago.
 
-You might wonder, why not just tweak the old one (Gabs Website 3.0)? Well, it's not that good of an idea. Plus, it's a pain to add new stuff, being a Vue Single Page thingy, and even worse, Vue <abbr title="Content Delivery Network">CDN</abbr>, which I never understood how to make use of. Tried fixing just the backend, but no luck.
+You might wonder, why not just tweak the old one (Gabs Website 3.0)? Well, it's not that good of an idea. Plus, it's a pain to add new stuff, being a Vue Single Page thingy, and even worse, Vue.js <abbr title="Content Delivery Network">CDN</abbr>, which I never understood how to make use of. Tried fixing just the engine, but no luck.
 
 <video src="/assets/blog/changing-up-my-website/oldsite-screencast.webm" controls="true" alt="A screencast of the my Old Website on Firefox showing how laggy the transictions were" />
 
-<figcaption>A screencast of the my Old Website on Firefox Desktop showing how laggy the transictions were</figcaption>
+<figcaption>A screencast of the my Old Website on Firefox RPM Desktop showing how laggy the transictions were</figcaption>
 
 It took me too long to sort out the mess and figure out what the website was even telling its visitors. So, I figured, why not start fresh with a new website that's:
 
@@ -73,6 +73,8 @@ Way better than the old:
 | Find Me   | `pages`, index.html |
 | Blog      | `blog`              |
 
+<br />
+
 - `pages` = main repository
 - `blog` = old blog repository
 
@@ -80,11 +82,11 @@ Way better than the old:
 
 > The blog folder keeps it straightforward: `/blog/index.md` is the main page, and `/blogs/posts/` is where I have all the posts.
 >
-> > Sadly I am still figuring out how to auto-list projects on the main page. For now, I've made up a simple way to show the latest posts using the `formatter`.
+> > Sadly I am still figuring out how to auto-list posts on the posts list page. For now, I've made up a simple way to show the latest posts using the `formatter`.
 
 ## Design
 
-Check it out, the website has a new look. Tried to keep the old colors, but it's just a simple Aplós design, inspired by [Duckquill](https://daudix.codeberg.page/duckquill/). Shoutout to [Monster](https://monster.codeberg.page) for helping with design suggestions.
+Check it out, the website has a new look. Tried to keep the old colors, but it's just a simple Aplós design, inspired by [Duckquill](https://daudix.codeberg.page/duckquill/). Shoutout to [Jamie](https://jamie.garden/) for helping with design suggestions.
 
 ## Wrapping Up
 
