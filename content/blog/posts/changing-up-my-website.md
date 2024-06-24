@@ -86,7 +86,7 @@ Way better than the old:
 
 ## Design
 
-Check it out, the website has a new look. Tried to keep the old colors, but it's just a simple Aplós design, inspired by [Duckquill](https://daudix.codeberg.page/duckquill/). Shoutout to [Jamie](https://jamie.garden/) for helping with design suggestions.
+Check it out, the website has a new look. Tried to keep the old colors, but it's just a simple Aplós design, inspired by [Duckquill](https://daudix.codeberg.page/duckquill/). Shoutout to [Jamie/Monster](https://jamie.garden/) for helping with design suggestions.
 
 ## Wrapping Up
 

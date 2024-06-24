@@ -8,9 +8,8 @@ Here, in my part of the world, it's currently <time><span :title="'The current t
 
 <section class="cards">
 
-- [**Keyoxide <mark>Identity claims</mark>** Pretty much all of my socials](https://keyoxide.org/me%40gabs.eu.org) { .special }
 - [**Discord** gabsme](https://discord.com/users/841649648606249021)
-- [**Email** me[at]gabs.eu.org](mailto:me@gabs.eu.org)
+- [**Email** me [at] gabs.eu.org](mailto:me@gabs.eu.org)
 - [**Mastodon** @gabs@vmst.io](https://vmst.io/@gabs)
 - [**Matrix <mark>Not Active</mark>** @gxbs:matrix.org](https://matrix.to/#/@gxbs:matrix.org)
 - [**Telegram** @GabsEdits](https://t.me/gabsedits)
@@ -28,7 +27,6 @@ You can find me on the following Git Services:
 <section class="cards">
 
 - [**GitHub** @GabsEdits](https://github.com/GabsEdits) { .special }
-- [**Public Key** My GPG Key](https://github.com/GabsEdits.gpg) { .special }
 - [**Forgejo** @gxbs@codeberg.org](https://codeberg.org/gxbs)
 - [**GitLab** @gxbs](https://gitlab.com/gxbs)
 - [**GNOME GitLab** @gabs](https://gitlab.gnome.org/gabs)
@@ -37,6 +35,17 @@ You can find me on the following Git Services:
 
 > [!TIP] Tip
 > If you want to explore my projects, check on GitHub! As all of my current work is hosted there. Feel free to check out my repositories for a great view of what I've been working on :+1:
+
+## Miscellaneous
+
+Other information that claims that it's me:
+
+<section class="cards">
+
+- [**Keyoxide <mark>Identity claims</mark>** Pretty much all of my socials](https://keyoxide.org/me%40gabs.eu.org)
+- [**Public Key** My GPG Key](https://github.com/GabsEdits.gpg)
+
+</section>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';

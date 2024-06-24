@@ -56,6 +56,12 @@ For web development enthusiasts, I have a dedicated [web page](https://tips.gxbs
 
 Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work \:D :rocket:
 
+---
+
+## This Website
+
+Check out the special [Colophon](/colophon) page for more information about this website, including the tools and technologies used to build it. If you have any feedback or suggestions, feel free to [contact me](/findme).
+
 <div id="statuscafe">
   <div id="statuscafe-username"></div>
   <div id="statuscafe-content"></div>
