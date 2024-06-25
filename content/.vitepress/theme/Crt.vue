@@ -18,8 +18,10 @@
     var(--color-accent);
 
   @media (prefers-color-scheme: light) {
-    background: radial-gradient(rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.85)),
+    background: radial-gradient(
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.85)
+      ),
       var(--color-accent);
   }
 
@@ -30,18 +32,22 @@
     left: 0;
     z-index: 1;
     animation: scanlines 0.25s linear infinite;
-    background: repeating-linear-gradient(to top,
-        rgba(0, 0, 0, 0.25),
-        rgba(0, 0, 0, 0.25) 1px,
-        transparent 3px,
-        transparent 4px);
+    background: repeating-linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25) 1px,
+      transparent 3px,
+      transparent 4px
+    );
 
     @media (prefers-color-scheme: light) {
-      background: repeating-linear-gradient(to top,
-          rgba(255, 255, 255, 0.25),
-          rgba(255, 255, 255, 0.25) 1px,
-          transparent 3px,
-          transparent 4px);
+      background: repeating-linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.25) 1px,
+        transparent 3px,
+        transparent 4px
+      );
     }
 
     width: 100%;
