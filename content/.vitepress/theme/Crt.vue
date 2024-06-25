@@ -8,40 +8,6 @@
 .scanlines {
   position: relative;
   overflow: hidden;
-
-  &::before {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    animation: scanlines 0.25s linear infinite;
-    background: repeating-linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.25),
-      rgba(0, 0, 0, 0.25) 1px,
-      transparent 3px,
-      transparent 4px
-    );
-
-    @media (prefers-color-scheme: light) {
-      background: repeating-linear-gradient(
-        to top,
-        rgba(255, 255, 255, 0.25),
-        rgba(255, 255, 255, 0.25) 1px,
-        transparent 3px,
-        transparent 4px
-      );
-    }
-
-    width: 100%;
-    height: calc(100% + 0.5rem);
-    pointer-events: none;
-    content: "";
-  }
-}
-
-.crt {
   margin: 2rem 0;
   box-shadow:
     0 0 0 0 var(--color-accent),
@@ -52,11 +18,36 @@
     var(--color-accent);
 
   @media (prefers-color-scheme: light) {
-    background: radial-gradient(
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.85)
-      ),
+    background: radial-gradient(rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.85)),
       var(--color-accent);
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: scanlines 0.25s linear infinite;
+    background: repeating-linear-gradient(to top,
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.25) 1px,
+        transparent 3px,
+        transparent 4px);
+
+    @media (prefers-color-scheme: light) {
+      background: repeating-linear-gradient(to top,
+          rgba(255, 255, 255, 0.25),
+          rgba(255, 255, 255, 0.25) 1px,
+          transparent 3px,
+          transparent 4px);
+    }
+
+    width: 100%;
+    height: calc(100% + 0.5rem);
+    pointer-events: none;
+    content: "";
   }
 
   pre {
