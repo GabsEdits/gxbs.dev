@@ -6,6 +6,7 @@ author: Gabriel Cozma
 description: Rebuilding my personal website with Aplós, prioritizing simplicity and readability.
 comments: giscus
 date: 2024-01-13T11:28:00+02:00
+update: 2024-06-20T09:03:41Z
 prev: Behind Aplós
 next: My Time with VitePress
 tags:

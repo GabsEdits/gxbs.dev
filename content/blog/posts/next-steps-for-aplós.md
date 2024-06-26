@@ -6,6 +6,7 @@ author: Gabriel Cozma
 description: How Aplós has evolved and what are the next steps for the project to become even better, more modular, and easier to use.
 comments: giscus
 date: 2024-06-11T13:40:00+03:00
+update: 2024-06-11T13:49:53Z
 prev: MacOS for Web Development
 tags:
   - tech

@@ -6,6 +6,7 @@ author: Gabriel Cozma
 description: The development journey of Aplós with all the work and thinking behind it.
 comments: giscus
 date: 2024-01-04T21:26:00+02:00
+update: 2024-06-20T12:03:00+03:00
 next: Changing Up My Website
 tags:
   - tech
@@ -141,4 +142,4 @@ I want to thank every project that helped make this come true, special thanks to
 
 **Edit 1** (24/04/2024): Updated the post with the new way to configure the theme colors, and added an link to the documentation. {.edits}
 
-**Edit 2** (24/04/2024): Added the information about the new NPM package. {.edits}
+**Edit 2**: Added the information about the new NPM package. {.edits}

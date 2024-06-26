@@ -6,6 +6,7 @@ author: Gabriel Cozma
 description: My personal experience with VitePress and how it transformed my website development process.
 comments: giscus
 date: 2024-03-11T13:19:00+02:00
+update: 2024-06-20T09:03:41Z
 prev: Changing Up My Website
 next: Why Developer Experience Actually Matters
 tags:
