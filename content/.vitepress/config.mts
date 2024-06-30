@@ -42,6 +42,8 @@ export default defineConfig({
         { text: "Mastodon", link: "https://vmst.io/@gabs" },
       ],
 
+      message: "Searching for the best future 🚀",
+
       madeby: {
         show: false,
         name: "Gabs",

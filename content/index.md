@@ -62,19 +62,7 @@ Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving w
 
 Check out the special [Colophon](/colophon) page for more information about this website, including the tools and technologies used to build it. If you have any feedback or suggestions, feel free to [contact me](/findme).
 
-<div id="statuscafe">
-  <div id="statuscafe-username"></div>
-  <div id="statuscafe-content"></div>
-</div>
 
 <script setup>
 import Crt from './.vitepress/theme/Crt.vue';
-import { onMounted } from 'vue';
-
-onMounted(() => {
-    const script = document.createElement('script');
-    script.src = 'https://status.cafe/current-status.js?name=gabs';
-    script.defer = true;
-    document.body.appendChild(script);
-});
 </script>

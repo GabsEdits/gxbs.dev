@@ -4,6 +4,7 @@ interface Post {
   title: string;
   description: string;
   update: string;
+  type: string;
   tags: string[];
 }
 
@@ -19,6 +20,7 @@ export default createContentLoader("blog/posts/*.md", {
         description: frontmatter.description,
         tags: frontmatter.tags,
         update: frontmatter.update,
+        type: frontmatter.type,
         date: formatDate(frontmatter.date),
       }))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
