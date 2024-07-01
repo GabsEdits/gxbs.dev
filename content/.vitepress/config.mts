@@ -16,7 +16,7 @@ export default defineConfig({
     author: "Gabriel Cozma",
     articles: {
       giscus: {
-        repo: "GabsEdits/gabs.eu.org",
+        repo: "GabsEdits/www.gxbs.me",
         repoid: "R_kgDOLDBscA",
         categoryid: "DIC_kwDOLDBscM4CdfK8",
         category: "Blog Comments",
@@ -28,7 +28,7 @@ export default defineConfig({
         { text: "Find Me", link: "/findme" },
         { text: "Projects", link: "/projects" },
       ],
-      git: "https://github.com/GabsEdits/gabs.eu.org",
+      git: "https://github.com/GabsEdits/www.gxbs.me",
       rss: "/atom.xml",
     },
     footer: {
@@ -47,13 +47,13 @@ export default defineConfig({
       madeby: {
         show: false,
         name: "Gabs",
-        link: "https://gabs.eu.org",
+        link: "https://www.gxbs.me",
       },
 
       copyleft: {
         show: true,
         license: "MIT License",
-        info: "https://github.com/GabsEdits/gabs.eu.org/blob/main/LICENSE",
+        info: "https://github.com/GabsEdits/www.gxbs.me/blob/main/LICENSE",
       },
     },
   },
@@ -82,16 +82,16 @@ export default defineConfig({
     ],
     ["meta", { name: "og:site_name", content: "Gabs | Gabriel Cozma" }],
     ["meta", { name: "og:title", content: "Gabs | Gabriel Cozma" }],
-    ["meta", { name: "og:url", content: "https://gabs.eu.org" }],
+    ["meta", { name: "og:url", content: "https://www.gxbs.me" }],
     [
       "meta",
-      { name: "og:image", content: "https://gabs.eu.org/assets/cover.png" },
+      { name: "og:image", content: "https://www.gxbs.me/assets/cover.png" },
     ],
     [
       "meta",
       {
         name: "twitter:image",
-        content: "https://gabs.eu.org/assets/cover.png",
+        content: "https://www.gxbs.me/assets/cover.png",
       },
     ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
@@ -103,10 +103,10 @@ export default defineConfig({
         content: "Human, Front-end Developer & Open Source Contributor.",
       },
     ],
-    ["meta", { name: "twitter:url", content: "https://gabs.eu.org" }],
+    ["meta", { name: "twitter:url", content: "https://www.gxbs.me/" }],
   ],
   sitemap: {
-    hostname: "https://gabs.eu.org",
+    hostname: "https://www.gxbs.me/",
   },
   vite: {
     css: {

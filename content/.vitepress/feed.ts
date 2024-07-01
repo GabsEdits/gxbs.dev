@@ -3,7 +3,7 @@ import { writeFileSync } from "fs";
 import { Feed } from "feed";
 import { createContentLoader, type SiteConfig } from "vitepress";
 
-const baseUrl = `https://gabs.eu.org`;
+const baseUrl = `https://www.gxbs.me`;
 
 export async function genFeed(config: SiteConfig) {
   const feed = new Feed({
