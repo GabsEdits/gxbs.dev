@@ -27,8 +27,8 @@ Gabriels-MacBook-Air:~ gabs$ curl -L https://gxbs.me/me.json
   },
   "github": "https://github.com/GabsEdits",
   "mastodon": "https://vmst.io/@gabs",
-  "blog": "https://gabs.eu.org/blog",
-  "other": "https://gabs.eu.org/findme"
+  "blog": "https://www.gxbs.me/blog",
+  "other": "https://www.gxbs.me/findme"
 }
 
 Gabriels-MacBook-Air:~ gabs$ _
