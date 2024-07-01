@@ -8,6 +8,7 @@ comments: giscus
 date: 2024-06-11T13:40:00+03:00
 update: 2024-06-11T13:49:53Z
 prev: MacOS for Web Development
+next: My Take on Serverless Hosting
 tags:
   - tech
   - web
