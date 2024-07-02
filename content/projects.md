@@ -2,6 +2,7 @@
 host: gabs.eu.org
 mygit: https://github.com/GabsEdits/
 github: https://github.com/
+description: "A collection of my professional work, projects, and contributions."
 ---
 
 # Projects

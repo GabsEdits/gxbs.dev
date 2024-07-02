@@ -1,11 +1,10 @@
 ---
-title: Gabs
 pageClass: home
 ---
 
-# Gabriel Cozma <small>Gabs</small>
+# Gabriel Cozma <small>(Gabs)</small>
 
-<small>Human, Front-end Developer & Open Source Contributor.</small> { .desc }
+<small>Human, Front-End Developer & Open Source Contributor.</small> { .desc }
 
 ---
 

@@ -129,7 +129,7 @@ Sadly, I didn't find an option, so I got the idea (also from Duckquill) to make 
 > **Update:**\
 > It turns out, you can edit standard styles directly from the `config.mts` file, using Vite's `style` option. The documentation is already available [here](https://aplos.gxbs.me/guide/).
 
-## The rest
+## The Rest
 
 After two weeks of building this project during the winter holidays, I am happy to announce that we reached the stable version, and we will continue making this project even better.
 

@@ -40,7 +40,7 @@ Before we dive deep, what even _is_ Developer Experience? Well, as mentioned by 
 
 And here comes the issue, DevEx isn't something widely used across projects, including <abbr title="Open Source Software">OSS</abbr>. Normally, once an open-source project gets quite big, their existing maintainer should start seeking collaborators to help maintain, fix, and add features to the software. The potential new collaborators surf the code to find issues or other pieces of code that could be improved, and that's where DevEx comes in.
 
-## Why it Matters in Open Source
+## Why It Matters in Open Source
 
 DevEx is important to allow potential new collaborators to find the bad piece of code faster and understand it better, even if they don't know the language that was used to build the project.
 

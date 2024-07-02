@@ -1,3 +1,8 @@
+---
+title: Find Me
+description: Find me on the internet, and get in touch with me.
+---
+
 # Find Me
 
 <noscript>

@@ -6,8 +6,8 @@ const accent = "#DA6944";
 
 export default defineConfig({
   lang: "en-US",
-  title: "Gabs",
-  description: "Human, Front-end Developer & Open Source Contributor",
+  title: "Gabriel Cozma (Gabs)",
+  description: "Human, Front-End Developer & Open Source Contributor",
 
   lastUpdated: true,
   cleanUrls: true,
@@ -23,6 +23,7 @@ export default defineConfig({
       },
     },
     nav: {
+      title: "Gabs",
       links: [
         { text: "Blog", link: "/blog/" },
         { text: "Find Me", link: "/findme" },
@@ -71,6 +72,7 @@ export default defineConfig({
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["link", { rel: "me", href: "https://vmst.io/@gabs" }],
     ["meta", { name: "theme-color", content: "#f17755" }],
+    ["meta", { name: "og:locale", content: "en_IE" }],
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
     [
@@ -80,8 +82,16 @@ export default defineConfig({
         content: "Human, Front-end Developer & Open Source Contributor.",
       },
     ],
-    ["meta", { name: "og:site_name", content: "Gabs | Gabriel Cozma" }],
-    ["meta", { name: "og:title", content: "Gabs | Gabriel Cozma" }],
+    [
+      "meta",
+      {
+        name: "description",
+        content: "Human, Front-End Developer & Open Source Contributor.",
+      },
+    ],
+    ["meta", { name: "og:site_name", content: "Gabriel Cozma (Gabs)" }],
+
+    ["meta", { name: "og:title", content: "Gabriel Cozma (Gabs)" }],
     ["meta", { name: "og:url", content: "https://www.gxbs.me" }],
     [
       "meta",
@@ -95,7 +105,7 @@ export default defineConfig({
       },
     ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
-    ["meta", { name: "twitter:title", content: "Gabs | Gabriel Cozma" }],
+    ["meta", { name: "twitter:title", content: "Gabriel Cozma (Gabs)" }],
     [
       "meta",
       {
@@ -104,6 +114,7 @@ export default defineConfig({
       },
     ],
     ["meta", { name: "twitter:url", content: "https://www.gxbs.me/" }],
+    ["link", { rel: "canonical", href: "https://www.gxbs.me/" }],
   ],
   sitemap: {
     hostname: "https://www.gxbs.me/",
