@@ -2,7 +2,8 @@
 layout: article
 title: Changing Up My Website
 titleTemplate: Gabs' Blog
-author: Gabriel Cozma
+author: 
+  - Gabriel Cozma
 description: Rebuilding my personal website with Aplós, prioritizing simplicity and readability.
 comments: giscus
 date: 2024-01-13T11:28:00+02:00

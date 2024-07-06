@@ -4,7 +4,8 @@ title: MacOS for Web Development
 titleTemplate: Gabs' Blog
 date: 2024-06-05T15:00:00+03:00
 update: 2024-06-20T09:03:41Z
-author: Gabriel Cozma
+author: 
+  - Gabriel Cozma
 description: My experience with MacOS for web development, coming from a GNOME Linux environment.
 comments: giscus
 tags:

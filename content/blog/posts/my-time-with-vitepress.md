@@ -2,7 +2,8 @@
 layout: article
 title: My Time with VitePress
 titleTemplate: Gabs' Blog
-author: Gabriel Cozma
+author: 
+  - Gabriel Cozma
 description: My personal experience with VitePress and how it transformed my website development process.
 comments: giscus
 date: 2024-03-11T13:19:00+02:00

@@ -3,7 +3,8 @@ layout: article
 title: My Take on Serverless Hosting
 titleTemplate: Gabs' Blog
 date: 2024-07-01T16:25:00+03:00
-author: Gabriel Cozma
+author: 
+  - Gabriel Cozma
 description: Recently, there was some drama in the serverless hosting world. Here's my take on it, and what you should consider when choosing a serverless hosting provider.
 comments: giscus
 tags:

@@ -9,7 +9,7 @@ description: Find me on the internet, and get in touch with me.
 <small style="text-align: center;">It seems like you have JavaScript disabled, if you are intrested in the time in my country check <a href="https://time.is/Moldova#time_zone">time.is</a>, you will see all the info needed about my timezone.</small>
 </noscript>
 
-Here, in my part of the world, it's currently <time><span :title="'The current time in my location is ' + TimeForMe">{{ TimeForMe }}</span><noscript>Enable JS to see it</noscript></time> <small>({{ timezone }})</small>, so take that into consideration if I don’t respond immediately. I am available on the following platforms:
+Here, in my part of the world, it's currently <time :title="'The current time in my location is ' + TimeForMe">**{{ TimeForMe }}**<noscript>NO:JS</noscript></time> <small>({{ timezone }})</small>, so take that into consideration if I don’t respond immediately. I am available on the following platforms:
 
 <section class="cards">
 

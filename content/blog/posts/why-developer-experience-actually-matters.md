@@ -2,7 +2,8 @@
 layout: article
 title: Why Developer Experience Actually Matters
 titleTemplate: Gabs' Blog
-author: Gabriel Cozma
+author: 
+  - Gabriel Cozma
 description: A significant issue in open-source projects is the lack of a proper good developer experience; this blog looks into why and how it matters.
 comments: giscus
 date: 2024-05-08T12:05:00+03:00
