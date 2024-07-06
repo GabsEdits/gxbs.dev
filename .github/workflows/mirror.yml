@@ -17,6 +17,6 @@ jobs:
       - name: mirror-repository
         uses: spyoungtech/mirror-action@v0.5.1
         with:
-          REMOTE: "https://codeberg.org/gxbs/pages.git"
-          GIT_USERNAME: gxbs
+          REMOTE: "https://codeberg.org/gabs/pages.git"
+          GIT_USERNAME: gabs
           GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
