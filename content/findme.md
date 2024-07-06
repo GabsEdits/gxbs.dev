@@ -32,7 +32,7 @@ You can find me on the following Git Services:
 <section class="cards">
 
 - [**GitHub** @GabsEdits](https://github.com/GabsEdits) { .special }
-- [**Forgejo** @gxbs@codeberg.org](https://codeberg.org/gxbs)
+- [**Forgejo** @gabs@codeberg.org](https://codeberg.org/gabs)
 - [**GitLab** @gxbs](https://gitlab.com/gxbs)
 - [**GNOME GitLab** @gabs](https://gitlab.gnome.org/gabs)
 
