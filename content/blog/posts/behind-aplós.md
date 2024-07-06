@@ -2,7 +2,7 @@
 layout: article
 title: "Behind Aplós"
 titleTemplate: Gabs' Blog
-author: 
+author:
   - Gabriel Cozma
 description: The development journey of Aplós with all the work and thinking behind it.
 comments: giscus
