@@ -13,9 +13,9 @@ The site is continuously updated and improved, with new features and content add
 
 ## Tools
 
-- **Code Editor**: [Visual Studio Code](https://code.visualstudio.com/) and/or [VSCodium](https://vscodium.com/)
-- **<abbr title="Visual Studio Code">VSCode</abbr> extensions**: Capitalize, CSS Sorting, "px to rem", Sort Lines
-- **Formatter**: [Prettier](https://prettier.io)
+- **Code Editor**: [Visual Studio Code](https://code.visualstudio.com/) and/or [VSCodium](https://vscodium.com/).
+- **<abbr title="Visual Studio Code">VSCode</abbr> extensions**: [Capitalize](https://marketplace.visualstudio.com/items?itemName=viablelab.capitalize), [CSS Sorting](https://marketplace.visualstudio.com/items?itemName=CssSorting.css-sorting), [`px to rem`](https://marketplace.visualstudio.com/items?itemName=sainoba.px-to-rem), [Sort Lines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines).
+- **Formatter**: [Prettier](https://prettier.io).
 
 ---
 
