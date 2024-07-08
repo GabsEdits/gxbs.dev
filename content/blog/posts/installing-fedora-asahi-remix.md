@@ -6,7 +6,7 @@ author:
   - Gabriel Cozma
 description: My setup process for Fedora Asahi Remix, and my thoughts on it.
 comments: giscus
-date: 2024-07-08T11:17:00+02:00
+date: 2024-07-08T11:18:00+02:00
 tags:
   - tech
   - linux
@@ -14,7 +14,7 @@ tags:
   - asahi
 ---
 
-I've used [MacOS](../macos-for-web-development.md) ever since I got my new device, which is well over a month now. It went pretty great, but I've started to want more and more to go back to my "home" system, which is Linux. Before getting my new device, I used [Fedora Workstation](https://fedoraproject.org/) as my daily driver, and I loved it. It was fast, reliable, and it had everything I needed. With the temptation of going back to Linux, I had a few options to choose for my distribution:
+I've used [MacOS](./macos-for-web-development.md) ever since I got my new device, which is well over a month now. It went pretty great, but I've started to want more and more to go back to my "home" system, which is Linux. Before getting my new device, I used [Fedora Workstation](https://fedoraproject.org/) as my daily driver, and I loved it. It was fast, reliable, and it had everything I needed. With the temptation of going back to Linux, I had a few options to choose for my distribution:
 
 1. [**Fedora Asahi Remix**](https://asahilinux.org/fedora/): The most polished Linux for Apple Silicon Macs, and the flagship distribution for the [Asahi Linux](https://asahilinux.org/) project.
 2. [**NixOS for Apple Silicon**](https://github.com/tpwrules/nixos-apple-silicon): A distribution that I've been wanting to try for a while now, and it's available for Apple Silicon Macs.
