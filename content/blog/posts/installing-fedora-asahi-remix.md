@@ -2,8 +2,8 @@
 layout: article
 title: Installing Fedora Asahi Remix
 titleTemplate: Gabs' Blog
-author: 
-   - Gabriel Cozma
+author:
+  - Gabriel Cozma
 description: My setup process for Fedora Asahi Remix, and my thoughts on it.
 comments: giscus
 date: 2024-07-08T11:17:00+02:00
@@ -29,12 +29,13 @@ I decided to document my setup process, and my thoughts on it. So, here it is.
 Before installing Fedora Asahi Remix, I did many things:
 
 1. I've asked the Asahi Linux community on what to expect, and to be ready for any issues. They were very helpful, and they told me what to expect. Few things that I've learned:
+
    - The battery life is not as good as on MacOS, but it's getting better. (Already knew that)
-   - There could be flickering on the screen, but it's not a big issue. 
+   - There could be flickering on the screen, but it's not a big issue.
    - For GNOME:
-        - Occasionally, GDM will just fail because it tries to fallback to nonexistent X11 stuff. But it seems to be less noticeable now.
-        - GNOME is unable to detect and explain ARM systems, due to missing features in libraries in the GNOME stack (e.g. `libgtop`).
-        - The opinions of the developers don't align very well with the Apple Silicon platform. So there are a little mismatches in the experience.
+     - Occasionally, GDM will just fail because it tries to fallback to nonexistent X11 stuff. But it seems to be less noticeable now.
+     - GNOME is unable to detect and explain ARM systems, due to missing features in libraries in the GNOME stack (e.g. `libgtop`).
+     - The opinions of the developers don't align very well with the Apple Silicon platform. So there are a little mismatches in the experience.
 
 2. I've prepared my post-setup script for Fedora to include Asahi Remix specific things, like apps that aren't available for `aarch64` architecture.
 3. Prepare myself for the installation process, and to be ready for any issues that might come up.
@@ -45,7 +46,7 @@ Once I've done all of these, I was ready to install Fedora Asahi Remix.
 
 I used the installation script provided by the Fedora Asahi Remix team, which is the <https://fedora-asahi-remix.org> script. It's almost the same as the one provided by Asahi, but with a little less options.
 
-Of course I've chosen the latest version with GNOME. (I am a GNOME fan, and I love it), and I've started the installation process. It was pretty simple, way simpler than I expected. I've chosen the disk and the installation started. It took around 20 minutes to install, and then I've rebooted the system, and followed the other steps that were provided by the script. 
+Of course I've chosen the latest version with GNOME. (I am a GNOME fan, and I love it), and I've started the installation process. It was pretty simple, way simpler than I expected. I've chosen the disk and the installation started. It took around 20 minutes to install, and then I've rebooted the system, and followed the other steps that were provided by the script.
 
 ## Post-Installation
 
