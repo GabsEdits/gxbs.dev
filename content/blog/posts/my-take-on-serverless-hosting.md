@@ -8,9 +8,9 @@ author:
 description: Recently, there was some drama in the serverless hosting world. Here's my take on it, and what you should consider when choosing a serverless hosting provider.
 comments: giscus
 tags:
-  - tech
-  - web
-  - vercel
+  - Tech
+  - Web
+  - Vercel
 prev: Next Steps for Aplós
 head:
   - - meta

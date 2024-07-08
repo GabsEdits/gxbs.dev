@@ -6,7 +6,7 @@
     <div class="filter-tags">
       <button @click="filterPosts('')" id="all-tags">All</button>
       <button v-for="tag in uniqueTags" :key="tag" @click="filterPosts(tag)">
-        <span class="hashtag">#</span>{{ tag }}
+        {{ tag }}
       </button>
     </div>
     <div class="post-container">
@@ -24,22 +24,30 @@
             >{{ post.title }}</a
           >
         </h3>
-        <p class="date" v-if="post.type === 'archive'">
-          {{ post.date }} &middot; Archived
+        <p class="date">
+          {{ post.date }}
+          <template v-if="post.type">
+            &middot;
+            <span
+              >{{ post.type.charAt(0).toUpperCase() + post.type.slice(1)
+              }}<template v-if="post.type === 'archive'">d</template>
+            </span>
+          </template>
+          <span v-if="post.author">
+            &middot;
+            {{ post.author.length > 1 ? "Authors:" : "Author:" }}
+            <template v-for="(author, index) in post.author" :key="index">
+              {{ author
+              }}<span v-if="index !== post.author.length - 1">, </span>
+            </template>
+          </span>
         </p>
-        <p class="date" v-else-if="post.type === 'draft'">
-          {{ post.date }} &middot; Draft
-        </p>
-        <p class="date" v-else-if="post.type === 'featured'">
-          {{ post.date }} &middot; Featured
-        </p>
-        <p class="date" v-else>{{ post.date }}</p>
-        <p>{{ post.description }}</p>
-        <div class="tags">
-          <span v-if="typeof post.tags === 'string'" :key="post.tags"
-            >#{{ post.tags }}</span
-          >
-          <span v-else v-for="tag in post.tags" :key="tag">#{{ tag }}</span>
+        <p v-if="post.description">{{ post.description }}</p>
+        <div class="tags" v-if="post.tags">
+          <span v-if="typeof post.tags === 'string'" :key="post.tags">{{
+            post.tags
+          }}</span>
+          <span v-else v-for="tag in post.tags" :key="tag">{{ tag }}</span>
         </div>
       </article>
     </div>

@@ -11,10 +11,10 @@ update: 2024-06-20T09:03:41Z
 prev: Behind Aplós
 next: My Time with VitePress
 tags:
-  - tech
-  - web
-  - personal
-  - devlog
+  - Tech
+  - Web
+  - Personal
+  - Devlog
 ---
 
 [[toc]]

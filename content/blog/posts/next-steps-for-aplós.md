@@ -11,10 +11,10 @@ update: 2024-06-11T13:49:53Z
 prev: MacOS for Web Development
 next: My Take on Serverless Hosting
 tags:
-  - tech
-  - web
-  - oss
-  - aplos
+  - Tech
+  - Web
+  - OSS
+  - Aplós
 head:
   - - meta
     - property: og:image

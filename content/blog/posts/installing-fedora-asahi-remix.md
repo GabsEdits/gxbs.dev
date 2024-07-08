@@ -8,10 +8,10 @@ description: My setup process for Fedora Asahi Remix, and my thoughts on it.
 comments: giscus
 date: 2024-07-08T11:18:00+02:00
 tags:
-  - tech
-  - linux
-  - fedora
-  - asahi
+  - Tech
+  - Linux
+  - Fedora
+  - Asahi Linux
 ---
 
 I've used [macOS](./macos-for-web-development.md) ever since I got my new device, which is well over a month now. It went pretty great, but I've started to want more and more to go back to my "home" system, which is Linux. Before getting my new device, I used [Fedora Workstation](https://fedoraproject.org/workstation/) as my daily driver, and I loved it. It was fast, reliable, and it had everything I needed. With the temptation of going back to Linux, I had a few options to choose for my distribution:

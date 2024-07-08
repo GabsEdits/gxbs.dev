@@ -11,10 +11,9 @@ update: 2024-06-20T09:03:41Z
 prev: Changing Up My Website
 next: Why Developer Experience Actually Matters
 tags:
-  - tech
-  - web
-  - personal
-  - experience
+  - Tech
+  - Web
+  - Personal Experience
 ---
 
 As you may know, I recently launched a new project named ["Aplós"](https://aplos.gxbs.me/) – a VitePress theme that introduced me to the world of "Markdown" on the web.

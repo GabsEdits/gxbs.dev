@@ -30,9 +30,9 @@ head:
 prev: My Time with VitePress
 next: MacOS for Web Development
 tags:
-  - tech
-  - devex
-  - oss
+  - Tech
+  - DevEx
+  - OSS
 ---
 
 Before we dive deep, what even _is_ Developer Experience? Well, as mentioned by [Gwen Davis](https://github.blog/2023-06-08-developer-experience-what-is-it-and-why-should-you-care/): It "refers to the systems, technology, process, and culture that influence the effectiveness of software development". Of course, it's important for the average developer to maintain their project while having a basic level of <abbr title="Developer Experience">DevEx</abbr> to allow easy modifications to the already built project, and to make the code easy on the eye.

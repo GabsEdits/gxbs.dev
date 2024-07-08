@@ -9,11 +9,10 @@ author:
 description: My experience with MacOS for web development, coming from a GNOME Linux environment.
 comments: giscus
 tags:
-  - tech
-  - web
-  - oss
-  - personal
-  - experience
+  - Tech
+  - Web
+  - OSS
+  - Personal Experience
 prev: Why Developer Experience Actually Matters
 next: Next Steps for Aplós
 head:
