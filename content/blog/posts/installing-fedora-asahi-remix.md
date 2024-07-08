@@ -60,4 +60,4 @@ While I **love** and I mean it, I love Fedora Asahi Remix and GNOME, I am not re
 
 **Note:** It's really not Asahi's fault, they do their best (for free) to provide us with Linux on Apple Silicon Macs, and I am very grateful for that. Thanks to everyone who is working on Asahi Linux, you are doing an amazing job! :heart:
 
-I will keep you updated on my journey with Fedora Asahi Remix, and I will let you know if I switch to it as my daily driver. Stay tuned! 
+I will keep you updated on my journey with Fedora Asahi Remix, and I will let you know if I switch to it as my daily driver. Stay tuned!
