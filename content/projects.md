@@ -54,7 +54,7 @@ This page showcases a collection of my professional work, projects, and contribu
 </section>
 <br>
 
-> All of my projects source code can be found on [GitHub](/findme)
+> All of my projects source code can be found on [GitHub](https://github.com/GabsEdits) and sometimes have mirrors to [other forges](/findme#forges) like [Codeberg](https://codeberg.org/gabs). Feel free to check out my repositories for a great view of what I've been working on :+1:
 
 ## Contributions
 

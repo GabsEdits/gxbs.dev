@@ -1,8 +1,8 @@
 # Colophon
 
-This site is built with [VitePress](https://vitepress.dev) and [Aplós](https://aplos.gxbs.me) by [me](https://gxbs.me/). The source code is hosted on [GitHub](https://github.com/GabsEdits/www.gxbs.me). The site is hosted on [Vercel](https://vercel.com).
+This site is built with [VitePress](https://vitepress.dev) and [Aplós](https://aplos.gxbs.me) by [me](https://gxbs.me/). The source code is hosted on [GitHub](https://github.com/GabsEdits/www.gxbs.me), and the site on [Vercel](https://vercel.com).
 
-The site is designed to be simple, fast, and easy to read. It uses the [Aplós](https://aplos.gxbs.me) theme, that ensures a clean and minimalistic design using modern web technologies such as SCSS, TypeScript, and Vue.js. The site is optimized for performance and accessibility, with a focus on clean and semantic HTML.
+The site is designed to be simple, fast, and easy to read. Aplós ensures a clean and minimalistic design using modern web technologies such as SCSS, TypeScript, and Vue.js. The site is optimized for performance and accessibility, with a focus on user experience.
 
 The site is continuously updated and improved, with new features and content added regularly. If you have any feedback or suggestions, feel free to [contact me](/findme).
 

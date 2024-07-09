@@ -25,9 +25,9 @@ Feel free to message me on any of these platforms - I'd love to hear from you! :
 
 ---
 
-## Contributions
+## Forges
 
-You can find me on the following Git Services:
+You can find me on the following forges:
 
 <section class="cards">
 
@@ -43,7 +43,7 @@ You can find me on the following Git Services:
 
 ## Miscellaneous
 
-Other information that claims that it's me:
+Other information that help you confirm my identity and find me easier on the internet:
 
 <section class="cards">
 
