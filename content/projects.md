@@ -23,8 +23,6 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Keímeno** Just Text. Just Notes. Save](https://gxbs.me/keimeno) { .special }
 
-- [**Vanilla OS** An immutable Linux distribution](https://vanillaos.org) { .special }
-
 </section>
 
 ---
