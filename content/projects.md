@@ -23,7 +23,7 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.me) { .special .wip-card }
 
-- [**Gangi** Calculate the time between two dates](https://gangi.vercel.app) { .special .wip-card }
+- [**Gangi** Calculate the time between two dates](https://time.gxbs.me) { .special .wip-card }
 
 </section>
 
