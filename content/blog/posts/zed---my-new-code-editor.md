@@ -19,7 +19,7 @@ Up until very recently, I was using Visual Studio Code as my main code editor, a
 
 Then, I stumbled upon [Zed](https://zed.dev), after ~~hearing~~ seeing a few people talking about it on Mastodon and other groups I was in. I decided to give it a try, and I was quite impressed with it.
 
-For starters, Zed is a code editor that is built with web technologies, and it's both fast and lightweight. It has a lot of features that I like, such as a *very* minimalistic UI, extensions, themes and a blazing fast speed (basically instant in any way).
+For starters, Zed is a code editor that is built with web technologies, and it's both fast and lightweight. It has a lot of features that I like, such as a _very_ minimalistic UI, extensions, themes and a blazing fast speed (basically instant in any way).
 
 Given that I like simple and minimalistic things, Zed was a perfect fit for me. So I gave it a try.
 
@@ -29,9 +29,9 @@ Given that I like simple and minimalistic things, Zed was a perfect fit for me. 
 
 I've started to use Zed, and I love multuple things about it. Such as these features:
 
-- **Themes***: Zed has a lot of themes to choose from, and I like that. I'm currently using the deafult theme, and I love it.
+- **Themes\***: Zed has a lot of themes to choose from, and I like that. I'm currently using the deafult theme, and I love it.
 
-- **Extensions***: Zed has a lot of extensions, and I like that. Extensions always help.
+- **Extensions\***: Zed has a lot of extensions, and I like that. Extensions always help.
 
 - **Speed**: Zed is very fast.
 
