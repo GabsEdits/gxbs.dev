@@ -8,6 +8,25 @@ description: A brief story about how I started using Zed as my new code editor a
 comments: giscus
 date: 2024-07-17T13:22:00+03:00
 prev: My Take on Serverless Hosting
+head:
+  - - meta
+    - property: og:image
+      content: /assets/blog/zed/cover.png
+  - - meta
+    - name: og:description
+      content: A brief story about how I started using Zed as my new code editor
+  - - meta
+    - name: og:site_name
+      content: Zed - My New Code Editor | Gabs' Blog
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:image
+      content: /assets/blog/zed/cover.png
+  - - meta
+    - name: twitter:title
+      content: Zed - My New Code Editor | Gabs' Blog
 tags:
   - Tech
   - Web
