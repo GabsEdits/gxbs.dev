@@ -1,8 +1,9 @@
 <div align="center">
   <img src="https://cdn.jsdelivr.net/npm/twemoji@11.3.0/2/svg/1f33f.svg" width="64">
   <h1>My Personal Website</h1>
-  <p>This is the main website were you are going to find my projects, about me and how to find me.<p>
-    
+  <p>This is the source code of my personal website, were you're going to find my projects, who am I, and how to find me.<p>
+  <small>Powered by <a href="https://vitepress.dev/">VitePress</a> and <a href="https://aplos.gxbs.me">Aplós</a></small>
+
 ![website-screenshot-2](https://github.com/GabsEdits/gabs.eu.org/assets/110247388/e78f4319-4012-4c46-96a9-4fca0898f717)
 </div>
 
@@ -16,20 +17,23 @@ Check the story behind this website on my [blog](https://gabs.eu.org/blog/posts/
 
 Make sure you have [Node.js](https://nodejs.org) and [PNPM](https://pnpm.io) installed.
 
-Install the dependencies:
+**Install the dependencies:**
 
 ```bash
 pnpm install
 ```
 
-Then start the development server:
+**Then start the development server:**
 
 ```bash
 pnpm dev
 ```
 
-To build the website:
+**To build the website:**
 
 ```bash
 pnpm build
 ```
+
+> [!NOTE]
+> This website is powered by [Aplós](https://aplos.gxbs.me), a sleek VitePress theme.
