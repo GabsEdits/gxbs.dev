@@ -5,6 +5,7 @@
   <small>Powered by <a href="https://vitepress.dev/">VitePress</a> and <a href="https://aplos.gxbs.me">Aplós</a></small>
 
 ![website-screenshot-2](https://github.com/GabsEdits/gabs.eu.org/assets/110247388/e78f4319-4012-4c46-96a9-4fca0898f717)
+
 </div>
 
 ## Story
