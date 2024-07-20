@@ -4,6 +4,7 @@ title: Zed - My New Code Editor
 titleTemplate: Gabs' Blog
 author:
   - Gabriel Cozma
+banner: /assets/blog/zed/banner.png
 description: A brief story about how I started using Zed as my new code editor and why I like it so much.
 comments: giscus
 date: 2024-07-17T13:22:00+03:00
