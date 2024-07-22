@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       aplos:
-        specifier: 2.5.0-1
-        version: 2.5.0-1
+        specifier: 2.5.0
+        version: 2.5.0
       vue:
         specifier: ^3.4.31
         version: 3.4.31
@@ -579,8 +579,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  aplos@2.5.0-1:
-    resolution: {integrity: sha512-JgZBAvMCFbv/Mi7QdgbfYgvbC1h/i+lHOgTw5fyrj0kiluKyctWUAD51oROdgghcPyoo03COD4PaWQZU4rZCZg==}
+  aplos@2.5.0:
+    resolution: {integrity: sha512-WezQM+UwLuldhYpGtTwtcSfdTlwmpOb0g0UN1uEQbFoaMvHgmTDxXJDfqjADuMDDBsCRXiFDRXXsA1eArgleCQ==}
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
@@ -1662,7 +1662,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  aplos@2.5.0-1:
+  aplos@2.5.0:
     dependencies:
       '@csstools/normalize.css': 12.1.1
       '@eslint/js': 9.7.0
