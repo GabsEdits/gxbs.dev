@@ -11,11 +11,12 @@ description: Find me on the internet, and get in touch with me.
 
 Here, in my part of the world, it's currently <time :title="'The current time in my location is ' + TimeForMe">**{{ TimeForMe }}**<noscript>NO:JS</noscript></time> <small>({{ timezone }})</small>, so take that into consideration if I don’t respond immediately. I am available on the following platforms:
 
+<small>From most preferred to the least ↓</small>
+
 <section class="cards">
 
 - [**Discord** gabsme](https://discord.com/users/841649648606249021)
 - [**Email** me [at] gabs.eu.org](mailto:me@gabs.eu.org)
-- [**Mastodon** @gabs@vmst.io](https://vmst.io/@gabs)
 - [**Matrix <mark>Not Active</mark>** @gxbs:matrix.org](https://matrix.to/#/@gxbs:matrix.org)
 - [**Telegram** @GabsEdits](https://t.me/gabsedits)
 
@@ -23,18 +24,28 @@ Here, in my part of the world, it's currently <time :title="'The current time in
 
 Feel free to message me on any of these platforms - I'd love to hear from you! :D
 
+**And my only public social media account:**
+
+<section class="cards">
+
+- [**Mastodon** @gabs@vmst.io](https://vmst.io/@gabs)
+
+</section>
+
 ---
 
 ## Forges
 
 You can find me on the following forges:
 
+<small>From most active to the least ↓</small>
+
 <section class="cards">
 
 - [**GitHub** @GabsEdits](https://github.com/GabsEdits) { .special }
 - [**Forgejo** @gabs@codeberg.org](https://codeberg.org/gabs)
-- [**GitLab** @gxbs](https://gitlab.com/gxbs)
 - [**GNOME GitLab** @gabs](https://gitlab.gnome.org/gabs)
+- [**GitLab** @gxbs](https://gitlab.com/gxbs)
 
 </section>
 
