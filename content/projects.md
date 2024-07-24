@@ -29,6 +29,8 @@ This page showcases a collection of my professional work, projects, and contribu
 
 ---
 
+<small>In alphabetical order ↓</small>
+
 <section class="cards">
 
 - [**Deb** A postsetup script for Debian with all my personal preferences. <mark>Unmaintained</mark>](https://github.com/GabsEdits/deb)
