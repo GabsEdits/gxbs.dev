@@ -7,6 +7,8 @@ author:
 description: My setup process for Fedora Asahi Remix, and my thoughts on it.
 comments: giscus
 date: 2024-07-08T11:18:00+02:00
+prev: My Take on Serverless Hosting
+next: Zed - My New Code Editor
 tags:
   - Tech
   - Linux

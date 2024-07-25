@@ -12,6 +12,7 @@ tags:
   - Web
   - Vercel
 prev: Next Steps for Aplós
+next: Installing Fedora Asahi Remix
 head:
   - - meta
     - property: og:image

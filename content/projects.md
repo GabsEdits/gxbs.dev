@@ -74,7 +74,7 @@ Here are some projects that I've contributed to, ranging from small edits and tr
 
 - [**VitePress** Vite & Vue powered static site generator.](https://vitepress.dev/)
 
-- [**Welcome to GNOME** A landing site for people wanting to contribute to the GNOME project.](https://gitlab.gnome.org/Teams/Websites/welcome.gnome.org/)
+- [**Welcome to GNOME** A landing site for people wanting to contribute to the GNOME project.](https://welcome.gnome.org/)
 
 - [**Distrobox** Use any linux distribution inside your terminal.](https://distrobox.it)
 
