@@ -1,7 +1,5 @@
 ---
-host: gabs.eu.org
-mygit: https://github.com/GabsEdits/
-github: https://github.com/
+host: www.gxbs.me
 description: "A collection of my professional work, projects, and contributions."
 ---
 
@@ -23,8 +21,6 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.me) { .special .wip-card }
 
-- [**Gangi** Calculate the time between two dates](https://time.gxbs.me) { .special .wip-card }
-
 </section>
 
 ---
@@ -41,7 +37,9 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Fed** A postsetup script for Fedora Workstation.](https://fed-jet.vercel.app)
 
-- [**{{ $frontmatter.host }}** My personal website, powered by Aplós <mark>Here</mark>](https://gabs.eu.org)
+- [**{{ $frontmatter.host }}** My personal website, powered by Aplós <mark>Here</mark>](https://www.gxbs.me)
+
+- [**Gangi** Calculate the time between two dates](https://time.gxbs.me) { .wip-card }
 
 - [**Mastodon Profile** A website to list your Mastodon and GitHub profile (fork of XProfile).](https://github.com/GabsEdits/mastodonprofile)
 

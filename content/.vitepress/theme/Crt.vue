@@ -50,10 +50,12 @@
       );
     }
 
-    width: 100%;
-    height: calc(100% + 0.5rem);
-    pointer-events: none;
-    content: "";
+    & {
+      width: 100%;
+      height: calc(100% + 0.5rem);
+      pointer-events: none;
+      content: "";
+    }
   }
 
   pre {
