@@ -130,6 +130,9 @@ export default defineConfig({
           $bg-color-d: color.scale($color-accent, $lightness: -86%, $saturation: -60%);
           $bg-color-l: color.scale($color-accent, $lightness: 95%, $saturation: -65%);
           $bg-color-s-d: mix($color-accent, $bg-color-d, 20%);
+          $bg-color-s-l: color.scale($color-accent, $lightness: 75%);
+          $nav-bg-l: color.scale($bg-color-s-l, $alpha: -20%, $lightness: 60%, $saturation: -30%);
+          $nav-bg-d: color.scale($bg-color-s-d, $alpha: -20%, $lightness: -40%);
           `,
         },
       },
