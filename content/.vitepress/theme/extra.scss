@@ -49,12 +49,12 @@
   }
 
   small {
-      display: inline;
+    display: inline;
   }
 
   details {
-      min-width: 80% !important;
-      margin: 0 auto;
+    min-width: 80% !important;
+    margin: 0 auto;
   }
 }
 
@@ -267,7 +267,6 @@ h6 {
   font-style: italic;
 }
 
-
 .wip-card a {
   background-image: linear-gradient(transparent, transparent),
     repeating-linear-gradient(
@@ -287,11 +286,11 @@ h6 {
 }
 
 .hidden a {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 
-    &:hover {
-      opacity: 1;
-      transform: scale(0);
-    }
+  &:hover {
+    opacity: 1;
+    transform: scale(0);
+  }
 }
