@@ -108,6 +108,23 @@
   }
 }
 
+.vanillaos {
+    img {
+        all: unset;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 5px;
+        width: 1em;
+        height: 1em;
+
+        &:hover {
+            transform: scale(1.2);
+            box-shadow: 0;
+            border: 0;
+        }
+    }
+}
+
 .small table {
   width: max-content !important;
 }
@@ -293,4 +310,25 @@ h6 {
     opacity: 1;
     transform: scale(0);
   }
+}
+
+.wave {
+  animation-name: wave-animation;
+  animation-duration: .75s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+.wave:hover {
+  animation-play-state: paused;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate( 0deg ) }
+  25% { transform: rotate( -10deg ) }
+  75% { transform: rotate( 12deg ) }
+  100% { transform: rotate( 0deg ) }
 }

@@ -64,7 +64,7 @@ Here are some projects that I've contributed to, ranging from small edits and tr
 
 <section class="cards">
 
-- [**Vanilla OS** An Linux Distribution built with simplicity in mind.](https://vanillaos.org) { .special }
+- [**![Vanilla OS Icon](https://vanillaos.org/assets/images/brand/vanillaos-logo-icon.svg#static) Vanilla OS** A simple, fast, and secure operating system](https://vanillaos.org) { .special .vanillaos }
 
 - [**Vue.js** The Progressive JavaScript Framework.](https://vuejs.org)
 
