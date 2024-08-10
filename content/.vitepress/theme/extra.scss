@@ -109,20 +109,20 @@
 }
 
 .vanillaos {
-    img {
-        all: unset;
-        display: inline-block;
-        vertical-align: middle;
-        margin-bottom: 5px;
-        width: 1em;
-        height: 1em;
+  img {
+    all: unset;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    width: 1em;
+    height: 1em;
 
-        &:hover {
-            transform: scale(1.2);
-            box-shadow: 0;
-            border: 0;
-        }
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0;
+      border: 0;
     }
+  }
 }
 
 .small table {
@@ -314,7 +314,7 @@ h6 {
 
 .wave {
   animation-name: wave-animation;
-  animation-duration: .75s;
+  animation-duration: 0.75s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-play-state: running;
@@ -327,8 +327,16 @@ h6 {
 }
 
 @keyframes wave-animation {
-  0% { transform: rotate( 0deg ) }
-  25% { transform: rotate( -10deg ) }
-  75% { transform: rotate( 12deg ) }
-  100% { transform: rotate( 0deg ) }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
