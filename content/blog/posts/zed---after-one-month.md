@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Zed - After One Month
-date: 2024-08-18T17:17:00+03:00
+date: 2024-08-20T17:15:44:00
 author:
   - Gabriel Cozma
 description: After using Zed for a month, I've decided to write a follow-up post about it, and how I feel about it now.
