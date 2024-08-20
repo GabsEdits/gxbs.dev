@@ -31,7 +31,7 @@ I will rate the editor based on these languages, and how well it works with them
 
 ## Performance
 
-Do I even have to say it? Their tagline is literally "code at the speed of thought", so zed is fast. Like, really fast. It opens in less than a second, and it's ready to use. It doesn't lag, it doesn't freeze, it doesn't crash. It's just fast. And I love it. For example, when I was using Visual Studio Code, it took a few seconds to open fully (all the extensions to get loaded, the syntax highlighting to get loaded, etc.). Zed doesn't have that problem. It's just *extremely* fast.
+Do I even have to say it? Their tagline is literally "code at the speed of thought", so zed is fast. Like, really fast. It opens in less than a second, and it's ready to use. It doesn't lag, it doesn't freeze, it doesn't crash. It's just fast. And I love it. For example, when I was using Visual Studio Code, it took a few seconds to open fully (all the extensions to get loaded, the syntax highlighting to get loaded, etc.). Zed doesn't have that problem. It's just _extremely_ fast.
 
 Here, the rating is **5/5**.
 
