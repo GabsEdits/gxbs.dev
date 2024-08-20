@@ -7,7 +7,7 @@ author:
 banner: /assets/blog/zed/banner.png
 description: A brief story about how I started using Zed as my new code editor and why I like it so much.
 comments: giscus
-date: 2024-07-17T13:22:00+03:00
+date: 2024-07-20T15:42:00+03:00
 prev: My Take on Serverless Hosting
 head:
   - - meta
