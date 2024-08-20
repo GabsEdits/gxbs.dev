@@ -26,7 +26,7 @@ export default defineConfig({
       title: "Gabs",
       links: [
         { text: "Blog", link: "/blog/" },
-        { text: "Find Me", link: "/findme" },
+        { text: "Find", link: "/find" },
         { text: "Projects", link: "/projects" },
       ],
       git: "https://github.com/GabsEdits/www.gxbs.me",
