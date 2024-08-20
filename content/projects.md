@@ -13,7 +13,7 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Boekestijn Moldova Website** Local Company Website](https://boekestijn.md) { .special .important }
 
-- [**Aplóe** Sleek Vue.js components and styles](https://aploe.gxbs.me) { .special }
+- [**Aplóe** Lightweight Vue.js Components](https://aploe.gxbs.me) { .special }
 
 - [**Aplós** A sleek VitePress theme & template](https://aplos.gxbs.me) { .special }
 
