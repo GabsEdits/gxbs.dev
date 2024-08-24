@@ -1,17 +1,18 @@
 ---
 layout: article
 title: Zed - After One Month
-date: 2024-08-20T17:15:44:00
+titleTemplate: Gabs' Blog
+date: 2024-08-20T17:15:00+03:00
 author:
   - Gabriel Cozma
 description: After using Zed for a month, I've decided to write a follow-up post about it, and how I feel about it now.
+comments: giscus
+prev: Zed - My New Code Editor
 tags:
   - Tech
   - Web
   - Code
   - Experience
-comments: giscus
-prev: Zed - My New Code Editor
 ---
 
 Around a month or so, I wrote a post about how I started using [Zed](https://zed.dev) as my new code editor, and why I like it so much. And now, after using it for a month, I've decided to write a follow-up post about it, and how I feel about it now.
