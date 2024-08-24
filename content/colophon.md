@@ -4,7 +4,7 @@ This site is built with [VitePress](https://vitepress.dev) and [Aplós](https://
 
 The site is designed to be simple, fast, and easy to read. Aplós ensures a clean and minimalistic design using modern web technologies such as [SCSS](https://sass-lang.com),[TypeScript](https://typescript.dev), and [Vue.js](https://vuejs.org). The site is optimized for performance and accessibility, with a focus on user experience.
 
-The site is continuously updated and improved, with new features and content added regularly. If you have any feedback or suggestions, feel free to [contact me](/findme).
+The site is continuously updated and improved, with new features and content added regularly. If you have any feedback or suggestions, feel free to [contact me](/find).
 
 ## Licenses
 
