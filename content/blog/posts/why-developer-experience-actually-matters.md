@@ -7,6 +7,7 @@ author:
 description: A significant issue in open-source projects is the lack of a proper good developer experience; this blog looks into why and how it matters.
 comments: giscus
 date: 2024-05-08T12:05:00+03:00
+update: 2024-08-24T12:45:00+03:00
 type: featured
 head:
   - - meta
@@ -51,13 +52,13 @@ Big projects happen to not provide good DevEx, which leads to the contributor ha
 
 Sadly, there isn't a standard way of how we can get to better DevEx, but there are a set of things that can be done to prevent it:
 
-- Deployment frequency: Believe it or not, the way new software is released also is important, playing a key role in first understanding how you can make the changes.
+- **Deployment frequency**: Believe it or not, the way new software is released also is important, playing a key role in first understanding how you can make the changes.
 
-- Formatting the code: It might not play a big role, but it's still important. When potential contributors open the code, they should quickly understand where the key areas are.
+- **Formatting the code**: It might not play a big role, but it's still important. When potential contributors open the code, they should quickly understand where the key areas are.
 
-- Consistent APIs and Interfaces: Maintain consistency in APIs and user interfaces across the projects. This consistency reduces cognitive load on potential developers and makes it easier for them to switch between different parts of the ecosystem.
+- **Consistent APIs and Interfaces**: Maintain consistency in APIs and user interfaces across the projects. This consistency reduces cognitive load on potential developers and makes it easier for them to switch between different parts of the ecosystem.
 
-- Modern Development Tools: It shouldn't be a surprise that modern development tools allow the developer to understand the code better, while old tech just makes it harder.
+- **Modern Development Tools**: It shouldn't be a surprise that modern development tools allow the developer to understand the code better, while old tech just makes it harder.
 
 By focusing on these key areas, we can help prevent bad Developer Experience and create a more productive and enjoyable environment for new collaborators to work in.
 
