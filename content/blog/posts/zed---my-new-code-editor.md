@@ -9,6 +9,7 @@ description: A brief story about how I started using Zed as my new code editor a
 comments: giscus
 date: 2024-07-20T15:42:00+03:00
 prev: My Take on Serverless Hosting
+next: Zed - After One Month
 head:
   - - meta
     - property: og:image
