@@ -10,6 +10,7 @@ tags:
   - Web
   - Code
   - Experience
+comments: giscus
 ---
 
 Around a month or so, I wrote a post about how I started using [Zed](https://zed.dev) as my new code editor, and why I like it so much. And now, after using it for a month, I've decided to write a follow-up post about it, and how I feel about it now.
