@@ -62,7 +62,7 @@ Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving w
 ---
 
 ::: details About this website
-Check out the special [Colophon](/colophon) page for more information about this website, including the tools and technologies used to build it. If you have any feedback or suggestions, feel free to [contact me](/findme).
+Check out the special [Colophon](/colophon) page for more information about this website, including the tools and technologies used to build it. If you have any feedback or suggestions, feel free to [contact me](/find).
 :::
 
 <script setup>
