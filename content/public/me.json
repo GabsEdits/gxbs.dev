@@ -1,0 +1,16 @@
+{
+  "name": "Gabriel Cozma",
+  "username": "gabs",
+  "status": "Working on Aplóe, Tipps and other projects",
+  "about": "Human",
+  "interests": ["Web Development", "Technology", "Open Source", "Linux", "History"],
+  "technologies": {
+    "frontend": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "Nuxt.js", "Vite", "React", "Next.js", "Tailwind CSS", "Sass", "Node.js"],
+    "wip": ["Deno", "Docker"],
+    "other": ["Git", "Linux", "Bash", "Java"]
+  },
+  "github": "https://github.com/GabsEdits",
+  "mastodon": "https://vmst.io/@gabs",
+  "blog": "https://gxbs.dev/blog",
+  "other": "https://gxbs.dev/findme"
+}

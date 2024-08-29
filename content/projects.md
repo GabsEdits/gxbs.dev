@@ -1,11 +1,15 @@
 ---
-host: www.gxbs.me
+host: gxbs.dev
 description: "A collection of my professional work, projects, and contributions."
 ---
 
 # Projects
 
 This page showcases a collection of my professional work, projects, and contributions:
+
+| Legend | Meaning | Domain |
+| ------ | ------- | ------ |
+| Lab | Smaller projects or experiments, hosted on GitHub | lab.gxbs.dev |
 
 <br>
 
@@ -17,7 +21,7 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Aplós** A sleek VitePress theme & template](https://aplos.gxbs.me) { .special }
 
-- [**Keímeno** Just Text. Just Notes. Save](https://gxbs.me/keimeno) { .special }
+- [**Keímeno** Just Text. Just Notes. Save](https://lab.gxbs.me/keimeno) { .special }
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.me) { .special .wip-card }
 
@@ -43,7 +47,7 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Mastodon Profile** A website to list your Mastodon and GitHub profile (fork of XProfile).](https://github.com/GabsEdits/mastodonprofile)
 
-- [**Quick Links** An easy way to access your quick links from anywhere in the world.](https://github.com/GabsEdits/quick-links)
+- [**Quick Links** An easy way to access your quick links from anywhere in the world. <mark>Lab</mark>](https://github.com/GabsEdits/quick-links)
 
 - [**Semantic HTML** An informal website about Semantic HTML. <mark>Powered by Aplós</mark>](https://semantichtml.github.io)
 

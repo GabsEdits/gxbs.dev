@@ -11,7 +11,7 @@ pageClass: home
 <Crt>
 
 ```bash
-Gabriels-MacBook-Air:~ gabs$ curl -L https://gxbs.me/me.json
+Gabriels-MacBook-Air:~ gabs$ curl -L https://gxbs.dev/me.json
 
 {
   "name": "Gabriel Cozma",
@@ -26,8 +26,8 @@ Gabriels-MacBook-Air:~ gabs$ curl -L https://gxbs.me/me.json
   },
   "github": "https://github.com/GabsEdits",
   "mastodon": "https://vmst.io/@gabs",
-  "blog": "https://www.gxbs.me/blog",
-  "other": "https://www.gxbs.me/find"
+  "blog": "https://gxbs.dev/blog",
+  "other": "https://gxbs.dev/find"
 }
 
 Gabriels-MacBook-Air:~ gabs$ _
