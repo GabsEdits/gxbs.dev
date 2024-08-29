@@ -3,9 +3,28 @@
   "username": "gabs",
   "status": "Working on Aplóe, Tipps and other projects",
   "about": "Human",
-  "interests": ["Web Development", "Technology", "Open Source", "Linux", "History"],
+  "interests": [
+    "Web Development",
+    "Technology",
+    "Open Source",
+    "Linux",
+    "History"
+  ],
   "technologies": {
-    "frontend": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "Nuxt.js", "Vite", "React", "Next.js", "Tailwind CSS", "Sass", "Node.js"],
+    "frontend": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Vue.js",
+      "Nuxt.js",
+      "Vite",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Sass",
+      "Node.js"
+    ],
     "wip": ["Deno", "Docker"],
     "other": ["Git", "Linux", "Bash", "Java"]
   },

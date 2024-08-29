@@ -7,9 +7,9 @@ description: "A collection of my professional work, projects, and contributions.
 
 This page showcases a collection of my professional work, projects, and contributions:
 
-| Legend | Meaning | Domain |
-| ------ | ------- | ------ |
-| Lab | Smaller projects or experiments, hosted on GitHub | lab.gxbs.dev |
+| Legend | Meaning                                           | Domain       |
+| ------ | ------------------------------------------------- | ------------ |
+| Lab    | Smaller projects or experiments, hosted on GitHub | lab.gxbs.dev |
 
 <br>
 
