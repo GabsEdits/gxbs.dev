@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       aplos:
-        specifier: 3.0.0-0
-        version: 3.0.0-0
+        specifier: 3.0.0-1
+        version: 3.0.0-1
       vue:
         specifier: ^3.4.38
         version: 3.4.38
@@ -98,8 +98,8 @@ packages:
   '@algolia/transporter@4.24.0':
     resolution: {integrity: sha512-86nI7w6NzWxd1Zp9q3413dRshDqAzSbsQjhcDhPIatEFiZrL1/TjnHL8S7jVKFePlIMzDsZWXAXwXzcok9c5oA==}
 
-  '@aplosdev/boosts@https://codeload.github.com/aplosdev/boosts/tar.gz/8854cbcd4d607c8a3750867adb79873060659fb2':
-    resolution: {tarball: https://codeload.github.com/aplosdev/boosts/tar.gz/8854cbcd4d607c8a3750867adb79873060659fb2}
+  '@aplosdev/boosts@https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8':
+    resolution: {tarball: https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8}
     version: 1.0.0-rc.0
 
   '@babel/helper-string-parser@7.24.7':
@@ -498,8 +498,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  aplos@3.0.0-0:
-    resolution: {integrity: sha512-rj+wNMSDzSfTIDqR+8ZzjVT1oXNTUCDPNMpMe738YO6z4etTCfFCWfcLZwufOiDloh2cdv9/a+FiouT1KvMzcg==}
+  aplos@3.0.0-1:
+    resolution: {integrity: sha512-ltou1avVWPDfEgOV5wroWkhI115g+K9yk/RKLy5k710wLZYfDee9R5KBrqD5RvOM6UV1HQco6xlZbjr65XzKNg==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -855,7 +855,7 @@ snapshots:
       '@algolia/logger-common': 4.24.0
       '@algolia/requester-common': 4.24.0
 
-  '@aplosdev/boosts@https://codeload.github.com/aplosdev/boosts/tar.gz/8854cbcd4d607c8a3750867adb79873060659fb2':
+  '@aplosdev/boosts@https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8':
     dependencies:
       sass: 1.77.8
 
@@ -1179,9 +1179,9 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  aplos@3.0.0-0:
+  aplos@3.0.0-1:
     dependencies:
-      '@aplosdev/boosts': https://codeload.github.com/aplosdev/boosts/tar.gz/8854cbcd4d607c8a3750867adb79873060659fb2
+      '@aplosdev/boosts': https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8
       '@csstools/normalize.css': 12.1.1
       inter-ui: 4.0.2
       non.geist: 1.0.3
