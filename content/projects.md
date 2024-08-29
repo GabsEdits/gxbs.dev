@@ -21,7 +21,7 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Aplós** A sleek VitePress theme & template](https://aplos.gxbs.me) { .special }
 
-- [**Keímeno** Just Text. Just Notes. Save](https://lab.gxbs.me/keimeno) { .special }
+- [**Keímeno** Just Text. Just Notes. Save](https://lab.gxbs.dev/keimeno) { .special }
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.me) { .special .wip-card }
 
