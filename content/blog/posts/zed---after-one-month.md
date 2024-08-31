@@ -8,6 +8,7 @@ author:
 description: After using Zed for a month, I've decided to write a follow-up post about it, and how I feel about it now.
 comments: giscus
 prev: Zed - My New Code Editor
+next: Zen - An Browser with a Lot of Potential
 tags:
   - Tech
   - Web
