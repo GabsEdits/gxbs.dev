@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import { genFeed } from "./feed.ts";
+import { imgMark } from "@mdit/plugin-img-mark";
 const accent = "#DA6944";
 
 // https://vitepress.dev/reference/site-config
@@ -60,6 +61,9 @@ export default defineConfig({
   },
 
   markdown: {
+    config: (md) => {
+      md.use(imgMark);
+    },
     container: {
       warningLabel: "⚠ Warning",
       tipLabel: "Tip",
