@@ -16,7 +16,7 @@ export default defineConfig({
     author: "Gabriel Cozma",
     articles: {
       giscus: {
-        repo: "GabsEdits/www.gxbs.me",
+        repo: "GabsEdits/gxbs.dev",
         repoid: "R_kgDOLDBscA",
         categoryid: "DIC_kwDOLDBscM4CdfK8",
         category: "Blog Comments",
