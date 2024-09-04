@@ -48,14 +48,14 @@ Take a closer look at my [projects & contributions](/projects). It's more than j
 > If you have a project that needs a little extra love, feel free to [reach out](/find). I love contributing to open-source projects and I'm always on the lookout for new opportunities to help out.
 
 ::: details A story of my journey
-Let's fast forward to May 2023. That's when something amazing happened. I went beyond my personal space and created something truly remarkable. Aeolus – a powerful framework built with Vue.js 3 & Vite, exclusively for Boekestijn in Moldova. The success of this project fueled my desire to take on more professional work, especially for other companies. But Aeolus didn't quite take off and wasn't easy enough to reproduce the components on a shiny new webpage. I decided to start an new adventure called [Aplóe](https://aploe.gxbs.me), aimed at solving the main issue with Aeolus – the lack of unified styles and **If you need a website, don't hesitate to [contact me](/find).**
+Let's fast forward to May 2023. That's when something amazing happened. I went beyond my personal space and created something truly remarkable. Aeolus – a powerful framework built with Vue.js 3 & Vite, exclusively for Boekestijn in Moldova. The success of this project fueled my desire to take on more professional work, especially for other companies. But Aeolus didn't quite take off and wasn't easy enough to reproduce the components on a shiny new webpage. I decided to start an new adventure called [Aplóe](https://aploe.gxbs.dev), aimed at solving the main issue with Aeolus – the lack of unified styles and **If you need a website, don't hesitate to [contact me](/find).**
 :::
 
 I occasionally write about tech, development, and open-source on my [blog](/blog/), that you can also subscribe to via [RSS/Atom Feed](/atom.xml). You can check it out if you're interested in learning more about my work and the projects I'm involved in, or if you just want to read some cool stories about my journey in the tech world.
 
-In addition to coding, I also ~~slightly~~ enjoy photography. You can find a small collection of my favorite shots on my [Photography Gallery](https://photo.gxbs.me). <small>While it's not much, and not my main focus, I still enjoy capturing moments.</small>
+In addition to coding, I also ~~slightly~~ enjoy photography. You can find a small collection of my favorite shots on my [Photography Gallery](https://photo.gxbs.dev). <small>While it's not much, and not my main focus, I still enjoy capturing moments.</small>
 
-For web development enthusiasts, have a look on [my tips and tricks](https://tips.gxbs.me) page, mainly for CSS/SCSS and development in general. You can check it out! <small>It's a work in progress, but I'm getting there.</small>
+For web development enthusiasts, have a look on [my tips and tricks](https://tips.gxbs.dev) page, mainly for CSS/SCSS and development in general. You can check it out! <small>It's a work in progress, but I'm getting there.</small>
 
 Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work \:D :rocket:
 

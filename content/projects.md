@@ -17,13 +17,13 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Boekestijn Moldova Website** Local Company Website](https://boekestijn.md) { .special .important }
 
-- [**Aplóe** Lightweight Vue.js Components](https://aploe.gxbs.me) { .special }
+- [**Aplóe** Lightweight Vue.js Components](https://aploe.gxbs.dev) { .special }
 
-- [**Aplós** A sleek VitePress theme & template](https://aplos.gxbs.me) { .special }
+- [**Aplós** A sleek VitePress theme & template](https://aplos.gxbs.dev) { .special }
 
 - [**Keímeno** Just Text. Just Notes. Save](https://lab.gxbs.dev/keimeno) { .special }
 
-- [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.me) { .special .wip-card }
+- [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.dev) { .special .wip-card }
 
 </section>
 
@@ -41,9 +41,9 @@ This page showcases a collection of my professional work, projects, and contribu
 
 - [**Fed** A postsetup script for Fedora Workstation.](https://fed-jet.vercel.app)
 
-- [**{{ $frontmatter.host }}** My personal website, powered by Aplós <mark>Here</mark>](https://www.gxbs.me)
+- [**{{ $frontmatter.host }}** My personal website, powered by Aplós <mark>Here</mark>](https://gxbs.dev)
 
-- [**Gangi** Calculate the time between two dates](https://time.gxbs.me) { .wip-card }
+- [**Gangi** Calculate the time between two dates](https://time.gxbs.dev) { .wip-card }
 
 - [**Mastodon Profile** A website to list your Mastodon and GitHub profile (fork of XProfile).](https://github.com/GabsEdits/mastodonprofile)
 
