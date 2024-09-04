@@ -9,7 +9,7 @@
   "dependencies": {
     "@mdit/plugin-img-mark": "^0.13.1",
     "aplos": "3.0.0-1",
-    "vue": "^3.4.38"
+    "vue": "^3.5.1"
   },
   "pnpm": {
     "peerDependencyRules": {
