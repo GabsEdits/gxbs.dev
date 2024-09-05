@@ -30,7 +30,7 @@ export default defineConfig({
         { text: "Find", link: "/find" },
         { text: "Projects", link: "/projects" },
       ],
-      git: "https://github.com/GabsEdits/www.gxbs.me",
+      git: "https://github.com/GabsEdits/gxbs.dev",
       rss: "/atom.xml",
     },
     footer: {
@@ -38,8 +38,8 @@ export default defineConfig({
       poweredBy: true,
 
       links: [
-        { text: "Photos", link: "https://photo.gxbs.me" },
-        { text: "Tips", link: "https://tips.gxbs.me" },
+        { text: "Photos", link: "https://photo.gxbs.dev" },
+        { text: "Tips", link: "https://tips.gxbs.dev" },
         { text: "GitHub", link: "https://github.com/GabsEdits" },
         { text: "Mastodon", link: "https://vmst.io/@gabs" },
       ],
@@ -49,13 +49,13 @@ export default defineConfig({
       madeby: {
         show: false,
         name: "Gabs",
-        link: "https://www.gxbs.me",
+        link: "https://gxbs.dev",
       },
 
       copyleft: {
         show: true,
         license: "MIT License",
-        info: "https://github.com/GabsEdits/www.gxbs.me/blob/main/LICENSE",
+        info: "https://github.com/GabsEdits/gxbs.dev/blob/main/LICENSE",
       },
     },
   },
@@ -96,16 +96,16 @@ export default defineConfig({
     ["meta", { name: "og:site_name", content: "Gabriel Cozma (Gabs)" }],
 
     ["meta", { name: "og:title", content: "Gabriel Cozma (Gabs)" }],
-    ["meta", { name: "og:url", content: "https://www.gxbs.me" }],
+    ["meta", { name: "og:url", content: "https://gxbs.dev" }],
     [
       "meta",
-      { name: "og:image", content: "https://www.gxbs.me/assets/cover.png" },
+      { name: "og:image", content: "https://gxbs.dev/assets/cover.png" },
     ],
     [
       "meta",
       {
         name: "twitter:image",
-        content: "https://www.gxbs.me/assets/cover.png",
+        content: "https://gxbs.dev/assets/cover.png",
       },
     ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
@@ -117,11 +117,11 @@ export default defineConfig({
         content: "Human, Front-end Developer & Open Source Contributor.",
       },
     ],
-    ["meta", { name: "twitter:url", content: "https://www.gxbs.me/" }],
-    ["link", { rel: "canonical", href: "https://www.gxbs.me/" }],
+    ["meta", { name: "twitter:url", content: "https://gxbs.dev/" }],
+    ["link", { rel: "canonical", href: "https://gxbs.dev/" }],
   ],
   sitemap: {
-    hostname: "https://www.gxbs.me/",
+    hostname: "https://gxbs.dev/",
   },
   vite: {
     css: {
