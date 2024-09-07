@@ -141,6 +141,10 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 
+  &:last-of-type {
+    margin-top: 1.25rem;
+  }
+
   li {
     list-style: none;
     text-align: center;
