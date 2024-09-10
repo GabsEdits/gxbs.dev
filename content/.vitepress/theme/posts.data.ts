@@ -3,7 +3,8 @@ import { createContentLoader } from "vitepress";
 interface Post {
   title: string;
   description: string;
-  update: string;
+  author: string;
+  excerpt: string | undefined;
   type: string;
   tags: string[];
 }
@@ -15,13 +16,14 @@ export default createContentLoader("blog/posts/*.md", {
   excerpt: true,
   transform(raw): Post[] {
     return raw
-      .map(({ frontmatter }) => ({
+      .map(({ frontmatter, excerpt }) => ({
         title: frontmatter.title,
         description: frontmatter.description,
         tags: frontmatter.tags,
-        update: frontmatter.update,
+        author: frontmatter.author,
         type: frontmatter.type,
         date: formatDate(frontmatter.date),
+        excerpt,
       }))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   },

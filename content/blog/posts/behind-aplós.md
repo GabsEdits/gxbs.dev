@@ -4,7 +4,6 @@ title: "Behind Aplós"
 titleTemplate: Gabs' Blog
 author:
   - Gabriel Cozma
-description: The development journey of Aplós with all the work and thinking behind it.
 comments: giscus
 date: 2024-01-04T21:26:00+02:00
 update: 2024-06-20T12:03:00+03:00
@@ -17,12 +16,14 @@ tags:
   - Aplós
 ---
 
+Aplós, a new project I've been working on for the past two weeks. Here's what I learned and what I plan to do next.
+
+---
+
 [[toc]]
 
 > **Update:**\
 > I've wrote a new blog post about the future of Aplós, you can find it [here](/blog/posts/next-steps-for-aplós)
-
-For the past two weeks, I've been working on a new project called "Aplós"! I had a lot of fun making this project, and here's what I learned:
 
 ## Why?
 

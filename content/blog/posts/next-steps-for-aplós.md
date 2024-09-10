@@ -38,6 +38,8 @@ head:
 
 Aplós has been a project that I have been working on for a while now. It has been a great learning experience for me, and I have learned a lot from it. Since the start of the project, a lot has changed in terms of how the general structure of the project is, and it's next steps.
 
+---
+
 Recently, I've released the second major version of Aplós, which brought a lot of changes to the project. Since the big migration to becoming a NPM package, the project is now more modular, and it's easier to add new features to it. The project is now more stable, and it's easier to maintain.
 
 Since my last blog about Aplós ([Behind Aplós](/blog/posts/behind-aplós)), a lot has changed:

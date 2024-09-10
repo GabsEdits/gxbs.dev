@@ -4,7 +4,6 @@ title: Why Developer Experience Actually Matters
 titleTemplate: Gabs' Blog
 author:
   - Gabriel Cozma
-description: A significant issue in open-source projects is the lack of a proper good developer experience; this blog looks into why and how it matters.
 comments: giscus
 date: 2024-05-08T12:05:00+03:00
 update: 2024-08-24T12:45:00+03:00
@@ -34,6 +33,10 @@ tags:
   - Tech
   - DevEx
   - OSS
+---
+
+Developer Experience, or DevEx, is a term that's been thrown around a lot lately, but what does it actually mean? And why does it matter, especially in open-source projects? Let's dive deep into this topic and see why it's important to have a good Developer Experience in your projects.
+
 ---
 
 Before we dive deep, what even _is_ Developer Experience? Well, as mentioned by [Gwen Davis](https://github.blog/2023-06-08-developer-experience-what-is-it-and-why-should-you-care/): It "refers to the systems, technology, process, and culture that influence the effectiveness of software development". Of course, it's important for the average developer to maintain their project while having a basic level of <abbr title="Developer Experience">DevEx</abbr> to allow easy modifications to the already built project, and to make the code easy on the eye.

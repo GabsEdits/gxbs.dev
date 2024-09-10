@@ -17,9 +17,11 @@ tags:
   - Devlog
 ---
 
-[[toc]]
-
 I had a bunch of problems with my old website, and I thought it's time for something new, something simpler.
+
+---
+
+[[toc]]
 
 ## Getting Started
 

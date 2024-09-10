@@ -38,6 +38,8 @@ head:
 
 I usually don't write about browsers, as I don't really care about them. I've been using [Firefox](https://firefox.com) for a long time, and I'm quite happy with it. But recently, I stumbled upon [Zen](https://zen-browser.app), and I was quite impressed with it.
 
+---
+
 But first, let me tell you a bit about what Zen is.
 
 ## What is Zen?

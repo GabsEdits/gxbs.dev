@@ -36,6 +36,8 @@ head:
 
 Not too long ago, I was browsing YouTube when I stumbled upon a video that caught my attention. The video was from [FireShip](https://fireship.io), about [a recent change in the pricing of a popular serverless hosting platform](https://www.youtube.com/watch?v=SCIfWhAheVw), [Vercel](https://vercel.com/). That got my attention, and I decided to watch the video to see what the fuss was about. It was about a [Vercel customer was surprised to get a $96K serverless bill after their app went viral](https://x.com/zemotion/status/1798558292681343039). The video was quite interesting, and it got me thinking about serverless hosting. I have been using Vercel for a while now, and I have been quite happy with it. A few weeks later it turned out that [Cloudflare Pages](https://pages.cloudflare.com/) also had similar drama.
 
+---
+
 Now, can we still trust serverless hosting? And more importantly - free tiers?
 
 ## Serverless Hosting

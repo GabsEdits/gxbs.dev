@@ -36,6 +36,12 @@ head:
       content: MacOS for Web Development | Gabs' Blog
 ---
 
+Recently, I got myself an MacBook Air, my first _MacOS_ device. Since when I got it, I planned to switch to [Asahi Linux](https://asahilinux.org/), but due to the lack of support for Thunderbolt (that is neecessary if you have a laptop with 3 ports from which 2 are Thunderbolt), I decided to stick with MacOS till the support is there.
+
+I have been using MacOS for a bit now, and I have some thoughts about it.
+
+---
+
 **Notes:**
 
 1. This article is coming from a person that has been daily driving Linux with the [GNOME Desktop Environment](https://gnome.org/) for a while. Of course any criticism is coming from that perspective.
@@ -45,10 +51,6 @@ head:
 3. This article was written after using MacOS for well over a week.
 
 ---
-
-Recently, I got myself an MacBook Air, my first _MacOS_ device. Since when I got it, I planned to switch to [Asahi Linux](https://asahilinux.org/), but due to the lack of support for Thunderbolt (that is neecessary if you have a laptop with 3 ports from which 2 are Thunderbolt), I decided to stick with MacOS till the support is there.
-
-I have been using MacOS for a bit now, and I have some thoughts about it.
 
 ## Workflow
 

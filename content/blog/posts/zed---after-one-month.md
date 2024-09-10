@@ -5,7 +5,6 @@ titleTemplate: Gabs' Blog
 date: 2024-08-20T17:15:00+03:00
 author:
   - Gabriel Cozma
-description: After using Zed for a month, I've decided to write a follow-up post about it, and how I feel about it now.
 comments: giscus
 prev: Zed - My New Code Editor
 next: Zen - An Browser with a Lot of Potential
@@ -17,6 +16,8 @@ tags:
 ---
 
 Around a month or so, I wrote a post about how I started using [Zed](https://zed.dev) as my new code editor, and why I like it so much. And now, after using it for a month, I've decided to write a follow-up post about it, and how I feel about it now.
+
+---
 
 First, I have to say for what (languages) I've been using Zed for the past month. I've been using it for:
 
