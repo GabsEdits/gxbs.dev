@@ -74,6 +74,8 @@ Here are some projects that I've contributed to, ranging from small edits and tr
 
 - [**Vite** Next Generation Frontend Tooling.](https://vitejs.dev/)
 
+- [**Bottles** Easily run Windows software on Linux](https://usebottles.com)
+
 - [**VitePress** Vite & Vue powered static site generator.](https://vitepress.dev/)
 
 - [**Welcome to GNOME** A landing site for people wanting to contribute to the GNOME project.](https://welcome.gnome.org/)
