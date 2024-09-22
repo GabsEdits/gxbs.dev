@@ -8,6 +8,7 @@ comments: giscus
 date: 2024-01-04T21:26:00+02:00
 update: 2024-06-20T12:03:00+03:00
 next: Changing Up My Website
+type: archive
 tags:
   - Tech
   - Web
