@@ -3,6 +3,7 @@
 **Please note that I haven't yet started accepting commissions. This page is a work in progress.**
 
 **Open Slots:**
+
 - **Small Scale:** <mark>0/0</mark> <!-- 2/2 -->
 - **Medium Scale:** <mark>0/0</mark> <!-- 1/1 -->
 - **Large Scale:** <mark>0/0</mark> <!-- 1/1 -->
@@ -14,17 +15,20 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 <section class="non-cards">
 
 - **Payment**
+
   - Payments are processed via Ko-fi.
   - Prices are flexible and depend on project complexity.
   - 50% upfront, 50% upon completion.
   - Max 3 revisions, refunds available before the project starts.
 
 - **Timing**
+
   - Response time within **24 hours**.
   - Project duration will be estimated after discussion.
   - Queue wait time between **24 hours to 2 weeks**, depending on workload.
 
 - **Process**
+
   - Regular updates will be provided.
   - Final delivery as a zip file containing all necessary files, including source code.
 
@@ -121,7 +125,7 @@ A complete design-to-development solution that includes third-party integrations
 
 </section>
 
-\* -  Maintenance services are billed annually, and the price may vary based on the type of maintenance required.
+\* - Maintenance services are billed annually, and the price may vary based on the type of maintenance required.
 
 ---
 
