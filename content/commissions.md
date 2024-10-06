@@ -30,11 +30,11 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 - **Process**
 
   - Regular updates will be provided.
-  - Final delivery as a zip file containing all necessary files, including source code.
+  - Final delivery as a zip file containing all necessary files, including source code for development, and the Figma file for design.
 
 - **Other Details**
   - Projects include both dark and light modes by default.
-  - Manual switchers are available for an additional <mark>3€</mark>.
+  - Manual switchers are available for an additional <mark>3€</mark> when developing.
   - Returning customers, students, and non-profits enjoy a 10% discount.
 
 </section>
