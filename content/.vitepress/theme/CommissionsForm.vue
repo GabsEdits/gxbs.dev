@@ -34,14 +34,41 @@
                     placeholder="example@example.com"
                   />
                 </div>
+                <div class="form-group ohnohoney">
+                  <label for="honeypot">Honeyvotepot</label>
+                  <input
+                    type="text"
+                    id="honeypot"
+                    v-model="honeypot"
+                    placeholder="Email"
+                  />
+                </div>
                 <div class="form-group">
                   <label for="projectType">Project Type</label>
-                  <select id="project-type" v-model="projectType">
-                    <option disabled value="">Select Project Type</option>
-                    <option value="Web Design">Web Design</option>
-                    <option value="Web Development">Web Development</option>
-                    <option value="Both">Both</option>
-                  </select>
+                  <div class="select-buttons" id="project-type">
+                    <button
+                      type="button"
+                      @click="projectType = 'Web Development'"
+                      :class="{ active: projectType === 'Web Development' }"
+                    >
+                      Web Development
+                    </button>
+                    <button
+                      type="button"
+                      @click="projectType = 'Web Design'"
+                      :class="{ active: projectType === 'Web Design' }"
+                    >
+                      Web Design
+                    </button>
+                    <button
+                      type="button"
+                      @click="projectType = 'Both'"
+                      :class="{ active: projectType === 'Both' }"
+                    >
+                      Both
+                    </button>
+                  </div>
+                  <input type="hidden" v-model="projectType" required />
                 </div>
                 <div
                   v-if="
@@ -50,32 +77,57 @@
                   class="form-group"
                 >
                   <label for="frontend">Frontend Type</label>
-                  <select id="frontend" v-model="frontend">
-                    <option disabled value="">Select Frontend</option>
-                    <option value="aplos">Aplós</option>
-                    <option value="aploe">Aplóe</option>
-                    <option value="custom">Custom</option>
-                  </select>
+                  <div class="select-buttons">
+                    <button
+                      type="button"
+                      @click="frontend = 'Aplós'"
+                      :class="{ active: frontend === 'Aplós' }"
+                    >
+                      Aplós
+                    </button>
+                    <button
+                      type="button"
+                      @click="frontend = 'Aplóe'"
+                      :class="{ active: frontend === 'Aplóe' }"
+                    >
+                      Aplóe
+                    </button>
+                    <button
+                      type="button"
+                      @click="frontend = 'Custom'"
+                      :class="{ active: frontend === 'Custom' }"
+                    >
+                      Custom
+                    </button>
+                  </div>
+                  <input type="hidden" v-model="frontend" required />
                 </div>
                 <div class="form-group">
                   <label for="scale">Scale</label>
-                  <select id="scale" v-model="scale">
-                    <option disabled value="">Select Scale</option>
-                    <option value="Small">Small</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="additionalServices">Additional Services</label>
-                  <select id="additional-services" v-model="additionalServices">
-                    <option disabled value="">
-                      Select Additional Services
-                    </option>
-                    <option value="Hosting">Hosting</option>
-                    <option value="Maintenance">Maintenance</option>
-                    <option value="Consulting">Consulting</option>
-                  </select>
+                  <div class="select-buttons">
+                    <button
+                      type="button"
+                      @click="scale = 'Small'"
+                      :class="{ active: scale === 'Small' }"
+                    >
+                      Small
+                    </button>
+                    <button
+                      type="button"
+                      @click="scale = 'Medium'"
+                      :class="{ active: scale === 'Medium' }"
+                    >
+                      Medium
+                    </button>
+                    <button
+                      type="button"
+                      @click="scale = 'Large'"
+                      :class="{ active: scale === 'Large' }"
+                    >
+                      Large
+                    </button>
+                  </div>
+                  <input type="hidden" v-model="scale" required />
                 </div>
                 <div class="form-group">
                   <label for="details">Details</label>
@@ -84,8 +136,11 @@
                     id="details"
                     required
                     v-model="details"
-                    placeholder="Details of the project"
+                    placeholder="Details of the project, additional services, etc."
                   />
+                </div>
+                <div v-if="errorMessage" class="error-message">
+                  {{ errorMessage }}
                 </div>
                 <button type="submit">{{ submitButtonText }}</button>
               </form>
@@ -187,6 +242,52 @@
             font-size: 1rem;
           }
 
+          .select-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: row;
+            width: 100%;
+
+            @media screen and (max-width: 768px) {
+              flex-direction: column;
+            }
+
+            &#project-type {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: auto auto;
+              grid-template-areas:
+                "button1 button2"
+                "button3 button3";
+              button:nth-child(1) {
+                grid-area: button1;
+              }
+              button:nth-child(2) {
+                grid-area: button2;
+              }
+              button:nth-child(3) {
+                grid-area: button3;
+              }
+
+              @media screen and (max-width: 768px) {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-areas:
+                  "button1"
+                  "button2"
+                  "button3";
+              }
+            }
+
+            button {
+              width: 100%;
+
+              &.active {
+                background-color: var(--color-accent);
+                color: var(--color-background);
+              }
+            }
+          }
+
           select {
             padding: 0.8rem;
             border: 0;
@@ -203,12 +304,16 @@
           border: none;
           font-weight: 600;
           border-radius: 0.8rem;
-          background-color: var(--color-background-mute);
+          background-color: var(--color-background-second);
           font-size: 1rem;
           cursor: pointer;
 
           &:hover {
             opacity: 0.8;
+          }
+
+          &[type="submit"] {
+            background-color: var(--color-background-mute);
           }
         }
       }
@@ -272,15 +377,29 @@ const email = ref("");
 const projectType = ref("");
 const frontend = ref("");
 const scale = ref("");
-const additionalServices = ref("");
 const details = ref("");
+const honeypot = ref("");
 const submitButtonText = ref("Submit");
+const errorMessage = ref("");
 
 const toggleCommissionsPopup = () => {
   showPopup.value = !showPopup.value;
 };
 
 const sendForm = async () => {
+  if (
+    !name.value ||
+    !email.value ||
+    !projectType.value ||
+    !scale.value ||
+    !details.value ||
+    honeypot.value
+  ) {
+    errorMessage.value = "Please fill out all required fields.";
+    return;
+  }
+  errorMessage.value = "";
+
   try {
     const TOKEN = import.meta.env.VITE_TOKEN;
     const CHAT_ID = "5777053104";
@@ -293,7 +412,6 @@ const sendForm = async () => {
             - <b>Project Type:</b> ${projectType.value}
             - <b>Frontend:</b> ${frontend.value}
             - <b>Scale:</b> ${scale.value}
-            - <b>Additional Services:</b> ${additionalServices.value}
             - <b>Details:</b> ${details.value}
         `;
 
@@ -314,8 +432,8 @@ const sendForm = async () => {
     projectType.value = "";
     frontend.value = "";
     scale.value = "";
-    additionalServices.value = "";
     details.value = "";
+    honeypot.value = "";
     submitButtonText.value = "Looking forward to work with you 🚀";
     setTimeout(() => {
       submitButtonText.value = "Submit";
