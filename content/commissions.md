@@ -15,6 +15,7 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 <section class="non-cards">
 
 - **Payment**
+
   - Processed via GitHub Sponsors or Ko-fi.
   - Prices depend on project complexity.
   - 50% upfront, 50% upon completion.
@@ -22,11 +23,13 @@ Welcome to my commissions page! Here, you'll find all the information you need t
   - Max 3 revisions; refunds available before the project starts.
 
 - **Timing**
+
   - Response within **24 hours**.
   - Project duration estimated after discussion.
   - Queue wait time: **24 hours to 2 weeks**.
 
 - **Process**
+
   - Regular updates provided.
   - Feedback encouraged at every stage.
   - Provide all necessary information at the start, including communication preferences.
