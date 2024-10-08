@@ -15,29 +15,28 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 <section class="non-cards">
 
 - **Payment**
-
-  - Payments are processed via GitHub Sponsors or Ko-fi.
-  - Prices are flexible and depend on project complexity.
+  - Processed via GitHub Sponsors or Ko-fi.
+  - Prices depend on project complexity.
   - 50% upfront, 50% upon completion.
-  - If I can't complete the commission, you'll receive a full refund.
-  - Max 3 revisions, refunds available before the project starts.
+  - Full refund if the commission can't be completed.
+  - Max 3 revisions; refunds available before the project starts.
 
 - **Timing**
-
-  - Response time within **24 hours**.
-  - Project duration will be estimated after discussion.
-  - Queue wait time between **24 hours to 2 weeks**, depending on workload.
+  - Response within **24 hours**.
+  - Project duration estimated after discussion.
+  - Queue wait time: **24 hours to 2 weeks**.
 
 - **Process**
-
-  - Regular updates will be provided.
-  - Final delivery as a zip file containing all necessary files, including source code for development, and the Figma file for design.
+  - Regular updates provided.
+  - Feedback encouraged at every stage.
+  - Provide all necessary information at the start, including communication preferences.
+  - Final delivery as a zip file with all necessary files, including source code and Figma file.
 
 - **Other Details**
-  - Projects include both dark and light modes by default.
-  - Manual switchers are available for an additional <mark>3€</mark> when developing.
-  - Returning customers, students, and non-profits enjoy a 10% discount.
-  - I reserve the right to refuse any commission, that I feel uncomfortable with, or that goes against my values.
+  - Projects include dark and light modes by default.
+  - Manual switchers available for an additional <mark>3€</mark>.
+  - 10% discount for returning customers, students, and non-profits.
+  - Right to refuse any commission that feels uncomfortable or goes against values.
 
 </section>
 

@@ -131,13 +131,12 @@
                 </div>
                 <div class="form-group">
                   <label for="details">Details</label>
-                  <input
-                    type="text"
+                  <textarea
                     id="details"
                     required
                     v-model="details"
-                    placeholder="Details of the project, additional services, etc."
-                  />
+                    placeholder="Details of the project, additional services, etc. Provide as much detail as possible, so I can provide an accurate quote."
+                  ></textarea>
                 </div>
                 <div v-if="errorMessage" class="error-message">
                   {{ errorMessage }}
@@ -240,6 +239,16 @@
             background-color: var(--color-background-second);
             border-radius: 0.8rem;
             font-size: 1rem;
+          }
+
+          textarea {
+            padding: 0.8rem;
+            border: 0;
+            background-color: var(--color-background-second);
+            border-radius: 0.8rem;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 90px;
           }
 
           .select-buttons {
