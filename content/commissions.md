@@ -106,7 +106,7 @@ Custom features and third-party integrations are available upon request, and the
 
 ### Website Design & Development (Complete Package)
 
-A complete design-to-development solution that includes third-party integrations and custom features*.
+A complete design-to-development solution that includes third-party integrations and custom features\*.
 
 - **Small scale** <mark>25€</mark>
 - **Medium scale** <mark>55€</mark>
