@@ -130,7 +130,7 @@
 }
 
 .non-cards-scroll ul li {
-    aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1;
 }
 
 .non-cards ul {
@@ -170,7 +170,6 @@
       color 0.3s ease;
     max-height: 100%;
 
-
     &:hover {
       text-decoration: none;
       background-color: var(--color-background-mute);
@@ -181,7 +180,13 @@
     }
 
     ul {
-      --mask: linear-gradient(to bottom, transparent, black 1rem, black calc(100% - 1rem), transparent);
+      --mask: linear-gradient(
+        to bottom,
+        transparent,
+        black 1rem,
+        black calc(100% - 1rem),
+        transparent
+      );
       display: flex;
       flex-direction: column;
       margin-top: 10px;
