@@ -12,7 +12,7 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 
 ## Key Information
 
-<section class="non-cards">
+<section class="non-cards non-cards-scroll">
 
 - **Payment**
 
