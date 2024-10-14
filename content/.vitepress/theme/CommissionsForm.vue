@@ -1,7 +1,7 @@
 <template>
   <p class="center">
     <button @click="toggleCommissionsPopup" id="request-button">
-      🚀 Request An Commissions
+      🚀 Request An Commission
     </button>
   </p>
   <Transition>
