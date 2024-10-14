@@ -515,3 +515,30 @@ mark {
 .ohnohoney {
   display: none !important;
 }
+
+footer nav ul li a[href*="/commissions"] {
+  position: relative;
+
+  &:hover {
+    &::after {
+      transform: rotate(360deg);
+    }
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    inset-block-start: -1rem;
+    inset-inline-end: -1rem;
+    box-shadow: var(--base-shadow);
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    padding: 0.25rem 0.3125rem;
+    content: "New!";
+    color: var(--color-background);
+    font-size: smaller;
+    line-height: 1;
+  }
+}

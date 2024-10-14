@@ -38,8 +38,8 @@ export default defineConfig({
       poweredBy: true,
 
       links: [
+        { text: "Commissions", link: "/commissions" },
         { text: "Photos", link: "https://photo.gxbs.dev" },
-        { text: "Tips", link: "https://tips.gxbs.dev" },
         { text: "GitHub", link: "https://github.com/GabsEdits" },
         { text: "Mastodon", link: "https://vmst.io/@gabs" },
       ],

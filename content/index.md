@@ -45,10 +45,10 @@ Take a closer look at my [projects & contributions](/projects). It's more than j
 
 <!-- I'm also an [team member](https://vanillaos.org/team) of [Vanilla OS](https://vanillaos.org/), a Linux distribution based on Debian, with a focus on simplicity, cleanliness, freedom, and an obstruction-free experience. My role is "Frontend Developer", and I'm responsible for contributing to the web infrastructure of the project (website, web tools, etc.). -->
 
-> If you have a project that needs a little extra love, feel free to [reach out](/find). I love contributing to open-source projects and I'm always on the lookout for new opportunities to help out.
+> If you are looking for a website, feel free to request a commission, check out the [commission page](/commissions) for more information.
 
 ::: details A story of my journey
-Let's fast forward to May 2023. That's when something amazing happened. I went beyond my personal space and created something truly remarkable. Aeolus – a powerful framework built with Vue.js 3 & Vite, exclusively for Boekestijn in Moldova. The success of this project fueled my desire to take on more professional work, especially for other companies. But Aeolus didn't quite take off and wasn't easy enough to reproduce the components on a shiny new webpage. I decided to start an new adventure called [Aplóe](https://aploe.gxbs.dev), aimed at solving the main issue with Aeolus – the lack of unified styles and **If you need a website, don't hesitate to [contact me](/find).**
+Let's fast forward to May 2023. That's when something amazing happened. I went beyond my personal space and created something truly remarkable. Aeolus – a powerful framework built with Vue.js 3 & Vite, exclusively for Boekestijn in Moldova. The success of this project fueled my desire to take on more professional work, especially for other companies. But Aeolus didn't quite take off and wasn't easy enough to reproduce the components on a shiny new webpage. I decided to start an new adventure called [Aplóe](https://aploe.gxbs.dev), aimed at solving the main issue with Aeolus – the lack of unified styles.
 :::
 
 I occasionally write about tech, development, and open-source on my [blog](/blog/), that you can also subscribe to via [RSS/Atom Feed](/atom.xml). You can check it out if you're interested in learning more about my work and the projects I'm involved in, or if you just want to read some cool stories about my journey in the tech world.

@@ -1,14 +1,12 @@
 # Commissions
 
-**Please note that I haven't yet started accepting commissions. This page is a work in progress.**
-
 **Open Slots:**
 
-- **Small Scale:** <mark>0/0</mark> <!-- 2/2 -->
-- **Medium Scale:** <mark>0/0</mark> <!-- 1/1 -->
-- **Large Scale:** <mark>0/0</mark> <!-- 1/1 -->
+- **Small Scale:** <mark>1/1</mark>
+- **Medium Scale:** <mark>1/1</mark>
+- **Large Scale:** <mark>1/1</mark>
 
-Welcome to my commissions page! Here, you'll find all the information you need to request a commission. Feel free to check out my [projects](/projects) to see examples of my previous work.
+Welcome to my commissions page! Here, you'll find all the information you need to request a commission. Feel free to check out my [projects](/projects) to see my previous work.
 
 ## Key Information
 
@@ -16,7 +14,7 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 
 - **Payment**
 
-  - Processed via GitHub Sponsors or Ko-fi.
+  - Processed via [GitHub Sponsors](https://github.com/sponsors/GabsEdits/).
   - Prices depend on project complexity.
   - 50% upfront, 50% upon completion.
   - Full refund if the commission can't be completed.
@@ -30,12 +28,13 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 
 - **Process**
 
-  - Regular updates provided.
+  - Regular updates via email or your preferred platform (specify in the form under "Details" with your username).
   - Feedback encouraged at every stage.
   - Provide all necessary information at the start, including communication preferences.
   - Final delivery as a zip file with all necessary files, including source code and Figma file.
 
 - **Other Details**
+
   - Projects include dark and light modes by default.
   - Manual switchers available for an additional <mark>3€</mark>.
   - 10% discount for returning customers, students, and non-profits.
