@@ -14,7 +14,7 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 
 - **Payment**
 
-  - Processed via [GitHub Sponsors](https://github.com/sponsors/GabsEdits/).
+  - Processed via [Ko-fi](https://ko-fi.com/gxbsdev) or [GitHub Sponsors](https://github.com/sponsors/GabsEdits/).
   - Prices depend on project complexity.
   - 50% upfront, 50% upon completion.
   - Full refund if the commission can't be completed.
