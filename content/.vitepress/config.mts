@@ -119,7 +119,13 @@ export default defineConfig({
     ],
     ["meta", { name: "twitter:url", content: "https://gxbs.dev/" }],
     ["link", { rel: "canonical", href: "https://gxbs.dev/" }],
-    ["meta", { httpEquiv: "Content-Security-Policy", content: "default-src 'self'; img-src https://*; child-src 'none'" }],
+    [
+      "meta",
+      {
+        httpEquiv: "Content-Security-Policy",
+        content: "default-src 'self'; img-src https://*; child-src 'none'",
+      },
+    ],
   ],
   sitemap: {
     hostname: "https://gxbs.dev/",
