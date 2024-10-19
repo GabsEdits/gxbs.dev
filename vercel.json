@@ -2,12 +2,17 @@
   "cleanUrls": true,
   "headers": [
     {
-      "key": "X-Content-Type-Options",
-      "value": "nosniff"
-    },
-    {
-      "key": "X-Frame-Options",
-      "value": "DENY"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
     }
   ],
   "contentSecurityPolicy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; font-src 'self'; object-src 'none'; media-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; manifest-src 'self'; worker-src 'self'; prefetch-src 'self'; child-src 'self'; script-src-attr 'none'; style-src-attr 'none'; plugin-types 'none'; block-all-mixed-content; upgrade-insecure-requests; report-uri /csp-report"
