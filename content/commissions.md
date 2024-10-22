@@ -2,9 +2,15 @@
 
 **Open Slots:**
 
-- **Small Scale:** <mark>1/1</mark>
-- **Medium Scale:** <mark>1/1</mark>
-- **Large Scale:** <mark>1/1</mark>
+<noscript>
+
+Slots are currently fetched via an API, which requires JavaScript to be enabled. Please enable JavaScript to see the available slots, or contact me directly for more information. { .center }
+
+</noscript>
+
+- **Small Scale:** <mark>{{ slots.smallScale.available }}/{{ slots.smallScale.total }} <noscript>NO/JS</noscript></mark>
+- **Medium Scale:** <mark>{{ slots.mediumScale.available }}/{{ slots.mediumScale.total }} <noscript>NO/JS</noscript></mark>
+- **Large Scale:** <mark>{{ slots.largeScale.available }}/{{ slots.largeScale.total }} <noscript>NO/JS</noscript></mark>
 
 Welcome to my commissions page! Here, you'll find all the information you need to request a commission. Feel free to check out my [projects](/projects) to see my previous work.
 
@@ -147,5 +153,56 @@ You can request a commission by clicking the button below:
 Alternatively, you can submit a request via any of the methods listed on the [find me](/find) page.
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import CommissionForm from './.vitepress/theme/CommissionsForm.vue';
+
+const slots = ref({
+  smallScale: {
+    available: 0,
+    total: 0
+  },
+  mediumScale: {
+    available: 0,
+    total: 0
+  },
+  largeScale: {
+    available: 0,
+    total: 0
+  }
+});
+
+async function getSlots() {
+  try {
+    const response = await fetch('https://api.gxbs.dev/hire/slots', {
+      headers: {
+        "X-Source": "Cloudflare-Workers",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch slots');
+    }
+
+    const data = await response.json();
+    const results = data.results.reduce((acc, slot) => {
+      acc[slot.name.replace(" ", "").toLowerCase()] = {
+        available: slot.available,
+        total: slot.total
+      };
+      return acc;
+    }, {});
+
+    slots.value = {
+      smallScale: results.smallscale,
+      mediumScale: results.mediumscale,
+      largeScale: results.largescale
+    };
+  } catch (error) {
+    console.error('Error fetching slots:', error);
+  }
+}
+
+onMounted(() => {
+  getSlots();
+});
 </script>
