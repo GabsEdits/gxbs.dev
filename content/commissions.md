@@ -184,7 +184,7 @@ async function getSlots() {
     }
 
     const data = await response.json();
-    const results = data.results.reduce((acc, slot) => {
+    const results = data.reduce((acc, slot) => {
       acc[slot.name.replace(" ", "").toLowerCase()] = {
         available: slot.available,
         total: slot.total
