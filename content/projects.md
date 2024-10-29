@@ -25,7 +25,7 @@ Legend:
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.dev) { .special .wip-card }
 
-- [**@feed/feed**  Fast Atom feed generator for Deno](https://jsr.io/@feed/feed) { .special }
+- [**@feed/feed** Fast Atom feed generator for Deno](https://jsr.io/@feed/feed) { .special }
 
 </section>
 
