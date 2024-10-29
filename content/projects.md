@@ -23,9 +23,9 @@ Legend:
 
 - [**Keímeno** Just Text. Just Notes. Save](https://lab.gxbs.dev/keimeno) { .special }
 
-- [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.dev) { .special .wip-card }
-
 - [**@feed/feed** Fast Atom feed generator for Deno](https://jsr.io/@feed/feed) { .special }
+
+- [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.dev) { .special .wip-card }
 
 </section>
 
