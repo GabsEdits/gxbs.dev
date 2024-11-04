@@ -542,3 +542,9 @@ footer nav ul li a[href*="/commissions"] {
     line-height: 1;
   }
 }
+
+.🇲🇩:hover {
+  &::after {
+    content: " 🇲🇩✊🇪🇺";
+  }
+}

@@ -39,7 +39,7 @@ Gabriels-MacBook-Air:~ gabs$ _
 
 ### Salut! <span class="wave">👋</span>
 
-My name is **Gabriel**, also known as **Gabs** in my digital world. Yeah, I'm a human person, but also a designer and developer with a passion for creating beautiful and intuitive experiences. Proudly navigating the world of development here, in Moldova. Creating visually stunning and user-friendly web experiences is what I love. You can peek into my coding contributions by looking at [my Forges Profiles](/find#contributions), most of the projects are on [GitHub](https://github.com/GabsEdits)
+My name is **Gabriel**, also known as **Gabs** in my digital world. Yeah, I'm a human person, but also a designer and developer with a passion for creating beautiful and intuitive experiences. Proudly navigating the world of development here, in <span class="🇲🇩">Moldova</span>. Creating visually stunning and user-friendly web experiences is what I love. You can peek into my coding contributions by looking at [my Forges Profiles](/find#contributions), most of the projects are on [GitHub](https://github.com/GabsEdits)
 
 Take a closer look at my [projects & contributions](/projects). It's more than just code; it's a reflection of my passion. Occasionally, you might even find me translating one project to another, although not very often.
 
