@@ -72,14 +72,14 @@ const timezone = ref('');
 function TimeForMeFunction() {
   const now = new Date();
   const userLocale = navigator.language || "en-US";
-  const chisinauTime = now.toLocaleTimeString(userLocale, { timeZone: "Europe/Chisinau", hour12: !(userLocale.startsWith("en") || userLocale.startsWith("en-US")), hour: "numeric", minute: "numeric" });
+  const chisinauTime = now.toLocaleTimeString(userLocale, { timeZone: "Europe/Amsterdam", hour12: !(userLocale.startsWith("en") || userLocale.startsWith("en-US")), hour: "numeric", minute: "numeric" });
   return chisinauTime;
 }
 
 function getTimezone() {
   try {
     const now = new Date();
-    const options = { timeZone: "Europe/Chisinau", timeZoneName: "longOffset" };
+    const options = { timeZone: "Europe/Amsterdam", timeZoneName: "longOffset" };
     const gmtOffset = new Intl.DateTimeFormat(undefined, options).formatToParts(now).find(part => part.type === 'timeZoneName').value;
 
     timezone.value = `${gmtOffset}`;
