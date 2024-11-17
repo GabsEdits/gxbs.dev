@@ -15,7 +15,7 @@ Here, in my part of the world, it's currently <time :title="'The current time in
 
 <section class="cards">
 
-- [**Email** me [at] gabs.eu.org](mailto:me@gabs.eu.org)
+- [**Email** me [at] gxbs.dev](mailto:me@gxbs.dev)
 - [**Discord** gabsme](https://discord.com/users/841649648606249021)
 - [**Telegram** @GabsEdits](https://t.me/gabsedits)
 - [**Matrix <mark>Not Active</mark>** @gxbs:matrix.org](https://matrix.to/#/@gxbs:matrix.org)

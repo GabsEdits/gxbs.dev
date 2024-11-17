@@ -4,13 +4,13 @@
   <p>This is the source code of my personal website, were you're going to find my projects, who am I, and how to find me.<p>
   <small>Powered by <a href="https://vitepress.dev/">VitePress</a> and <a href="https://aplos.gxbs.me">Aplós</a></small>
 
-![website-screenshot-2](https://github.com/GabsEdits/gabs.eu.org/assets/110247388/e78f4319-4012-4c46-96a9-4fca0898f717)
+![website-screenshot-2](https://github.com/GabsEdits/gxbs.dev/assets/110247388/e78f4319-4012-4c46-96a9-4fca0898f717)
 
 </div>
 
 ## Story
 
-Check the story behind this website on my [blog](https://gabs.eu.org/blog/posts/changing-up-my-website).
+Check the story behind this website on my [blog](https://gxbs.dev/blog/posts/changing-up-my-website).
 
 ---
 
