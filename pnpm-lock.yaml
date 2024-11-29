@@ -12,8 +12,8 @@ importers:
         specifier: ^0.13.1
         version: 0.13.1
       aplos:
-        specifier: 3.0.0-3
-        version: 3.0.0-3
+        specifier: 3.0.0-4
+        version: 3.0.0-4
       vue:
         specifier: ^3.5.6
         version: 3.5.6
@@ -513,8 +513,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  aplos@3.0.0-3:
-    resolution: {integrity: sha512-AXjLLfNzAJhDIWADfkMWg1G/5RCQdrAsYFiGkBJqjDdmxRaJmY1uhkjPhncnaSi/V4He7VcN+79LhuQxEQyUwA==}
+  aplos@3.0.0-4:
+    resolution: {integrity: sha512-TJ844GiSEV5GDPJ9tzE3dfcqTL0z4Yn8MQqbIO+g7rSzylCkdm8IIq/KLWxuFVpDQIWtJQ+IxrPwvkQ5I5j50Q==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -1217,7 +1217,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  aplos@3.0.0-3:
+  aplos@3.0.0-4:
     dependencies:
       '@aplosdev/boosts': https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8
       '@csstools/normalize.css': 12.1.1
