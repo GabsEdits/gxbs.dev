@@ -24,11 +24,15 @@ Here, in my part of the world, it's currently <time :title="'The current time in
 
 Feel free to message me on any of these platforms - I'd love to hear from you! :D
 
-**And my only public social media account:**
+## Socials
+
+You can find me on the following social networks:
 
 <section class="cards">
 
 - [**Mastodon** @gabs@vmst.io](https://vmst.io/@gabs)
+
+- [**Bluesky** @gxbs.dev](https://bsky.app/profile/gxbs.dev)
 
 </section>
 
