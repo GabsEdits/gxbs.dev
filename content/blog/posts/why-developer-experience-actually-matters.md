@@ -105,4 +105,4 @@ It's important to start the project with a great DevEx, by using up to date tech
 
 As open source gains more collaborators, it's important to maintain DevEx at it's highest levels, to make sure that the projects we are starting can be continued and developed for as long as possible.
 
-> This my first non-devlog blog post, and I hope you enjoyed it. If you have any feedback, feel free to [open an issue](https://github.com/GabsEdits/gabs.eu.org/issues/new), I will be happy to hear it.
+> This my first non-devlog blog post, and I hope you enjoyed it. If you have any feedback, feel free to [open an issue](https://github.com/GabsEdits/gxbs.dev/issues/new), I will be happy to hear it.
