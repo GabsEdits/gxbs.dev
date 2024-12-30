@@ -25,7 +25,7 @@ I had a bunch of problems with my old website, and I thought it's time for somet
 
 ## Getting Started
 
-I recently did a project called [Aplós](https://aplos.gxbs.me/), and you can check out the blog about it [here](https://gabs.eu.org/blog/posts/behind-apl%C3%B3s).
+I recently did a project called [Aplós](https://aplos.gxbs.dev/), and you can check out the blog about it [here](https://gxbs.dev/blog/posts/behind-apl%C3%B3s).
 
 **TL;DR**: Made it with VitePress, and it was a breeze to use. Got me thinking, why not redo my website with a focus on making it easy to read? As I didn't really pay attention to that when I built the old one about 2 years ago.
 

@@ -116,7 +116,7 @@ footer: {
   madeby: {
     show: true,
     name: "Gabs",
-    link: "https://gxbs.me",
+    link: "https://gxbs.dev",
   },
 },
 ```
@@ -130,7 +130,7 @@ Again, I was searching for options to not have an issue like this. While looking
 Sadly, I didn't find an option, so I got the idea (also from Duckquill) to make a `custom.scss` file where we will have the accent color **and** other custom styles not from the theme. I did that, for now, we will keep this as it is, maybe in the future we will be able to connect an SCSS file to a TypeScript/Javascript file.
 
 > **Update:**\
-> It turns out, you can edit standard styles directly from the `config.mts` file, using Vite's `style` option. The documentation is already available [here](https://aplos.gxbs.me/guide/).
+> It turns out, you can edit standard styles directly from the `config.mts` file, using Vite's `style` option. The documentation is already available [here](https://aplos.gxbs.dev/guide/).
 
 ## The Rest
 

@@ -15,7 +15,7 @@ Here, in my part of the world, it's currently <time :title="'The current time in
 
 <section class="cards">
 
-- [**Email** me [at] gabs.eu.org](mailto:me@gabs.eu.org)
+- [**Email** me [at] gxbs.dev](mailto:me@gxbs.dev)
 - [**Discord** gabsme](https://discord.com/users/841649648606249021)
 - [**Telegram** @GabsEdits](https://t.me/gabsedits)
 - [**Matrix <mark>Not Active</mark>** @gxbs:matrix.org](https://matrix.to/#/@gxbs:matrix.org)
@@ -24,11 +24,15 @@ Here, in my part of the world, it's currently <time :title="'The current time in
 
 Feel free to message me on any of these platforms - I'd love to hear from you! :D
 
-**And my only public social media account:**
+## Socials
+
+You can find me on the following social networks:
 
 <section class="cards">
 
 - [**Mastodon** @gabs@vmst.io](https://vmst.io/@gabs)
+
+- [**Bluesky** @gxbs.dev](https://bsky.app/profile/gxbs.dev)
 
 </section>
 
@@ -69,17 +73,19 @@ import { ref, onMounted } from 'vue';
 const TimeForMe = ref('');
 const timezone = ref('');
 
+const currentTime = "Europe/Chisinau";
+
 function TimeForMeFunction() {
   const now = new Date();
   const userLocale = navigator.language || "en-US";
-  const chisinauTime = now.toLocaleTimeString(userLocale, { timeZone: "Europe/Chisinau", hour12: !(userLocale.startsWith("en") || userLocale.startsWith("en-US")), hour: "numeric", minute: "numeric" });
+  const chisinauTime = now.toLocaleTimeString(userLocale, { timeZone: currentTime, hour12: !(userLocale.startsWith("en") || userLocale.startsWith("en-US")), hour: "numeric", minute: "numeric" });
   return chisinauTime;
 }
 
 function getTimezone() {
   try {
     const now = new Date();
-    const options = { timeZone: "Europe/Chisinau", timeZoneName: "longOffset" };
+    const options = { timeZone: currentTime, timeZoneName: "longOffset" };
     const gmtOffset = new Intl.DateTimeFormat(undefined, options).formatToParts(now).find(part => part.type === 'timeZoneName').value;
 
     timezone.value = `${gmtOffset}`;

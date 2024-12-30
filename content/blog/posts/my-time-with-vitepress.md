@@ -16,7 +16,7 @@ tags:
   - Personal Experience
 ---
 
-As you may know, I recently launched a new project named ["Aplós"](https://aplos.gxbs.me/) – a VitePress theme that introduced me to the world of "Markdown" on the web.
+As you may know, I recently launched a new project named ["Aplós"](https://aplos.gxbs.dev/) – a VitePress theme that introduced me to the world of "Markdown" on the web.
 
 Until then, I wasn't a fan of Zola, Jekyll, VuePress, and all these 'blog' static engines. In fact, I wasn't fond of VitePress initially; it seemed confusing. However, Aplós changed my perspective on static engines and led me to the point where I [rebuilt my website](changing-up-my-website) using both VitePress and Aplós.
 
