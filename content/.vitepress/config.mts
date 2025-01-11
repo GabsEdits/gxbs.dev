@@ -139,7 +139,7 @@ export default defineConfig({
           @use "sass:color";
           $color-accent: ${accent};
           $color-accent-l: color.scale($color-accent, $lightness: -60%);
-          $bg-color-d: color.scale($color-accent, $lightness: -86%, $saturation: -60%);
+          $bg-color-d: color.scale($color-accent, $lightness: -90%, $saturation: -60%);
           $bg-color-l: color.scale($color-accent, $lightness: 95%, $saturation: -65%);
           $bg-color-s-d: mix($color-accent, $bg-color-d, 20%);
           $bg-color-s-l: color.scale($color-accent, $lightness: 75%);
