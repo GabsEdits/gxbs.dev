@@ -14,14 +14,13 @@
     0 2px 6px 2px var(--color-accent-alpha),
     0 4px 24px 4px var(--color-accent-alpha);
   border-radius: 10px;
-  background: radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
+  background:
+    radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
     var(--color-accent);
 
   @media (prefers-color-scheme: light) {
-    background: radial-gradient(
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.85)
-      ),
+    background:
+      radial-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.85)),
       var(--color-accent);
   }
 
