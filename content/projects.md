@@ -27,7 +27,7 @@ Legend:
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.dev) { .special .wip-card }
 
-- [**Steno** Your Next-Gen Static Site Generator](https://https://github.com/stenodevs/steno) { .special .wip-card }
+- [**Steno** Your Next-Gen Static Site Generator](https://github.com/stenodevs/steno) { .special .wip-card }
 
 </section>
 
