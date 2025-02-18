@@ -20,7 +20,7 @@
     }
   },
   "devDependencies": {
-    "@types/node": "^22.13.2",
+    "@types/node": "^22.13.4",
     "feed": "^4.2.2",
     "prettier": "3.5.1",
     "sass": "^1.85.0",
