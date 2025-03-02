@@ -108,15 +108,12 @@ Credits.
 
 I used **6× $20 DigiKey credits ($120 total)** to order:
 
-<aside>
-
-![The order, sitting in the digikey box, just opened](/assets/blog/rpi/box.jpg)
-
-</aside>
-
 - **Raspberry Pi 5** (8GB RAM)
 - **Raspberry Pi 5 Case** (Red/White)
 - **Raspberry Pi 27W Power Supply** (White)
+
+![The order, sitting in the digikey box, just opened](/assets/blog/rpi/box.jpg#small)
+
 
 However, shipping directly to me was too expensive ($240 total). Instead, I
 shipped it to a colleague in Germany (free shipping, $121 total including VAT).
@@ -167,11 +164,7 @@ Well no.
 First, I've opened all the boxes, then I covered the Raspberry Pi with the case,
 and finally plugged in the new power supply. This was the quick part.
 
-<aside>
-
-![The Raspberry Pi 5](/assets/blog/rpi/rpi5.jpg)
-
-</aside>
+![The Raspberry Pi 5](/assets/blog/rpi/rpi5.jpg#small)
 
 I migrated the 512GB MicroSD card from the old Pi to the new one, and it didn't
 want to boot up...
