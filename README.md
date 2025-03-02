@@ -10,13 +10,15 @@
 
 ## Story
 
-Check the story behind this website on my [blog](https://gxbs.dev/blog/posts/changing-up-my-website).
+Check the story behind this website on my
+[blog](https://gxbs.dev/blog/posts/changing-up-my-website).
 
 ---
 
 ## Development
 
-Make sure you have [Node.js](https://nodejs.org) and [PNPM](https://pnpm.io) installed.
+Make sure you have [Node.js](https://nodejs.org) and [PNPM](https://pnpm.io)
+installed.
 
 **Install the dependencies:**
 
@@ -37,4 +39,5 @@ pnpm build
 ```
 
 > [!NOTE]
-> This website is powered by [Aplós](https://aplos.gxbs.dev), a sleek VitePress theme.
+> This website is powered by [Aplós](https://aplos.gxbs.dev), a sleek VitePress
+> theme.
