@@ -12,6 +12,28 @@ tags:
   - Tech
   - Raspberry Pi
   - Experience
+head:
+  - - meta
+    - property: "og:image"
+      content: /assets/blog/rpi/banner.png
+  - - meta
+    - name: "og:description"
+      content: >-
+        Setting up my own home server,
+        specifically to create a self-hosted cloud storage solution using Nextcloud,
+        and host many other services and projects.
+  - - meta
+    - name: "og:site_name"
+      content: My Raspberry Pi 5 | Gabs' Blog
+  - - meta
+    - name: "twitter:card"
+      content: summary_large_image
+  - - meta
+    - name: "twitter:image"
+      content: /assets/blog/rpi/banner.png
+  - - meta
+    - name: "twitter:title"
+      content: My Raspberry Pi 5 | Gabs' Blog
 ---
 
 For the past few months, I've been eager to set up my own home server,
