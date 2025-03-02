@@ -17,7 +17,10 @@
 
   h1 {
     text-align: center;
-    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease,
+      text-shadow 0.3s ease;
 
     &:hover {
       transform: scale3d(1.15, 1.15, 1.25) rotate3d(0, 0, 1, 1deg) skewX(5deg);
@@ -431,16 +434,18 @@ h6 {
   background-image:
     linear-gradient(transparent, transparent),
     repeating-linear-gradient(
-    45deg,
-    #000,
-    #000 10px,
-    #ffdd00 10px,
-    #ffdd00 17px
-  );
+      45deg,
+      #000,
+      #000 10px,
+      #ffdd00 10px,
+      #ffdd00 17px
+    );
   background-size:
     calc(100% - 1.56rem) 100%,
     1.56rem 100%;
-  background-position: left center, right center;
+  background-position:
+    left center,
+    right center;
   background-repeat: no-repeat;
 }
 
