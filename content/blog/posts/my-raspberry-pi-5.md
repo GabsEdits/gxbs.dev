@@ -114,7 +114,6 @@ I used **6× $20 DigiKey credits ($120 total)** to order:
 
 ![The order, sitting in the digikey box, just opened](/assets/blog/rpi/box.jpg#small)
 
-
 However, shipping directly to me was too expensive ($240 total). Instead, I
 shipped it to a colleague in Germany (free shipping, $121 total including VAT).
 
