@@ -7,7 +7,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@mdit/plugin-img-mark": "^0.14.0",
+    "@mdit/plugin-img-mark": "^0.16.0",
     "aplos": "3.0.0-3",
     "vue": "^3.5.13"
   },
