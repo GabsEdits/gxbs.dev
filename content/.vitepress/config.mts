@@ -137,8 +137,8 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '!': path.resolve(__dirname, 'node_modules/aplos')
-      }
+        "!": path.resolve(__dirname, "node_modules/aplos"),
+      },
     },
     css: {
       preprocessorOptions: {
