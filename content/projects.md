@@ -1,5 +1,4 @@
 ---
-host: gxbs.dev
 description: "A collection of my professional work, projects, and contributions."
 ---
 
@@ -15,7 +14,7 @@ Legend:
 
 <section class="cards">
 
-- [**Boekestijn Moldova Website** Local Company Website](https://boekestijn.md) { .special .important }
+- [**Steno** Your Next-Gen Static Site Generator](https://github.com/stenodevs/steno) { .special .wip-card .important }
 
 - [**Aplóe** Lightweight Vue.js Components](https://aploe.gxbs.dev) { .special }
 
@@ -27,8 +26,6 @@ Legend:
 
 - [**Tipps** Sleek VitePress theme for sharing tips](https://tipps.gxbs.dev) { .special .wip-card }
 
-- [**Steno** Your Next-Gen Static Site Generator](https://github.com/stenodevs/steno) { .special .wip-card }
-
 </section>
 
 ---
@@ -36,6 +33,8 @@ Legend:
 <small>In alphabetical order ↓</small>
 
 <section class="cards">
+
+- [**Boekestijn Moldova Website** Local Company Website](https://boekestijn.md)
 
 - [**Deb** A postsetup script for Debian with all my personal preferences. <mark>Unmaintained</mark>](https://github.com/GabsEdits/deb)
 
@@ -45,7 +44,7 @@ Legend:
 
 - [**Fed** A postsetup script for Fedora Workstation.](https://fed-jet.vercel.app)
 
-- [**{{ $frontmatter.host }}** My personal website, powered by Aplós <mark>Here</mark>](https://gxbs.dev)
+- [**gxbs.dev** My personal website, powered by Aplós <mark>Here</mark>](https://gxbs.dev)
 
 - [**Gangi** Calculate the time between two dates](https://time.gxbs.dev) { .wip-card }
 

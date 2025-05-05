@@ -12,8 +12,14 @@ importers:
         specifier: ^0.14.0
         version: 0.14.0
       aplos:
-        specifier: 3.0.0-3
-        version: 3.0.0-3
+        specifier: 3.0.0-7
+        version: 3.0.0-7
+      non.geist:
+        specifier: ^1.0.4
+        version: 1.0.4
+      path:
+        specifier: ^0.12.7
+        version: 0.12.7
       vue:
         specifier: ^3.5.13
         version: 3.5.13
@@ -108,8 +114,8 @@ packages:
     resolution: {integrity: sha512-FqR3pQPfHfQyX1wgcdK6iyqu86yP76MZd4Pzj1y/YLMj9rRmRCY0E0AffKr//nrOFEwv6uY8BQY4fd9/6b0ZCg==}
     engines: {node: '>= 14.0.0'}
 
-  '@aplosdev/boosts@https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8':
-    resolution: {tarball: https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8}
+  '@aplosdev/boosts@https://codeload.github.com/aplosdev/boosts/tar.gz/93dc815823e07632dd3cb02061d1e3ec4603017d':
+    resolution: {tarball: https://codeload.github.com/aplosdev/boosts/tar.gz/93dc815823e07632dd3cb02061d1e3ec4603017d}
     version: 1.0.0-rc.0
 
   '@babel/helper-string-parser@7.25.9':
@@ -641,8 +647,8 @@ packages:
     resolution: {integrity: sha512-iNC6BGvipaalFfDfDnXUje8GUlW5asj0cTMsZJwO/0rhsyLx1L7GZFAY8wW+eQ6AM4Yge2p5GSE5hrBlfSD90Q==}
     engines: {node: '>= 14.0.0'}
 
-  aplos@3.0.0-3:
-    resolution: {integrity: sha512-AXjLLfNzAJhDIWADfkMWg1G/5RCQdrAsYFiGkBJqjDdmxRaJmY1uhkjPhncnaSi/V4He7VcN+79LhuQxEQyUwA==}
+  aplos@3.0.0-7:
+    resolution: {integrity: sha512-U6yh97g2gDtxSHC7EdTPpuhuBl+NrJWm2kHbTBLw6GmvXbOAl2Sm1vpngjHdlQVAs0t+KkdOkCWpfipAABliOQ==}
 
   birpc@0.2.19:
     resolution: {integrity: sha512-5WeXXAvTmitV1RqJFppT5QtUiz2p1mRSYU000Jkft5ZUCLJIk4uQriYNO50HknxKwM6jd8utNc66K1qGIwwWBQ==}
@@ -732,6 +738,9 @@ packages:
   immutable@5.1.1:
     resolution: {integrity: sha512-3jatXi9ObIsPGr3N5hGw/vWWcTkq6hUYhpQz4k0wLC+owqWi/LiugIw9x0EdNZ2yGedKN/HzePiBvaJRXa0Ujg==}
 
+  inherits@2.0.3:
+    resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
+
   inter-ui@4.1.0:
     resolution: {integrity: sha512-lUJ5YLtpj7jWsrhTbN5w32MLOqISGFGOTMRNn+IGhLrbt67z5yvmBRoqpLCWLVlJ+l7kqnH6su4meEqvLMfAAA==}
     engines: {node: '>=16.0.0'}
@@ -800,6 +809,9 @@ packages:
   oniguruma-to-es@3.1.1:
     resolution: {integrity: sha512-bUH8SDvPkH3ho3dvwJwfonjlQ4R80vjyvrU8YpxuROddv55vAEJrTuCuCVUhhsHbtlD9tGGbaNApGQckXhS8iQ==}
 
+  path@0.12.7:
+    resolution: {integrity: sha512-aXXC6s+1w7otVF9UletFkFcDsJeO7lSZBPUQhtb5O0xJe8LtYhj/GxldoL09bBj9+ZmE2hNoHqQSFMN5fikh4Q==}
+
   perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
 
@@ -821,6 +833,10 @@ packages:
     resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
     hasBin: true
+
+  process@0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
 
   property-information@7.0.0:
     resolution: {integrity: sha512-7D/qOz/+Y4X/rzSB6jKxKUsQnphO046ei8qxG59mtM3RG3DHgTK81HrxrmoDVINJb8NKT5ZsRbwHvQ6B68Iyhg==}
@@ -905,6 +921,9 @@ packages:
 
   unist-util-visit@5.0.0:
     resolution: {integrity: sha512-MR04uvD+07cwl/yhVuVWAtw+3GOR/knlL55Nd/wAdblk27GCVt3lqpTivy/tkJcZoNPzTwS1Y+KMojlLDhoTzg==}
+
+  util@0.10.4:
+    resolution: {integrity: sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==}
 
   vfile-message@4.0.2:
     resolution: {integrity: sha512-jRDZ1IMLttGj41KcZvlrYAaI3CfqpLpfpf+Mfig13viT6NKvRzWZ+lXz0Y5D60w6uJIBAOGq9mSHf0gktF0duw==}
@@ -1077,7 +1096,7 @@ snapshots:
     dependencies:
       '@algolia/client-common': 5.20.3
 
-  '@aplosdev/boosts@https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8':
+  '@aplosdev/boosts@https://codeload.github.com/aplosdev/boosts/tar.gz/93dc815823e07632dd3cb02061d1e3ec4603017d':
     dependencies:
       sass: 1.87.0
 
@@ -1508,9 +1527,9 @@ snapshots:
       '@algolia/requester-fetch': 5.20.3
       '@algolia/requester-node-http': 5.20.3
 
-  aplos@3.0.0-3:
+  aplos@3.0.0-7:
     dependencies:
-      '@aplosdev/boosts': https://codeload.github.com/aplosdev/boosts/tar.gz/b66e8cabd2421f8035e5def56bbeb071578d3dc8
+      '@aplosdev/boosts': https://codeload.github.com/aplosdev/boosts/tar.gz/93dc815823e07632dd3cb02061d1e3ec4603017d
       '@csstools/normalize.css': 12.1.1
       inter-ui: 4.1.0
       non.geist: 1.0.4
@@ -1622,6 +1641,8 @@ snapshots:
 
   immutable@5.1.1: {}
 
+  inherits@2.0.3: {}
+
   inter-ui@4.1.0: {}
 
   is-extglob@2.1.1:
@@ -1695,6 +1716,11 @@ snapshots:
       regex: 6.0.1
       regex-recursion: 6.0.2
 
+  path@0.12.7:
+    dependencies:
+      process: 0.11.10
+      util: 0.10.4
+
   perfect-debounce@1.0.0: {}
 
   picocolors@1.1.1: {}
@@ -1711,6 +1737,8 @@ snapshots:
   preact@10.26.4: {}
 
   prettier@3.5.3: {}
+
+  process@0.11.10: {}
 
   property-information@7.0.0: {}
 
@@ -1824,6 +1852,10 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
+
+  util@0.10.4:
+    dependencies:
+      inherits: 2.0.3
 
   vfile-message@4.0.2:
     dependencies:

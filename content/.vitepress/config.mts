@@ -1,6 +1,9 @@
 import { defineConfig } from "vitepress";
 import { genFeed } from "./feed.ts";
 import { imgMark } from "@mdit/plugin-img-mark";
+import path from "path";
+
+const __dirname = path.resolve();
 const accent = "#DA6944";
 
 // https://vitepress.dev/reference/site-config
@@ -35,7 +38,7 @@ export default defineConfig({
     },
     footer: {
       copyright: true,
-      poweredBy: true,
+      poweredBy: false,
 
       links: [
         { text: "Commissions", link: "/commissions" },
@@ -53,7 +56,7 @@ export default defineConfig({
       },
 
       copyleft: {
-        show: true,
+        show: false,
         license: "MIT License",
         info: "https://github.com/GabsEdits/gxbs.dev/blob/main/LICENSE",
       },
@@ -132,16 +135,25 @@ export default defineConfig({
     hostname: "https://gxbs.dev/",
   },
   vite: {
+    resolve: {
+      alias: {
+        '!': path.resolve(__dirname, 'node_modules/aplos')
+      }
+    },
     css: {
       preprocessorOptions: {
         scss: {
+          api: "modern-compiler",
           additionalData: `
+          @use "!/src/styles/variables-color.scss" with (
+            $color-accent: ${accent}
+          );
           @use "sass:color";
           $color-accent: ${accent};
           $color-accent-l: color.scale($color-accent, $lightness: -60%);
           $bg-color-d: color.scale($color-accent, $lightness: -90%, $saturation: -60%);
           $bg-color-l: color.scale($color-accent, $lightness: 95%, $saturation: -65%);
-          $bg-color-s-d: mix($color-accent, $bg-color-d, 20%);
+          $bg-color-s-d: color.scale($color-accent, $saturation: 60%);
           $bg-color-s-l: color.scale($color-accent, $lightness: 75%);
           $nav-bg-l: color.scale($bg-color-s-l, $alpha: -20%, $lightness: 60%, $saturation: -30%);
           $nav-bg-d: color.scale($bg-color-s-d, $alpha: -20%, $lightness: -40%);

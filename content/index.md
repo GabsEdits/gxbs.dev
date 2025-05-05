@@ -1,73 +1,127 @@
 ---
 pageClass: home
+title: "Gabriel Cozma (Gabs)"
 ---
 
-# Gabriel Cozma <small>(Gabs)</small>
+# Salut, I'm <br><span>Gabriel Cozma</span>
 
-<small>Human, Front-End Developer & Open Source Contributor</small> { .desc }
+<small>Human, Front-End Developer <br>& Open Source Contributor</small> { .desc }
 
----
+<div class="fade-text">
 
-<Crt>
+My name is **Gabriel**, also known as **Gabs**. I'm a designer and developer passionate about creating intuitive and visually appealing web experiences. Based in <span class="🇲🇩">Moldova</span>, I focus on building user-friendly solutions. You can explore my coding contributions on [my Forges Profiles](/find#contributions), with most projects hosted on [GitHub](https://github.com/GabsEdits).
 
-```bash
-Gabriels-MacBook-Air:~ gabs$ curl -L https://gxbs.dev/me.json
+Check out my [projects & contributions](/projects) to see my work. If you're interested in a custom website, visit the [commission page](/commissions) for details.
 
-{
-  "name": "Gabriel Cozma",
-  "username": "gabs",
-  "status": "Working on Aplóe, Tipps and other projects",
-  "about": "Human",
-  "interests": ["Web Development", "Technology", "Open Source", "Linux", "History"],
-  "technologies": {
-    "frontend": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "Nuxt.js", "Vite", "React", "Next.js", "Tailwind CSS", "Sass", "Node.js"],
-    "wip": ["Deno", "Docker"],
-    "other": ["Git", "Linux", "Bash", "Java"]
-  },
-  "github": "https://github.com/GabsEdits",
-  "mastodon": "https://vmst.io/@gabs",
-  "blog": "https://gxbs.dev/blog",
-  "other": "https://gxbs.dev/find"
-}
+I write about tech, development, and open-source on my [blog](/blog/), which you can subscribe to via [RSS/Atom Feed](/atom.xml). It's a space to share insights and stories from my tech journey.
 
-Gabriels-MacBook-Air:~ gabs$ _
-```
+I also enjoy photography and share some of my favorite shots in my [Photography Gallery](https://photo.gxbs.dev). While it's not my main focus, I love capturing moments.
 
-</Crt>
+For web development tips, visit [my tips and tricks](https://tips.gxbs.dev) page, primarily focused on CSS/SCSS and general development. It's a work in progress, but growing steadily.
+
+When I'm not coding, I'm learning new skills to stay updated and make a positive impact through my work. :D :rocket:
 
 ---
 
-### Salut! <span class="wave">👋</span>
+### About this website
 
-My name is **Gabriel**, also known as **Gabs** in my digital world. Yeah, I'm a human person, but also a designer and developer with a passion for creating beautiful and intuitive experiences. Proudly navigating the world of development here, in <span class="🇲🇩">Moldova</span>. Creating visually stunning and user-friendly web experiences is what I love. You can peek into my coding contributions by looking at [my Forges Profiles](/find#contributions), most of the projects are on [GitHub](https://github.com/GabsEdits)
+Visit the [Colophon](/colophon) page for details about the tools and technologies behind this website. For feedback or suggestions, feel free to [contact me](/find).
 
-Take a closer look at my [projects & contributions](/projects). It's more than just code; it's a reflection of my passion. Occasionally, you might even find me translating one project to another, although not very often.
+</div>
 
-<!-- I'm also an [team member](https://vanillaos.org/team) of [Vanilla OS](https://vanillaos.org/), a Linux distribution based on Debian, with a focus on simplicity, cleanliness, freedom, and an obstruction-free experience. My role is "Frontend Developer", and I'm responsible for contributing to the web infrastructure of the project (website, web tools, etc.). -->
+<div class="button-center">
+<button class="action-button" id="read-more-button">Read More ↓</button>
+</div>
 
-> If you are looking for a website, feel free to request a commission, check out the [commission page](/commissions) for more information.
+<section class="cards">
 
-::: details A story of my journey
-Let's fast forward to May 2023. That's when something amazing happened. I went beyond my personal space and created something truly remarkable. Aeolus – a powerful framework built with Vue.js 3 & Vite, exclusively for Boekestijn in Moldova. The success of this project fueled my desire to take on more professional work, especially for other companies. But Aeolus didn't quite take off and wasn't easy enough to reproduce the components on a shiny new webpage. I decided to start an new adventure called [Aplóe](https://aploe.gxbs.dev), aimed at solving the main issue with Aeolus – the lack of unified styles.
-:::
+- [**Blog →**](/blog)
+- [**Find Me →**](/find)
 
-I occasionally write about tech, development, and open-source on my [blog](/blog/), that you can also subscribe to via [RSS/Atom Feed](/atom.xml). You can check it out if you're interested in learning more about my work and the projects I'm involved in, or if you just want to read some cool stories about my journey in the tech world.
+</section>
 
-In addition to coding, I also ~~slightly~~ enjoy photography. You can find a small collection of my favorite shots on my [Photography Gallery](https://photo.gxbs.dev). <small>While it's not much, and not my main focus, I still enjoy capturing moments.</small>
+## Works
 
-For web development enthusiasts, have a look on [my tips and tricks](https://tips.gxbs.dev) page, mainly for CSS/SCSS and development in general. You can check it out! <small>It's a work in progress, but I'm getting there.</small>
+<div class="works">
+  <ul>
+    <li v-for="work in [
+      {
+        title: 'Vanilla OS',
+        role: 'Volunteer (& more) - Team Member',
+        period: 'Jul. 2024 - Present',
+        adaptiveLogo: true
+      },
+      {
+        title: 'Bottles',
+        role: 'Volunteer - Team Member',
+        period: 'Oct. 2024 - Present',
+        adaptiveLogo: true
+      },
+      {
+        title: 'HackClub',
+        role: 'Community Member',
+        period: 'Dec. 2024 - Present',
+      }
+    ]" :key="work.title" class="work-item">
+      <div class="work-info">
+        <img :src="`/assets/works/${work.title.replace(/\s+/g, '').toLowerCase()}${work.adaptiveLogo ? isDarkMode ? '-dark' : '-light' : ''}.svg#static`" :alt="`${work.title} Logo`">
+        <div class="work-desc">
+          <h4>{{ work.title }}</h4>
+          <p>{{ work.role }}</p>
+        </div>
+      </div>
+      <p class="work-period">{{ work.period }}</p>
+    </li>
+  </ul>
+</div>
 
-Now, when I'm not in coding mode, you'll find me immersed in the ever-evolving world of technology. Learning new skills is not just a hobby; it's my way of trying to make a positive impact through my work \:D :rocket:
+## Skills
 
----
+<ul class="skills">
+  <li v-for="skill in ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'Next.js', 'Nuxt', 'Vite', 'React', 'Astro', 'Svelte', 'Fresh.js', 'Hono', 'Java', 'Liquid', 'Tailwind CSS', 'Sass', 'Node.js', 'Deno', 'Docker', 'Git', 'Bash', '& learning other skills']">
+    {{ skill }}
+  </li>
+</ul>
 
-::: details About this website
-Check out the special [Colophon](/colophon) page for more information about this website, including the tools and technologies used to build it. If you have any feedback or suggestions, feel free to [contact me](/find).
-:::
+## Projects
+
+<ul class="projects">
+  <li v-for="project in [
+    {
+      title: 'Steno',
+      link: 'https://github.com/stenodevs/steno',
+      description: 'A modern and simple static site generator.'
+    },
+    {
+      title: '@feed',
+      link: 'https://jsr.io/@feed/feed',
+      description: 'A fast and easy-to-use feed generator for Deno.'
+    }
+  ]" :key="project.title" class="project-item">
+    <div class="project-info">
+        <h4><a :href="project.link">{{ project.title }}</a></h4>
+        <p>{{ project.description }}</p>
+    </div>
+      <img :src="`/assets/projects/${project.title.replace(/\s+/g, '').toLowerCase()}.png#static`" :alt="`Screenshot of ${project.title}`">
+  </li>
+</ul>
+
+<div class="button-center">
+<a class="action-button" href="/projects">More Projects -></a>
+</div>
+
+## Sponsor
+
+<section class="sponsors">
+
+- [![Tuta](https://tuta.com/assets/Logo_text.LuqsxYBF_Z2cigi2.webp#no-border#static)](https://tuta.com)
+
+</section>
 
 <script setup lang="ts">
-import Crt from './.vitepress/theme/Crt.vue';
 import { onMounted } from 'vue';
+
+const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 const animate = (
   ctx: CanvasRenderingContext2D,
@@ -110,7 +164,7 @@ const animate = (
 };
 
 onMounted(() => {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (window?.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
     return;
   }
   if (
@@ -161,6 +215,18 @@ onMounted(() => {
       } else {
         wrapper.style.opacity = "1";
       }
+    });
+  }
+
+  const readMoreBtn = document.querySelector('#read-more-button');
+  const fadeText = document.querySelector('.fade-text');
+
+  if (readMoreBtn && fadeText) {
+    readMoreBtn.addEventListener('click', () => {
+      fadeText.classList.toggle('expanded');
+      readMoreBtn.textContent = fadeText.classList.contains('expanded')
+        ? 'Read Less ↑'
+        : 'Read More ↓';
     });
   }
 });
