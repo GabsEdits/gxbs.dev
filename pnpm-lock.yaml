@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@mdit/plugin-img-mark':
-        specifier: ^0.14.0
-        version: 0.14.0
+        specifier: ^0.18.0
+        version: 0.18.0
       aplos:
         specifier: 3.0.0-7
         version: 3.0.0-7
@@ -308,8 +308,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
 
-  '@mdit/plugin-img-mark@0.14.0':
-    resolution: {integrity: sha512-wVAtRby7/4/EM+6ipNLqxUo4HGN8QWxBpc8An3QdOgqT6bJsmDiTM461gZIwtbzhBdh9RE9Bg1I5BmedXjTkZQ==}
+  '@mdit/plugin-img-mark@0.18.0':
+    resolution: {integrity: sha512-dLPOuUUcP/tlOVRTWJYeIhcFLE4DQgFovDE0ojlGZS/nS5YYjZGELujADHL2zUruCe99uJqAbHzTPeQvUsWckw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -1216,7 +1216,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
-  '@mdit/plugin-img-mark@0.14.0':
+  '@mdit/plugin-img-mark@0.18.0':
     dependencies:
       '@types/markdown-it': 14.1.2
 
