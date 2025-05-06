@@ -14,6 +14,7 @@ export default defineConfig({
   description: "Human, Front-End Developer & Open Source Contributor",
 
   lastUpdated: true,
+  ignoreDeadLinks: true,
   cleanUrls: true,
 
   themeConfig: {
