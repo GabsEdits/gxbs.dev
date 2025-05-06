@@ -121,7 +121,11 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
-const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let isDarkMode = false;
+
+if (typeof window !== 'undefined') {
+  isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
 
 const animate = (
   ctx: CanvasRenderingContext2D,
@@ -164,6 +168,10 @@ const animate = (
 };
 
 onMounted(() => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
   if (window?.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
     return;
   }
