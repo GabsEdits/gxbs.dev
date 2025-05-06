@@ -45,7 +45,7 @@ export default defineConfig({
         { text: "Commissions", link: "/commissions" },
         { text: "Photos", link: "https://photo.gxbs.dev" },
         { text: "GitHub", link: "https://github.com/GabsEdits" },
-        { text: "Mastodon", link: "https://vmst.io/@gabs" },
+        { text: "Fediverse", link: "https://vmst.io/@gabs" },
       ],
 
       message: "Searching for the best future 🚀",
