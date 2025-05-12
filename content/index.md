@@ -78,7 +78,7 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
 ## Skills
 
 <ul class="skills">
-  <li v-for="skill in ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'Next.js', 'Nuxt', 'Vite', 'React', 'Astro', 'Svelte', 'Fresh.js', 'Hono', 'Java', 'Liquid', 'Tailwind CSS', 'Sass', 'Node.js', 'Deno', 'Docker', 'Git', 'Bash', '& learning other skills']">
+  <li v-for="skill in ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'Next.js', 'Nuxt', 'Vite', 'React', 'Astro', 'Svelte', 'Fresh.js', 'Hono', 'Java', 'Liquid', 'Tailwind CSS', 'Sass', 'Node.js', 'Deno', 'Docker', 'Git', 'Bash', 'DevOps', 'GitHub Actions', 'Release Management', 'GitHub Actions', '& learning other skills']">
     {{ skill }}
   </li>
 </ul>
