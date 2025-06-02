@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.18",
-    "feed": "^4.2.2",
+    "feed": "^5.1.0",
     "prettier": "3.5.3",
     "sass": "^1.89.1",
     "vitepress": "^1.6.3"
