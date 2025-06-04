@@ -747,13 +747,13 @@ footer nav ul li a[href*="/commissions"] {
     transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: rgba(218, 105, 68, 0.15);
+      background-color: rgba(218, 105, 68, 0.15);
     }
 
     a {
-        color: var(--color-text);
-        font-weight: bold;
-        text-decoration: none;
+      color: var(--color-text);
+      font-weight: bold;
+      text-decoration: none;
     }
   }
 }
