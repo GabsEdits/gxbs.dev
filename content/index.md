@@ -110,6 +110,48 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
   </li>
 </ul>
 
+## Achievements
+
+<div class="achievements">
+      <ul>
+        <li v-for="achievement in [
+          {
+            title: 'InfoMatrix 2025 (World Final)',
+            link: 'https://infomatrix.ro',
+            type: 'Hackathon',
+            place: '🥇 Platinum Medal',
+            date: 'May 2025',
+          },
+          {
+            title: 'GitHub Foundations',
+            link: 'https://www.credly.com/badges/bed86599-e2cc-443a-87fd-856d04d1cd3f/public_url',
+            type: 'Certification',
+            place: '',
+            date: 'May 2025',
+          },
+          {
+            title: 'IT Specialist - HTML5 Application Development',
+            link: 'https://www.credly.com/badges/7b064a7b-40ae-4fa8-891f-134fda3fabb4/public_url',
+            type: 'Certification',
+            place: '',
+            date: 'Oct. 2024',
+          }
+        ]" :key="achievement.title" class="achievement-item">
+          <div class="achievement-info">
+            <img :src="`/assets/achievements/${achievement.title.replace(/\s+/g, '').toLowerCase()}.svg#static`" :alt="`${achievement.title} Logo`">
+            <div class="achievement-desc">
+              <a class="achievement-title" :href="achievement.link">{{ achievement.title }}</a>
+              <div class="achievement-details">
+                <p class="achievement-type">{{ achievement.type }}</p>
+                <p v-if="achievement.type === 'Hackathon'" class="achievement-place">{{ achievement.place }}</p>
+              </div>
+            </div>
+          </div>
+          <p class="achievement-period">{{ achievement.date }}</p>
+        </li>
+      </ul>
+</div>
+
 ## Projects
 
 <ul class="projects">

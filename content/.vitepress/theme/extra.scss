@@ -904,3 +904,121 @@ footer nav ul li a[href*="/commissions"] {
     }
   }
 }
+
+.achievements {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .achievement-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+
+    .achievement-info {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+
+      .achievement-title {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--color-text);
+      }
+
+      .achievement-desc {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+
+        h4 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin: 0 !important;
+          letter-spacing: 0;
+        }
+
+        p {
+          margin: 0 !important;
+          font-size: 0.95rem;
+        }
+      }
+
+      .achievement-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        .achievement-type {
+          display: flex;
+          height: 34px;
+          font-size: 0.9rem;
+          font-weight: bold;
+          background-color: rgba(218, 105, 68, 0.1);
+          padding: 4px 18px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 25px;
+          transition: background-color 0.3s ease;
+        }
+
+        .achievement-place {
+          font-weight: 600;
+        }
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 10%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .achievement-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .achievement-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        .achievement-desc {
+          align-items: flex-start;
+
+          h4 {
+            font-size: 1rem;
+          }
+
+          p {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+}
