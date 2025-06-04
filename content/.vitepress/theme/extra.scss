@@ -744,6 +744,17 @@ footer nav ul li a[href*="/commissions"] {
     justify-content: center;
     align-items: center;
     border-radius: 25px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: rgba(218, 105, 68, 0.15);
+    }
+
+    a {
+        color: var(--color-text);
+        font-weight: bold;
+        text-decoration: none;
+    }
   }
 }
 

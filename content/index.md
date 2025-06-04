@@ -78,8 +78,35 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
 ## Skills
 
 <ul class="skills">
-  <li v-for="skill in ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'Next.js', 'Nuxt', 'Vite', 'React', 'Astro', 'Svelte', 'Fresh.js', 'Hono', 'Java', 'Liquid', 'Tailwind CSS', 'Sass', 'Node.js', 'Deno', 'Docker', 'Git', 'Bash', 'DevOps', 'GitHub Actions', 'Release Management', 'GitHub Actions', '& learning other skills']">
-    {{ skill }}
+  <li v-for="skill in [
+    { name: 'HTML', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+    { name: 'CSS', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+    { name: 'JavaScript', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+    { name: 'TypeScript', link: 'https://www.typescriptlang.org/' },
+    { name: 'Vue.js', link: 'https://vuejs.org/' },
+    { name: 'Next.js', link: 'https://nextjs.org/' },
+    { name: 'Nuxt', link: 'https://nuxt.com/' },
+    { name: 'Vite', link: 'https://vitejs.dev/' },
+    { name: 'React', link: 'https://react.dev/' },
+    { name: 'Astro', link: 'https://astro.build/' },
+    { name: 'Svelte', link: 'https://svelte.dev/' },
+    { name: 'Fresh.js', link: 'https://fresh.deno.dev/' },
+    { name: 'Hono', link: 'https://hono.dev/' },
+    { name: 'Java', link: 'https://www.java.com/' },
+    { name: 'Liquid', link: 'https://shopify.github.io/liquid/' },
+    { name: 'Tailwind CSS', link: 'https://tailwindcss.com/' },
+    { name: 'Sass', link: 'https://sass-lang.com/' },
+    { name: 'Node.js', link: 'https://nodejs.org/' },
+    { name: 'Deno', link: 'https://deno.land/' },
+    { name: 'Docker', link: 'https://www.docker.com/' },
+    { name: 'Git', link: 'https://git-scm.com/' },
+    { name: 'Bash', link: 'https://www.gnu.org/software/bash/' },
+    { name: 'DevOps', link: 'https://azure.microsoft.com/en-us/solutions/devops/' },
+    { name: 'GitHub Actions', link: 'https://github.com/features/actions' },
+    { name: 'Release Management', link: 'https://en.wikipedia.org/wiki/Release_management' },
+    { name: '& learning other skills', link: '#' }
+  ]" :key="skill.name">
+    <a :href="skill.link" target="_blank" rel="noopener noreferrer">{{ skill.name }}</a>
   </li>
 </ul>
 
