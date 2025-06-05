@@ -26,6 +26,10 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     max-width: 40%;
+
+    @media screen and (max-width: 600px) {
+      max-width: 100%;
+    }
   }
 
   .cards ul {
