@@ -138,7 +138,7 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
           }
         ]" :key="achievement.title" class="achievement-item">
           <div class="achievement-info">
-            <img :src="`/assets/achievements/${achievement.title.replace(/\s+/g, '').toLowerCase()}.svg#static`" :alt="`${achievement.title} Logo`">
+            <img :src="`/assets/achievements/${achievement.title.replace(/\s+/g, '').toLowerCase()}.png#static`" :alt="`${achievement.title} Logo`">
             <div class="achievement-desc">
               <a class="achievement-title" :href="achievement.link">{{ achievement.title }}</a>
               <div class="achievement-details">
