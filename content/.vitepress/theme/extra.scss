@@ -1002,10 +1002,10 @@ footer nav ul li a[href*="/commissions"] {
     .achievement-item {
       flex-direction: column;
       align-items: flex-start;
-      gap: 1rem;
+      gap: 0;
 
       .achievement-info {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 0.5rem;
 
