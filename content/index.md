@@ -40,6 +40,10 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
 
 </section>
 
+<div id="home-items">
+
+<div id="works">
+
 ## Works
 
 <div class="works">
@@ -75,6 +79,10 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
   </ul>
 </div>
 
+</div>
+
+<div id="skills">
+
 ## Skills
 
 <ul class="skills">
@@ -109,6 +117,10 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
     <a :href="skill.link" target="_blank" rel="noopener noreferrer">{{ skill.name }}</a>
   </li>
 </ul>
+
+</div>
+
+<div id="achievements">
 
 ## Achievements
 
@@ -152,6 +164,10 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
       </ul>
 </div>
 
+</div>
+
+<div id="projects">
+
 ## Projects
 
 <ul class="projects">
@@ -179,6 +195,10 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
 <a class="action-button" href="/projects">More Projects -></a>
 </div>
 
+</div>
+
+<div id="sponsor">
+
 ## Sponsor
 
 <section class="sponsors">
@@ -186,6 +206,10 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
 - [![Tuta](https://tuta.com/assets/Logo_text.LuqsxYBF_Z2cigi2.webp#no-border#static)](https://tuta.com)
 
 </section>
+
+</div>
+
+</div>
 
 <script setup lang="ts">
 import { onMounted } from 'vue';
