@@ -127,6 +127,9 @@ A complete design-to-development solution that includes third-party integrations
 
 <section class="non-cards">
 
+- **Logo/88x31 Badge** Need a logo or a static badge for your website? My talented friend offers this service separately. Check out his work and commissions here:\
+   [daudix.one/commissions](https://daudix.one/commissions) - <mark>$3-$24</mark>
+
 - **Hosting** Hosting your website on Vercel or GitHub Pages. Includes custom domain configuration.\
    <mark>1€</mark>
 
