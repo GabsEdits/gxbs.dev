@@ -581,38 +581,21 @@ footer nav ul li a[href*="/commissions"] {
 }
 
 .fade-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  position: relative;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 1.4rem,
+    black calc(50% - 1.5rem),
+    transparent
+  );
   max-height: 5em;
   transition: max-height 0.3s ease;
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4em;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      var(--color-background)
-    );
-    pointer-events: none;
-  }
-
   &.expanded {
-    -webkit-line-clamp: unset;
+    mask-image: none;
     max-height: none;
     overflow: visible;
-
-    &::after {
-      display: none;
-    }
   }
 }
 
