@@ -137,7 +137,7 @@ A complete design-to-development solution that includes third-party integrations
    <mark>20€\y</mark>
 
 - **Consulting** Web development consulting on technologies, tools, and frameworks.\
-   <mark>5€</mark>
+   <mark>0€</mark> (free)
 
 </section>
 
