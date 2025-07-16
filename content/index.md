@@ -140,13 +140,6 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
             type: 'Certification',
             place: '',
             date: 'May 2025',
-          },
-          {
-            title: 'IT Specialist - HTML5 Application Development',
-            link: 'https://www.credly.com/badges/7b064a7b-40ae-4fa8-891f-134fda3fabb4/public_url',
-            type: 'Certification',
-            place: '',
-            date: 'Oct. 2024',
           }
         ]" :key="achievement.title" class="achievement-item">
           <div class="achievement-info">
