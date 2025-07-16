@@ -726,8 +726,6 @@ footer nav ul li a[href*="/commissions"] {
   li {
     display: flex;
     height: 34px;
-    font-size: 0.9rem;
-    font-weight: 500;
     background-color: rgba(218, 105, 68, 0.1);
     padding: 4px 18px;
     justify-content: center;
@@ -741,7 +739,8 @@ footer nav ul li a[href*="/commissions"] {
 
     a {
       color: var(--color-text);
-      font-weight: bold;
+      font-size: 0.9rem;
+      font-weight: 600;
       text-decoration: none;
     }
   }
@@ -844,7 +843,7 @@ footer nav ul li a[href*="/commissions"] {
       height: 100%;
       padding: 0.5rem 1rem;
       text-align: center;
-      background-color: rgba(218, 105, 68, 0.1);
+      background-color: #f7e8e9;
       border-radius: 0.8rem;
       transition:
         transform 0.3s ease 0s,
@@ -852,11 +851,12 @@ footer nav ul li a[href*="/commissions"] {
 
       @media (prefers-color-scheme: light) {
         &:hover {
-          background-color: rgba(218, 105, 68, 0.2);
+          background-color: #f2e3e4;
         }
       }
 
       @media (prefers-color-scheme: dark) {
+          background-color: #400102;
         transition: all 0.3s;
 
         &:hover {
