@@ -50,8 +50,14 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
   <ul>
     <li v-for="work in [
       {
+        title: 'fabricators.ltd',
+        role: 'Frontend Engineer',
+        period: 'Nov. 2024 - Present',
+        adaptiveLogo: false
+      },
+      {
         title: 'Vanilla OS',
-        role: 'Volunteer (& more) - Team Member',
+        role: 'Volunteer - Team Member',
         period: 'Jul. 2024 - Present',
         adaptiveLogo: true
       },
