@@ -19,7 +19,6 @@ Welcome to my commissions page! Here, you'll find all the information you need t
 <section class="non-cards non-cards-scroll">
 
 - **Payment**
-
   - Processed via [Ko-fi](https://ko-fi.com/gxbsdev) or [GitHub Sponsors](https://github.com/sponsors/GabsEdits/).
   - Prices depend on project complexity.
   - 50% upfront, 50% upon completion.
@@ -27,20 +26,17 @@ Welcome to my commissions page! Here, you'll find all the information you need t
   - Max 3 revisions; refunds available before the project starts.
 
 - **Timing**
-
   - Response within **24 hours**.
   - Project duration estimated after discussion.
   - Queue wait time: **24 hours to 2 weeks**.
 
 - **Process**
-
   - Regular updates via email or your preferred platform (specify in the form under "Details" with your username).
   - Feedback encouraged at every stage.
   - Provide all necessary information at the start, including communication preferences.
   - Final delivery as a zip file with all necessary files, including source code and Figma file.
 
 - **Other Details**
-
   - Projects include dark and light modes by default.
   - Manual switchers available for an additional <mark>3€</mark>.
   - 10% discount for returning customers, students, and non-profits.

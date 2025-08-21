@@ -78,7 +78,6 @@ As I mentioned, it's not only about how you code your project, but also how you 
 To have a better understanding, let's look into how developers create new GNOME apps:
 
 1. Before anything, they get started with the [amazing documentation](https://developer.gnome.org/) built by GNOME, where you can find what your first steps should be.
-
    - Including an introduction to the app you will use to build it (GNOME Builder). That allows them to start off easily.
 
 2. **Choosing the right Programming Language**: With the power of a great community, GNOME provides a long list of programming languages that can be used to build the applications. That already makes it easy for the developer to build an app with their language of choice.

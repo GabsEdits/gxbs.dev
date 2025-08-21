@@ -35,7 +35,6 @@ I decided to document my setup process and my thoughts on it. So, here it is.
 Before installing Fedora Asahi Remix, I did many things:
 
 1. I asked the Asahi Linux community what to expect and be ready for any issues. They were very helpful and provided me with the following information:
-
    - The battery life is not as good as on macOS, but it's improving. (Which I new from the beginning, and not supprised by it.)
    - There could be flickering on the screen, but it's not a major issue. (I've heard about it on Redit)
    - For GNOME:
