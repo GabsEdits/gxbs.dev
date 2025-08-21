@@ -26,6 +26,6 @@
     "feed": "^5.1.0",
     "prettier": "3.6.2",
     "sass": "^1.89.2",
-    "vitepress": "^1.6.3"
+    "vitepress": "^1.6.4"
   }
 }
