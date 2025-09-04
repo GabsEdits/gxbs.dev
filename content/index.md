@@ -51,7 +51,7 @@ Visit the [Colophon](/colophon) page for details about the tools and technologie
     <li v-for="work in [
       {
         title: 'fabricators.ltd',
-        role: 'Frontend Engineer',
+        role: 'Junior Software Engineer',
         period: 'Nov. 2024 - Present',
         adaptiveLogo: false
       },
