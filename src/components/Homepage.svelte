@@ -114,6 +114,22 @@
   const INTRO_DURATION = 1200;
   const ICON_TRIGGER_SCROLL = 100;
   const ICON_TRAVEL_DURATION = 760;
+  const MOLDOVA_TIMEZONE = "Europe/Chisinau";
+
+  const moldovaTimeFormatter = new Intl.DateTimeFormat("en-GB", {
+    timeZone: MOLDOVA_TIMEZONE,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  });
+
+  const moldovaPartsFormatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: MOLDOVA_TIMEZONE,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZoneName: "short"
+  });
 
   let heroIconAnchor;
   let targetIconAnchor;
@@ -130,6 +146,8 @@
   let contentRoot;
   let scrolled = false;
   let hintVisible = false;
+  let moldovaTime = "";
+  let moldovaZone = "";
 
 
   $: orderedSkills = [...skills].sort((a, b) => {
@@ -219,6 +237,14 @@
     iconReady = true;
   };
 
+  const updateMoldovaTime = () => {
+    const now = new Date();
+    const parts = moldovaPartsFormatter.formatToParts(now);
+
+    moldovaTime = moldovaTimeFormatter.format(now);
+    moldovaZone = parts.find((part) => part.type === "timeZoneName")?.value ?? "EET";
+  };
+
   onMount(() => {
     // Initialize Easter eggs
     injectEasterEggStyles();
@@ -239,6 +265,8 @@
     let revealObserver;
 
     let ticking = false;
+    let moldovaTickTimeout;
+    let moldovaTickInterval;
 
     const requestUpdate = () => {
       if (ticking) return;
@@ -302,6 +330,12 @@
       introRafId = requestAnimationFrame(trackDuringIntro);
     });
 
+    updateMoldovaTime();
+    moldovaTickTimeout = window.setTimeout(() => {
+      updateMoldovaTime();
+      moldovaTickInterval = window.setInterval(updateMoldovaTime, 60_000);
+    }, 60_000 - (Date.now() % 60_000));
+
     const introTimer = window.setTimeout(() => {
       introDone = true;
       cancelAnimationFrame(introRafId);
@@ -330,6 +364,8 @@
       if (iconTravelRafId) {
         cancelAnimationFrame(iconTravelRafId);
       }
+      window.clearTimeout(moldovaTickTimeout);
+      window.clearInterval(moldovaTickInterval);
       window.clearTimeout(introTimer);
       window.clearTimeout(hintTimer);
     };
@@ -341,7 +377,7 @@
 <div class="relative grid h-screen w-full place-items-center overflow-hidden px-4">
   <div class="relative inline-block">
     <h1
-      class="hero-name text-center text-5xl leading-none sm:text-7xl transition-all"
+      class="hero-name text-center text-5xl leading-none sm:text-7xl -ml-12.5 sm:ml-0 transition-all"
       data-easter-hero-name
       title="Try clicking me"
     >
@@ -383,11 +419,13 @@
 
   <!-- Intro -->
   <div class="flex flex-col items-center justify-center gap-12 w-full">
-    <h1 class="text-3xl text-center" data-reveal style="--reveal-delay: 600ms;"><i>Jr. Software Engineer & OSS Contributor</i>, based in <span
-      class="font-extralight">Moldova.</span></h1>
+    <h1 class="text-3xl text-center" data-reveal style="--reveal-delay: 600ms;">
+      <i>Software Engineer & OSS Contributor</i>, based in <span class="font-extralight">Moldova.</span>
+    </h1>
 
-    <p class="text-2xl text-center max-w-[80%]" data-reveal style="--reveal-delay: 1000ms;">Focused on delivering intuitive and visually appealing web experiences
-      through <i>clean, minimalist design</i>.</p>
+    <p class="text-2xl text-center max-w-[80%]" data-reveal style="--reveal-delay: 1000ms;">
+      Focused on delivering intuitive and visually appealing web experiences through <i>clean, minimalist design</i>.
+    </p>
 
     <hr class="divider w-full" />
   </div>
@@ -487,6 +525,15 @@
   <!-- Contact -->
   <div class="flex flex-col items-center justify-center gap-12 w-full" data-reveal style="--reveal-delay: 210ms;">
     <h3 class="italic text-xl">Contact</h3>
+    <p
+      class="local-time-line"
+      aria-live="polite"
+      aria-label={moldovaTime ? `Current local time in Chișinău is ${moldovaTime} ${moldovaZone}` : "Loading local time in Chișinău"}
+    >
+      <span class="local-time-value animate-pulse">{moldovaTime || "--:--"}</span>
+      <span aria-hidden="true" class="opacity-60">·</span>
+      <span class="text-xs font-extralight uppercase opacity-70">({moldovaZone || "EET"})</span>
+    </p>
     <div class="flex flex-row flex-wrap gap-6 items-center justify-center">
       <p class="text-lg text-center">
         <b>Blog:</b> <a href="/blog" class="micro-link font-extralight italic">/blog</a>
@@ -496,6 +543,10 @@
         <a href="https://github.com/GabsEdits" class="micro-link font-extralight italic">gabsedits</a>
       </p>
       <p class="text-lg text-center">
+        <b>Discord:</b>
+        <a href="https://discord.com/users/841649648606249021" class="micro-link font-extralight italic">gabsme</a>
+      </p>
+      <p class="text-lg text-center">
         <b>Email:</b> <a href="mailto:me@gxbs.dev" class="micro-link font-extralight italic">me@gxbs.dev</a>
       </p>
       <p class="text-lg text-center">
@@ -503,6 +554,18 @@
         <a href="https://keyoxide.com" class="micro-link font-extralight italic">me@gxbs.dev</a>
       </p>
     </div>
+
+    <a href="/partnerships"
+       class="group flex items-center gap-3 px-5 py-2.5 mt-2 border border-gray-900/10 dark:border-white/10 rounded-full transition-all hover:bg-gray-900/5 dark:hover:bg-white/5 cursor-pointer text-xs font-extralight uppercase tracking-[0.15em] opacity-75 hover:opacity-100"
+       style="text-decoration: none; --reveal-delay: 1100ms;"
+       data-reveal>
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sienna opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-sienna-600"></span>
+      </span>
+      <span>Interested in working together?</span>
+      <span class="font-serif text-sm italic lowercase tracking-normal transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+    </a>
 
     <hr class="divider w-full" />
   </div>
@@ -584,6 +647,24 @@
     border-radius: 0.8rem;
     margin-inline: -0.4rem;
     padding: 0.4rem;
+  }
+
+  .local-time-line {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: -0.25rem;
+    margin-bottom: -0.15rem;
+  }
+
+  .local-time-value {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
   }
 
   .micro-link {

@@ -51,7 +51,8 @@
 
 @theme {
     --font-serif: "PPEditorialNew", "Times New Roman", serif;
-    --sienna: #A34D32;
+    --color-sienna: #ED7B58;
+    --color-sienna-600: #A34D32;
     --bone: #FDFDFB;
     --carbon: #1A1A1A;
 }

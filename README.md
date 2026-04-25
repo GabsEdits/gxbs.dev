@@ -1,43 +1,136 @@
-# Astro Starter Kit: Minimal
+# gxbs.dev (ethos)
 
-```sh
-pnpm create astro@latest -- --template minimal
+Personal site and studio portal built with Astro + Svelte.
+
+## Overview
+
+This repository powers a content-first website with:
+
+- a homepage (`/`)
+- a commissions/partnerships experience (`/partnerships`)
+- a markdown-driven blog (`/blog` and `/blog/[slug]`)
+- a private studio gate and session dashboard (`/studio`, `/studio/[session]`)
+
+The project uses Astro for routing/rendering, Svelte for interactive UI, and Tailwind CSS v4 for styling.
+
+## Tech Stack
+
+- Astro 6
+- Svelte 5 (`@astrojs/svelte`)
+- Tailwind CSS 4 + `@tailwindcss/typography`
+- TypeScript
+- Node adapter (`@astrojs/node`) in `standalone` mode
+- Markdown parsing in blog detail pages via `gray-matter` + `marked`
+
+## Requirements
+
+- Node.js `>=22.12.0` (enforced in `package.json`)
+- pnpm (recommended, lockfile is included)
+
+## Quick Start
+
+```bash
+pnpm install
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Then open `http://localhost:4321`.
 
-## 🚀 Project Structure
+## Available Scripts
 
-Inside of your Astro project, you'll see the following folders and files:
+From `package.json`:
+
+- `pnpm dev` - start local dev server
+- `pnpm build` - create production build
+- `pnpm preview` - preview the production build locally
+- `pnpm astro -- <command>` - run Astro CLI commands directly
+
+## Project Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+gxbs.dev/
+  public/                  # static assets (images, favicons, fonts)
+  src/
+    components/            # Svelte/Astro UI components
+    content/blog/          # markdown blog posts
+    layouts/               # shared Astro layouts
+    pages/                 # file-based routes
+    styles/global.css      # Tailwind import + theme + font faces
+    utils/                 # utility modules
+  astro.config.mjs         # Astro config + Node adapter + Tailwind Vite plugin
+  svelte.config.js         # Svelte preprocess config
+  src/content.config.ts    # content collection schema
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Content and Blog Workflow
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Blog posts live in `src/content/blog/*.md` and are rendered by:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- listing page: `src/pages/blog/index.astro`
+- detail page: `src/pages/blog/[slug].astro`
 
-## 🧞 Commands
+Use this frontmatter shape:
 
-All commands are run from the root of the project, from a terminal:
+```yaml
+---
+title: My Post Title
+date: 2026-04-25
+tags:
+  - astro
+  - svelte
+draft: false
+---
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Notes:
 
-## 👀 Want to learn more?
+- `draft: true` posts are hidden from `/blog` and redirected away on detail pages.
+- The slug is derived from the markdown filename.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Environment Variables
+
+Create a local env file before using the commissions form integration:
+
+```bash
+cat > .env <<'EOF'
+VITE_TOKEN=your_telegram_bot_token
+EOF
+```
+
+The commissions form (`src/components/Commissions.svelte`) sends submissions to Telegram using this token.
+
+If you do not set `VITE_TOKEN`, the partnerships form submission will fail.
+
+## Studio Routes
+
+- `src/pages/studio/index.astro`: access gate view
+- `src/pages/studio/[session].astro`: session-based dashboard route (`prerender = false`)
+
+Current behavior in `src/components/studio/StudioDashboard.svelte`:
+
+- `DEV_MODE` is set to `true`, so mock data is used.
+- Set `DEV_MODE` to `false` to fetch real data from `https://api.gxbs.dev/api/studio/${uuid}`.
+
+## Styling and Assets
+
+- Global styles: `src/styles/global.css`
+- Typography plugin enabled for rich markdown rendering
+- Custom `PPEditorialNew` font files are loaded from `public/fonts/`
+
+## Build and Deployment
+
+Build for production:
+
+```bash
+pnpm build
+```
+
+This project uses the Astro Node adapter in standalone mode (`astro.config.mjs`), suitable for Node hosting platforms.
+
+Typical deployment flow:
+
+1. Install dependencies
+2. Run `pnpm build`
+3. Run the generated Node server output from `dist/`
+
+If your platform supports Astro directly, follow its Astro Node adapter deployment docs and point it to this repository.
