@@ -1,0 +1,73 @@
+---
+import BlogHeader from "../../components/BlogHeader.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+type BlogModule = {
+  frontmatter: {
+	title: string;
+	date: string | Date;
+	tags?: string[];
+	draft?: boolean;
+  };
+};
+
+const postModules = import.meta.glob("../../content/blog/*.md", { eager: true });
+
+const posts = Object.entries(postModules)
+  .map(([path, module]) => {
+	const post = module as BlogModule;
+
+	return {
+	  slug: path.split("/").pop()?.replace(/\.md$/, "") ?? "",
+	  title: post.frontmatter.title,
+	  date: new Date(post.frontmatter.date),
+	  tags: post.frontmatter.tags ?? [],
+	  draft: post.frontmatter.draft ?? false
+	};
+  })
+  .filter((post) => !post.draft)
+  .sort((a, b) => b.date.getTime() - a.date.getTime());
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat("en", {
+	month: "short",
+	day: "numeric",
+	year: "numeric"
+  }).format(date);
+---
+
+<SiteLayout title="Blog">
+  <main class="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-16 px-4 py-10 font-serif sm:px-6 lg:py-16">
+	<BlogHeader />
+
+	<section class="mx-auto flex w-full max-w-4xl flex-col items-center gap-16">
+	  <h1 class="italic text-xl">Posts</h1>
+
+	  {
+		posts.length > 0 ? (
+		  <ul class="flex w-full flex-col gap-4">
+			{posts.map((post) => (
+			  <li class="flex flex-row justify-between items-center self-stretch w-full gap-6">
+				<div class="flex min-w-0 w-full flex-col items-start gap-2">
+				  <a href={`/blog/${post.slug}/`} class="text-xl font-extrabold italic underline">
+					{post.title}
+				  </a>
+				  <p class="text-lg font-extralight">{formatDate(post.date)}</p>
+				</div>
+
+				<p class="text-lg font-extralight text-right">
+				  {post.tags.join(" · ")}
+				</p>
+			  </li>
+			))}
+		  </ul>
+		) : (
+		  <p class="text-center text-lg font-extralight">No posts yet.</p>
+		)
+	  }
+	</section>
+  </main>
+</SiteLayout>
+
+
+

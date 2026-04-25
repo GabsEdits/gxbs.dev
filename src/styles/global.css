@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+    font-family: "PPEditorialNew";
+    src: url("/fonts/PPEditorialNew-Ultralight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPEditorialNew";
+    src: url("/fonts/PPEditorialNew-UltralightItalic.otf") format("opentype");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPEditorialNew";
+    src: url("/fonts/PPEditorialNew-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPEditorialNew";
+    src: url("/fonts/PPEditorialNew-Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPEditorialNew";
+    src: url("/fonts/PPEditorialNew-Ultrabold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPEditorialNew";
+    src: url("/fonts/PPEditorialNew-UltraboldItalic.otf") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@theme {
+    --font-serif: "PPEditorialNew", "Times New Roman", serif;
+    --sienna: #A34D32;
+    --bone: #FDFDFB;
+    --carbon: #1A1A1A;
+}
+
+:root {
+    --font-serif: "PPEditorialNew", "Times New Roman", serif;
+    --sienna: #A34D32;
+    --bone: #FDFDFB;
+    --carbon: #1A1A1A;
+}
+
+body {
+    background-color: var(--bone);
+    color: var(--carbon);
+    font-family: "PPEditorialNew", "Times New Roman", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: oklch(14.7% 0.004 49.25);
+        color: var(--bone);
+    }
+}
