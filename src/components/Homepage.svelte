@@ -407,7 +407,7 @@
   <img
     src="/ecliptic.svg"
     alt=""
-    class="h-5.25 w-11.25 dark:invert"
+    class="h-5.25 w-11.25 dark:invert hover:animate-spin"
     class:hero-icon-intro={!reduceMotion}
   />
 </div>
@@ -447,7 +447,7 @@
               <p class="text-lg">{item.position}</p>
             </div>
           </div>
-          <p class="text-lg font-extralight text-left sm:text-right">{item.startDate} - <br>{item.endDate}</p>
+          <p class="text-lg font-normal font-sans text-left sm:text-right">{item.startDate} - <br>{item.endDate}</p>
         </li>
       {/each}
     </ul>
@@ -469,7 +469,7 @@
               <p class="text-lg">{item.description}</p>
             </div>
           </div>
-          <p class="text-lg font-extralight text-left sm:text-right">{item.date}</p>
+          <p class="text-lg font-normal font-sans text-left sm:text-right">{item.date}</p>
         </li>
       {/each}
     </ul>
@@ -497,7 +497,7 @@
               <p class="text-lg">{item.description}</p>
             </div>
           </div>
-          <p class="text-lg font-extralight text-left sm:text-right">{item.date}</p>
+          <p class="text-lg font-normal font-sans text-left sm:text-right">{item.date}</p>
         </li>
       {/each}
     </ul>
@@ -509,7 +509,7 @@
   <!-- Skills -->
   <div class="flex flex-col items-center justify-center gap-12 w-full" data-reveal style="--reveal-delay: 160ms;">
     <h3 class="italic text-xl">Skills</h3>
-    <p class="text-lg text-center">
+    <p class="text-lg text-center font-normal font-sans">
       {#each skillLines as line, lineIndex}
         {#each line as skill, index}
           <span class="ml-1" class:font-bold={boldSkills.has(skill)}>{skill}</span>
@@ -536,27 +536,27 @@
     </p>
     <div class="flex flex-row flex-wrap gap-6 items-center justify-center">
       <p class="text-lg text-center">
-        <b>Blog:</b> <a href="/blog" class="micro-link font-extralight italic">/blog</a>
+        <b>Blog:</b> <a href="/blog" class="micro-link font-extralight font-sans italic">/blog</a>
       </p>
       <p class="text-lg text-center">
         <b>GitHub:</b>
-        <a href="https://github.com/GabsEdits" class="micro-link font-extralight italic">gabsedits</a>
+        <a href="https://github.com/GabsEdits" class="micro-link font-extralight font-sans italic">gabsedits</a>
       </p>
       <p class="text-lg text-center">
         <b>Discord:</b>
-        <a href="https://discord.com/users/841649648606249021" class="micro-link font-extralight italic">gabsme</a>
+        <a href="https://discord.com/users/841649648606249021" class="micro-link font-extralight font-sans italic">gabsme</a>
       </p>
       <p class="text-lg text-center">
-        <b>Email:</b> <a href="mailto:me@gxbs.dev" class="micro-link font-extralight italic">me@gxbs.dev</a>
+        <b>Email:</b> <a href="mailto:me@gxbs.dev" class="micro-link font-extralight font-sans italic">me@gxbs.dev</a>
       </p>
       <p class="text-lg text-center">
         <b>Keyoxide:</b>
-        <a href="https://keyoxide.com" class="micro-link font-extralight italic">me@gxbs.dev</a>
+        <a href="https://keyoxide.com" class="micro-link font-extralight font-sans italic">me@gxbs.dev</a>
       </p>
     </div>
 
     <a href="/partnerships"
-       class="group flex items-center gap-3 px-5 py-2.5 mt-2 border border-gray-900/10 dark:border-white/10 rounded-full transition-all hover:bg-gray-900/5 dark:hover:bg-white/5 cursor-pointer text-xs font-extralight uppercase tracking-[0.15em] opacity-75 hover:opacity-100"
+       class="group flex items-center gap-3 px-5 py-2.5 mt-2 border border-gray-900/10 dark:border-white/10 rounded-full transition-all hover:bg-gray-900/5 dark:hover:bg-white/5 cursor-pointer text-xs font-medium font-sans uppercase opacity-75 hover:opacity-100"
        style="text-decoration: none; --reveal-delay: 1100ms;"
        data-reveal>
       <span class="relative flex h-2 w-2">

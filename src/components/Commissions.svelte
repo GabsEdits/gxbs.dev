@@ -114,7 +114,10 @@
       const res = await fetch("https://api.gxbs.dev/hire/slots", {
         headers: { "X-Source": "Cloudflare-Workers" }
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        slotsError = true;
+        return;
+      }
       const data = await res.json();
       const map = {};
       for (const slot of data) map[slot.name.replace(/\s+/g, "").toLowerCase()] = slot;
@@ -268,7 +271,7 @@
     </div>
 
     <div
-      class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm"
+      class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-sans text-sm"
       aria-live="polite"
       data-reveal style="--reveal-delay: 120ms;"
     >
@@ -302,9 +305,9 @@
   <div class="flex flex-col items-center gap-12 w-full" data-reveal>
 
     <div class="flex flex-col items-center gap-2 text-center">
-      <p class="text-xs font-extralight uppercase tracking-[0.22em] opacity-45">Blueprint</p>
+      <p class="text-xs font-sans font-medium uppercase tracking-[0.22em] opacity-45">Blueprint</p>
       <h2 class="text-3xl italic">Define your scope</h2>
-      <p class="text-sm font-extralight opacity-55 mt-1">
+      <p class="mt-1 text-sm font-sans font-light opacity-55">
         Configure your stack below to generate a tailored estimate.
       </p>
     </div>
@@ -335,7 +338,7 @@
             <button type="button" class="scale-btn"
                     class:active={builderScale === key}
                     on:click={() => builderScale = key}>
-              <span class="font-extrabold italic min-w-[7rem]">{label}</span>
+              <span class="min-w-28 font-extrabold italic">{label}</span>
               <span class="scale-desc">{desc}</span>
             </button>
           {/each}
@@ -390,14 +393,14 @@
     <div class="w-full flex flex-col items-center gap-6 pt-2">
       <hr class="divider w-full" />
 
-      <div class="flex flex-col items-center gap-1 min-h-[3.5rem] justify-center">
+      <div class="flex min-h-14 flex-col items-center justify-center gap-1">
         {#if startingPrice !== null}
-          <p class="text-xs font-extralight uppercase tracking-[0.2em] opacity-45">
+          <p class="text-xs font-sans font-medium uppercase tracking-[0.2em] opacity-45">
             {priceIsExact ? "Estimated investment" : "Investment starting from"}
           </p>
           <p class="price-display">{startingPrice}<span class="price-display-unit">€</span></p>
         {:else}
-          <p class="text-sm font-extralight italic opacity-40">Select parameters above for a precise estimate</p>
+          <p class="font-sans text-sm font-light italic opacity-40">Select parameters above for a precise estimate</p>
         {/if}
       </div>
 
@@ -482,7 +485,7 @@
 
   <div class="flex flex-col items-center gap-6 w-full pb-4 text-center" data-reveal>
     <h3 class="italic text-xl">Have a unique proposition?</h3>
-    <p class="text-base font-extralight max-w-[72%] leading-relaxed">
+    <p class="max-w-[72%] font-sans text-base font-light leading-relaxed">
       Bypass the builder and detail your specific technical requirements directly.
     </p>
     <button class="commission-btn commission-btn-filled" on:click={openForm}>
@@ -495,14 +498,24 @@
 
 
 {#if showForm}
-  <div class="form-overlay" on:click={closeForm} role="dialog" aria-modal="true" aria-label="Commission request form" tabindex="-1">
-    <div class="form-panel" on:click|stopPropagation>
+  <div
+    class="form-overlay"
+    on:click|self={closeForm}
+    on:keydown={(event) => {
+      if (event.key === "Escape") closeForm();
+    }}
+    role="dialog"
+    aria-modal="true"
+    aria-label="Commission request form"
+    tabindex="-1"
+  >
+    <div class="form-panel">
       <button class="form-close" on:click={closeForm} aria-label="Close">x</button>
 
       <div class="flex flex-col gap-6 w-full">
         <div>
           <h2 class="text-2xl italic font-extrabold">Project Initiation</h2>
-          <p class="text-sm font-extralight mt-1.5 opacity-55 leading-snug">I will review and reply within 24 hours.</p>
+          <p class="mt-1.5 font-sans text-sm font-light opacity-55 leading-snug">I will review and reply within 24 hours.</p>
         </div>
 
         <form on:submit|preventDefault={sendForm} class="flex flex-col gap-5 w-full" novalidate>
@@ -597,53 +610,38 @@
     background-color: #e5e7eb;
   }
 
-  .micro-link { position:relative; text-decoration:none; }
-  .micro-link::after {
-    content:""; position:absolute; left:0; bottom:-0.08em;
-    width:100%; height:1px; background:currentColor;
-    transform:scaleX(0); transform-origin:left;
-    transition:transform 260ms cubic-bezier(0.19,1,0.22,1);
-  }
-  .micro-link:hover::after,
-  .micro-link:focus-visible::after { transform:scaleX(1); }
-
   .slot-count {
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
     font-size:0.72rem; font-variant-numeric:tabular-nums;
-    font-style:italic; opacity:0.4;
+    font-style:normal; font-weight:500; letter-spacing:0.04em; opacity:0.5;
   }
   .slot-full .slot-count { color:#A34D32; opacity:1; }
 
-  .price { font-style:italic; font-weight:800; color:#A34D32; }
-
   .price-display {
+    font-family:"PPEditorialNew", "Times New Roman", serif;
     font-size:3rem; font-style:italic; font-weight:800;
     color:#A34D32; font-variant-numeric:tabular-nums;
     line-height:1; letter-spacing:-0.03em;
   }
-  .price-display-unit { font-size:1.5rem; margin-left:0.1em; }
-
-  .price-rows { display:flex; flex-direction:column; gap:0; }
-  .price-row {
-    display:flex; justify-content:space-between; align-items:center;
-    padding:0.55rem 0;
-    border-bottom:1px solid rgba(17,24,39,0.05);
+  .price-display-unit {
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
+    font-size:1.1rem; font-style:normal; font-weight:500;
+    margin-left:0.18em; letter-spacing:0.08em; vertical-align:top;
   }
-  .price-row:last-child { border-bottom:none; }
 
   .info-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem; }
   .info-list li {
-    font-size:0.9375rem; font-weight:200; padding-left:1.1rem;
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
+    font-size:0.9375rem; font-weight:300; padding-left:1.1rem;
     position:relative; line-height:1.6;
   }
   .info-list li::before { content:"–"; position:absolute; left:0; opacity:0.3; }
 
-  .svc { display:flex; flex-direction:column; gap:1.25rem; width:100%; }
-  .svc-head { display:flex; flex-direction:column; }
-
   .builder-group { display:flex; flex-direction:column; gap:0.7rem; width:100%; }
   .builder-dimmed { opacity:0.25; pointer-events:none; user-select:none; transition:opacity 240ms; }
   .builder-label {
-    font-size:0.72rem; font-weight:800; font-style:italic;
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
+    font-size:0.72rem; font-weight:600; font-style:normal;
     text-transform:uppercase; letter-spacing:0.16em; opacity:0.4;
   }
 
@@ -655,9 +653,10 @@
   .faq-item summary { list-style:none; }
   .faq-item summary::-webkit-details-marker { display:none; }
   .faq-q {
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
     display:flex; justify-content:space-between; align-items:center;
     padding:1rem 0;
-    font-style:italic; font-weight:800; font-size:0.9375rem;
+    font-style:normal; font-weight:600; font-size:0.9375rem; letter-spacing:0.01em;
     cursor:pointer; gap:1rem;
     transition:opacity 160ms;
   }
@@ -670,27 +669,28 @@
   details[open] .faq-q::after { content:"–"; }
   .faq-a {
     padding:0 0 1rem 0;
-    font-size:0.9375rem; font-weight:200; line-height:1.7; opacity:0.7;
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
+    font-size:0.9375rem; font-weight:300; line-height:1.7; opacity:0.72;
   }
 
   .scale-btn {
     display:flex; align-items:center; gap:1rem;
     padding:0.8rem 1rem;
     border:1px solid rgba(17,24,39,0.1); background:transparent;
-    font-family:inherit; font-size:1rem; cursor:pointer; border-radius:0;
+    font-family:"PPNeueMontreal", "Inter", sans-serif; font-size:1rem; cursor:pointer; border-radius:0;
     color:inherit; text-align:left; width:100%;
     transition:border-color 160ms, background 160ms, color 160ms;
   }
   .scale-btn:hover { border-color:rgba(17,24,39,0.35); }
   .scale-btn.active { background:#1A1A1A; border-color:#1A1A1A; color:#FDFDFB; }
-  .scale-desc { font-size:0.8125rem; font-weight:200; opacity:0.5; }
+  .scale-desc { font-family:"PPNeueMontreal", "Inter", sans-serif; font-size:0.8125rem; font-weight:300; opacity:0.5; }
   .scale-btn.active .scale-desc { opacity:0.65; }
 
   .addon-btn {
     display:flex; align-items:center; gap:0.85rem;
     padding:0.7rem 0.9rem;
     border:1px solid rgba(17,24,39,0.1); background:transparent;
-    font-family:inherit; cursor:pointer; border-radius:0;
+    font-family:"PPNeueMontreal", "Inter", sans-serif; cursor:pointer; border-radius:0;
     color:inherit; text-align:left; width:100%;
     transition:border-color 160ms, background 160ms;
   }
@@ -710,19 +710,21 @@
   .toggle-btn {
     flex:1; min-width:72px; padding:0.55rem 0.85rem;
     border:1px solid rgba(17,24,39,0.12); background:transparent;
-    font-family:inherit; font-size:0.875rem; font-weight:200;
-    font-style:italic; cursor:pointer; border-radius:0; color:inherit;
+    font-family:"PPNeueMontreal", "Inter", sans-serif; font-size:0.875rem; font-weight:400;
+    font-style:normal; cursor:pointer; border-radius:0; color:inherit;
+    letter-spacing:0.01em;
     transition:border-color 160ms, background 160ms, color 160ms, font-weight 160ms;
   }
   .toggle-btn:hover { border-color:rgba(17,24,39,0.4); }
-  .toggle-btn.active { background:#1A1A1A; border-color:#1A1A1A; color:#FDFDFB; font-weight:800; }
+  .toggle-btn.active { background:#1A1A1A; border-color:#1A1A1A; color:#FDFDFB; font-weight:600; }
 
   .toggle-btn-stacked {
     display:flex; flex-direction:column; gap:0.15rem;
     text-align:center; padding:0.65rem 0.85rem;
   }
   .toggle-sub {
-    font-size:0.675rem; opacity:0.45; font-weight:200;
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
+    font-size:0.675rem; opacity:0.45; font-weight:300;
     font-style:normal; letter-spacing:0.04em;
   }
   .toggle-btn.active .toggle-sub { opacity:0.6; }
@@ -731,17 +733,17 @@
     display:inline-flex; align-items:center; justify-content:center;
     padding:0.75rem 1.75rem;
     border:1px solid currentColor; background:transparent;
-    font-family:inherit; font-style:italic; font-weight:400;
-    font-size:0.9375rem; cursor:pointer; border-radius:0;
+    font-family:"PPNeueMontreal", "Inter", sans-serif; font-style:normal; font-weight:500;
+    font-size:0.8rem; cursor:pointer; border-radius:0;
     transition:background 200ms, color 200ms, border-color 200ms;
-    letter-spacing:0.01em;
+    letter-spacing:0.12em; text-transform:uppercase;
   }
   .commission-btn:hover:not(:disabled),
   .commission-btn:focus-visible:not(:disabled) {
     background:#1A1A1A; color:#FDFDFB; border-color:#1A1A1A;
   }
   .commission-btn.commission-btn-filled {
-    background:#1A1A1A; color:#FDFDFB; border-color:#1A1A1A; font-weight:800;
+    background:#1A1A1A; color:#FDFDFB; border-color:#1A1A1A; font-weight:600;
   }
   .commission-btn.commission-btn-filled:hover:not(:disabled) {
     background:#A34D32; border-color:#A34D32;
@@ -770,20 +772,22 @@
 
   .form-close {
     position:absolute; top:1rem; right:1.25rem;
-    background:none; border:none; font-size:1.35rem; font-weight:200;
+    background:none; border:none; font-family:"PPNeueMontreal", "Inter", sans-serif; font-size:1.1rem; font-weight:500;
     cursor:pointer; color:inherit; padding:0.2rem 0.4rem; opacity:0.3;
-    font-family:inherit; transition:opacity 140ms;
+    letter-spacing:0.08em; text-transform:uppercase; transition:opacity 140ms;
   }
   .form-close:hover { opacity:0.9; }
 
   .form-field { display:flex; flex-direction:column; gap:0.45rem; width:100%; }
   .form-field label,
   .form-group-label {
-    font-size:0.8rem; font-weight:800; font-style:italic; letter-spacing:0.04em;
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
+    font-size:0.75rem; font-weight:600; font-style:normal; letter-spacing:0.1em;
+    text-transform:uppercase;
   }
   .form-field input,
   .form-field textarea {
-    font-family:inherit; font-size:0.9375rem; font-weight:200;
+    font-family:"PPNeueMontreal", "Inter", sans-serif; font-size:0.9375rem; font-weight:300;
     padding:0.7rem 0.8rem;
     border:1px solid rgba(17,24,39,0.13); border-radius:0;
     background:transparent; color:inherit; outline:none; width:100%;
@@ -793,7 +797,10 @@
   .form-field textarea:focus { border-color:rgba(17,24,39,0.5); }
   .form-field textarea { resize:vertical; min-height:96px; }
 
-  .form-error { font-size:0.875rem; font-weight:200; font-style:italic; color:#A34D32; }
+  .form-error {
+    font-family:"PPNeueMontreal", "Inter", sans-serif;
+    font-size:0.875rem; font-weight:400; font-style:normal; color:#A34D32;
+  }
 
   .reveal-enabled [data-reveal] {
     opacity:0; filter:blur(2px); transform:translateY(18px);
@@ -809,7 +816,6 @@
 
   @media (prefers-color-scheme: dark) {
     .divider { background-color: oklch(26.9% 0 0); }
-    .price-row { border-bottom-color:rgba(255,255,255,0.06); }
     .faq-list { border-top-color:rgba(255,255,255,0.08); }
     .faq-item { border-bottom-color:rgba(255,255,255,0.08); }
     .scale-btn, .addon-btn, .toggle-btn { border-color:rgba(255,255,255,0.1); }
@@ -829,7 +835,7 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal-enabled [data-reveal] { opacity:1; filter:none; transform:none; transition:none; }
     .form-overlay, .form-panel { animation:none; }
-    .commission-btn, .scale-btn, .addon-btn, .toggle-btn, .micro-link::after { transition:none; }
+    .commission-btn, .scale-btn, .addon-btn, .toggle-btn { transition:none; }
   }
 
   main::before {

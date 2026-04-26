@@ -36,6 +36,19 @@ const postDate = frontmatter.date ? new Date(frontmatter.date) : new Date();
 const postTags = frontmatter.tags ?? [];
 const postHtml = await marked.parse(content);
 
+const postDescription = content
+  .replace(/```[\s\S]*?```/g, " ")
+  .replace(/`[^`]*`/g, " ")
+  .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+  .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+  .replace(/<[^>]*>/g, " ")
+  .replace(/\s+/g, " ")
+  .trim()
+  .slice(0, 180);
+
+const ogImagePath = `/og/blog/${slug}.svg`;
+const postUrl = `/blog/${slug}/`;
+
 const formatDate = (date: Date) =>
   new Intl.DateTimeFormat("en", {
     month: "short",
@@ -44,7 +57,14 @@ const formatDate = (date: Date) =>
   }).format(date);
 ---
 
-<SiteLayout title={`${postTitle} | Blog`}>
+<SiteLayout
+  title={`${postTitle} | Blog`}
+  description={postDescription}
+  image={ogImagePath}
+  url={postUrl}
+  type="article"
+  publishedTime={postDate.toISOString()}
+>
   <main class="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-16 px-4 py-10 font-serif sm:px-6 lg:py-16">
     <BlogHeader />
 
@@ -56,10 +76,10 @@ const formatDate = (date: Date) =>
         </div>
 
         <h1 class="text-center text-4xl italic">{postTitle}</h1>
-        <hr class="border-t border-b border-gray-100 w-full" />
+        <hr class="border-t border-b border-neutral-100 dark:border-neutral-800 w-full" />
       </div>
 
-      <div class="prose dark:prose-invert dark:text-white prose-neutral max-w-none text-[1.125rem] leading-8 prose-headings:italic prose-headings:font-extrabold prose-a:italic prose-a:underline prose-blockquote:italic prose-blockquote:border-l prose-blockquote:border-gray-200 prose-pre:border prose-pre:border-gray-100 prose-img:rounded-xl" set:html={postHtml}></div>
+      <div class="prose prose-p:font-sans font-medium dark:prose-invert dark:text-white prose-neutral max-w-none text-[1.125rem] leading-8 prose-headings:italic prose-headings:font-extrabold prose-hedings:font-serif prose-a:italic prose-a:underline prose-blockquote:italic prose-blockquote:border-l prose-blockquote:border-gray-200 prose-pre:border prose-blockquote:font-serif prose-pre:border-gray-100 prose-img:rounded-xl prose-figcaption:text-center prose-figcaption:text-sm" set:html={postHtml}></div>
 
       <div class="flex w-full items-center justify-end">
         <p class="font-extralight">~by <b class="font-extrabold italic">Gabs</b></p>

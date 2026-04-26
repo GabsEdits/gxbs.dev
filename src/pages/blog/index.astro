@@ -8,6 +8,7 @@ type BlogModule = {
 	date: string | Date;
 	tags?: string[];
 	draft?: boolean;
+	archived?: boolean;
   };
 };
 
@@ -22,11 +23,15 @@ const posts = Object.entries(postModules)
 	  title: post.frontmatter.title,
 	  date: new Date(post.frontmatter.date),
 	  tags: post.frontmatter.tags ?? [],
-	  draft: post.frontmatter.draft ?? false
+	  draft: post.frontmatter.draft ?? false,
+	  archived: post.frontmatter.archived ?? false
 	};
   })
-  .filter((post) => !post.draft)
+	  .filter((post) => !post.draft)
   .sort((a, b) => b.date.getTime() - a.date.getTime());
+
+const featuredPosts = posts.filter((post) => !post.archived);
+const archivedPosts = posts.filter((post) => post.archived);
 
 const formatDate = (date: Date) =>
   new Intl.DateTimeFormat("en", {
@@ -37,16 +42,16 @@ const formatDate = (date: Date) =>
 ---
 
 <SiteLayout title="Blog">
-  <main class="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-16 px-4 py-10 font-serif sm:px-6 lg:py-16">
+  <main class="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-16 px-4 py-10 sm:px-6 lg:py-16">
 	<BlogHeader />
 
 	<section class="mx-auto flex w-full max-w-4xl flex-col items-center gap-16">
 	  <h1 class="italic text-xl">Posts</h1>
 
 	  {
-		posts.length > 0 ? (
+		featuredPosts.length > 0 ? (
 		  <ul class="flex w-full flex-col gap-4">
-			{posts.map((post) => (
+			{featuredPosts.map((post) => (
 			  <li class="flex flex-row justify-between items-center self-stretch w-full gap-6">
 				<div class="flex min-w-0 w-full flex-col items-start gap-2">
 				  <a href={`/blog/${post.slug}/`} class="text-xl font-extrabold italic underline">
@@ -65,6 +70,13 @@ const formatDate = (date: Date) =>
 		  <p class="text-center text-lg font-extralight">No posts yet.</p>
 		)
 	  }
+
+	  <a
+		href="/blog/archive"
+		class="inline-flex items-center justify-center border border-current px-5 py-2 text-xs font-medium uppercase tracking-[0.12em] transition-opacity hover:opacity-70"
+	  >
+		Archive
+	  </a>
 	</section>
   </main>
 </SiteLayout>

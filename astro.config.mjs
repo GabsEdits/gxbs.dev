@@ -11,6 +11,7 @@ EventEmitter.defaultMaxListeners = 30;
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://preview.gxbs.dev',
   output: 'server',
   adapter: node({ mode: 'standalone' }),
   integrations: [svelte()],

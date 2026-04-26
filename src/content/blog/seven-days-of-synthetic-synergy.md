@@ -1,6 +1,7 @@
 ---
 title: Seven Days of Synthetic Synergy
 date: 2026-05-08
+draft: true
 tags:
   - study
 ---

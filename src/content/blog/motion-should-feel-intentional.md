@@ -1,8 +1,8 @@
 ---
 title: Motion Should Feel Intentional
 date: 2026-04-18
+draft: true
 tags:
-  - motion
   - ux
 ---
 

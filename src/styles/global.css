@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: "PPEditorialNew";
-    src: url("/fonts/PPEditorialNew-Ultralight.otf") format("opentype");
+    src: url("../../public/fonts/serif/PPEditorialNew-Ultralight.otf") format("opentype");
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: "PPEditorialNew";
-    src: url("/fonts/PPEditorialNew-UltralightItalic.otf") format("opentype");
+    src: url("../../public/fonts/serif/PPEditorialNew-UltralightItalic.otf") format("opentype");
     font-weight: 200;
     font-style: italic;
     font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
     font-family: "PPEditorialNew";
-    src: url("/fonts/PPEditorialNew-Regular.otf") format("opentype");
+    src: url("../../public/fonts/serif/PPEditorialNew-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
     font-family: "PPEditorialNew";
-    src: url("/fonts/PPEditorialNew-Italic.otf") format("opentype");
+    src: url("../../public/fonts/serif/PPEditorialNew-Italic.otf") format("opentype");
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -35,7 +35,7 @@
 
 @font-face {
     font-family: "PPEditorialNew";
-    src: url("/fonts/PPEditorialNew-Ultrabold.otf") format("opentype");
+    src: url("../../public/fonts/serif/PPEditorialNew-Ultrabold.otf") format("opentype");
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -43,14 +43,63 @@
 
 @font-face {
     font-family: "PPEditorialNew";
-    src: url("/fonts/PPEditorialNew-UltraboldItalic.otf") format("opentype");
+    src: url("../../public/fonts/serif/PPEditorialNew-UltraboldItalic.otf") format("opentype");
     font-weight: 800;
     font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPNeueMontreal";
+    src: url("../../public/fonts/sans/PPNeueMontreal-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPNeueMontreal";
+    src: url("../../public/fonts/sans/PPNeueMontreal-Book.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPNeueMontreal";
+    src: url("../../public/fonts/sans/PPNeueMontreal-Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPNeueMontreal";
+    src: url("../../public/fonts/sans/PPNeueMontreal-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPNeueMontreal";
+    src: url("../../public/fonts/sans/PPNeueMontreal-SemiBolditalic.otf") format("opentype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPNeueMontreal";
+    src: url("../../public/fonts/sans/PPNeueMontreal-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
     font-display: swap;
 }
 
 @theme {
     --font-serif: "PPEditorialNew", "Times New Roman", serif;
+    --font-sans: "PPNeueMontreal", "Inter", sans-serif;
     --color-sienna: #ED7B58;
     --color-sienna-600: #A34D32;
     --bone: #FDFDFB;
@@ -59,6 +108,7 @@
 
 :root {
     --font-serif: "PPEditorialNew", "Times New Roman", serif;
+    --font-sans: "PPNeueMontreal", "Inter", sans-serif;
     --sienna: #A34D32;
     --bone: #FDFDFB;
     --carbon: #1A1A1A;

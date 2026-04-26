@@ -12,7 +12,7 @@
 
     <a
       href="https://snugnook.org/ring"
-      class="text-xs font-extrabold italic underline cursor-pointer transition-all"
+      class="text-xs font-extrabold font-sans underline cursor-pointer transition-all"
       target="_blank"
       rel="noreferrer"
       data-easter-snug
@@ -24,6 +24,6 @@
     </a>
   </div>
 
-  <p class="text-sm font-extralight">© Gabriel <i>(Gabs)</i> Cozma, 2026</p>
+  <p class="text-sm font-sans font-medium">© Gabriel <i>(Gabs)</i> Cozma, 2026</p>
 </footer>
 
