@@ -46,7 +46,7 @@ const postDescription = content
   .trim()
   .slice(0, 180);
 
-const ogImagePath = `/og/blog/${slug}.svg`;
+const ogImagePath = `/og/blog/${slug}.png`;
 const postUrl = `/blog/${slug}/`;
 
 const formatDate = (date: Date) =>
@@ -79,7 +79,7 @@ const formatDate = (date: Date) =>
         <hr class="border-t border-b border-neutral-100 dark:border-neutral-800 w-full" />
       </div>
 
-      <div class="prose prose-p:font-sans font-medium dark:prose-invert dark:text-white prose-neutral max-w-none text-[1.125rem] leading-8 prose-headings:italic prose-headings:font-extrabold prose-hedings:font-serif prose-a:italic prose-a:underline prose-blockquote:italic prose-blockquote:border-l prose-blockquote:border-gray-200 prose-pre:border prose-blockquote:font-serif prose-pre:border-gray-100 prose-img:rounded-xl prose-figcaption:text-center prose-figcaption:text-sm" set:html={postHtml}></div>
+      <div class="prose prose-p:font-sans font-normal dark:prose-invert dark:text-white prose-neutral max-w-none text-[1.125rem] leading-8 prose-headings:italic prose-headings:font-extrabold prose-hedings:font-serif prose-a:italic prose-a:underline prose-blockquote:italic prose-blockquote:border-l prose-blockquote:border-gray-200 prose-pre:border prose-blockquote:font-serif prose-pre:border-gray-100 prose-pre:dark:border-zinc-700 prose-img:rounded-xl prose-figcaption:text-center prose-figcaption:text-sm prose-img:grayscale prose-img:transition-all prose-img:hover:grayscale-0 prose-a:font-serif" set:html={postHtml}></div>
 
       <div class="flex w-full items-center justify-end">
         <p class="font-extralight">~by <b class="font-extrabold italic">Gabs</b></p>

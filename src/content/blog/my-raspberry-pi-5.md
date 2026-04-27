@@ -125,7 +125,7 @@ Now, it was time to assemble it!
 
 ### Assembly
 
-It should take long, _right?... right?_
+It shouldn't take long, _right?... right?_
 
 Well no.
 

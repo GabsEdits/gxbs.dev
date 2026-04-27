@@ -1,6 +1,9 @@
-# gxbs.dev (ethos)
-
-Personal site and studio portal built with Astro + Svelte.
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/npm/twemoji@11.3.0/2/svg/1f33f.svg" width="64">
+  <h1>gxbs.dev (ethos)</h1>
+  <p>This is the source code of my personal website, were you're going to find my projects, who am I, and how to find me.<p>
+  <small>Powered by <a href="https://astro.build/">Astro</a></small>
+</div>
 
 ## Overview
 

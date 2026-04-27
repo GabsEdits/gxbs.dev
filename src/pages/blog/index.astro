@@ -31,7 +31,6 @@ const posts = Object.entries(postModules)
   .sort((a, b) => b.date.getTime() - a.date.getTime());
 
 const featuredPosts = posts.filter((post) => !post.archived);
-const archivedPosts = posts.filter((post) => post.archived);
 
 const formatDate = (date: Date) =>
   new Intl.DateTimeFormat("en", {

@@ -8,6 +8,7 @@ interface Props {
   url?: string;
   type?: "website" | "article";
   publishedTime?: string;
+  bodyClass?: string;
 }
 
 const {
@@ -16,7 +17,8 @@ const {
   image,
   url,
   type = "website",
-  publishedTime
+  publishedTime,
+  bodyClass = "container mx-auto max-w-150 p-4 flex flex-col gap-12 items-center lg:py-24 font-serif"
 } = Astro.props;
 
 const siteOrigin = Astro.site?.toString() ?? "https://gxbs.dev";
@@ -48,7 +50,7 @@ const twitterCard = imageUrl ? "summary_large_image" : "summary";
 	<meta name="twitter:description" content={description} />
 	{imageUrl && <meta name="twitter:image" content={imageUrl} />}
   </head>
-  <body class="container mx-auto max-w-150 p-4 flex flex-col gap-12 items-center lg:py-24 font-serif">
+  <body class={bodyClass}>
 	<slot />
   </body>
 </html>
