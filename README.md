@@ -118,7 +118,7 @@ Current behavior in `src/components/studio/StudioDashboard.svelte`:
 
 - Global styles: `src/styles/global.css`
 - Typography plugin enabled for rich markdown rendering
-- Custom `PPEditorialNew` font files are loaded from `public/fonts/`
+- Custom `PPEditorialNew` & `PPNeueMontreal` font files are loaded from `public/fonts/`
 
 ## Build and Deployment
 
