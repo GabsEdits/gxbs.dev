@@ -56,7 +56,7 @@
       title: "Moldsef - III Place",
       link: "https://ance.gov.md/sites/default/files/document/attachments/mold_sef_2026_premianti.pdf",
       description: "Competition",
-      date: "May. 25'"
+      date: "Feb. 26'"
     }
   ];
 
