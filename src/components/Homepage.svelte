@@ -594,12 +594,12 @@
     <hr class="divider w-full" />
   </div>
 
-  <!-- Sponsors -->
+  <!-- Friends -->
   <div class="flex flex-col items-center justify-center gap-12 w-full" data-reveal style="--reveal-delay: 260ms;">
     <h3 class="italic text-xl">Backed by</h3>
     <div class="flex w-full flex-wrap items-center justify-center gap-6 sm:gap-12">
       <a
-        class="micro-link sponsor-link text-center text-2xl font-extrabold italic sm:text-3xl"
+        class="micro-link partner-link text-center text-2xl font-extrabold italic sm:text-3xl"
         href="https://bromb.in"
         target="_blank"
         rel="noreferrer"
@@ -607,7 +607,7 @@
         bromb.in
       </a>
       <a
-        class="micro-link sponsor-link text-center text-2xl font-extrabold italic sm:text-3xl"
+        class="micro-link partner-link text-center text-2xl font-extrabold italic sm:text-3xl"
         href="https://tuta.com"
         target="_blank"
         rel="noreferrer"
@@ -615,7 +615,7 @@
         tuta.com
       </a>
       <a
-        class="micro-link sponsor-link text-center text-2xl font-extrabold italic sm:text-3xl"
+        class="micro-link partner-link text-center text-2xl font-extrabold italic sm:text-3xl"
         href="https://daudix.one"
         target="_blank"
         rel="noreferrer"
@@ -828,12 +828,12 @@
     transform: translateX(3px);
   }
 
-  .sponsor-link {
+  .partner-link {
     transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .sponsor-link:hover,
-  .sponsor-link:focus-visible {
+  .partner-link:hover,
+  .partner-link:focus-visible {
     transform: translateY(-2px) scale(1.02);
   }
 
