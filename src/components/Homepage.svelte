@@ -679,6 +679,7 @@
     transition: opacity 280ms ease;
   }
 
+  /*
   .ecliptic-trans-overlay {
     position: absolute;
     inset: 0;
@@ -749,6 +750,7 @@
       #e28c00 100%
     );
   }
+   */
 
   .ecliptic-icon:hover .ecliptic-base,
   .ecliptic-icon:focus-visible .ecliptic-base {
