@@ -3,6 +3,8 @@
   import Footer from "./Footer.svelte";
   import { initEasterEggs, injectEasterEggStyles } from "../utils/easterEggs";
 
+  const hideAchievements = true;
+
   let workHistory = [
     {
       company: "fabricators.ltd",
@@ -475,7 +477,7 @@
         </li>
       {/each}
     </ul>
-    <ul class="flex flex-col gap-4 w-full">
+    <ul class="flex flex-col gap-4 w-full" class:hidden={hideAchievements === true}>
       {#each achievements as item, index}
         <li
           class="interactive-row flex w-full flex-col items-start justify-between gap-3 self-stretch sm:flex-row sm:items-center"
