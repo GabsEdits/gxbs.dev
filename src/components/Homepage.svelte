@@ -37,10 +37,10 @@
       date: "May. 26'"
     },
     {
-      title: "IT Spec. - HTML5 App Development",
-      link: "https://www.credly.com/badges/7b064a7b-40ae-4fa8-891f-134fda3fabb4/public_url",
-      description: "Certification",
-      date: "Oct. 24'"
+      title: "Moldsef - III Place",
+      link: "https://ance.gov.md/sites/default/files/document/attachments/mold_sef_2026_premianti.pdf",
+      description: "Competition",
+      date: "Feb. 26'"
     },
     {
       title: "IT Spec. - Databases",
@@ -49,22 +49,22 @@
       date: "Aug. 25'"
     },
     {
-      title: "GitHub Foundations",
-      link: "https://www.credly.com/badges/bed86599-e2cc-443a-87fd-856d04d1cd3f/public_url",
-      description: "Certification",
-      date: "May. 25'"
-    },
-    {
       title: "InfoMatrix - Platinum",
       link: "https://infomatrix.world",
       description: "Competition",
       date: "May. 25'"
     },
     {
-      title: "Moldsef - III Place",
-      link: "https://ance.gov.md/sites/default/files/document/attachments/mold_sef_2026_premianti.pdf",
-      description: "Competition",
-      date: "Feb. 26'"
+      title: "GitHub Foundations",
+      link: "https://www.credly.com/badges/bed86599-e2cc-443a-87fd-856d04d1cd3f/public_url",
+      description: "Certification",
+      date: "May. 25'"
+    },
+    {
+      title: "IT Spec. - HTML5 App Development",
+      link: "https://www.credly.com/badges/7b064a7b-40ae-4fa8-891f-134fda3fabb4/public_url",
+      description: "Certification",
+      date: "Oct. 24'"
     }
   ];
 
