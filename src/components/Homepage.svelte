@@ -3,7 +3,7 @@
   import Footer from "./Footer.svelte";
   import { initEasterEggs, injectEasterEggStyles } from "../utils/easterEggs";
 
-  const hideAchievements = true;
+  const hideAchievements = false;
 
   let workHistory = [
     {
@@ -30,6 +30,12 @@
   ];
 
   let achievements = [
+    {
+      title: "IT Spec. - Networking",
+      link: "https://www.credly.com/badges/7b01287e-0d47-4270-87b1-d9e03860b36a",
+      description: "Certification",
+      date: "May. 26'"
+    },
     {
       title: "IT Spec. - HTML5 App Development",
       link: "https://www.credly.com/badges/7b064a7b-40ae-4fa8-891f-134fda3fabb4/public_url",
