@@ -115,7 +115,7 @@
 }
 
 body {
-    background-color: var(--bone);
+    background-color: #F9F6F0;
     color: var(--carbon);
     font-family: "PPEditorialNew", "Times New Roman", serif;
 }
