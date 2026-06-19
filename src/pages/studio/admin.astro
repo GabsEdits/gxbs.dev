@@ -13,6 +13,11 @@ import '../../styles/global.css'
   <meta name="description" content="Internal commissions pipeline and studio invite management." />
 </head>
 <body>
+<form action="/api/studio/auth/logout?redirect=/studio/admin/login" method="post" style="position:fixed;top:1rem;right:1rem;z-index:50;">
+  <button type="submit" style="font:inherit;border:1px solid currentColor;background:transparent;padding:0.35rem 0.6rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;cursor:pointer;">
+    Sign out
+  </button>
+</form>
 <StudioDashboard client:load mode="admin" />
 </body>
 </html>

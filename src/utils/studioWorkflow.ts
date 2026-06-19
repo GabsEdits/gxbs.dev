@@ -5,11 +5,52 @@ export const COMMISSION_STATUSES = {
   DENIED: "denied",
 };
 
+export const PAYMENT_STATUSES = {
+  UNPAID: "unpaid",
+  PENDING: "pending",
+  PAID: "paid",
+};
+
+export const PAYMENT_PROVIDERS = {
+  KOFI: "kofi",
+  GITHUB_SPONSORS: "github_sponsors",
+  MANUAL: "manual",
+};
+
+export type CommissionStatus = (typeof COMMISSION_STATUSES)[keyof typeof COMMISSION_STATUSES];
+export type PaymentStatus = (typeof PAYMENT_STATUSES)[keyof typeof PAYMENT_STATUSES];
+export type PaymentProvider = (typeof PAYMENT_PROVIDERS)[keyof typeof PAYMENT_PROVIDERS];
+
+export type StudioCommission = {
+  id: string;
+  clientName: string;
+  clientEmail: string;
+  projectTitle: string;
+  offer: string;
+  tier: string;
+  status: CommissionStatus;
+  brief: string;
+  submittedAt: string;
+  updatedAt: string;
+  decisionNote: string;
+  accessCode: string;
+  sessionId: string;
+  approvedAt: string;
+  quotedAmount: number;
+  currency: string;
+  paymentStatus: PaymentStatus;
+  paymentProvider: PaymentProvider;
+  paymentUrl: string;
+  paymentReference: string;
+  paidAt: string;
+};
+
 type ApprovalMessageInput = {
   clientName: string;
   projectTitle: string;
   accessCode: string;
   studioLink: string;
+  paymentLink?: string;
 };
 
 const CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -28,23 +69,44 @@ export const createStudioSessionId = () => {
   return `s_${token}`;
 };
 
-export const buildApprovalMessage = ({ clientName, projectTitle, accessCode, studioLink }: ApprovalMessageInput) => {
-  return [
+export const buildApprovalMessage = ({ clientName, projectTitle, accessCode, studioLink, paymentLink }: ApprovalMessageInput) => {
+  const lines = [
     `Hi ${clientName},`,
     "",
     `Your project request for ${projectTitle} was approved.`,
     "",
     `Studio access code: ${accessCode}`,
     `Studio link: ${studioLink}`,
-    "",
-    "Reply to this email if you want to adjust scope before kickoff.",
-  ].join("\n");
+  ];
+
+  if (paymentLink) {
+    lines.push(`Payment link: ${paymentLink}`);
+  }
+
+  lines.push("", "Reply to this email if you want to adjust scope before kickoff.");
+  return lines.join("\n");
 };
 
-export const STUDIO_STORAGE_KEY = "gxbs.studio.commissions.v1";
+const toQuotedAmount = (tier: string) => {
+  if (tier === "Core") return 420;
+  if (tier === "Presence") return 1050;
+  if (tier === "System") return 2200;
+  return 500;
+};
 
-export const createSeedCommissions = () => [
-  {
+const withDefaults = (commission: Partial<StudioCommission> & Pick<StudioCommission, "id" | "clientName" | "clientEmail" | "projectTitle" | "offer" | "tier" | "status" | "brief" | "submittedAt" | "updatedAt" | "decisionNote" | "accessCode" | "sessionId" | "approvedAt">): StudioCommission => ({
+  ...commission,
+  quotedAmount: commission.quotedAmount ?? toQuotedAmount(commission.tier),
+  currency: commission.currency ?? "EUR",
+  paymentStatus: commission.paymentStatus ?? PAYMENT_STATUSES.UNPAID,
+  paymentProvider: commission.paymentProvider ?? PAYMENT_PROVIDERS.KOFI,
+  paymentUrl: commission.paymentUrl ?? "",
+  paymentReference: commission.paymentReference ?? "",
+  paidAt: commission.paidAt ?? "",
+});
+
+export const createSeedCommissions = (): StudioCommission[] => [
+  withDefaults({
     id: "cmp_2026_051",
     clientName: "Mara Voicu",
     clientEmail: "mara@atelier.io",
@@ -59,8 +121,8 @@ export const createSeedCommissions = () => [
     accessCode: "",
     sessionId: "",
     approvedAt: "",
-  },
-  {
+  }),
+  withDefaults({
     id: "cmp_2026_052",
     clientName: "Alex Negoita",
     clientEmail: "alex@northline.app",
@@ -75,8 +137,8 @@ export const createSeedCommissions = () => [
     accessCode: "",
     sessionId: "",
     approvedAt: "",
-  },
-  {
+  }),
+  withDefaults({
     id: "cmp_2026_053",
     clientName: "Radu Matei",
     clientEmail: "radu@habitatstudio.co",
@@ -91,8 +153,46 @@ export const createSeedCommissions = () => [
     accessCode: "N7P4Q9LM",
     sessionId: "s_28f59c6a0cbd",
     approvedAt: "2026-05-23T16:40:00.000Z",
-  },
+    paymentStatus: PAYMENT_STATUSES.PENDING,
+    paymentProvider: PAYMENT_PROVIDERS.KOFI,
+    paymentUrl: "https://ko-fi.com/gabs",
+    paymentReference: "kofi-link",
+  }),
 ];
+
+export const normalizeCommission = (commission: StudioCommission | Partial<StudioCommission>) => {
+  const legacy = commission as {
+    paypalCheckoutUrl?: string;
+    paypalOrderId?: string;
+  };
+
+  const paymentUrl = commission.paymentUrl ?? legacy.paypalCheckoutUrl ?? "";
+  const paymentReference = commission.paymentReference ?? legacy.paypalOrderId ?? "";
+
+  return withDefaults({
+    id: commission.id ?? `cmp_${Date.now()}`,
+    clientName: commission.clientName ?? "Unknown client",
+    clientEmail: commission.clientEmail ?? "",
+    projectTitle: commission.projectTitle ?? "Untitled project",
+    offer: commission.offer ?? "Design",
+    tier: commission.tier ?? "Core",
+    status: (commission.status as CommissionStatus) ?? COMMISSION_STATUSES.NEW,
+    brief: commission.brief ?? "",
+    submittedAt: commission.submittedAt ?? new Date().toISOString(),
+    updatedAt: commission.updatedAt ?? new Date().toISOString(),
+    decisionNote: commission.decisionNote ?? "",
+    accessCode: commission.accessCode ?? "",
+    sessionId: commission.sessionId ?? "",
+    approvedAt: commission.approvedAt ?? "",
+    quotedAmount: commission.quotedAmount,
+    currency: commission.currency,
+    paymentStatus: commission.paymentStatus,
+    paymentProvider: commission.paymentProvider,
+    paymentUrl,
+    paymentReference,
+    paidAt: commission.paidAt,
+  });
+};
 
 
 

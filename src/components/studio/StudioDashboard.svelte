@@ -2,17 +2,20 @@
   import { onMount } from "svelte";
   import {
     COMMISSION_STATUSES,
-    STUDIO_STORAGE_KEY,
+    PAYMENT_PROVIDERS,
+    PAYMENT_STATUSES,
     buildApprovalMessage,
     createSeedCommissions,
     createStudioAccessCode,
     createStudioSessionId,
+    normalizeCommission,
   } from "../../utils/studioWorkflow";
 
   export let uuid;
   export let mode = "client";
 
-  const DEV_MODE = true;
+  const STUDIO_API_BASE_URL = import.meta.env.PUBLIC_STUDIO_API_BASE_URL ?? "https://api.gxbs.dev";
+  const USE_MOCK_DATA = import.meta.env.DEV && import.meta.env.PUBLIC_STUDIO_USE_MOCK_DATA !== "false";
 
   let project = null;
   let loading = true;
@@ -23,12 +26,20 @@
   let decisionNote = "";
   let denialReason = "";
   let copyState = "";
+  let creatingPaymentLinkId = "";
+  let markingPaidId = "";
 
   const statusLabel = {
     [COMMISSION_STATUSES.NEW]: "New",
     [COMMISSION_STATUSES.UNDER_REVIEW]: "Under review",
     [COMMISSION_STATUSES.APPROVED]: "Approved",
     [COMMISSION_STATUSES.DENIED]: "Denied",
+  };
+
+  const paymentStatusLabel = {
+    [PAYMENT_STATUSES.UNPAID]: "Unpaid",
+    [PAYMENT_STATUSES.PENDING]: "Pending",
+    [PAYMENT_STATUSES.PAID]: "Paid",
   };
 
   const STATUS_ORDER = [
@@ -43,6 +54,9 @@
     projectName: "Project Ethos Arch",
     status: "Phase 02: Infrastructure",
     progress: 68,
+    paymentStatus: "pending",
+    paymentProvider: "kofi",
+    paymentUrl: "https://ko-fi.com/gabs",
     stagingUrl: "https://ethos-staging.gxbs.dev",
     milestones: [
       { name: "Discovery & Scope Definition", status: "Completed" },
@@ -81,80 +95,97 @@
     });
   };
 
-  const saveCommissions = () => {
-    if (mode !== "admin") return;
-    localStorage.setItem(STUDIO_STORAGE_KEY, JSON.stringify(commissions));
-  };
-
-  const loadCommissions = () => {
-    const raw = localStorage.getItem(STUDIO_STORAGE_KEY);
-    if (!raw) {
-      commissions = sortCommissions(createSeedCommissions());
-      saveCommissions();
-      return;
-    }
-
+  const loadCommissions = async () => {
     try {
-      const parsed = JSON.parse(raw);
-      commissions = sortCommissions(Array.isArray(parsed) ? parsed : createSeedCommissions());
+      const res = await fetch("/api/studio/commissions");
+      if (!res.ok) {
+        throw new Error("Failed to load commissions.");
+      }
+
+      const payload = await res.json();
+      const items = Array.isArray(payload?.commissions) ? payload.commissions : [];
+      commissions = sortCommissions(items.map(normalizeCommission));
     } catch {
       commissions = sortCommissions(createSeedCommissions());
-      saveCommissions();
+      copyState = "Admin API unavailable. Showing fallback data.";
     }
   };
 
   $: selectedCommission = commissions.find((item) => item.id === selectedCommissionId) ?? null;
 
-  const updateCommission = (id, patch) => {
-    const now = new Date().toISOString();
-    commissions = sortCommissions(
-      commissions.map((item) => {
-        if (item.id !== id) return item;
-        return { ...item, ...patch, updatedAt: now };
-      })
-    );
-    saveCommissions();
+  const updateCommission = async (id, patch) => {
+    try {
+      const res = await fetch(`/api/studio/commissions/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ patch }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to persist commission update.");
+      }
+
+      const payload = await res.json();
+      const updated = normalizeCommission(payload?.commission ?? {});
+      commissions = sortCommissions(
+        commissions.map((item) => (item.id === id ? updated : item))
+      );
+      return true;
+    } catch {
+      copyState = "Could not save changes. Try again.";
+      return false;
+    }
   };
 
-  const markUnderReview = (id) => {
-    updateCommission(id, {
+  const markUnderReview = async (id) => {
+    const ok = await updateCommission(id, {
       status: COMMISSION_STATUSES.UNDER_REVIEW,
       decisionNote: decisionNote.trim() || "Moved to review.",
     });
-    decisionNote = "";
+    if (ok) decisionNote = "";
   };
 
-  const approveCommission = (id) => {
+  const approveCommission = async (id) => {
     const accessCode = createStudioAccessCode();
     const sessionId = createStudioSessionId();
     const approvedAt = new Date().toISOString();
 
-    updateCommission(id, {
+    const ok = await updateCommission(id, {
       status: COMMISSION_STATUSES.APPROVED,
       accessCode,
       sessionId,
       approvedAt,
       decisionNote: decisionNote.trim() || "Approved. Invite generated.",
+      paymentStatus: PAYMENT_STATUSES.UNPAID,
+      paymentProvider: PAYMENT_PROVIDERS.KOFI,
+      paymentUrl: "",
+      paymentReference: "",
+      paidAt: "",
     });
 
-    decisionNote = "";
+    if (ok) decisionNote = "";
   };
 
-  const denyCommission = (id) => {
+  const denyCommission = async (id) => {
     if (!denialReason.trim()) {
       copyState = "Add a denial reason first.";
       return;
     }
 
-    updateCommission(id, {
+    const ok = await updateCommission(id, {
       status: COMMISSION_STATUSES.DENIED,
       accessCode: "",
       sessionId: "",
       approvedAt: "",
       decisionNote: denialReason.trim(),
+      paymentStatus: PAYMENT_STATUSES.UNPAID,
+      paymentProvider: PAYMENT_PROVIDERS.KOFI,
+      paymentUrl: "",
+      paymentReference: "",
+      paidAt: "",
     });
 
-    denialReason = "";
+    if (ok) denialReason = "";
   };
 
   const copyText = async (value, successMessage) => {
@@ -178,8 +209,88 @@
       projectTitle: commission.projectTitle,
       accessCode: commission.accessCode,
       studioLink: `${origin}/studio/${commission.sessionId}`,
+      paymentLink: commission.paymentUrl,
     });
     await copyText(text, "Approval message copied.");
+  };
+
+  const formatMoney = (amount, currency = "EUR") => {
+    const value = Number(amount ?? 0);
+    return new Intl.NumberFormat(undefined, {
+      style: "currency",
+      currency,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
+
+  const createPaymentLink = async (commission) => {
+    if (!commission) return;
+
+    creatingPaymentLinkId = commission.id;
+    copyState = "Creating payment link...";
+
+    try {
+      const response = await fetch("/api/studio/payment-link", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          commissionId: commission.id,
+          provider: PAYMENT_PROVIDERS.KOFI,
+          paymentUrl: "https://ko-fi.com/gabs",
+        }),
+      });
+
+      const payload = await response.json();
+      if (!response.ok || !payload.ok || !payload.paymentUrl) {
+        throw new Error(payload.error || "Could not create payment link.");
+      }
+
+      await loadCommissions();
+      selectedCommissionId = commission.id;
+
+      copyState = "Payment link generated.";
+    } catch (err) {
+      copyState = err instanceof Error ? err.message : "Failed to create payment link.";
+    } finally {
+      creatingPaymentLinkId = "";
+      window.setTimeout(() => {
+        if (copyState === "Payment link generated.") copyState = "";
+      }, 2200);
+    }
+  };
+
+  const markPaymentPaid = async (commission) => {
+    if (!commission?.paymentUrl) {
+      copyState = "Generate a payment link first.";
+      return;
+    }
+
+    markingPaidId = commission.id;
+    copyState = "Marking payment as paid...";
+
+    try {
+      const response = await fetch("/api/studio/mark-paid", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          commissionId: commission.id,
+          reference: "manual-kofi-confirmation",
+        }),
+      });
+      const payload = await response.json();
+
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.error || "Could not update payment status.");
+      }
+
+      await loadCommissions();
+      selectedCommissionId = commission.id;
+      copyState = "Payment marked as paid.";
+    } catch (err) {
+      copyState = err instanceof Error ? err.message : "Failed to mark payment as paid.";
+    } finally {
+      markingPaidId = "";
+    }
   };
 
   const copyStudioLink = async (commission) => {
@@ -189,7 +300,7 @@
 
   onMount(async () => {
     if (mode === "admin") {
-      loadCommissions();
+      await loadCommissions();
       selectedCommissionId = commissions[0]?.id ?? "";
       loading = false;
       window.setTimeout(() => {
@@ -199,11 +310,11 @@
     }
 
     try {
-      if (DEV_MODE) {
+      if (USE_MOCK_DATA) {
         await new Promise(resolve => setTimeout(resolve, 800));
         project = MOCK_DATA;
       } else {
-        const res = await fetch(`https://api.gxbs.dev/api/studio/${uuid}`);
+        const res = await fetch(`${STUDIO_API_BASE_URL}/api/studio/${uuid}`);
         if (!res.ok) throw new Error("Invalid session key");
         project = await res.json();
       }
@@ -317,6 +428,25 @@
               </div>
             </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm font-sans">
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Quoted amount</p>
+                <p class="mt-1 italic text-base">{formatMoney(selectedCommission.quotedAmount, selectedCommission.currency)}</p>
+              </div>
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Payment status</p>
+                <p class="mt-2">
+                  <span class={`status-badge status-payment-${selectedCommission.paymentStatus}`}>
+                    {paymentStatusLabel[selectedCommission.paymentStatus] ?? "Unpaid"}
+                  </span>
+                </p>
+              </div>
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Paid at</p>
+                <p class="mt-1 text-sm">{toDateLabel(selectedCommission.paidAt)}</p>
+              </div>
+            </div>
+
             {#if selectedCommission.status !== COMMISSION_STATUSES.DENIED}
               <label class="form-label" for="decision-note">Internal note</label>
               <textarea
@@ -361,9 +491,40 @@
                   <p class="text-sm mt-2 font-mono">Code: {selectedCommission.accessCode}</p>
                   <p class="text-sm mt-1 font-mono break-all">Session: /studio/{selectedCommission.sessionId}</p>
                 </div>
+                <div class="p-3 border border-gray-900/10 dark:border-white/10 bg-gray-900/[0.02] dark:bg-white/[0.02]">
+                  <p class="text-[10px] uppercase tracking-[0.2em] opacity-60">Payment link</p>
+                  <p class="text-sm mt-2 font-mono break-all">
+                    {selectedCommission.paymentUrl || "Not generated yet."}
+                  </p>
+                  <p class="text-xs mt-2 opacity-55 font-mono">Provider: {selectedCommission.paymentProvider}</p>
+                  {#if selectedCommission.paymentReference}
+                    <p class="text-xs mt-2 opacity-55 font-mono">Reference: {selectedCommission.paymentReference}</p>
+                  {/if}
+                </div>
                 <div class="flex flex-wrap gap-3">
                   <button type="button" class="system-btn" on:click={() => copyApproval(selectedCommission)}>Copy approval message</button>
                   <button type="button" class="system-btn" on:click={() => copyStudioLink(selectedCommission)}>Copy studio link</button>
+                  <button
+                    type="button"
+                    class="system-btn"
+                    disabled={creatingPaymentLinkId === selectedCommission.id}
+                    on:click={() => createPaymentLink(selectedCommission)}
+                  >
+                    {creatingPaymentLinkId === selectedCommission.id ? "Creating link..." : "Create Ko-fi link"}
+                  </button>
+                  <button
+                    type="button"
+                    class="system-btn"
+                    disabled={markingPaidId === selectedCommission.id || !selectedCommission.paymentUrl}
+                    on:click={() => markPaymentPaid(selectedCommission)}
+                  >
+                    {markingPaidId === selectedCommission.id ? "Updating..." : "Mark paid"}
+                  </button>
+                  {#if selectedCommission.paymentUrl}
+                    <a href={selectedCommission.paymentUrl} target="_blank" rel="noreferrer" class="system-btn">
+                      Open payment page →
+                    </a>
+                  {/if}
                 </div>
               </div>
             {/if}
@@ -466,6 +627,20 @@
           </a>
         </section>
 
+        {#if project.paymentUrl || project.paypalCheckoutUrl || project.paymentStatus}
+          <section class="p-6 border border-gray-900/10 dark:border-white/10" data-reveal style="--reveal-delay: 560ms;">
+            <h3 class="text-[10px] font-mono uppercase tracking-[0.2em] mb-3 opacity-55">Payment</h3>
+            <p class="text-sm font-extralight opacity-70 mb-3 leading-relaxed">
+              Status: {project.paymentStatus || "unpaid"}
+            </p>
+            {#if project.paymentUrl || project.paypalCheckoutUrl}
+              <a href={project.paymentUrl || project.paypalCheckoutUrl} target="_blank" rel="noreferrer" class="system-btn w-full">
+                Complete payment →
+              </a>
+            {/if}
+          </section>
+        {/if}
+
       </div>
 
     </div>
@@ -500,6 +675,7 @@
     :global(.status-new) {
         color: #6b7280;
     }
+
     :global(.status-under_review) {
         color: #A34D32;
         border-color: rgba(163,77,50,0.5);
@@ -511,6 +687,18 @@
     :global(.status-denied) {
         color: #b91c1c;
         border-color: rgba(185,28,28,0.35);
+    }
+    :global(.status-payment-unpaid) {
+        color: #9a3412;
+        border-color: rgba(154,52,18,0.35);
+    }
+    :global(.status-payment-pending) {
+        color: #A34D32;
+        border-color: rgba(163,77,50,0.45);
+    }
+    :global(.status-payment-paid) {
+        color: #15803d;
+        border-color: rgba(21,128,61,0.4);
     }
 
     .form-label {
@@ -557,6 +745,11 @@
         cursor: pointer;
         text-decoration: none;
         transition: all 300ms ease;
+    }
+    .system-btn:disabled {
+        opacity: 0.45;
+        cursor: default;
+        transform: none;
     }
     .system-btn:hover {
         background: #A34D32;

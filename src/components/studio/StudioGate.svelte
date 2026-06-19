@@ -43,7 +43,7 @@
       ← Return to Studio
     </a>
 
-    <a href="/studio/admin" class="micro-link text-[10px] font-extralight uppercase tracking-widest opacity-30 hover:opacity-70 transition-opacity mt-4">
+    <a href="/studio/admin/login" class="micro-link text-[10px] font-extralight uppercase tracking-widest opacity-30 hover:opacity-70 transition-opacity mt-4">
       Owner review console
     </a>
   </div>
