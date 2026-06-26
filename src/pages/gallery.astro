@@ -1,0 +1,12 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import GalleryGrid from "../components/Gallery.svelte";
+---
+<SiteLayout
+  title="Gallery"
+  description="Photography by Gabriel Cozma."
+  url="/gallery/"
+  bodyClass="mx-auto flex min-h-screen w-full max-w-200 flex-col items-center font-serif lg:py-24"
+>
+  <GalleryGrid client:load />
+</SiteLayout>

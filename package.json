@@ -1,31 +1,33 @@
 {
+  "name": "",
   "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "dev": "vitepress dev content",
-    "build": "vitepress build content",
-    "preview": "vitepress preview content",
-    "format": "prettier --write ."
+    "dev": "astro dev",
+    "prebuild": "node scripts/generate-og-blog-pngs.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "HOST=0.0.0.0 node ./dist/server/entry.mjs",
+    "astro": "astro"
   },
   "dependencies": {
-    "@mdit/plugin-img-mark": "^0.22.1",
-    "aplos": "3.0.0-7",
-    "non.geist": "^1.0.4",
-    "path": "^0.12.7",
-    "vue": "^3.5.17"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "search-insights"
-      ]
-    }
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/node": "^10.1.0",
+    "@astrojs/svelte": "^8.1.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.3.1",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.2",
+    "sharp": "^0.34.4",
+    "svelte": "^5.55.4",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/node": "^24.0.10",
-    "feed": "^5.1.0",
-    "prettier": "3.6.2",
-    "sass": "^1.89.2",
-    "vitepress": "^1.6.3"
+    "@types/node": "^25.6.0"
   }
 }
