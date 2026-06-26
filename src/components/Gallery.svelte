@@ -232,7 +232,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<header class="flex flex-col items-center gap-4 text-center">
+<header class="flex flex-col items-center gap-4 text-center pt-10 lg:pt-0">
   <div class="flex items-end justify-end gap-3 text-xl font-extrabold italic leading-4">
     <a href="/">
       <img src="/ecliptic.svg" alt="" aria-hidden="true" class="h-5 dark:invert" />
