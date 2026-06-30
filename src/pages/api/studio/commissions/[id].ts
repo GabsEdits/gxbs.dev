@@ -1,6 +1,9 @@
 import type { APIRoute } from "astro";
 import type { StudioCommission } from "../../../../utils/studioWorkflow";
-import { getCommissionById, updateCommissionById } from "../../../../utils/studioServerStore";
+import {
+  getCommissionById,
+  updateCommissionById,
+} from "../../../../utils/studioServerStore";
 import { createStatusEmail } from "../../../../utils/studioEmailTemplates";
 import { sendStudioEmail } from "../../../../utils/studioMailer";
 
@@ -31,7 +34,8 @@ export const PATCH: APIRoute = async ({ params, request }) => {
       return json(404, { ok: false, error: "Commission not found." });
     }
 
-    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null = null;
+    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null =
+      null;
     const statusChanged = Boolean(before && before.status !== updated.status);
     if (statusChanged) {
       const email = createStatusEmail(updated);
@@ -45,7 +49,9 @@ export const PATCH: APIRoute = async ({ params, request }) => {
         emailResult = {
           ok: false,
           skipped: false,
-          error: emailError instanceof Error ? emailError.message : "Unknown email error",
+          error: emailError instanceof Error
+            ? emailError.message
+            : "Unknown email error",
         };
       }
     }
@@ -56,5 +62,3 @@ export const PATCH: APIRoute = async ({ params, request }) => {
     return json(500, { ok: false, error: message });
   }
 };
-
-

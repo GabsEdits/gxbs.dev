@@ -18,7 +18,9 @@ const readPayPalConfig = () => {
 
 export const getPayPalBaseUrl = () => {
   const { env } = readPayPalConfig();
-  return env === "live" ? "https://api-m.paypal.com" : "https://api-m.sandbox.paypal.com";
+  return env === "live"
+    ? "https://api-m.paypal.com"
+    : "https://api-m.sandbox.paypal.com";
 };
 
 export const getPayPalAccessToken = async () => {
@@ -37,10 +39,11 @@ export const getPayPalAccessToken = async () => {
 
   if (!tokenResponse.ok) {
     const details = await tokenResponse.text();
-    throw new Error(`PayPal token request failed: ${details || tokenResponse.statusText}`);
+    throw new Error(
+      `PayPal token request failed: ${details || tokenResponse.statusText}`,
+    );
   }
 
   const tokenJson = (await tokenResponse.json()) as PayPalTokenResponse;
   return tokenJson.access_token;
 };
-

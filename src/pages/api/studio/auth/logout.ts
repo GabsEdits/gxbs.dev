@@ -29,4 +29,3 @@ export const POST: APIRoute = async ({ cookies, request, url }) => {
 
   return json(200, { ok: true });
 };
-

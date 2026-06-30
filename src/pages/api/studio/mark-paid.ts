@@ -35,7 +35,8 @@ export const POST: APIRoute = async ({ request }) => {
       return json(404, { ok: false, error: "Commission not found." });
     }
 
-    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null = null;
+    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null =
+      null;
     if (updated.clientEmail) {
       const email = createPaymentCapturedEmail(updated);
       try {
@@ -48,7 +49,9 @@ export const POST: APIRoute = async ({ request }) => {
         emailResult = {
           ok: false,
           skipped: false,
-          error: emailError instanceof Error ? emailError.message : "Unknown email error",
+          error: emailError instanceof Error
+            ? emailError.message
+            : "Unknown email error",
         };
       }
     }
@@ -59,4 +62,3 @@ export const POST: APIRoute = async ({ request }) => {
     return json(500, { ok: false, error: message });
   }
 };
-

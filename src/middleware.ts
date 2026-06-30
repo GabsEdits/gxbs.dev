@@ -6,7 +6,8 @@ const isProtectedPage = (pathname: string) => {
 };
 
 const isProtectedApi = (pathname: string) => {
-  return pathname.startsWith("/api/studio/") || pathname.startsWith("/api/paypal/");
+  return pathname.startsWith("/api/studio/") ||
+    pathname.startsWith("/api/paypal/");
 };
 
 const isPublicAuthApi = (pathname: string) => {
@@ -42,4 +43,3 @@ export const onRequest = defineMiddleware((context, next) => {
   loginUrl.searchParams.set("next", `${pathname}${context.url.search}`);
   return context.redirect(loginUrl.pathname + loginUrl.search);
 });
-

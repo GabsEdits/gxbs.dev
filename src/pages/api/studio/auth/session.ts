@@ -1,8 +1,8 @@
 import type { APIRoute } from "astro";
 import {
   isStudioAdminAuthenticated,
-  verifyStudioAdminToken,
   STUDIO_ADMIN_COOKIE,
+  verifyStudioAdminToken,
 } from "../../../../utils/studioAdminAuth";
 
 const json = (status: number, body: Record<string, unknown>) =>
@@ -24,4 +24,3 @@ export const GET: APIRoute = async ({ cookies }) => {
     username: username ?? "",
   });
 };
-

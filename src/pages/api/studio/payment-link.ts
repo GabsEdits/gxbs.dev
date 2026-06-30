@@ -1,5 +1,8 @@
 import type { APIRoute } from "astro";
-import { PAYMENT_PROVIDERS, PAYMENT_STATUSES } from "../../../utils/studioWorkflow";
+import {
+  PAYMENT_PROVIDERS,
+  PAYMENT_STATUSES,
+} from "../../../utils/studioWorkflow";
 import { updateCommissionById } from "../../../utils/studioServerStore";
 import { createPaymentLinkEmail } from "../../../utils/studioEmailTemplates";
 import { sendStudioEmail } from "../../../utils/studioMailer";
@@ -18,7 +21,8 @@ const json = (status: number, body: Record<string, unknown>) =>
 
 const defaultProviderUrl = (provider: string) => {
   if (provider === PAYMENT_PROVIDERS.GITHUB_SPONSORS) {
-    return process.env.STUDIO_GITHUB_SPONSORS_URL ?? "https://github.com/sponsors/gabs";
+    return process.env.STUDIO_GITHUB_SPONSORS_URL ??
+      "https://github.com/sponsors/gabs";
   }
   return process.env.STUDIO_KOFI_URL ?? "https://ko-fi.com/gabs";
 };
@@ -33,10 +37,9 @@ export const POST: APIRoute = async ({ request }) => {
       return json(400, { ok: false, error: "Missing commissionId." });
     }
 
-    const provider =
-      body.provider === PAYMENT_PROVIDERS.GITHUB_SPONSORS
-        ? PAYMENT_PROVIDERS.GITHUB_SPONSORS
-        : PAYMENT_PROVIDERS.KOFI;
+    const provider = body.provider === PAYMENT_PROVIDERS.GITHUB_SPONSORS
+      ? PAYMENT_PROVIDERS.GITHUB_SPONSORS
+      : PAYMENT_PROVIDERS.KOFI;
 
     const paymentUrl = body.paymentUrl?.trim() || defaultProviderUrl(provider);
 
@@ -52,7 +55,8 @@ export const POST: APIRoute = async ({ request }) => {
       return json(404, { ok: false, error: "Commission not found." });
     }
 
-    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null = null;
+    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null =
+      null;
     if (updated.clientEmail && updated.paymentUrl) {
       const email = createPaymentLinkEmail(updated);
       try {
@@ -65,7 +69,9 @@ export const POST: APIRoute = async ({ request }) => {
         emailResult = {
           ok: false,
           skipped: false,
-          error: emailError instanceof Error ? emailError.message : "Unknown email error",
+          error: emailError instanceof Error
+            ? emailError.message
+            : "Unknown email error",
         };
       }
     }
@@ -82,4 +88,3 @@ export const POST: APIRoute = async ({ request }) => {
     return json(500, { ok: false, error: message });
   }
 };
-

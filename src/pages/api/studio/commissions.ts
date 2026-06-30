@@ -1,5 +1,8 @@
 import type { APIRoute } from "astro";
-import { listCommissions, createCommission } from "../../../utils/studioServerStore";
+import {
+  createCommission,
+  listCommissions,
+} from "../../../utils/studioServerStore";
 import type { StudioCommission } from "../../../utils/studioWorkflow";
 
 const json = (status: number, body: Record<string, unknown>) =>

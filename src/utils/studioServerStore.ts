@@ -1,16 +1,18 @@
 import PocketBase from "pocketbase";
 import {
   normalizeCommission,
-  type StudioCommission,
-  PAYMENT_STATUSES,
   PAYMENT_PROVIDERS,
+  PAYMENT_STATUSES,
+  type StudioCommission,
 } from "./studioWorkflow";
 
 const pb = new PocketBase("https://cdn.gxbs.dev");
 
 const COLLECTION_NAME = "commissions";
 
-const recordToCommission = (record: Record<string, unknown>): StudioCommission => {
+const recordToCommission = (
+  record: Record<string, unknown>,
+): StudioCommission => {
   return normalizeCommission({
     id: record.id as string,
     clientName: record.clientName as string,
@@ -21,7 +23,7 @@ const recordToCommission = (record: Record<string, unknown>): StudioCommission =
     status: record.status as any,
     brief: record.brief as string,
     submittedAt: record.created as string, // Use PocketBase's 'created'
-    updatedAt: record.updated as string,   // Use PocketBase's 'updated'
+    updatedAt: record.updated as string, // Use PocketBase's 'updated'
     decisionNote: record.decisionNote as string,
     accessCode: record.accessCode as string,
     sessionId: record.sessionId as string,
@@ -43,7 +45,9 @@ export const listCommissions = async (): Promise<StudioCommission[]> => {
   return records.map(recordToCommission);
 };
 
-export const getCommissionById = async (id: string): Promise<StudioCommission | null> => {
+export const getCommissionById = async (
+  id: string,
+): Promise<StudioCommission | null> => {
   try {
     const record = await pb.collection(COLLECTION_NAME).getOne(id);
     return recordToCommission(record);
@@ -54,7 +58,7 @@ export const getCommissionById = async (id: string): Promise<StudioCommission | 
 
 export const updateCommissionById = async (
   id: string,
-  patch: Partial<StudioCommission>
+  patch: Partial<StudioCommission>,
 ): Promise<StudioCommission | null> => {
   try {
     // PocketBase handles its own 'updated' timestamp, so we don't need to set updatedAt in patch
@@ -66,14 +70,14 @@ export const updateCommissionById = async (
 };
 
 export const createCommission = async (
-  commissionData: Partial<StudioCommission> // Accept partial data
+  commissionData: Partial<StudioCommission>, // Accept partial data
 ): Promise<StudioCommission> => {
   // Normalize the incoming data to ensure all fields have defaults
   // We pass temporary ID and timestamps, which will be overwritten by PocketBase's generated ones.
   const normalizedCommission = normalizeCommission({
     id: "temp-id", // Temporary ID, will be replaced by PocketBase's ID
     submittedAt: new Date().toISOString(), // Temporary, will be replaced by PocketBase's 'created'
-    updatedAt: new Date().toISOString(),   // Temporary, will be replaced by PocketBase's 'updated'
+    updatedAt: new Date().toISOString(), // Temporary, will be replaced by PocketBase's 'updated'
     ...commissionData, // Spread the actual incoming data
   });
 

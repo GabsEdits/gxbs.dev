@@ -4,13 +4,12 @@ import { z } from "astro/zod";
 const blog = defineCollection({
   type: "content",
   schema: z.object({
-	title: z.string(),
-	date: z.coerce.date(),
-	tags: z.array(z.string()).default([]),
-	draft: z.boolean().default(false),
-	archived: z.boolean().default(false)
-  })
+    title: z.string(),
+    date: z.coerce.date(),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+    archived: z.boolean().default(false),
+  }),
 });
 
 export const collections = { blog };
-

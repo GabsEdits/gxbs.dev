@@ -10,7 +10,8 @@ type SessionPayload = {
   exp: number;
 };
 
-const getConfiguredUsername = () => (process.env.STUDIO_ADMIN_USERNAME ?? "owner").trim();
+const getConfiguredUsername = () =>
+  (process.env.STUDIO_ADMIN_USERNAME ?? "owner").trim();
 const getConfiguredPassword = () => process.env.STUDIO_ADMIN_PASSWORD ?? "";
 const getAuthSecret = () => process.env.STUDIO_AUTH_SECRET ?? "";
 
@@ -23,7 +24,9 @@ const safeEquals = (a: string, b: string) => {
 
 const sign = (encodedPayload: string) => {
   const secret = getAuthSecret();
-  return createHmac("sha256", secret).update(encodedPayload).digest("base64url");
+  return createHmac("sha256", secret).update(encodedPayload).digest(
+    "base64url",
+  );
 };
 
 const encodePayload = (payload: SessionPayload) => {
@@ -45,7 +48,10 @@ export const isStudioAuthConfigured = () => {
   return Boolean(getConfiguredPassword() && getAuthSecret());
 };
 
-export const validateStudioAdminCredentials = (username: string, password: string) => {
+export const validateStudioAdminCredentials = (
+  username: string,
+  password: string,
+) => {
   if (!isStudioAuthConfigured()) return false;
   return (
     safeEquals(username.trim(), getConfiguredUsername()) &&
@@ -53,7 +59,10 @@ export const validateStudioAdminCredentials = (username: string, password: strin
   );
 };
 
-export const issueStudioAdminToken = (username: string, ttlSeconds = SESSION_TTL_SECONDS) => {
+export const issueStudioAdminToken = (
+  username: string,
+  ttlSeconds = SESSION_TTL_SECONDS,
+) => {
   const payload: SessionPayload = {
     u: username,
     exp: Date.now() + ttlSeconds * 1000,
@@ -84,7 +93,10 @@ export const isStudioAdminAuthenticated = (cookies: AstroCookies) => {
   return Boolean(verifyStudioAdminToken(token));
 };
 
-export const setStudioAdminCookie = (cookies: AstroCookies, username: string) => {
+export const setStudioAdminCookie = (
+  cookies: AstroCookies,
+  username: string,
+) => {
   const token = issueStudioAdminToken(username);
   cookies.set(STUDIO_ADMIN_COOKIE, token, {
     path: "/",
@@ -105,4 +117,3 @@ export const getStudioAuthConfigError = () => {
   if (isStudioAuthConfigured()) return "";
   return "Missing STUDIO_ADMIN_PASSWORD or STUDIO_AUTH_SECRET.";
 };
-

@@ -1,6 +1,12 @@
 import type { APIRoute } from "astro";
-import { getPayPalAccessToken, getPayPalBaseUrl } from "../../../utils/paypalServer";
-import { PAYMENT_PROVIDERS, PAYMENT_STATUSES } from "../../../utils/studioWorkflow";
+import {
+  getPayPalAccessToken,
+  getPayPalBaseUrl,
+} from "../../../utils/paypalServer";
+import {
+  PAYMENT_PROVIDERS,
+  PAYMENT_STATUSES,
+} from "../../../utils/studioWorkflow";
 import { updateCommissionById } from "../../../utils/studioServerStore";
 import { createPaymentLinkEmail } from "../../../utils/studioEmailTemplates";
 import { sendStudioEmail } from "../../../utils/studioMailer";
@@ -87,9 +93,12 @@ export const POST: APIRoute = async ({ request, url }) => {
     }
 
     const order = (await createResponse.json()) as PayPalCreateOrderResponse;
-    const approveLink = order.links?.find((link) => link.rel === "approve")?.href ?? "";
+    const approveLink = order.links?.find((link) =>
+      link.rel === "approve"
+    )?.href ?? "";
 
-    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null = null;
+    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null =
+      null;
 
     if (body.commissionId) {
       const updated = await updateCommissionById(body.commissionId, {
@@ -112,7 +121,9 @@ export const POST: APIRoute = async ({ request, url }) => {
           emailResult = {
             ok: false,
             skipped: false,
-            error: emailError instanceof Error ? emailError.message : "Unknown email error",
+            error: emailError instanceof Error
+              ? emailError.message
+              : "Unknown email error",
           };
         }
       }
@@ -130,8 +141,3 @@ export const POST: APIRoute = async ({ request, url }) => {
     return json(500, { ok: false, error: message });
   }
 };
-
-
-
-
-

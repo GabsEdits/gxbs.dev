@@ -1,5 +1,8 @@
 import type { APIRoute } from "astro";
-import { getPayPalAccessToken, getPayPalBaseUrl } from "../../../utils/paypalServer";
+import {
+  getPayPalAccessToken,
+  getPayPalBaseUrl,
+} from "../../../utils/paypalServer";
 import { PAYMENT_STATUSES } from "../../../utils/studioWorkflow";
 import { updateCommissionById } from "../../../utils/studioServerStore";
 import { createPaymentCapturedEmail } from "../../../utils/studioEmailTemplates";
@@ -41,13 +44,16 @@ export const POST: APIRoute = async ({ request }) => {
     const token = await getPayPalAccessToken();
     const baseUrl = getPayPalBaseUrl();
 
-    const captureResponse = await fetch(`${baseUrl}/v2/checkout/orders/${orderId}/capture`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
+    const captureResponse = await fetch(
+      `${baseUrl}/v2/checkout/orders/${orderId}/capture`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
 
     if (!captureResponse.ok) {
       const details = await captureResponse.text();
@@ -60,9 +66,11 @@ export const POST: APIRoute = async ({ request }) => {
 
     const payload = (await captureResponse.json()) as PayPalCaptureResponse;
     const capture = payload.purchase_units?.[0]?.payments?.captures?.[0];
-    const isPaid = payload.status === "COMPLETED" || capture?.status === "COMPLETED";
+    const isPaid = payload.status === "COMPLETED" ||
+      capture?.status === "COMPLETED";
 
-    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null = null;
+    let emailResult: { ok: boolean; skipped: boolean; error?: string } | null =
+      null;
 
     if (isPaid && body.commissionId) {
       const updated = await updateCommissionById(body.commissionId, {
@@ -83,7 +91,9 @@ export const POST: APIRoute = async ({ request }) => {
           emailResult = {
             ok: false,
             skipped: false,
-            error: emailError instanceof Error ? emailError.message : "Unknown email error",
+            error: emailError instanceof Error
+              ? emailError.message
+              : "Unknown email error",
           };
         }
       }
@@ -101,8 +111,3 @@ export const POST: APIRoute = async ({ request }) => {
     return json(500, { ok: false, error: message });
   }
 };
-
-
-
-
-

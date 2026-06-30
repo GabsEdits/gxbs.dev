@@ -7,7 +7,8 @@ type SendInput = {
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
-const getSender = () => process.env.STUDIO_EMAIL_FROM ?? "gxbs Studio <studio@gxbs.dev>";
+const getSender = () =>
+  process.env.STUDIO_EMAIL_FROM ?? "gxbs Studio <studio@gxbs.dev>";
 
 const htmlToText = (html: string) =>
   html
@@ -16,7 +17,9 @@ const htmlToText = (html: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
-export const sendStudioEmail = async ({ to, subject, html, text }: SendInput) => {
+export const sendStudioEmail = async (
+  { to, subject, html, text }: SendInput,
+) => {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     // Soft-fail in local/dev when email credentials are intentionally missing.
@@ -47,4 +50,3 @@ export const sendStudioEmail = async ({ to, subject, html, text }: SendInput) =>
   const payload = await response.json();
   return { ok: true, skipped: false, id: payload.id ?? "" };
 };
-

@@ -17,9 +17,12 @@ export const PAYMENT_PROVIDERS = {
   MANUAL: "manual",
 };
 
-export type CommissionStatus = (typeof COMMISSION_STATUSES)[keyof typeof COMMISSION_STATUSES];
-export type PaymentStatus = (typeof PAYMENT_STATUSES)[keyof typeof PAYMENT_STATUSES];
-export type PaymentProvider = (typeof PAYMENT_PROVIDERS)[keyof typeof PAYMENT_PROVIDERS];
+export type CommissionStatus =
+  (typeof COMMISSION_STATUSES)[keyof typeof COMMISSION_STATUSES];
+export type PaymentStatus =
+  (typeof PAYMENT_STATUSES)[keyof typeof PAYMENT_STATUSES];
+export type PaymentProvider =
+  (typeof PAYMENT_PROVIDERS)[keyof typeof PAYMENT_PROVIDERS];
 
 export type StudioCommission = {
   id: string;
@@ -59,17 +62,26 @@ export const createStudioAccessCode = (length = 8) => {
   const values = new Uint32Array(length);
   crypto.getRandomValues(values);
 
-  return Array.from(values, (value) => CODE_ALPHABET[value % CODE_ALPHABET.length]).join("");
+  return Array.from(
+    values,
+    (value) => CODE_ALPHABET[value % CODE_ALPHABET.length],
+  ).join("");
 };
 
 export const createStudioSessionId = () => {
   const values = new Uint8Array(6);
   crypto.getRandomValues(values);
-  const token = Array.from(values, (value) => value.toString(16).padStart(2, "0")).join("");
+  const token = Array.from(
+    values,
+    (value) => value.toString(16).padStart(2, "0"),
+  ).join("");
   return `s_${token}`;
 };
 
-export const buildApprovalMessage = ({ clientName, projectTitle, accessCode, studioLink, paymentLink }: ApprovalMessageInput) => {
+export const buildApprovalMessage = (
+  { clientName, projectTitle, accessCode, studioLink, paymentLink }:
+    ApprovalMessageInput,
+) => {
   const lines = [
     `Hi ${clientName},`,
     "",
@@ -83,7 +95,10 @@ export const buildApprovalMessage = ({ clientName, projectTitle, accessCode, stu
     lines.push(`Payment link: ${paymentLink}`);
   }
 
-  lines.push("", "Reply to this email if you want to adjust scope before kickoff.");
+  lines.push(
+    "",
+    "Reply to this email if you want to adjust scope before kickoff.",
+  );
   return lines.join("\n");
 };
 
@@ -94,7 +109,27 @@ const toQuotedAmount = (tier: string) => {
   return 500;
 };
 
-const withDefaults = (commission: Partial<StudioCommission> & Pick<StudioCommission, "id" | "clientName" | "clientEmail" | "projectTitle" | "offer" | "tier" | "status" | "brief" | "submittedAt" | "updatedAt" | "decisionNote" | "accessCode" | "sessionId" | "approvedAt">): StudioCommission => ({
+const withDefaults = (
+  commission:
+    & Partial<StudioCommission>
+    & Pick<
+      StudioCommission,
+      | "id"
+      | "clientName"
+      | "clientEmail"
+      | "projectTitle"
+      | "offer"
+      | "tier"
+      | "status"
+      | "brief"
+      | "submittedAt"
+      | "updatedAt"
+      | "decisionNote"
+      | "accessCode"
+      | "sessionId"
+      | "approvedAt"
+    >,
+): StudioCommission => ({
   ...commission,
   quotedAmount: commission.quotedAmount ?? toQuotedAmount(commission.tier),
   currency: commission.currency ?? "EUR",
@@ -114,7 +149,8 @@ export const createSeedCommissions = (): StudioCommission[] => [
     offer: "Design",
     tier: "Presence",
     status: COMMISSION_STATUSES.NEW,
-    brief: "Need a premium portfolio website with booking CTA and launch by mid-June.",
+    brief:
+      "Need a premium portfolio website with booking CTA and launch by mid-June.",
     submittedAt: "2026-05-20T14:22:00.000Z",
     updatedAt: "2026-05-20T14:22:00.000Z",
     decisionNote: "",
@@ -130,7 +166,8 @@ export const createSeedCommissions = (): StudioCommission[] => [
     offer: "Full Package",
     tier: "System",
     status: COMMISSION_STATUSES.UNDER_REVIEW,
-    brief: "Need conversion-focused website + gated demo flow. Must launch in 6 weeks.",
+    brief:
+      "Need conversion-focused website + gated demo flow. Must launch in 6 weeks.",
     submittedAt: "2026-05-21T09:10:00.000Z",
     updatedAt: "2026-05-22T08:05:00.000Z",
     decisionNote: "Waiting on final integration list.",
@@ -146,7 +183,8 @@ export const createSeedCommissions = (): StudioCommission[] => [
     offer: "Development",
     tier: "Core",
     status: COMMISSION_STATUSES.APPROVED,
-    brief: "Implement approved design and keep content editing simple for internal team.",
+    brief:
+      "Implement approved design and keep content editing simple for internal team.",
     submittedAt: "2026-05-18T11:36:00.000Z",
     updatedAt: "2026-05-23T16:40:00.000Z",
     decisionNote: "Approved with fast-track launch support add-on.",
@@ -160,36 +198,65 @@ export const createSeedCommissions = (): StudioCommission[] => [
   }),
 ];
 
-export const normalizeCommission = (commission: StudioCommission | Partial<StudioCommission>) => {
+export const normalizeCommission = (
+  commission: StudioCommission | Partial<StudioCommission>,
+) => {
   const legacy = commission as {
     paypalCheckoutUrl?: string;
     paypalOrderId?: string;
   };
 
-  const paymentUrl = (commission.paymentUrl === "" ? undefined : commission.paymentUrl) ?? legacy.paypalCheckoutUrl ?? undefined;
-  const paymentReference = (commission.paymentReference === "" ? undefined : commission.paymentReference) ?? legacy.paypalOrderId ?? undefined;
+  const paymentUrl =
+    (commission.paymentUrl === "" ? undefined : commission.paymentUrl) ??
+      legacy.paypalCheckoutUrl ?? undefined;
+  const paymentReference =
+    (commission.paymentReference === ""
+      ? undefined
+      : commission.paymentReference) ?? legacy.paypalOrderId ?? undefined;
 
   return withDefaults({
-    id: (commission.id === "" ? undefined : commission.id),
-    clientName: (commission.clientName === "" ? undefined : commission.clientName),
-    clientEmail: (commission.clientEmail === "" ? undefined : commission.clientEmail),
-    projectTitle: (commission.projectTitle === "" ? undefined : commission.projectTitle),
-    offer: (commission.offer === "" ? undefined : commission.offer),
-    tier: (commission.tier === "" ? undefined : commission.tier),
-    status: (commission.status === "" ? undefined : commission.status) as CommissionStatus,
-    brief: (commission.brief === "" ? undefined : commission.brief),
-    submittedAt: (commission.submittedAt === "" ? undefined : commission.submittedAt),
-    updatedAt: (commission.updatedAt === "" ? undefined : commission.updatedAt),
-    decisionNote: (commission.decisionNote === "" ? undefined : commission.decisionNote),
-    accessCode: (commission.accessCode === "" ? undefined : commission.accessCode),
-    sessionId: (commission.sessionId === "" ? undefined : commission.sessionId),
-    approvedAt: (commission.approvedAt === "" ? undefined : commission.approvedAt),
-    quotedAmount: (commission.quotedAmount === 0 ? undefined : commission.quotedAmount),
-    currency: (commission.currency === "" ? undefined : commission.currency),
-    paymentStatus: (commission.paymentStatus === "" ? undefined : commission.paymentStatus) as PaymentStatus,
-    paymentProvider: (commission.paymentProvider === "" ? undefined : commission.paymentProvider) as PaymentProvider,
+    id: commission.id === "" ? undefined : commission.id,
+    clientName: commission.clientName === ""
+      ? undefined
+      : commission.clientName,
+    clientEmail: commission.clientEmail === ""
+      ? undefined
+      : commission.clientEmail,
+    projectTitle: commission.projectTitle === ""
+      ? undefined
+      : commission.projectTitle,
+    offer: commission.offer === "" ? undefined : commission.offer,
+    tier: commission.tier === "" ? undefined : commission.tier,
+    status: (commission.status === ""
+      ? undefined
+      : commission.status) as CommissionStatus,
+    brief: commission.brief === "" ? undefined : commission.brief,
+    submittedAt: commission.submittedAt === ""
+      ? undefined
+      : commission.submittedAt,
+    updatedAt: commission.updatedAt === "" ? undefined : commission.updatedAt,
+    decisionNote: commission.decisionNote === ""
+      ? undefined
+      : commission.decisionNote,
+    accessCode: commission.accessCode === ""
+      ? undefined
+      : commission.accessCode,
+    sessionId: commission.sessionId === "" ? undefined : commission.sessionId,
+    approvedAt: commission.approvedAt === ""
+      ? undefined
+      : commission.approvedAt,
+    quotedAmount: commission.quotedAmount === 0
+      ? undefined
+      : commission.quotedAmount,
+    currency: commission.currency === "" ? undefined : commission.currency,
+    paymentStatus: (commission.paymentStatus === ""
+      ? undefined
+      : commission.paymentStatus) as PaymentStatus,
+    paymentProvider: (commission.paymentProvider === ""
+      ? undefined
+      : commission.paymentProvider) as PaymentProvider,
     paymentUrl,
     paymentReference,
-    paidAt: (commission.paidAt === "" ? undefined : commission.paidAt),
+    paidAt: commission.paidAt === "" ? undefined : commission.paidAt,
   });
 };

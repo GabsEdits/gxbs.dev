@@ -21,7 +21,11 @@ const parseCredentials = async (request: Request) => {
   const contentType = request.headers.get("content-type") ?? "";
 
   if (contentType.includes("application/json")) {
-    const body = (await request.json()) as { username?: string; password?: string; next?: string };
+    const body = (await request.json()) as {
+      username?: string;
+      password?: string;
+      next?: string;
+    };
     return {
       username: body.username?.trim() ?? "",
       password: body.password ?? "",
@@ -74,4 +78,3 @@ export const POST: APIRoute = async ({ request, cookies, url }) => {
     return json(500, { ok: false, error: message });
   }
 };
-
