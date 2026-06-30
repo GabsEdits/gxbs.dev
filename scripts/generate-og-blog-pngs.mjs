@@ -50,7 +50,9 @@ const splitTitle = (title, maxLineLength = 30, maxLines = 3) => {
     lines.push(current);
   }
 
-  if (lines.length === maxLines && words.join(" ").length > lines.join(" ").length) {
+  if (
+    lines.length === maxLines && words.join(" ").length > lines.join(" ").length
+  ) {
     lines[maxLines - 1] = `${lines[maxLines - 1].replace(/[.]{3,}$/, "")}...`;
   }
 
@@ -58,7 +60,9 @@ const splitTitle = (title, maxLineLength = 30, maxLines = 3) => {
 };
 
 const truncateText = (value, maxLength) =>
-  value.length > maxLength ? `${value.slice(0, maxLength - 1).trimEnd()}...` : value;
+  value.length > maxLength
+    ? `${value.slice(0, maxLength - 1).trimEnd()}...`
+    : value;
 
 const formatDate = (value) => {
   if (!value) return "";
@@ -69,7 +73,7 @@ const formatDate = (value) => {
   return date.toLocaleDateString("en", {
     month: "short",
     day: "numeric",
-    year: "numeric"
+    year: "numeric",
   });
 };
 
@@ -82,15 +86,21 @@ const buildOgSvg = ({ slug, title, tags, date }) => {
   const titleSvg = titleLines
     .map((line, index) => {
       const y = titleStartY + index * lineHeight;
-      return `<text x="600" y="${y}" text-anchor="middle" font-size="58" font-style="italic" font-weight="700" fill="#1A1A1A" font-family="'Times New Roman', Georgia, serif">${escapeXml(line)}</text>`;
+      return `<text x="600" y="${y}" text-anchor="middle" font-size="58" font-style="italic" font-weight="700" fill="#1A1A1A" font-family="'Times New Roman', Georgia, serif">${
+        escapeXml(line)
+      }</text>`;
     })
     .join("");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="#FDFDFB"/>
-  <text x="80" y="104" font-size="28" font-weight="300" fill="#1A1A1A" font-family="'Times New Roman', Georgia, serif">${escapeXml(date)}</text>
-  <text x="1120" y="104" text-anchor="end" font-size="28" font-weight="300" fill="#1A1A1A" font-family="'Times New Roman', Georgia, serif">${escapeXml(tagsLine)}</text>
+  <text x="80" y="104" font-size="28" font-weight="300" fill="#1A1A1A" font-family="'Times New Roman', Georgia, serif">${
+    escapeXml(date)
+  }</text>
+  <text x="1120" y="104" text-anchor="end" font-size="28" font-weight="300" fill="#1A1A1A" font-family="'Times New Roman', Georgia, serif">${
+    escapeXml(tagsLine)
+  }</text>
   ${titleSvg}
   <line x1="80" y1="442" x2="1120" y2="442" stroke="#E5E7EB" stroke-width="2"/>
   <g transform="translate(80 548) scale(2)">
@@ -108,7 +118,7 @@ const cleanOldPngs = async () => {
   await Promise.all(
     entries
       .filter((entry) => entry.isFile() && entry.name.endsWith(".png"))
-      .map((entry) => rm(path.join(OUTPUT_DIR, entry.name), { force: true }))
+      .map((entry) => rm(path.join(OUTPUT_DIR, entry.name), { force: true })),
   );
 };
 
@@ -156,7 +166,10 @@ const generate = async () => {
 };
 
 generate().catch((error) => {
-  process.stderr.write(`Failed to generate blog OG PNGs: ${error instanceof Error ? error.message : String(error)}\n`);
+  process.stderr.write(
+    `Failed to generate blog OG PNGs: ${
+      error instanceof Error ? error.message : String(error)
+    }\n`,
+  );
   process.exitCode = 1;
 });
-

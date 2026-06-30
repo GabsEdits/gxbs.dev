@@ -13,7 +13,7 @@ const KONAMI_CODE = [
   "ArrowLeft",
   "ArrowRight",
   "b",
-  "a"
+  "a",
 ] as const;
 
 const HERO_CLICK_THRESHOLD = 5;
@@ -69,7 +69,12 @@ export function initEasterEggs() {
     const heroTrigger = target.closest(HERO_SELECTOR) as HTMLElement | null;
     if (heroTrigger) {
       heroClicks += 1;
-      animateElement(heroTrigger, "easterNameWobble", 400, "cubic-bezier(0.68, -0.55, 0.265, 1.55)");
+      animateElement(
+        heroTrigger,
+        "easterNameWobble",
+        400,
+        "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      );
 
       if (heroClicks >= HERO_CLICK_THRESHOLD) {
         heroClicks = 0;
@@ -78,7 +83,7 @@ export function initEasterEggs() {
           top: "30%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          fontSize: "1.5rem"
+          fontSize: "1.5rem",
         });
       }
       return;
@@ -87,7 +92,12 @@ export function initEasterEggs() {
     const snugTrigger = target.closest(SNUG_SELECTOR) as HTMLElement | null;
     if (snugTrigger) {
       snugClicks += 1;
-      animateElement(snugTrigger, "easterSnugBounce", 500, "cubic-bezier(0.34, 1.56, 0.64, 1)");
+      animateElement(
+        snugTrigger,
+        "easterSnugBounce",
+        500,
+        "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      );
 
       if (snugClicks >= SNUG_CLICK_THRESHOLD) {
         snugClicks = 0;
@@ -96,7 +106,7 @@ export function initEasterEggs() {
           bottom: "20%",
           left: "50%",
           transform: "translate(-50%, 0)",
-          fontSize: "1.5rem"
+          fontSize: "1.5rem",
         });
       }
     }
@@ -108,7 +118,8 @@ export function initEasterEggs() {
     const target = e.target as HTMLElement | null;
     if (!target) return;
 
-    const supportsEggClick = target.matches(ICON_SELECTOR) || target.matches(HERO_SELECTOR) || target.matches(SNUG_SELECTOR);
+    const supportsEggClick = target.matches(ICON_SELECTOR) ||
+      target.matches(HERO_SELECTOR) || target.matches(SNUG_SELECTOR);
     if (!supportsEggClick) return;
 
     e.preventDefault();
@@ -142,7 +153,12 @@ function spinFloatingIcon(trigger: HTMLElement) {
   animateElement(icon as HTMLElement, "easterIconSpin", 600, "linear");
 }
 
-function animateElement(element: HTMLElement, keyframesName: string, durationMs: number, timing = "ease") {
+function animateElement(
+  element: HTMLElement,
+  keyframesName: string,
+  durationMs: number,
+  timing = "ease",
+) {
   element.style.animation = "none";
   void element.offsetWidth;
   element.style.animation = `${keyframesName} ${durationMs}ms ${timing}`;
@@ -157,7 +173,8 @@ function triggerKonamiEffect() {
 
   html.style.animation = "none";
   void html.offsetWidth;
-  html.style.animation = "easterKonamiSpin 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+  html.style.animation =
+    "easterKonamiSpin 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
 
   window.setTimeout(() => {
     html.style.animation = "";
@@ -172,7 +189,7 @@ function triggerSecretMessage() {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    fontSize: "2rem"
+    fontSize: "2rem",
   });
 }
 
@@ -185,7 +202,9 @@ type MessageOptions = {
   fontSize?: string;
 };
 
-function showMessage({ text, top, bottom, left, transform, fontSize = "1.5rem" }: MessageOptions) {
+function showMessage(
+  { text, top, bottom, left, transform, fontSize = "1.5rem" }: MessageOptions,
+) {
   const message = document.createElement("div");
   message.textContent = text;
   message.style.cssText = `
@@ -239,12 +258,18 @@ function logConsoleMessage() {
   const styles = {
     title: "font-size: 24px; font-weight: bold; color: #A34D32;",
     subtitle: "font-size: 14px; color: #666;",
-    link: "font-size: 12px; color: #0066cc; text-decoration: underline;"
+    link: "font-size: 12px; color: #0066cc; text-decoration: underline;",
   };
 
   console.log("%cGabriel Cozma", styles.title);
-  console.log("%cLike the site? Check out the source or say hello: me@gxbs.dev", styles.link);
-  console.log("%cTip: Try the Konami code (↑↑↓↓←→←→BA), double-G, or click hidden elements.", styles.subtitle);
+  console.log(
+    "%cLike the site? Check out the source or say hello: me@gxbs.dev",
+    styles.link,
+  );
+  console.log(
+    "%cTip: Try the Konami code (↑↑↓↓←→←→BA), double-G, or click hidden elements.",
+    styles.subtitle,
+  );
 }
 
 export function injectEasterEggStyles() {

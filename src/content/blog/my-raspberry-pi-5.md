@@ -252,7 +252,8 @@ preview deployment status:
 <figcaption>A screenshot from GitHub, of a comment made by the "gxbs-server" bot, says
     "The preview deployment is ready" under an pull request</figcaption>
 
-Oh, and one more thing, it even has it's own page on this website! [Check it out](/server)
+Oh, and one more thing, it even has it's own page on this website!
+[Check it out](/server)
 
 ## Conclusion
 

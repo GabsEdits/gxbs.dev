@@ -162,9 +162,6 @@
   let hintVisible = false;
   let moldovaTime = "";
   let moldovaZone = "";
-  let hoverFlag = "trans";
-  let hoverFlagQueue = [];
-
 
   $: orderedSkills = [...skills].sort((a, b) => {
     const lengthDiff = a.length - b.length;
@@ -204,17 +201,6 @@
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
   const easeOutCubic = (value) => 1 - Math.pow(1 - value, 3);
-
-  const nextHoverFlag = () => {
-    // Shuffle a tiny bag so every 2 hovers show both flags in random order.
-    if (hoverFlagQueue.length === 0) {
-      hoverFlagQueue = Math.random() < 0.5
-        ? ["trans", "aroace"]
-        : ["aroace", "trans"];
-    }
-
-    hoverFlag = hoverFlagQueue.pop();
-  };
 
   const getAnchorPosition = (element) => {
     const rect = element.getBoundingClientRect();
@@ -424,16 +410,12 @@
 
 <div
   class="ecliptic-icon fixed left-0 top-0 z-40 will-change-transform transition-opacity duration-300 cursor-pointer pointer-events-auto"
-  class:flag-trans={hoverFlag === "trans"}
-  class:flag-aroace={hoverFlag === "aroace"}
   class:opacity-0={!iconReady}
   style={`transform: translate3d(${iconX}px, ${iconY}px, 0);`}
   data-easter-svg-icon
   role="button"
   tabindex="0"
   title="Click to spin"
-  on:mouseenter={nextHoverFlag}
-  on:focus={nextHoverFlag}
 >
   <img
     src="/ecliptic.svg"
@@ -441,7 +423,8 @@
     class="ecliptic-base h-5.25 w-11.25 dark:invert hover:animate-spin"
     class:hero-icon-intro={!reduceMotion}
   />
-  <span class="ecliptic-trans-overlay" aria-hidden="true"></span>
+  <img src="/agen-light.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-light" />
+  <img src="/agen-black.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-dark" />
 </div>
 
 <main bind:this={contentRoot} class="container mx-auto max-w-full lg:max-w-120 p-4 flex flex-col gap-12 items-center lg:py-24 font-serif" class:reveal-enabled={revealEnabled}>
@@ -685,87 +668,33 @@
     transition: opacity 280ms ease;
   }
 
-  /*
-  .ecliptic-trans-overlay {
+  .ecliptic-hover-image {
     position: absolute;
     inset: 0;
     display: block;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    object-fit: contain;
+    z-index: 3;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 320ms ease;
-    overflow: hidden;
-    --flag-gradient: linear-gradient(
-      110deg,
-      #5bcefa 0%,
-      #5bcefa 12%,
-      #f5a9b8 24%,
-      #ffffff 38%,
-      #f5a9b8 52%,
-      #5bcefa 66%,
-      #f5a9b8 80%,
-      #ffffff 90%,
-      #f5a9b8 96%,
-      #5bcefa 100%
-    );
-    background-image: var(--flag-gradient);
-    background-size: 220% 100%;
-    background-position: 0 50%;
-    -webkit-mask-image: url("/ecliptic.svg");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: 100% 100%;
-    mask-image: url("/ecliptic.svg");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 100% 100%;
-    animation: trans-gradient-drift 4.2s linear infinite;
-    will-change: background-position, opacity;
+    transform: scale(0.97);
+    transition: opacity 320ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .ecliptic-icon.flag-trans .ecliptic-trans-overlay {
-    --flag-gradient: linear-gradient(
-      110deg,
-      #5bcefa 0%,
-      #5bcefa 12%,
-      #f5a9b8 24%,
-      #ffffff 38%,
-      #f5a9b8 52%,
-      #5bcefa 66%,
-      #f5a9b8 80%,
-      #ffffff 90%,
-      #f5a9b8 96%,
-      #5bcefa 100%
-    );
+  .ecliptic-hover-dark {
+    display: none;
   }
-
-  .ecliptic-icon.flag-aroace .ecliptic-trans-overlay {
-    --flag-gradient: linear-gradient(
-      110deg,
-      #e28c00 0%,
-      #e28c00 12%,
-      #eccd00 24%,
-      #ffffff 38%,
-      #62afdd 52%,
-      #203856 66%,
-      #62afdd 80%,
-      #ffffff 90%,
-      #eccd00 96%,
-      #e28c00 100%
-    );
-  }
-   */
 
   .ecliptic-icon:hover .ecliptic-base,
   .ecliptic-icon:focus-visible .ecliptic-base {
-    opacity: 0.95;
+    opacity: 0;
   }
 
-  .ecliptic-icon:hover .ecliptic-trans-overlay,
-  .ecliptic-icon:focus-visible .ecliptic-trans-overlay {
-    opacity: 0.3;
+  .ecliptic-icon:hover .ecliptic-hover-image,
+  .ecliptic-icon:focus-visible .ecliptic-hover-image {
+    opacity: 1;
+    transform: scale(1);
   }
 
   .divider {
@@ -883,15 +812,6 @@
     }
   }
 
-  @keyframes trans-gradient-drift {
-    0% {
-      background-position: 0 50%;
-    }
-    100% {
-      background-position: 220% 50%;
-    }
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .hero-name,
     .hero-name b,
@@ -920,23 +840,23 @@
       transform: scaleX(1);
     }
 
-    .ecliptic-icon:hover .ecliptic-trans-overlay,
-    .ecliptic-icon:focus-visible .ecliptic-trans-overlay {
-      animation: none;
-    }
-
-    .ecliptic-trans-overlay {
-      animation: none;
-    }
-
-    .ecliptic-trans-overlay {
-      background-position: 50% 50%;
+    .ecliptic-hover-image {
+      transition: none;
+      transform: none;
     }
   }
 
   @media (prefers-color-scheme: dark) {
     .divider {
       background-color: oklch(26.9% 0 0);
+    }
+
+    .ecliptic-hover-light {
+      display: none;
+    }
+
+    .ecliptic-hover-dark {
+      display: block;
     }
   }
 </style>

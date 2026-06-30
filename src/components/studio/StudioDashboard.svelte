@@ -1,22 +1,63 @@
 <script>
   import { onMount } from "svelte";
+  import {
+    COMMISSION_STATUSES,
+    PAYMENT_PROVIDERS,
+    PAYMENT_STATUSES,
+    buildApprovalMessage,
+    createSeedCommissions,
+    createStudioAccessCode,
+    createStudioSessionId,
+    normalizeCommission,
+  } from "../../utils/studioWorkflow";
+  import { pb } from "../../lib/pocketbase";
 
   export let uuid;
+  export let mode = "client";
 
-  // DEV TEST VARIABLE!!!!!!!!!!
-  // Set to true to bypass backend fetch and load mock data
-  const DEV_MODE = true;
+  const PB_URL = "https://cdn.gxbs.dev";
+  const USE_MOCK_DATA = false; // Set to false to test PocketBase
 
   let project = null;
   let loading = true;
   let error = false;
   let revealEnabled = false;
+  let commissions = [];
+  let selectedCommissionId = "";
+  let decisionNote = "";
+  let denialReason = "";
+  let copyState = "";
+  let creatingPaymentLinkId = "";
+  let markingPaidId = "";
+
+  const statusLabel = {
+    [COMMISSION_STATUSES.NEW]: "New",
+    [COMMISSION_STATUSES.UNDER_REVIEW]: "Under review",
+    [COMMISSION_STATUSES.APPROVED]: "Approved",
+    [COMMISSION_STATUSES.DENIED]: "Denied",
+  };
+
+  const paymentStatusLabel = {
+    [PAYMENT_STATUSES.UNPAID]: "Unpaid",
+    [PAYMENT_STATUSES.PENDING]: "Pending",
+    [PAYMENT_STATUSES.PAID]: "Paid",
+  };
+
+  const STATUS_ORDER = [
+    COMMISSION_STATUSES.NEW,
+    COMMISSION_STATUSES.UNDER_REVIEW,
+    COMMISSION_STATUSES.APPROVED,
+    COMMISSION_STATUSES.DENIED,
+  ];
 
   const MOCK_DATA = {
     client: "Antuan Moldovan",
     projectName: "Project Ethos Arch",
     status: "Phase 02: Infrastructure",
     progress: 68,
+    paymentStatus: "pending",
+    paymentProvider: "kofi",
+    paymentUrl: "https://ko-fi.com/gabs",
     stagingUrl: "https://ethos-staging.gxbs.dev",
     milestones: [
       { name: "Discovery & Scope Definition", status: "Completed" },
@@ -38,18 +79,242 @@
     ]
   };
 
-  onMount(async () => {
+  const toDateLabel = (isoDate) => {
+    if (!isoDate) return "-";
+    return new Date(isoDate).toLocaleDateString(undefined, {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
+
+  const sortCommissions = (items) => {
+    return [...items].sort((a, b) => {
+      const statusDiff = STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status);
+      if (statusDiff !== 0) return statusDiff;
+      return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+    });
+  };
+
+  const loadCommissions = async () => {
     try {
-      if (DEV_MODE) {
-        // Simulate network delay for effect
+      // Fetch directly from PocketBase
+      const records = await pb.collection('commissions').getFullList({
+        sort: '-created',
+      });
+      
+      // Map PocketBase fields to your internal StudioCommission interface
+      // PB uses 'id', 'created', 'updated' by default.
+      commissions = sortCommissions(records.map(rec => normalizeCommission({ ...rec, updatedAt: rec.updated, submittedAt: rec.created })));
+    } catch {
+      commissions = sortCommissions(createSeedCommissions());
+      copyState = "Admin API unavailable. Showing fallback data.";
+    }
+  };
+
+  $: selectedCommission = commissions.find((item) => item.id === selectedCommissionId) ?? null;
+
+  const updateCommission = async (id, patch) => {
+    try {
+      const record = await pb.collection('commissions').update(id, patch);
+      const updated = normalizeCommission({
+        ...record,
+        updatedAt: record.updated,
+        submittedAt: record.created
+      });
+      
+      commissions = sortCommissions(
+        commissions.map((item) => (item.id === id ? updated : item))
+      );
+      return true;
+    } catch {
+      copyState = "Could not save changes. Try again.";
+      return false;
+    }
+  };
+
+  const markUnderReview = async (id) => {
+    const ok = await updateCommission(id, {
+      status: COMMISSION_STATUSES.UNDER_REVIEW,
+      decisionNote: decisionNote.trim() || "Moved to review.",
+    });
+    if (ok) decisionNote = "";
+  };
+
+  const approveCommission = async (id) => {
+    const accessCode = createStudioAccessCode();
+    const sessionId = createStudioSessionId();
+    const approvedAt = new Date().toISOString();
+
+    const ok = await updateCommission(id, {
+      status: COMMISSION_STATUSES.APPROVED,
+      accessCode,
+      sessionId,
+      approvedAt,
+      decisionNote: decisionNote.trim() || "Approved. Invite generated.",
+      paymentStatus: PAYMENT_STATUSES.UNPAID,
+      paymentProvider: PAYMENT_PROVIDERS.KOFI,
+      paymentUrl: "",
+      paymentReference: "",
+      paidAt: "",
+    });
+
+    if (ok) decisionNote = "";
+  };
+
+  const denyCommission = async (id) => {
+    if (!denialReason.trim()) {
+      copyState = "Add a denial reason first.";
+      return;
+    }
+
+    const ok = await updateCommission(id, {
+      status: COMMISSION_STATUSES.DENIED,
+      accessCode: "",
+      sessionId: "",
+      approvedAt: "",
+      decisionNote: denialReason.trim(),
+      paymentStatus: PAYMENT_STATUSES.UNPAID,
+      paymentProvider: PAYMENT_PROVIDERS.KOFI,
+      paymentUrl: "",
+      paymentReference: "",
+      paidAt: "",
+    });
+
+    if (ok) denialReason = "";
+  };
+
+  const copyText = async (value, successMessage) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      copyState = successMessage;
+      window.setTimeout(() => {
+        if (copyState === successMessage) copyState = "";
+      }, 2200);
+    } catch {
+      copyState = "Clipboard unavailable. Copy manually.";
+    }
+  };
+
+  const copyApproval = async (commission) => {
+    if (!commission?.accessCode || !commission?.sessionId) return;
+
+    const origin = window.location.origin;
+    const text = buildApprovalMessage({
+      clientName: commission.clientName,
+      projectTitle: commission.projectTitle,
+      accessCode: commission.accessCode,
+      studioLink: `${origin}/studio/${commission.sessionId}`,
+      paymentLink: commission.paymentUrl,
+    });
+    await copyText(text, "Approval message copied.");
+  };
+
+  const formatMoney = (amount, currency = "EUR") => {
+    const value = Number(amount ?? 0);
+    return new Intl.NumberFormat(undefined, {
+      style: "currency",
+      currency,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
+
+  const createPaymentLink = async (commission) => {
+    if (!commission) return;
+
+    creatingPaymentLinkId = commission.id;
+    copyState = "Creating payment link...";
+
+    try {
+      const response = await fetch("/api/studio/payment-link", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          commissionId: commission.id,
+          provider: PAYMENT_PROVIDERS.KOFI,
+          paymentUrl: "https://ko-fi.com/gabs",
+        }),
+      });
+
+      const payload = await response.json();
+      if (!response.ok || !payload.ok || !payload.paymentUrl) {
+        throw new Error(payload.error || "Could not create payment link.");
+      }
+
+      await loadCommissions();
+      selectedCommissionId = commission.id;
+
+      copyState = "Payment link generated.";
+    } catch (err) {
+      copyState = err instanceof Error ? err.message : "Failed to create payment link.";
+    } finally {
+      creatingPaymentLinkId = "";
+      window.setTimeout(() => {
+        if (copyState === "Payment link generated.") copyState = "";
+      }, 2200);
+    }
+  };
+
+  const markPaymentPaid = async (commission) => {
+    if (!commission?.paymentUrl) {
+      copyState = "Generate a payment link first.";
+      return;
+    }
+
+    markingPaidId = commission.id;
+    copyState = "Marking payment as paid...";
+
+    try {
+      const response = await fetch("/api/studio/mark-paid", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          commissionId: commission.id,
+          reference: "manual-kofi-confirmation",
+        }),
+      });
+      const payload = await response.json();
+
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.error || "Could not update payment status.");
+      }
+
+      await loadCommissions();
+      selectedCommissionId = commission.id;
+      copyState = "Payment marked as paid.";
+    } catch (err) {
+      copyState = err instanceof Error ? err.message : "Failed to mark payment as paid.";
+    } finally {
+      markingPaidId = "";
+    }
+  };
+
+  const copyStudioLink = async (commission) => {
+    if (!commission?.sessionId) return;
+    await copyText(`${window.location.origin}/studio/${commission.sessionId}`, "Studio link copied.");
+  };
+
+  onMount(async () => {
+    if (mode === "admin") {
+      await loadCommissions();
+      selectedCommissionId = commissions[0]?.id ?? "";
+      loading = false;
+      window.setTimeout(() => {
+        revealEnabled = true;
+      }, 40);
+      return;
+    }
+
+    try {
+      if (USE_MOCK_DATA) {
         await new Promise(resolve => setTimeout(resolve, 800));
         project = MOCK_DATA;
       } else {
-        const res = await fetch(`https://api.gxbs.dev/api/studio/${uuid}`);
-        if (!res.ok) throw new Error("Invalid session key");
-        project = await res.json();
+        // Client view: Fetch specific project by session ID or Access Code
+        // Assumes you have a field 'sessionId' in the collection
+        project = await pb.collection('commissions').getFirstListItem(`sessionId="${uuid}"`);
       }
-      setTimeout(() => { revealEnabled = true; }, 50);
+      revealEnabled = true;
     } catch (err) {
       error = true;
     } finally {
@@ -75,6 +340,205 @@
     <h1 class="text-3xl italic text-[#A34D32]">Session Invalid</h1>
     <p class="opacity-50 text-sm font-light">This console session has expired or the secure key is invalid.</p>
     <a href="/" class="micro-link mt-6 opacity-40 hover:opacity-100 uppercase text-[10px] tracking-widest transition-opacity">Return to Studio</a>
+  </div>
+{:else if mode === "admin"}
+  <div class="w-full font-serif pb-20" class:reveal-enabled={revealEnabled}>
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 border-b border-gray-900/10 dark:border-white/10 pb-8 pt-4" data-reveal>
+      <div>
+        <p class="text-[10px] font-mono opacity-40 uppercase tracking-[0.25em] mb-3">Studio Control / Owner Workspace</p>
+        <h1 class="text-4xl sm:text-5xl italic font-light">Commissions Pipeline</h1>
+      </div>
+      <p class="text-sm font-light opacity-55 max-w-sm">
+        Review requests, approve or deny, and generate a studio invite instantly.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 xl:grid-cols-[1fr_1.2fr] gap-8 lg:gap-10">
+      <section class="border border-gray-900/10 dark:border-white/10" data-reveal style="--reveal-delay: 60ms;">
+        <div class="px-4 py-3 border-b border-gray-900/10 dark:border-white/10 flex items-center justify-between">
+          <h2 class="text-sm uppercase tracking-[0.2em] opacity-55 font-mono">Requests</h2>
+          <span class="text-xs opacity-45">{commissions.length}</span>
+        </div>
+
+        <div class="flex flex-col">
+          {#each commissions as item}
+            <button
+              type="button"
+              class="request-item"
+              class:active={selectedCommissionId === item.id}
+              on:click={() => {
+                selectedCommissionId = item.id;
+                decisionNote = "";
+                denialReason = "";
+              }}
+            >
+              <span class="flex items-start justify-between gap-3">
+                <span class="text-left">
+                  <span class="block text-base italic">{item.projectTitle}</span>
+                  <span class="block text-xs opacity-60 font-sans">{item.clientName} - {item.offer} / {item.tier}</span>
+                </span>
+                <span class={`status-badge status-${item.status}`}>{statusLabel[item.status]}</span>
+              </span>
+              <span class="block text-xs opacity-45 font-mono mt-3">Submitted {toDateLabel(item.submittedAt)}</span>
+            </button>
+          {/each}
+        </div>
+      </section>
+
+      {#if selectedCommission}
+        <section class="border border-gray-900/10 dark:border-white/10 p-6 lg:p-8" data-reveal style="--reveal-delay: 120ms;">
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <p class="text-[10px] font-mono uppercase tracking-[0.2em] opacity-45">Commission</p>
+                <h3 class="text-3xl italic">{selectedCommission.projectTitle}</h3>
+                <p class="font-sans text-sm opacity-60 mt-2">{selectedCommission.clientName} - {selectedCommission.clientEmail}</p>
+              </div>
+              <span class={`status-badge status-${selectedCommission.status}`}>{statusLabel[selectedCommission.status]}</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-sm font-sans">
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Offer</p>
+                <p class="mt-1 italic text-base">{selectedCommission.offer}</p>
+              </div>
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Tier</p>
+                <p class="mt-1 italic text-base">{selectedCommission.tier}</p>
+              </div>
+            </div>
+
+            <div class="p-4 bg-gray-900/[0.02] dark:bg-white/[0.02] border border-gray-900/10 dark:border-white/10">
+              <p class="text-[10px] uppercase tracking-[0.2em] opacity-45 mb-2">Brief</p>
+              <p class="font-sans text-sm leading-relaxed opacity-80">{selectedCommission.brief}</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Submitted</p>
+                <p class="mt-1 text-sm">{toDateLabel(selectedCommission.submittedAt)}</p>
+              </div>
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Updated</p>
+                <p class="mt-1 text-sm">{toDateLabel(selectedCommission.updatedAt)}</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm font-sans">
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Quoted amount</p>
+                <p class="mt-1 italic text-base">{formatMoney(selectedCommission.quotedAmount, selectedCommission.currency)}</p>
+              </div>
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Payment status</p>
+                <p class="mt-2">
+                  <span class={`status-badge status-payment-${selectedCommission.paymentStatus}`}>
+                    {paymentStatusLabel[selectedCommission.paymentStatus] ?? "Unpaid"}
+                  </span>
+                </p>
+              </div>
+              <div class="p-3 border border-gray-900/10 dark:border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.14em] opacity-45">Paid at</p>
+                <p class="mt-1 text-sm">{toDateLabel(selectedCommission.paidAt)}</p>
+              </div>
+            </div>
+
+            {#if selectedCommission.status !== COMMISSION_STATUSES.DENIED}
+              <label class="form-label" for="decision-note">Internal note</label>
+              <textarea
+                id="decision-note"
+                class="admin-textarea"
+                bind:value={decisionNote}
+                placeholder="Add internal notes for review or approval."
+                rows="3"
+              ></textarea>
+            {/if}
+
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              {#if selectedCommission.status === COMMISSION_STATUSES.NEW}
+                <button type="button" class="system-btn" on:click={() => markUnderReview(selectedCommission.id)}>Move to review</button>
+              {/if}
+
+              {#if selectedCommission.status === COMMISSION_STATUSES.NEW || selectedCommission.status === COMMISSION_STATUSES.UNDER_REVIEW}
+                <button type="button" class="system-btn system-btn-accent" on:click={() => approveCommission(selectedCommission.id)}>
+                  Approve + generate invite
+                </button>
+              {/if}
+            </div>
+
+            {#if selectedCommission.status === COMMISSION_STATUSES.NEW || selectedCommission.status === COMMISSION_STATUSES.UNDER_REVIEW}
+              <div class="pt-3 border-t border-gray-900/10 dark:border-white/10">
+                <label class="form-label" for="denial-reason">Deny reason (client-facing)</label>
+                <textarea
+                  id="denial-reason"
+                  class="admin-textarea"
+                  bind:value={denialReason}
+                  rows="2"
+                  placeholder="Example: Timeline mismatch for current queue."
+                ></textarea>
+                <button type="button" class="system-btn mt-3" on:click={() => denyCommission(selectedCommission.id)}>Deny request</button>
+              </div>
+            {/if}
+
+            {#if selectedCommission.status === COMMISSION_STATUSES.APPROVED}
+              <div class="pt-3 border-t border-gray-900/10 dark:border-white/10 flex flex-col gap-3">
+                <div class="p-3 border border-[#A34D32]/35 bg-[#A34D32]/[0.03]">
+                  <p class="text-[10px] uppercase tracking-[0.2em] opacity-60">Studio invite</p>
+                  <p class="text-sm mt-2 font-mono">Code: {selectedCommission.accessCode}</p>
+                  <p class="text-sm mt-1 font-mono break-all">Session: /studio/{selectedCommission.sessionId}</p>
+                </div>
+                <div class="p-3 border border-gray-900/10 dark:border-white/10 bg-gray-900/[0.02] dark:bg-white/[0.02]">
+                  <p class="text-[10px] uppercase tracking-[0.2em] opacity-60">Payment link</p>
+                  <p class="text-sm mt-2 font-mono break-all">
+                    {selectedCommission.paymentUrl || "Not generated yet."}
+                  </p>
+                  <p class="text-xs mt-2 opacity-55 font-mono">Provider: {selectedCommission.paymentProvider}</p>
+                  {#if selectedCommission.paymentReference}
+                    <p class="text-xs mt-2 opacity-55 font-mono">Reference: {selectedCommission.paymentReference}</p>
+                  {/if}
+                </div>
+                <div class="flex flex-wrap gap-3">
+                  <button type="button" class="system-btn" on:click={() => copyApproval(selectedCommission)}>Copy approval message</button>
+                  <button type="button" class="system-btn" on:click={() => copyStudioLink(selectedCommission)}>Copy studio link</button>
+                  <button
+                    type="button"
+                    class="system-btn"
+                    disabled={creatingPaymentLinkId === selectedCommission.id}
+                    on:click={() => createPaymentLink(selectedCommission)}
+                  >
+                    {creatingPaymentLinkId === selectedCommission.id ? "Creating link..." : "Create Ko-fi link"}
+                  </button>
+                  <button
+                    type="button"
+                    class="system-btn"
+                    disabled={markingPaidId === selectedCommission.id || !selectedCommission.paymentUrl}
+                    on:click={() => markPaymentPaid(selectedCommission)}
+                  >
+                    {markingPaidId === selectedCommission.id ? "Updating..." : "Mark paid"}
+                  </button>
+                  {#if selectedCommission.paymentUrl}
+                    <a href={selectedCommission.paymentUrl} target="_blank" rel="noreferrer" class="system-btn">
+                      Open payment page →
+                    </a>
+                  {/if}
+                </div>
+              </div>
+            {/if}
+
+            {#if selectedCommission.decisionNote}
+              <div class="p-3 border border-gray-900/10 dark:border-white/10 bg-gray-900/[0.02] dark:bg-white/[0.02]">
+                <p class="text-[10px] uppercase tracking-[0.16em] opacity-45">Decision note</p>
+                <p class="text-sm mt-2 opacity-75">{selectedCommission.decisionNote}</p>
+              </div>
+            {/if}
+
+            {#if copyState}
+              <p class="text-sm text-[#A34D32]">{copyState}</p>
+            {/if}
+          </div>
+        </section>
+      {/if}
+    </div>
   </div>
 {:else}
   <div class="w-full font-serif pb-20" class:reveal-enabled={revealEnabled}>
@@ -159,6 +623,20 @@
           </a>
         </section>
 
+        {#if project.paymentUrl || project.paypalCheckoutUrl || project.paymentStatus}
+          <section class="p-6 border border-gray-900/10 dark:border-white/10" data-reveal style="--reveal-delay: 560ms;">
+            <h3 class="text-[10px] font-mono uppercase tracking-[0.2em] mb-3 opacity-55">Payment</h3>
+            <p class="text-sm font-extralight opacity-70 mb-3 leading-relaxed">
+              Status: {project.paymentStatus || "unpaid"}
+            </p>
+            {#if project.paymentUrl || project.paypalCheckoutUrl}
+              <a href={project.paymentUrl || project.paypalCheckoutUrl} target="_blank" rel="noreferrer" class="system-btn w-full">
+                Complete payment →
+              </a>
+            {/if}
+          </section>
+        {/if}
+
       </div>
 
     </div>
@@ -167,6 +645,78 @@
 </main>
 
 <style>
+    .request-item {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgba(17,24,39,0.1);
+        background: transparent;
+        padding: 1rem;
+        text-align: left;
+        transition: background 180ms ease;
+        cursor: pointer;
+    }
+    .request-item:hover,
+    .request-item.active {
+        background: rgba(17,24,39,0.04);
+    }
+
+    :global(.status-badge) {
+        font-family: "PPNeueMontreal", "Inter", sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.5rem;
+        border: 1px solid rgba(17,24,39,0.16);
+    }
+    :global(.status-new) {
+        color: #6b7280;
+    }
+
+    :global(.status-under_review) {
+        color: #A34D32;
+        border-color: rgba(163,77,50,0.5);
+    }
+    :global(.status-approved) {
+        color: #15803d;
+        border-color: rgba(21,128,61,0.4);
+    }
+    :global(.status-denied) {
+        color: #b91c1c;
+        border-color: rgba(185,28,28,0.35);
+    }
+    :global(.status-payment-unpaid) {
+        color: #9a3412;
+        border-color: rgba(154,52,18,0.35);
+    }
+    :global(.status-payment-pending) {
+        color: #A34D32;
+        border-color: rgba(163,77,50,0.45);
+    }
+    :global(.status-payment-paid) {
+        color: #15803d;
+        border-color: rgba(21,128,61,0.4);
+    }
+
+    .form-label {
+        font-family: "PPNeueMontreal", "Inter", sans-serif;
+        font-size: 0.67rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.55;
+    }
+
+    .admin-textarea {
+        width: 100%;
+        border: 1px solid rgba(17,24,39,0.16);
+        background: transparent;
+        font-family: "PPNeueMontreal", "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 300;
+        padding: 0.7rem 0.75rem;
+        resize: vertical;
+        min-height: 80px;
+    }
+
     .micro-link { position:relative; text-decoration:none; }
     .micro-link::after {
         content:""; position:absolute; left:0; bottom:-0.08em;
@@ -192,19 +742,50 @@
         text-decoration: none;
         transition: all 300ms ease;
     }
+    .system-btn:disabled {
+        opacity: 0.45;
+        cursor: default;
+        transform: none;
+    }
     .system-btn:hover {
         background: #A34D32;
         border-color: #A34D32;
         transform: translateY(-1px);
     }
+    .system-btn.system-btn-accent {
+        background: #A34D32;
+        border-color: #A34D32;
+        color: #FDFDFB;
+    }
+    .system-btn.system-btn-accent:hover {
+        filter: brightness(1.05);
+    }
 
     @media (prefers-color-scheme: dark) {
+        .request-item {
+            border-bottom-color: rgba(255,255,255,0.1);
+        }
+        .request-item:hover,
+        .request-item.active {
+            background: rgba(255,255,255,0.05);
+        }
+        :global(.status-badge) {
+            border-color: rgba(255,255,255,0.25);
+        }
+        .admin-textarea {
+            border-color: rgba(255,255,255,0.2);
+        }
         .system-btn {
             background: #FDFDFB;
             color: #1A1A1A;
             border-color: #FDFDFB;
         }
         .system-btn:hover {
+            background: #A34D32;
+            color: #FDFDFB;
+            border-color: #A34D32;
+        }
+        .system-btn.system-btn-accent {
             background: #A34D32;
             color: #FDFDFB;
             border-color: #A34D32;
@@ -216,7 +797,7 @@
         transition: all 800ms cubic-bezier(0.22,1,0.36,1);
         transition-delay: var(--reveal-delay, 0ms);
     }
-    :global(.reveal-enabled) [data-reveal] {
+    .reveal-enabled [data-reveal] {
         opacity: 1; transform: translateY(0);
     }
     @media (prefers-reduced-motion: reduce) {
