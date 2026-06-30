@@ -19,7 +19,7 @@
     "@astrojs/svelte": "^8.1.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.3.1",
+    "astro": "^6.4.8",
     "gray-matter": "^4.0.3",
     "marked": "^18.0.2",
     "pocketbase": "^0.27.0",
