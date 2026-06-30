@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
-import { listCommissions } from "../../../utils/studioServerStore";
+import { listCommissions, createCommission } from "../../../utils/studioServerStore";
+import type { StudioCommission } from "../../../utils/studioWorkflow";
 
 const json = (status: number, body: Record<string, unknown>) =>
   new Response(JSON.stringify(body), {
@@ -19,3 +20,13 @@ export const GET: APIRoute = async () => {
   }
 };
 
+export const POST: APIRoute = async ({ request }) => {
+  try {
+    const body = (await request.json()) as Partial<StudioCommission>;
+    const newCommission = await createCommission(body);
+    return json(201, { ok: true, commission: newCommission });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    return json(500, { ok: false, error: message });
+  }
+};

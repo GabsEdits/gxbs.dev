@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import Footer from "./Footer.svelte";
+  import { pb } from "../lib/pocketbase";
 
   let slotsData = null;
   let slotsLoading = true;
@@ -13,14 +14,14 @@
   ];
 
   let builderType = "";
-  let builderScale = "";
+  let builderScale = ""; // This will now directly hold "Core", "Presence", or "System"
   let builderInfrastructure = false;
   let builderUpkeep = false;
 
   const PRICES = {
-    "Design": { Small: 200, Medium: 450, Large: 950 },
-    "Development": { Small: 300, Medium: 700, Large: 1500 },
-    "Full Package": { Small: 420, Medium: 1050, Large: 2200 }
+    "Design": { Core: 200, Presence: 450, System: 950 },
+    "Development": { Core: 300, Presence: 700, System: 1500 },
+    "Full Package": { Core: 420, Presence: 1050, System: 2200 }
   };
 
   $: builderPrice = (() => {
@@ -100,16 +101,14 @@
 
   const fetchSlots = async () => {
     try {
-      const res = await fetch("https://api.gxbs.dev/hire/slots", {
-        headers: { "X-Source": "Cloudflare-Workers" }
-      });
-      if (!res.ok) {
-        slotsError = true;
-        return;
-      }
-      const data = await res.json();
+      // Assumes a 'slots' collection in PocketBase
+      const records = await pb.collection('slots').getFullList();
+      
       const map = {};
-      for (const slot of data) map[slot.name.replace(/\s+/g, "").toLowerCase()] = slot;
+      for (const slot of records) {
+        map[slot.name.replace(/\s+/g, "").toLowerCase()] = slot;
+      }
+
       slotsData = {
         smallScale: map["smallscale"] ?? null,
         mediumScale: map["mediumscale"] ?? null,
@@ -156,32 +155,19 @@
     submitText = "Encrypting & Sending...";
 
     try {
-      const TOKEN = import.meta.env.VITE_TOKEN;
-      const CHAT_ID = "5777053104";
-      const msg = [
-        "<b>Partnership Inquiry</b>",
-        `\n- <b>Client:</b> ${formName}`,
-        `- <b>Email:</b> ${formEmail}`,
-        `- <b>Offer:</b> ${formType}`,
-        `- <b>Tier:</b> ${formScale}`,
-        `- <b>Brief:</b> ${formDetails}`
-      ].filter(Boolean).join("\n");
-
-      await fetch("https://api.gxbs.dev/hire/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formName,
-          email: formEmail,
-          type: formType,
-          scale: formScale,
-          addons: [
-            builderInfrastructure ? "Launch Support" : "",
-            builderUpkeep ? "Care Plan" : "",
-          ].filter(Boolean),
-          details: formDetails,
-          honeypot: formHoneypot,
-        }),
+      // Assumes a 'commissions' collection in PocketBase
+      await pb.collection('commissions').create({
+        clientName: formName,
+        clientEmail: formEmail,
+        offer: formType,
+        tier: formScale,
+        brief: formDetails,
+        status: "new",
+        addons: [
+          builderInfrastructure ? "Launch Support" : "",
+          builderUpkeep ? "Care Plan" : "",
+        ].filter(Boolean).join(", "),
+        // PocketBase handles IDs and Timestamps automatically
       });
 
       formName = "";
@@ -313,11 +299,11 @@
           type="button"
           class="border-0 border-b-2 border-black dark:border-white bg-transparent px-0 text-inherit font-bold transition-opacity hover:opacity-65"
           on:click={() => {
-            const tiers = ["Small", "Medium", "Large"];
+            const tiers = ["Core", "Presence", "System"]; // Changed to actual tier names
             const idx = tiers.indexOf(builderScale);
             builderScale = tiers[(idx + 1) % tiers.length];
           }}
-        >{#key builderScale}<span class="inline animate-[word-swap_180ms_ease]">{#if !builderScale}<span class="opacity-40">a scope</span>{:else}{builderScale === "Small" ? "Core" : builderScale === "Medium" ? "Presence" : "System"}{/if}</span>{/key}</button><sup class="font-neue ml-[0.15em] align-super text-[0.45em] font-light not-italic opacity-40">↕</sup>
+        >{#key builderScale}<span class="inline animate-[word-swap_180ms_ease]">{#if !builderScale}<span class="opacity-40">a scope</span>{:else}{builderScale}{/if}</span>{/key}</button><sup class="font-neue ml-[0.15em] align-super text-[0.45em] font-light not-italic opacity-40">↕</sup>
         <br>project, focusing on
         <button
           type="button"
@@ -523,9 +509,9 @@
             <p class="font-neue mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.1em]">Project Tier</p>
             <div class="toggle-group flex w-full flex-wrap gap-1.5" role="group" aria-label="Scale">
               {#each [
-                { id: "Small", label: "Core" },
-                { id: "Medium", label: "Presence" },
-                { id: "Large", label: "System" }
+                { id: "Core", label: "Core" },     // Changed id from "Small" to "Core"
+                { id: "Presence", label: "Presence" }, // Changed id from "Medium" to "Presence"
+                { id: "System", label: "System" }   // Changed id from "Large" to "System"
               ] as opt}
                 <button type="button" class="toggle-btn font-neue min-w-[72px] flex-1 border border-[rgba(17,24,39,0.12)] bg-transparent px-3.5 py-2 text-sm font-normal tracking-[0.01em] transition-[border-color,font-weight] hover:border-[rgba(17,24,39,0.4)] dark:border-[rgba(255,255,255,0.1)] dark:hover:border-[rgba(255,255,255,0.4)]"
                         class:active={formScale === opt.id}
@@ -760,4 +746,3 @@
     }
   }
 </style>
-
