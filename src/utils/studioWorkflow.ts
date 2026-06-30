@@ -166,33 +166,30 @@ export const normalizeCommission = (commission: StudioCommission | Partial<Studi
     paypalOrderId?: string;
   };
 
-  const paymentUrl = commission.paymentUrl ?? legacy.paypalCheckoutUrl ?? "";
-  const paymentReference = commission.paymentReference ?? legacy.paypalOrderId ?? "";
+  const paymentUrl = (commission.paymentUrl === "" ? undefined : commission.paymentUrl) ?? legacy.paypalCheckoutUrl ?? undefined;
+  const paymentReference = (commission.paymentReference === "" ? undefined : commission.paymentReference) ?? legacy.paypalOrderId ?? undefined;
 
   return withDefaults({
-    id: commission.id ?? `cmp_${Date.now()}`,
-    clientName: commission.clientName ?? "Unknown client",
-    clientEmail: commission.clientEmail ?? "",
-    projectTitle: commission.projectTitle ?? "Untitled project",
-    offer: commission.offer ?? "Design",
-    tier: commission.tier ?? "Core",
-    status: (commission.status as CommissionStatus) ?? COMMISSION_STATUSES.NEW,
-    brief: commission.brief ?? "",
-    submittedAt: commission.submittedAt ?? new Date().toISOString(),
-    updatedAt: commission.updatedAt ?? new Date().toISOString(),
-    decisionNote: commission.decisionNote ?? "",
-    accessCode: commission.accessCode ?? "",
-    sessionId: commission.sessionId ?? "",
-    approvedAt: commission.approvedAt ?? "",
-    quotedAmount: commission.quotedAmount,
-    currency: commission.currency,
-    paymentStatus: commission.paymentStatus,
-    paymentProvider: commission.paymentProvider,
+    id: (commission.id === "" ? undefined : commission.id),
+    clientName: (commission.clientName === "" ? undefined : commission.clientName),
+    clientEmail: (commission.clientEmail === "" ? undefined : commission.clientEmail),
+    projectTitle: (commission.projectTitle === "" ? undefined : commission.projectTitle),
+    offer: (commission.offer === "" ? undefined : commission.offer),
+    tier: (commission.tier === "" ? undefined : commission.tier),
+    status: (commission.status === "" ? undefined : commission.status) as CommissionStatus,
+    brief: (commission.brief === "" ? undefined : commission.brief),
+    submittedAt: (commission.submittedAt === "" ? undefined : commission.submittedAt),
+    updatedAt: (commission.updatedAt === "" ? undefined : commission.updatedAt),
+    decisionNote: (commission.decisionNote === "" ? undefined : commission.decisionNote),
+    accessCode: (commission.accessCode === "" ? undefined : commission.accessCode),
+    sessionId: (commission.sessionId === "" ? undefined : commission.sessionId),
+    approvedAt: (commission.approvedAt === "" ? undefined : commission.approvedAt),
+    quotedAmount: (commission.quotedAmount === 0 ? undefined : commission.quotedAmount),
+    currency: (commission.currency === "" ? undefined : commission.currency),
+    paymentStatus: (commission.paymentStatus === "" ? undefined : commission.paymentStatus) as PaymentStatus,
+    paymentProvider: (commission.paymentProvider === "" ? undefined : commission.paymentProvider) as PaymentProvider,
     paymentUrl,
     paymentReference,
-    paidAt: commission.paidAt,
+    paidAt: (commission.paidAt === "" ? undefined : commission.paidAt),
   });
 };
-
-
-

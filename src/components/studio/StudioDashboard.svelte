@@ -10,12 +10,13 @@
     createStudioSessionId,
     normalizeCommission,
   } from "../../utils/studioWorkflow";
+  import { pb } from "../../lib/pocketbase";
 
   export let uuid;
   export let mode = "client";
 
-  const STUDIO_API_BASE_URL = import.meta.env.PUBLIC_STUDIO_API_BASE_URL ?? "https://api.gxbs.dev";
-  const USE_MOCK_DATA = import.meta.env.DEV && import.meta.env.PUBLIC_STUDIO_USE_MOCK_DATA !== "false";
+  const PB_URL = "https://cdn.gxbs.dev";
+  const USE_MOCK_DATA = false; // Set to false to test PocketBase
 
   let project = null;
   let loading = true;
@@ -97,14 +98,14 @@
 
   const loadCommissions = async () => {
     try {
-      const res = await fetch("/api/studio/commissions");
-      if (!res.ok) {
-        throw new Error("Failed to load commissions.");
-      }
-
-      const payload = await res.json();
-      const items = Array.isArray(payload?.commissions) ? payload.commissions : [];
-      commissions = sortCommissions(items.map(normalizeCommission));
+      // Fetch directly from PocketBase
+      const records = await pb.collection('commissions').getFullList({
+        sort: '-created',
+      });
+      
+      // Map PocketBase fields to your internal StudioCommission interface
+      // PB uses 'id', 'created', 'updated' by default.
+      commissions = sortCommissions(records.map(rec => normalizeCommission({ ...rec, updatedAt: rec.updated, submittedAt: rec.created })));
     } catch {
       commissions = sortCommissions(createSeedCommissions());
       copyState = "Admin API unavailable. Showing fallback data.";
@@ -115,18 +116,13 @@
 
   const updateCommission = async (id, patch) => {
     try {
-      const res = await fetch(`/api/studio/commissions/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ patch }),
+      const record = await pb.collection('commissions').update(id, patch);
+      const updated = normalizeCommission({
+        ...record,
+        updatedAt: record.updated,
+        submittedAt: record.created
       });
-
-      if (!res.ok) {
-        throw new Error("Failed to persist commission update.");
-      }
-
-      const payload = await res.json();
-      const updated = normalizeCommission(payload?.commission ?? {});
+      
       commissions = sortCommissions(
         commissions.map((item) => (item.id === id ? updated : item))
       );
@@ -314,11 +310,11 @@
         await new Promise(resolve => setTimeout(resolve, 800));
         project = MOCK_DATA;
       } else {
-        const res = await fetch(`${STUDIO_API_BASE_URL}/api/studio/${uuid}`);
-        if (!res.ok) throw new Error("Invalid session key");
-        project = await res.json();
+        // Client view: Fetch specific project by session ID or Access Code
+        // Assumes you have a field 'sessionId' in the collection
+        project = await pb.collection('commissions').getFirstListItem(`sessionId="${uuid}"`);
       }
-      setTimeout(() => { revealEnabled = true; }, 50);
+      revealEnabled = true;
     } catch (err) {
       error = true;
     } finally {
