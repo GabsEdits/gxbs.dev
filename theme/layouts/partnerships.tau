@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content="{description}" />
+    <link rel="canonical" href="{canonical | url}" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <script src="/assets/partnerships.js" defer></script>
+  </head>
+  <body>
+    <main
+      class="w-full overflow-x-hidden font-serif"
+      data-design-core="{pricing.design.core}" data-design-presence="{pricing.design.presence}" data-design-system="{pricing.design.system}"
+      data-development-core="{pricing.development.core}" data-development-presence="{pricing.development.presence}" data-development-system="{pricing.development.system}"
+      data-full-core="{pricing.fullPackage.core}" data-full-presence="{pricing.fullPackage.presence}" data-full-system="{pricing.fullPackage.system}"
+      data-launch="{pricing.launchSupport}" data-care="{pricing.carePlan}"
+    >
+      <nav class="absolute inset-x-0 top-0 z-[100] flex items-center justify-end px-12 py-10 lg:px-10">
+        <div class="font-neue flex items-center justify-center gap-2 text-sm font-medium"><a href="/"><img src="/assets/ecliptic.svg" alt="" aria-hidden="true" class="h-5 dark:invert" /></a><span class="opacity-30">/</span><a href="/partnerships" class="opacity-60">partnerships</a></div>
+      </nav>
+
+      <section class="relative flex min-h-[100svh] flex-col justify-end">
+        <div class="mx-auto w-full max-w-5xl px-8 pb-16 pt-20 lg:px-16">
+          <div class="[&>h1]:m-0 [&>h1]:border-b [&>h1]:border-[rgba(17,24,39,0.1)] [&>h1]:pb-10 [&>h1]:font-sans [&>h1]:text-[clamp(5rem,12vw,9.5rem)] [&>h1]:leading-[0.9] [&>h1]:tracking-[-0.03em] [&>h1]:italic dark:[&>h1]:border-[rgba(255,255,255,0.08)] [&_em]:font-serif [&>p]:mt-6 [&>p]:mb-0 [&>p]:max-w-[45ch] [&>p]:font-sans [&>p]:text-[1.05rem] [&>p]:leading-[1.65] [&>p]:font-light [&>p]:italic [&>p]:opacity-70">{@html content}</div>
+          <div class="absolute right-16 bottom-16 flex flex-col gap-1" aria-live="polite"><p class="font-neue m-0 animate-pulse text-[0.7rem] italic opacity-30">Checking availability…</p></div>
+        </div>
+        <div class="font-neue pointer-events-none absolute bottom-7 left-1/2 -translate-x-1/2 animate-[bob_2.6s_ease-in-out_infinite] text-[0.7rem] font-light opacity-20" aria-hidden="true">↓</div>
+      </section>
+
+      <section class="mx-auto w-full max-w-5xl px-8 py-20 lg:px-16" data-reveal>
+        <hr class="h-px w-full border-none bg-[rgba(17,24,39,0.1)] dark:bg-[rgba(255,255,255,0.08)]" />
+        <p class="font-neue mt-7 text-[0.62rem] font-medium uppercase tracking-[0.28em] opacity-30">build your project</p>
+        <div class="relative mt-12 grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_auto]">
+          <p class="font-editorial m-0 max-w-[26ch] text-[clamp(2.2rem,4vw,3.2rem)] leading-[1.3] tracking-[-0.02em] italic">
+            I am looking for a <button type="button" data-cycle="scale" class="border-0 border-b-2 border-black bg-transparent px-0 font-bold text-inherit transition-opacity hover:opacity-65 dark:border-white"><span class="opacity-40">a scope</span></button><sup class="font-neue ml-[0.15em] align-super text-[0.45em] font-light not-italic opacity-40">↕</sup><br>
+            project, focusing on <button type="button" data-cycle="type" class="border-0 border-b-2 border-black bg-transparent px-0 font-bold text-inherit transition-opacity hover:opacity-65 dark:border-white"><span class="opacity-40">a focus</span></button><sup class="font-neue ml-[0.15em] align-super text-[0.45em] font-light not-italic opacity-40">↕</sup>,<br>
+            with <button type="button" data-cycle="extras" class="border-0 border-b-2 border-black bg-transparent px-0 font-bold text-inherit transition-opacity hover:opacity-65 dark:border-white"><span>nothing extra</span></button><sup class="font-neue ml-[0.15em] align-super text-[0.45em] font-light not-italic opacity-40">↕</sup>.
+          </p>
+          <div data-cycle-hint class="font-neue pointer-events-none flex flex-col items-end pt-2 text-right transition-opacity duration-[400ms]"><span class="font-mono text-[0.6rem] opacity-25">&lt;---------</span><span class="text-[0.65rem] font-light opacity-35">click to cycle</span></div>
+        </div>
+        <div class="mt-10">
+          <hr class="h-px w-full border-none bg-[rgba(17,24,39,0.1)] dark:bg-[rgba(255,255,255,0.08)]" />
+          <div class="mt-8"><div data-price-block hidden><p class="font-neue mb-2 text-[0.62rem] font-medium uppercase tracking-[0.25em] opacity-30">Estimated investment</p><p class="font-editorial m-0 text-[clamp(4rem,8vw,7rem)] leading-none font-extrabold tracking-[-0.04em] text-black italic dark:text-white"><span data-price-output></span><span class="font-neue ml-[0.5em] align-top text-[1.3rem] font-medium not-italic">€</span></p></div><p data-price-placeholder class="font-neue m-0 text-[0.875rem] font-light italic opacity-30">select a tier above to see pricing</p></div>
+          <div class="mt-8 flex flex-wrap items-center gap-8"><button type="button" data-open-form class="font-neue border-0 bg-[#1A1A1A] px-9 py-[0.85rem] text-[0.75rem] font-semibold uppercase tracking-[0.14em] text-[#FDFDFB] transition-colors hover:bg-[#A34D32] disabled:cursor-default disabled:opacity-20 dark:bg-[#FDFDFB] dark:text-[#1A1A1A] dark:hover:bg-[#A34D32] dark:hover:text-[#FDFDFB]" disabled>Secure your slot →</button><button type="button" data-open-form class="font-neue border-0 border-b border-current bg-transparent p-0 text-[0.875rem] font-light opacity-50 transition-opacity hover:opacity-85">Skip builder</button></div>
+        </div>
+      </section>
+
+      <section class="mx-auto w-full max-w-5xl px-8 py-16 lg:px-16" data-reveal>
+        <hr class="h-px w-full border-none bg-[rgba(17,24,39,0.1)] dark:bg-[rgba(255,255,255,0.08)]" />
+        <div class="mt-6 flex items-baseline justify-between gap-6"><span class="font-neue text-[0.62rem] font-medium uppercase tracking-[0.28em] opacity-30">Selected Works</span><span class="font-neue text-[0.62rem] font-medium uppercase tracking-[0.28em] opacity-20">2025 — 2026</span></div>
+        <div class="works-marquee mt-8" role="region" aria-label="Selected works marquee"><div class="works-marquee-window border-y border-[rgba(17,24,39,0.07)] py-5 dark:border-[rgba(255,255,255,0.07)]"><div class="works-marquee-track">
+          {#each selectedWorks as work, index}<div class="works-marquee-item group"><div class="flex items-baseline gap-5"><span class="font-neue w-6 shrink-0 text-[0.65rem] tabular-nums opacity-20">0{index + 1}</span><span class="font-editorial text-[clamp(1.3rem,2.2vw,2rem)] leading-none font-extrabold tracking-[-0.02em] italic">{work.name}</span></div><span class="font-neue text-[0.68rem] font-light opacity-40">{work.type}</span></div>{/each}
+          {#each selectedWorks as work, index}<div class="works-marquee-item group" aria-hidden="true"><div class="flex items-baseline gap-5"><span class="font-neue w-6 shrink-0 text-[0.65rem] tabular-nums opacity-20">0{index + 1}</span><span class="font-editorial text-[clamp(1.3rem,2.2vw,2rem)] leading-none font-extrabold tracking-[-0.02em] italic">{work.name}</span></div><span class="font-neue text-[0.68rem] font-light opacity-40">{work.type}</span></div>{/each}
+        </div></div></div>
+      </section>
+
+      <section class="mx-auto w-full max-w-5xl px-8 py-[clamp(4rem,8vw,7rem)] lg:px-16" data-reveal>
+        <hr class="h-px w-full border-none bg-[rgba(17,24,39,0.1)] dark:bg-[rgba(255,255,255,0.08)]" />
+        <div class="mt-6 flex items-baseline justify-between gap-6"><h3 class="font-editorial m-0 text-[clamp(2.5rem,5vw,4rem)] font-extrabold tracking-[-0.02em] italic">The Process</h3><span class="font-neue text-[0.62rem] font-medium uppercase tracking-[0.28em] opacity-30">HOW IT WORKS</span></div>
+        <div class="mt-14">{#each workflow as item}<div class="group flex items-center gap-6 border-t border-[rgba(17,24,39,0.07)] py-5 dark:border-[rgba(255,255,255,0.07)]" data-reveal><span class="font-editorial w-14 shrink-0 select-none text-[clamp(2.2rem,4vw,3.2rem)] leading-none font-extrabold text-[#A34D32] italic opacity-[0.13] transition-opacity duration-300 group-hover:opacity-[0.45]">{item.number}</span><span class="font-neue text-[clamp(0.9rem,1.5vw,1.1rem)] leading-snug font-medium">{item.statement}</span></div>{/each}<div class="border-t border-[rgba(17,24,39,0.07)] dark:border-[rgba(255,255,255,0.07)]"></div></div>
+      </section>
+
+      <section class="mx-auto w-full max-w-5xl px-8 py-[clamp(4rem,8vw,7rem)] lg:px-16" data-reveal>
+        <hr class="h-px w-full border-none bg-[rgba(17,24,39,0.1)] dark:bg-[rgba(255,255,255,0.08)]" />
+        <div class="mt-6 flex items-baseline justify-between gap-6"><h3 class="font-editorial m-0 text-[clamp(2.5rem,5vw,4rem)] font-extrabold tracking-[-0.02em] italic">FAQ</h3><span class="font-neue text-[0.62rem] font-medium uppercase tracking-[0.28em] opacity-30">COMMON QUESTIONS</span></div>
+        <div class="mt-12 border-t border-[rgba(17,24,39,0.08)] dark:border-[rgba(255,255,255,0.08)]">{#each faqs as item}<details class="group border-b border-[rgba(17,24,39,0.08)] dark:border-[rgba(255,255,255,0.08)]" data-reveal><summary class="font-neue flex cursor-pointer list-none items-center justify-between gap-4 py-[1.4rem] text-base font-semibold after:shrink-0 after:text-[1.3rem] after:text-[#A34D32] after:opacity-55 after:content-['+'] group-open:after:content-['−']">{item.question}</summary><p class="font-neue m-0 pb-6 text-[0.9375rem] leading-[1.7] font-light opacity-58">{item.answer}</p></details>{/each}</div>
+      </section>
+
+      <section class="flex min-h-[100svh] w-full flex-col items-center justify-center gap-6 bg-[#1A1A1A] px-8 py-16 text-center text-[#FDFDFB]" data-reveal>
+        <div class="flex items-center gap-2.5"><span class="inline-block h-2 w-2 animate-[pulse-dot_2.4s_ease-in-out_infinite] rounded-full bg-[#A34D32]" aria-hidden="true"></span><span class="font-neue text-[0.62rem] font-medium uppercase tracking-[0.22em] opacity-35">Available for new work</span></div>
+        <p class="font-neue m-0 text-[0.62rem] font-medium uppercase tracking-[0.28em] opacity-25">READY TO BEGIN</p><h2 class="font-editorial m-0 text-[clamp(4rem,11vw,8.5rem)] leading-[0.9] font-extrabold tracking-[-0.03em] italic">Let's build<br>something.</h2><p class="font-neue mt-2 max-w-[34ch] text-[0.9375rem] leading-7 font-light opacity-35">Skip the estimator and share your goals directly for a custom proposal.</p><button type="button" data-open-form class="font-neue mt-3 border border-[rgba(255,255,255,0.2)] bg-transparent px-11 py-4 text-[0.75rem] font-medium uppercase tracking-[0.14em] transition-colors hover:border-[#A34D32] hover:bg-[#A34D32]">Start a conversation →</button>
+      </section>
+      <div class="mx-auto w-full max-w-5xl px-8 pb-20 lg:px-16"><Footer /></div>
+    </main>
+
+    <aside data-project-drawer class="fixed top-0 right-0 z-[9999] h-[100svh] w-[min(500px,100vw)] translate-x-[105%] overflow-y-auto border-t-[3px] border-t-[#A34D32] bg-[#FDFDFB] px-10 py-12 transition-transform duration-300 [&.is-open]:translate-x-0 dark:bg-[#0f0f0f]" aria-hidden="true">
+      <div class="mb-8 flex items-center justify-between"><h2 class="font-editorial text-[1.9rem] font-extrabold italic">Project Initiation</h2><button class="font-neue border-0 bg-transparent text-sm underline opacity-50" type="button" data-close-form>Close</button></div>
+      <form class="flex flex-col gap-5">
+        <label class="font-neue flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.1em]">Name / Entity<input class="w-full border-0 border-b border-black/12 bg-transparent px-0 py-3 text-[0.9375rem] font-light outline-none focus:border-b-[#A34D32] dark:border-white/12" name="name" autocomplete="name" required></label>
+        <label class="font-neue flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.1em]">Email<input class="w-full border-0 border-b border-black/12 bg-transparent px-0 py-3 text-[0.9375rem] font-light outline-none focus:border-b-[#A34D32] dark:border-white/12" name="email" type="email" autocomplete="email" required></label>
+        <label class="font-neue flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.1em]">Technical Brief<textarea class="min-h-24 w-full resize-y border-0 border-b border-black/12 bg-transparent px-0 py-3 text-[0.9375rem] font-light outline-none focus:border-b-[#A34D32] dark:border-white/12" name="brief" required></textarea></label>
+        <input name="website" tabindex="-1" autocomplete="off" hidden>
+        <p class="font-neue text-sm opacity-55" data-form-note>I normally reply within 24 hours.</p>
+        <button class="font-neue w-full border-0 bg-[#1A1A1A] p-4 text-[0.75rem] font-semibold uppercase tracking-[0.14em] text-[#FDFDFB] dark:bg-[#FDFDFB] dark:text-[#1A1A1A]" type="submit">Initiate Project</button>
+      </form>
+    </aside>
+  </body>
+</html>

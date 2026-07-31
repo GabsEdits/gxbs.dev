@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="{description}" />
+    <link rel="canonical" href="{canonical | url}" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Gabriel Cozma" href="/feed.xml" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+  </head>
+  <body>
+    <main class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center gap-12 px-4 py-10 font-serif sm:px-6 lg:max-w-120 lg:py-16">
+      <BlogHeader />
+      <section class="flex w-full flex-col items-center justify-center gap-12 [&>h1]:text-center [&>h1]:text-3xl [&>p]:max-w-[80%] [&>p]:text-center [&>p]:text-2xl">
+        {@html content}
+        <hr class="divider w-full" />
+      </section>
+      <section class="flex w-full flex-col items-center justify-center gap-16">
+        <h3 class="text-xl italic">Posts</h3>
+        <ul class="flex w-full flex-col gap-4">
+          {#each collections.blog.items as post}
+            {#if !post.frontmatter.archived}
+              <li class="interactive-row flex w-full flex-row items-center justify-between gap-3 self-stretch">
+                <div class="flex min-w-0 flex-row items-center gap-4">
+                  <div class="flex w-full min-w-0 flex-col items-start gap-2">
+                    <a href="{post.url | url}" class="micro-link text-xl font-extrabold italic">{post.frontmatter.title}</a>
+                    <p class="text-lg">{#each post.frontmatter.tags as tag}<span class="mr-1">{tag}</span>{/each}</p>
+                  </div>
+                </div>
+                <p class="text-left font-sans text-lg font-normal sm:text-right">{post.frontmatter.displayDate}</p>
+              </li>
+            {/if}
+          {/each}
+        </ul>
+        <a href="/blog/archive" class="micro-link text-lg">Archive <span class="arrow-nudge">→</span></a>
+        <hr class="divider w-full" />
+      </section>
+      <Footer />
+    </main>
+  </body>
+</html>

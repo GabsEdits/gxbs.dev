@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <link rel="me" href="https://mastodon.online/@gabs" />
+    <title>{title}</title>
+    <meta name="description" content="{description}" />
+    <meta property="og:title" content="{title}" />
+    <meta property="og:description" content="{description}" />
+    <meta property="og:url" content="{canonical | url}" />
+    <link rel="canonical" href="{canonical | url}" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-light.svg" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <script src="/assets/home.js" defer></script>
+  </head>
+  <body>
+    <div class="relative grid h-screen w-full place-items-center overflow-hidden px-4">
+      <div class="relative inline-block">
+        <h1 class="hero-name -ml-12.5 text-center text-5xl leading-none transition-all sm:ml-0 sm:text-7xl">Gabriel <b class="italic">Cozma</b></h1>
+        <span data-icon-start class="pointer-events-none absolute bottom-3 left-[calc(100%+1.25rem)] inline-flex h-5.25 w-11.25" aria-hidden="true"></span>
+      </div>
+      <div data-scroll-hint class="scroll-hint absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 select-none" aria-hidden="true">
+        <p class="font-serif text-sm text-gray-400 italic">scroll</p>
+        <span class="scroll-arrow text-base leading-none text-gray-300">↓</span>
+      </div>
+    </div>
+
+    <div data-floating-icon class="ecliptic-icon pointer-events-auto fixed top-0 left-0 z-40 cursor-pointer opacity-0 transition-opacity duration-300 will-change-transform" role="button" tabindex="0" title="Click to spin">
+      <img src="/assets/ecliptic.svg" alt="" class="ecliptic-base h-5.25 w-11.25 hover:animate-spin dark:invert" />
+      <img src="/assets/agen-light.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-light" />
+      <img src="/assets/agen-black.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-dark" />
+    </div>
+
+    <main data-reveal-root class="container mx-auto flex max-w-full flex-col items-center gap-12 p-4 font-serif lg:max-w-120 lg:py-24">
+      <div class="flex h-6 items-center justify-center"><div data-icon-end class="h-5.25 w-11.25" aria-hidden="true"></div></div>
+
+      <div class="flex w-full flex-col items-center justify-center gap-12 [&>h1]:text-center [&>h1]:text-3xl [&>p]:max-w-[80%] [&>p]:text-center [&>p]:text-2xl">{@html content}<hr class="divider w-full" /></div>
+
+      <div class="flex w-full flex-col items-center justify-center gap-16" data-reveal>
+        <h3 class="text-xl italic">History</h3>
+        <ul class="flex w-full flex-col gap-4">
+          {#each history as item}
+            <li class="interactive-row flex w-full flex-row items-center justify-between gap-3 self-stretch" data-reveal>
+              <div class="flex min-w-0 flex-row items-center gap-4">
+                <img src="{item.logo | url}" alt="{item.company}" class="size-12 rounded-lg dark:invert" />
+                <div class="flex w-full min-w-0 flex-col items-start gap-2"><h4 class="text-xl font-extrabold italic">{item.company}</h4><p class="text-lg">{item.role}</p></div>
+              </div>
+              <p class="text-left font-sans text-lg font-normal sm:text-right">{item.startDate} -<br>{item.endDate}</p>
+            </li>
+          {/each}
+        </ul>
+        <ul class="flex w-full flex-col gap-4">
+          {#each achievements as item}
+            <li class="interactive-row flex w-full flex-col items-start justify-between gap-3 self-stretch sm:flex-row sm:items-center" data-reveal>
+              <div class="flex min-w-0 flex-row items-center gap-4"><div class="flex w-full min-w-0 flex-col items-start gap-2"><a href="{item.url | url}" target="_blank" rel="noreferrer" class="micro-link text-xl font-extrabold italic">{item.title}</a><p class="text-lg">{item.type}</p></div></div>
+              <p class="text-left font-sans text-lg font-normal sm:text-right">{item.date}</p>
+            </li>
+          {/each}
+        </ul>
+        <hr class="divider w-full" />
+      </div>
+
+      <div class="flex w-full flex-col items-center justify-center gap-16" data-reveal>
+        <h3 class="text-xl italic">Selected Works</h3>
+        <ul class="flex w-full flex-col gap-4">
+          {#each selectedWorks as item}
+            <li class="interactive-row flex w-full flex-row items-center justify-between gap-3 self-stretch" data-reveal>
+              <div class="flex min-w-0 flex-row items-center gap-4"><div class="flex w-full min-w-0 flex-col items-start gap-2"><a href="{item.url | url}" target="_blank" rel="noreferrer" class="micro-link text-xl font-extrabold italic">{item.title}</a><p class="text-lg">{item.description}</p></div></div>
+              <p class="text-left font-sans text-lg font-normal sm:text-right">{item.date}</p>
+            </li>
+          {/each}
+        </ul>
+        <a href="/projects" class="micro-link text-lg">View all projects <span class="arrow-nudge">→</span></a>
+        <hr class="divider w-full" />
+      </div>
+
+      <div class="flex w-full flex-col items-center justify-center gap-12" data-reveal>
+        <h3 class="text-xl italic">Skills</h3>
+        <div class="flex w-full flex-col items-center gap-8">
+          {#each skills as group}
+            <div class="flex flex-col items-center gap-2">
+              <p class="text-sm font-sans font-medium tracking-[0.12em] uppercase opacity-50">{group.category}</p>
+              <p class="max-w-2xl text-center font-sans text-lg font-normal">
+                {#each group.items as skill}<span class="mx-1">{skill}</span>,{/each}
+              </p>
+            </div>
+          {/each}
+        </div>
+        <hr class="divider w-full" />
+      </div>
+
+      <div class="flex w-full flex-col items-center justify-center gap-12" data-reveal>
+        <h3 class="text-xl italic">Contact</h3>
+        <p class="-mt-1 -mb-0.5 inline-flex flex-wrap items-center justify-center gap-[0.45rem]" aria-live="polite"><span data-local-time class="animate-pulse text-base font-normal italic tabular-nums">--:--</span><span aria-hidden="true" class="opacity-60">·</span><span data-local-zone class="text-xs font-extralight uppercase opacity-70">(EET)</span></p>
+        <div class="flex flex-row flex-wrap items-center justify-center gap-6">
+          {#each contacts as item}<p class="text-center text-lg"><b>{item.label}:</b> <a href="{item.url | url}" class="micro-link font-sans font-extralight italic">{item.title}</a></p>{/each}
+        </div>
+        <a href="/partnerships" class="group mt-2 flex cursor-pointer items-center gap-3 rounded-full border border-gray-900/10 px-5 py-2.5 font-sans text-xs font-medium uppercase opacity-75 transition-all hover:bg-gray-900/5 hover:opacity-100 dark:border-white/10 dark:hover:bg-white/5" data-reveal>
+          <span>Interested in working together?</span><span class="font-serif text-sm tracking-normal lowercase italic transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </a>
+        <hr class="divider w-full" />
+      </div>
+
+      <div class="flex w-full flex-col items-center justify-center gap-12" data-reveal>
+        <h3 class="text-xl italic">Backed by</h3>
+        <div class="flex w-full flex-wrap items-center justify-center gap-6 sm:gap-12">{#each partners as item}<a class="micro-link partner-link text-center text-2xl font-extrabold italic sm:text-3xl" href="{item.url | url}" target="_blank" rel="noreferrer">{item.title}</a>{/each}</div>
+      </div>
+      <Footer />
+    </main>
+  </body>
+</html>

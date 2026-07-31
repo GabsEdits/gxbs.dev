@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="{description}" />
+    <link rel="canonical" href="{canonical | url}" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <script src="/assets/gallery.js" defer></script>
+  </head>
+  <body class="mx-auto flex min-h-screen w-full max-w-200 flex-col items-center font-serif lg:py-24">
+    <header class="flex flex-col items-center gap-4 pt-10 text-center lg:pt-0">
+      <div class="flex items-end justify-end gap-3 text-xl leading-4 font-extrabold italic"><a href="/"><img src="/assets/ecliptic.svg" alt="" aria-hidden="true" class="h-5 dark:invert" /></a><span>/</span><a href="/gallery">gallery</a></div>
+    </header>
+    <main id="gallery-app" class="mx-auto flex w-full max-w-full flex-col gap-8 px-4 pt-10 pb-8 sm:px-6 lg:pt-16">
+      <div class="flex flex-col items-center justify-center gap-1.5 text-center [&>h1]:font-serif [&>h1]:text-2xl [&>h1]:italic md:[&>h1]:text-6xl [&>p]:font-sans [&>p]:text-sm">{@html content}</div>
+
+      <div data-gallery-loading class="flex flex-col gap-6 pt-2 pb-4" aria-hidden="true">
+        <div class="flex flex-col gap-1.5">
+          <p class="font-sans text-[0.72rem] tracking-[0.18em] uppercase opacity-55">loading frames</p>
+          <h2 class="font-serif text-[clamp(1.4rem,3vw,2.2rem)] leading-[1.05] italic">Developing the gallery…</h2>
+        </div>
+        <div data-gallery-loader class="flex flex-col gap-4"></div>
+      </div>
+
+      <div data-gallery-error hidden class="py-16 text-center"><p class="font-serif text-gray-400 italic dark:text-neutral-500"></p></div>
+      <div data-gallery-empty hidden class="py-16 text-center"><p class="font-serif text-gray-400 italic dark:text-neutral-500">No photos yet — check back soon.</p></div>
+
+      <div data-gallery-results hidden class="flex flex-col gap-4">
+        <div data-gallery-output class="flex flex-col gap-4"></div>
+        <div data-gallery-more hidden class="flex flex-col items-center gap-3 pt-3">
+          <button type="button" data-gallery-load-more class="rounded-full border border-black/10 px-5 py-2 font-sans text-xs tracking-[0.14em] text-black/70 uppercase transition-colors duration-200 hover:bg-black/5 dark:border-white/15 dark:text-white/75 dark:hover:bg-white/8">Load more photos</button>
+          <p class="font-sans text-[0.75rem] text-black/45 dark:text-white/45"><span data-gallery-count></span></p>
+        </div>
+      </div>
+
+      <div class="flex w-full items-center justify-end"><p class="font-extralight">~by <b class="font-extrabold italic">Gabs</b></p></div>
+      <div class="mt-8"><Footer /></div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<ul class="flex w-full flex-col gap-4">
+  {#each items as item}
+    <li class="interactive-row flex w-full flex-row items-center justify-between gap-3 self-stretch">
+      <div class="flex min-w-0 flex-row items-center gap-4">
+        <div class="flex w-full min-w-0 flex-col items-start gap-2">
+          <a href="{item.url | url}" target="_blank" rel="noreferrer" class="micro-link text-xl font-extrabold italic">{item.title}</a>
+          <p class="text-lg">{item.description}</p>
+        </div>
+      </div>
+      <p class="min-w-20 text-left text-[0.95rem] font-extralight italic lowercase opacity-65 sm:min-w-0 sm:whitespace-nowrap sm:text-right">{item.meta}</p>
+    </li>
+  {/each}
+</ul>
