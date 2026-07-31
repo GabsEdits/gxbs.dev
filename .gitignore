@@ -27,3 +27,4 @@ content/.steno/build-cache.json
 
 # jetbrains setting folder
 .idea/
+.tools/
