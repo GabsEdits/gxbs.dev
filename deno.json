@@ -1,0 +1,11 @@
+{
+  "imports": {
+    "steno": "jsr:@steno/steno@^0.10.0"
+  },
+  "tasks": {
+    "build": "deno run -A --minimum-dependency-age=0 steno build",
+    "dev": "deno run -A --minimum-dependency-age=0 steno dev",
+    "preview": "deno run -A --minimum-dependency-age=0 steno preview",
+    "doctor": "deno run -A --minimum-dependency-age=0 steno doctor"
+  }
+}

@@ -1,0 +1,36 @@
+title: "Gabriel Cozma"
+description: "Portfolio and blog by Gabriel Cozma."
+author: "Gabriel Cozma"
+
+plugins:
+  - package: "jsr:@steno/plugin-tailwind@^0.3.0"
+    mode: trusted
+    options:
+      input: "./theme/styles.css"
+      minify: false
+  - package: "jsr:@steno/plugin-seo@^0.7.0"
+    mode: trusted
+    options:
+      siteUrl: "https://gxbs.dev"
+      title: "Gabriel Cozma"
+      description: "Portfolio and blog by Gabriel Cozma."
+      authorName: "Gabriel Cozma"
+
+contentDir: "content"
+output: "dist"
+
+custom:
+  theme: "./theme"
+  shortUrls: true
+
+collections:
+  blog:
+    sortBy: date
+    order: desc
+    filter:
+      draft: false
+    schema:
+      title: { type: string }
+      tags: { type: array, required: false }
+      draft: { type: boolean, required: false }
+      archived: { type: boolean, required: false }

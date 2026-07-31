@@ -1,0 +1,6 @@
+name: gxbs
+version: 1.0.0
+components:
+  footer: components/Footer.tau
+  blogHeader: components/BlogHeader.tau
+  projectList: components/ProjectList.tau

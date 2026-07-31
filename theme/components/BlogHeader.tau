@@ -1,0 +1,7 @@
+<header class="flex flex-col items-center gap-4 text-center">
+  <div class="flex items-end justify-end gap-3 text-xl leading-4 font-extrabold italic">
+    <a href="/"><img src="/assets/ecliptic.svg" alt="" aria-hidden="true" class="h-5 dark:invert" /></a>
+    <span>/</span>
+    <a href="/blog">blog</a>
+  </div>
+</header>
