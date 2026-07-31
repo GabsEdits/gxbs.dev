@@ -91,7 +91,8 @@
 
   let firstVisit = false;
   try {
-    const hasVisited = window.localStorage.getItem("gallery:visited") === "true";
+    const hasVisited =
+      window.localStorage.getItem("gallery:visited") === "true";
     firstVisit = !hasVisited;
     if (!hasVisited) window.localStorage.setItem("gallery:visited", "true");
   } catch {
@@ -113,7 +114,9 @@
         const tile = document.createElement("div");
         tile.className = "min-w-0 flex-[var(--tile-flex)_1_0%]";
         tile.style.cssText =
-          `--tile-ratio: ${item.layout.ratio}; --tile-flex: ${item.layout.weight}; --tile-delay: ${(rowIndex * 3 + itemIndex) * 90}ms;`;
+          `--tile-ratio: ${item.layout.ratio}; --tile-flex: ${item.layout.weight}; --tile-delay: ${
+            (rowIndex * 3 + itemIndex) * 90
+          }ms;`;
         const shell = document.createElement("div");
         shell.className = "loader-shell";
         const skeleton = document.createElement("div");
@@ -168,7 +171,8 @@
     "max-h-[82vh] max-w-full rounded-xl object-contain shadow-[0_20px_60px_rgba(0,0,0,0.5)]";
 
   const caption = document.createElement("p");
-  caption.className = "text-center font-sans text-[0.8125rem] text-white/50 italic";
+  caption.className =
+    "text-center font-sans text-[0.8125rem] text-white/50 italic";
 
   frame.append(preview, caption);
   backdrop.append(prevButton, frame, nextButton, closeButton);
@@ -250,7 +254,9 @@
         button.className =
           "block min-w-0 flex-[var(--tile-flex)_1_0%] cursor-zoom-in rounded-[1.25rem] border-none bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[rgba(17,24,39,0.3)]";
         button.style.cssText =
-          `--tile-ratio: ${photo.layout.ratio}; --tile-flex: ${photo.layout.weight}; --tile-delay: ${flatIndex * 90}ms;`;
+          `--tile-ratio: ${photo.layout.ratio}; --tile-flex: ${photo.layout.weight}; --tile-delay: ${
+            flatIndex * 90
+          }ms;`;
         button.setAttribute("aria-label", `View ${photo.alt}`);
         button.addEventListener("click", () => {
           openLightbox(photos.findIndex((item) => item.key === photo.key));
@@ -265,8 +271,14 @@
         image.loading = rowIndex === 0 ? "eager" : "lazy";
         image.decoding = "async";
         image.className = "photo-img";
-        image.addEventListener("load", () => shell.classList.add("photo-shell-loaded"));
-        image.addEventListener("error", () => shell.classList.add("photo-shell-loaded"));
+        image.addEventListener(
+          "load",
+          () => shell.classList.add("photo-shell-loaded"),
+        );
+        image.addEventListener(
+          "error",
+          () => shell.classList.add("photo-shell-loaded"),
+        );
 
         shell.append(image);
         button.append(shell);
@@ -277,7 +289,9 @@
     });
 
     if (moreEl) moreEl.hidden = visibleCount >= photos.length;
-    if (countEl) countEl.textContent = `Showing ${visible.length} of ${photos.length}`;
+    if (countEl) {
+      countEl.textContent = `Showing ${visible.length} of ${photos.length}`;
+    }
   };
 
   loadMoreButton?.addEventListener("click", () => {
@@ -303,7 +317,9 @@
     `${POCKETBASE_URL}/api/collections/${COLLECTION}/records?sort=-created&perPage=500`,
   )
     .then((response) => {
-      if (!response.ok) throw new Error(`PocketBase returned ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`PocketBase returned ${response.status}`);
+      }
       return response.json();
     })
     .then((data) => {
@@ -318,7 +334,9 @@
     })
     .catch(() => {
       const message = errorEl?.querySelector("p");
-      if (message) message.textContent = "Unable to connect to the gallery backend.";
+      if (message) {
+        message.textContent = "Unable to connect to the gallery backend.";
+      }
       showState("error");
     });
 })();

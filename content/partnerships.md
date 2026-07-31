@@ -62,7 +62,7 @@ faqs:
     answer: "Additional features and revisions are scoped transparently and agreed upon before work continues."
 ---
 
-# Let's work<br>*together*.
+# Let's work<br>_together_.
 
 Outcome-focused websites and digital systems designed to move your business
 forward.

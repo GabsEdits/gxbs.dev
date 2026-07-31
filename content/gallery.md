@@ -8,4 +8,3 @@ layout: gallery
 # Gallery
 
 Different types of captures, from various places.
-

@@ -1,10 +1,8 @@
-# gxbs.dev
-
-Gabriel Cozma's portfolio and blog, built with [Steno](https://github.com/stenodevs/steno).
-
-The commissions/studio backend lives in `studio/` as its own Astro app,
-deployed independently at `studio.gxbs.dev`. It is not part of the Steno
-build — see `studio/README.md`.
+<div align="center">
+  <h1>gxbs.dev</h1>
+  <p>This is the source code of my personal website, were you're going to find my projects, who am I, and how to find me.<p>
+  <small>Powered by <a href="https://github.com/stenodevs/steno">Steno</a></small>
+</div>
 
 ## Requirements
 
@@ -75,5 +73,5 @@ image: https://gxbs.dev/assets/og/blog/my-post.png
 ---
 ```
 
-Drafts are omitted from production builds. Archived posts remain public and
-are listed under `/blog/archive`.
+Drafts are omitted from production builds. Archived posts remain public and are
+listed under `/blog/archive`.

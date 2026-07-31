@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "PPEditorialNew";
-  src: url("/assets/fonts/serif/PPEditorialNew-Ultralight.otf") format("opentype");
+  src: url("/assets/fonts/serif/PPEditorialNew-Ultralight.otf")
+    format("opentype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -10,7 +11,8 @@
 
 @font-face {
   font-family: "PPEditorialNew";
-  src: url("/assets/fonts/serif/PPEditorialNew-UltralightItalic.otf") format("opentype");
+  src: url("/assets/fonts/serif/PPEditorialNew-UltralightItalic.otf")
+    format("opentype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -34,7 +36,8 @@
 
 @font-face {
   font-family: "PPEditorialNew";
-  src: url("/assets/fonts/serif/PPEditorialNew-Ultrabold.otf") format("opentype");
+  src: url("/assets/fonts/serif/PPEditorialNew-Ultrabold.otf")
+    format("opentype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -42,7 +45,8 @@
 
 @font-face {
   font-family: "PPEditorialNew";
-  src: url("/assets/fonts/serif/PPEditorialNew-UltraboldItalic.otf") format("opentype");
+  src: url("/assets/fonts/serif/PPEditorialNew-UltraboldItalic.otf")
+    format("opentype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -82,7 +86,8 @@
 
 @font-face {
   font-family: "PPNeueMontreal";
-  src: url("/assets/fonts/sans/PPNeueMontreal-SemiBolditalic.otf") format("opentype");
+  src: url("/assets/fonts/sans/PPNeueMontreal-SemiBolditalic.otf")
+    format("opentype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -216,7 +221,8 @@
   pointer-events: none;
   opacity: 0;
   transform: scale(0.97);
-  transition: opacity 320ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 320ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36,
+    1);
 }
 
 .ecliptic-hover-dark {
@@ -239,7 +245,8 @@ main.reveal-enabled [data-reveal] {
   opacity: 0;
   filter: blur(2px);
   transform: translateY(18px);
-  transition: opacity 580ms cubic-bezier(0.22, 1, 0.36, 1), transform 580ms cubic-bezier(0.22, 1, 0.36, 1), filter 580ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 580ms cubic-bezier(0.22, 1, 0.36, 1), transform 580ms
+    cubic-bezier(0.22, 1, 0.36, 1), filter 580ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 [data-reveal][data-visible="true"] {
@@ -268,7 +275,8 @@ main[data-design-core]::before {
   aspect-ratio: var(--tile-ratio);
   overflow: hidden;
   border-radius: 1rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(0, 0, 0, 0.04));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(0, 0, 0,
+    0.04));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
@@ -279,7 +287,9 @@ main[data-design-core]::before {
   inset: 0;
   content: "";
   pointer-events: none;
-  background: linear-gradient(120deg, transparent 18%, rgba(255, 255, 255, 0.72) 42%, transparent 68%), radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.3), transparent 34%);
+  background: linear-gradient(120deg, transparent 18%, rgba(255, 255, 255, 0.72)
+    42%, transparent 68%), radial-gradient(circle at 18% 20%, rgba(255, 255,
+    255, 0.3), transparent 34%);
   transform: translateX(-140%);
   animation: loader-sweep 1.8s ease-in-out infinite;
   animation-delay: var(--tile-delay);
@@ -302,7 +312,8 @@ main[data-design-core]::before {
   background: rgba(0, 0, 0, 0.03);
   opacity: 0;
   transform: scale(1.035);
-  transition: opacity 360ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease;
+  transition: opacity 360ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36,
+    1), box-shadow 280ms ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
@@ -339,7 +350,8 @@ button:focus-visible .photo-img {
 }
 
 .works-marquee-window {
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%,
+    transparent 100%);
 }
 
 .works-marquee-track {
@@ -361,40 +373,71 @@ button:focus-visible .photo-img {
 }
 
 @keyframes hero-name-in {
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes arrow-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 @keyframes bob {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(7px); }
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(7px);
+  }
 }
 
 @keyframes marquee-scroll {
-  to { transform: translateX(-50%); }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes pulse-dot {
-  50% { opacity: 0.35; transform: scale(0.75); }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
 }
 
 @keyframes loader-sweep {
-  0% { transform: translateX(-140%); }
-  100% { transform: translateX(140%); }
+  0% {
+    transform: translateX(-140%);
+  }
+  100% {
+    transform: translateX(140%);
+  }
 }
 
 @keyframes skeleton-breathe {
-  0%, 100% { filter: saturate(1) brightness(1); }
-  50% { filter: saturate(1.03) brightness(1.04); }
+  0%,
+  100% {
+    filter: saturate(1) brightness(1);
+  }
+  50% {
+    filter: saturate(1.03) brightness(1.04);
+  }
 }
 
 @keyframes lb-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -412,7 +455,8 @@ button:focus-visible .photo-img {
 
   .photo-shell,
   .loader-shell {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255,
+      255, 255, 0.02));
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28), 0 4px 20px rgba(0, 0, 0, 0.28);
   }
 
@@ -429,7 +473,9 @@ button:focus-visible .photo-img {
 
   .photo-shell::before,
   .loader-shell::before {
-    background: linear-gradient(120deg, transparent 18%, rgba(255, 255, 255, 0.14) 42%, transparent 68%), radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.08), transparent 34%);
+    background: linear-gradient(120deg, transparent 18%, rgba(255, 255, 255,
+      0.14) 42%, transparent 68%), radial-gradient(circle at 18% 20%, rgba(255,
+      255, 255, 0.08), transparent 34%);
   }
 
   .skeleton {

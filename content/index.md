@@ -118,7 +118,7 @@ partners:
     url: "https://daudix.one"
 ---
 
-# *Software Engineer & OSS Contributor*, based in Moldova.
+# _Software Engineer & OSS Contributor_, based in Moldova.
 
 Focused on delivering intuitive and visually appealing web experiences through
-*clean, minimalist design*.
+_clean, minimalist design_.
