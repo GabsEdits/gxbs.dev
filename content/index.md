@@ -1,6 +1,6 @@
 ---
 title: "Gabriel Cozma"
-description: "Portfolio of Gabriel Cozma — software engineer and designer."
+description: "Software Engineer & OSS Contributor, based in Moldova"
 canonical: "https://gxbs.dev/"
 layout: home
 
@@ -22,19 +22,19 @@ history:
     endDate: "Present"
 
 achievements:
-  - title: "IT Spec. — Networking"
+  - title: "IT Spec. - Networking"
     url: "https://www.credly.com/badges/7b01287e-0d47-4270-87b1-d9e03860b36a"
     type: "Certification"
     date: "May. 26’"
-  - title: "Moldsef — III Place"
+  - title: "Moldsef - III Place"
     url: "https://ance.gov.md/sites/default/files/document/attachments/mold_sef_2026_premianti.pdf"
     type: "Competition"
     date: "Feb. 26’"
-  - title: "IT Spec. — Databases"
+  - title: "IT Spec. - Databases"
     url: "https://www.credly.com/badges/484c7451-0c30-48fe-aa9d-16e4ff708c7d/public_url"
     type: "Certification"
     date: "Aug. 25’"
-  - title: "InfoMatrix — Platinum"
+  - title: "InfoMatrix - Platinum"
     url: "https://infomatrix.world"
     type: "Competition"
     date: "May. 25’"
@@ -42,7 +42,7 @@ achievements:
     url: "https://www.credly.com/badges/bed86599-e2cc-443a-87fd-856d04d1cd3f/public_url"
     type: "Certification"
     date: "May. 25’"
-  - title: "IT Spec. — HTML5 App Development"
+  - title: "IT Spec. - HTML5 App Development"
     url: "https://www.credly.com/badges/7b064a7b-40ae-4fa8-891f-134fda3fabb4/public_url"
     type: "Certification"
     date: "Oct. 24’"
