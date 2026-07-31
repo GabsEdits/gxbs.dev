@@ -16,4 +16,5 @@
     <a href="/blog" class="underline">/blog</a>
   </div>
   <p class="font-sans text-sm font-medium">© Gabriel <i class="font-serif">(Gabs)</i> Cozma, 2026</p>
+  <p class="font-sans text-xs font-medium opacity-50">Powered by <a href="https://github.com/stenodevs/steno" target="_blank" rel="noreferrer" class="micro-link">Steno</a></p>
 </footer>
