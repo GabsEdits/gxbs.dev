@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 FROM denoland/deno:2.9.4 AS build
 RUN apt-get update && apt-get install -y --no-install-recommends nodejs npm \
     && rm -rf /var/lib/apt/lists/*

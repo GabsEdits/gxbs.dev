@@ -1,0 +1,7 @@
+dist/
+.dist.steno-backup/
+.git/
+.idea/
+.tools/
+node_modules/
+.DS_Store
