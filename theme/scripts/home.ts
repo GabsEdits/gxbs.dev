@@ -1,19 +1,25 @@
-(() => {
-  const icon = document.querySelector("[data-floating-icon]");
-  const startAnchor = document.querySelector("[data-icon-start]");
-  const endAnchor = document.querySelector("[data-icon-end]");
-  const hint = document.querySelector("[data-scroll-hint]");
-  const root = document.querySelector("[data-reveal-root]");
-  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-  if (!icon || !startAnchor || !endAnchor) return;
+interface Point {
+  x: number;
+  y: number;
+}
 
-  const size = { width: 45, height: 21 };
-  const clamp = (value, minimum, maximum) =>
+(() => {
+  const icon = document.querySelector<HTMLElement>("[data-floating-icon]");
+  const startAnchor = document.querySelector<HTMLElement>("[data-icon-start]");
+  const endAnchor = document.querySelector<HTMLElement>("[data-icon-end]");
+  const hint = document.querySelector<HTMLElement>("[data-scroll-hint]");
+  const root = document.querySelector<HTMLElement>("[data-reveal-root]");
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  if (!icon || !startAnchor || !endAnchor || !root) return;
+
+  const clamp = (value: number, minimum: number, maximum: number): number =>
     Math.min(maximum, Math.max(minimum, value));
-  const mix = (from, to, amount) => from + (to - from) * amount;
-  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-  const position = (element) => {
+  const mix = (from: number, to: number, amount: number): number =>
+    from + (to - from) * amount;
+  const easeOutCubic = (t: number): number => 1 - Math.pow(1 - t, 3);
+  const position = (element: HTMLElement): Point => {
     const rect = element.getBoundingClientRect();
+    const size = icon.getBoundingClientRect();
     return {
       x: rect.left + rect.width / 2 - size.width / 2,
       y: rect.top + rect.height / 2 - size.height / 2,
@@ -40,7 +46,7 @@
     const nx = -dy / length;
     const ny = dx / length;
     const bow = clamp(length * 0.32, 24, 90);
-    const control = {
+    const control: Point = {
       x: mix(start.x, end.x, 0.5) + nx * bow,
       y: mix(start.y, end.y, 0.5) + ny * bow,
     };
@@ -63,7 +69,7 @@
   };
 
   const reveal = () => {
-    const nodes = [...root.querySelectorAll("[data-reveal]")];
+    const nodes = [...root.querySelectorAll<HTMLElement>("[data-reveal]")];
     if (reducedMotion.matches || !("IntersectionObserver" in window)) {
       nodes.forEach((node) => (node.dataset.visible = "true"));
       return;
@@ -74,7 +80,7 @@
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
-          entry.target.dataset.visible = "true";
+          (entry.target as HTMLElement).dataset.visible = "true";
           observer.unobserve(entry.target);
         }
       },
@@ -84,8 +90,8 @@
   };
 
   const updateTime = () => {
-    const time = document.querySelector("[data-local-time]");
-    const zone = document.querySelector("[data-local-zone]");
+    const time = document.querySelector<HTMLElement>("[data-local-time]");
+    const zone = document.querySelector<HTMLElement>("[data-local-zone]");
     if (!time || !zone) return;
     const now = new Date();
     time.textContent = new Intl.DateTimeFormat("en-GB", {
@@ -105,6 +111,11 @@
   };
 
   render();
+  // The hero name is set in a custom webfont loaded with font-display:
+  // swap — it renders in a fallback font first, then swaps, shifting the
+  // text's width. Re-measure and re-render once the real font is active
+  // so the icon doesn't start in the wrong spot before the first scroll.
+  document.fonts?.ready.then(render);
   requestAnimationFrame(() => icon.classList.remove("opacity-0"));
   setTimeout(() => hint?.classList.toggle("visible", scrollY <= 10), 1400);
   reveal();

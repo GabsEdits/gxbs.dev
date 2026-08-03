@@ -1,5 +1,5 @@
 ---
-title: Blog Archive
+title: Blog Archive — Gabriel Cozma
 description: "Public legacy posts by Gabriel Cozma."
 canonical: "https://gxbs.dev/blog/archive"
 layout: blog-archive

@@ -2,6 +2,10 @@
 dist/
 .dist.steno-backup/
 studio/dist/
+# generated from theme/scripts/*.ts — run `deno task build-assets`
+theme/assets/home.js
+theme/assets/gallery.js
+theme/assets/partnerships.js
 # generated types
 .astro/
 
@@ -28,3 +32,6 @@ content/.steno/build-cache.json
 # jetbrains setting folder
 .idea/
 .tools/
+
+# local tool settings
+.claude/

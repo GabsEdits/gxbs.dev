@@ -20,9 +20,9 @@
   </head>
   <body>
     <div class="relative grid h-screen w-full place-items-center overflow-hidden px-4">
-      <div class="relative inline-block">
-        <h1 class="hero-name -ml-12.5 text-center text-5xl leading-none transition-all sm:ml-0 sm:text-7xl">Gabriel <b class="italic">Cozma</b></h1>
-        <span data-icon-start class="pointer-events-none absolute bottom-3 left-[calc(100%+1.25rem)] inline-flex h-5.25 w-11.25" aria-hidden="true"></span>
+      <div class="relative inline-block max-w-full">
+        <h1 class="hero-name text-center text-4xl leading-none transition-all sm:text-7xl">Gabriel <b class="italic">Cozma</b></h1>
+        <span data-icon-start class="pointer-events-none absolute bottom-1 left-[calc(100%+0.4rem)] inline-flex h-3.75 w-8 sm:bottom-3 sm:left-[calc(100%+1.25rem)] sm:h-5.25 sm:w-11.25" aria-hidden="true"></span>
       </div>
       <div data-scroll-hint class="scroll-hint absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 select-none" aria-hidden="true">
         <p class="font-serif text-sm text-gray-400 italic">scroll</p>
@@ -31,7 +31,7 @@
     </div>
 
     <div data-floating-icon class="ecliptic-icon pointer-events-auto fixed top-0 left-0 z-40 cursor-pointer opacity-0 transition-opacity duration-300 will-change-transform" role="button" tabindex="0" title="Click to spin">
-      <img src="/assets/ecliptic.svg" alt="" class="ecliptic-base h-5.25 w-11.25 hover:animate-spin dark:invert" />
+      <img src="/assets/ecliptic.svg" alt="" class="ecliptic-base hover:animate-spin dark:invert" />
       <img src="/assets/agen-light.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-light" />
       <img src="/assets/agen-black.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-dark" />
     </div>

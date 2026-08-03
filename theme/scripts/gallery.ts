@@ -1,22 +1,55 @@
+interface TileLayout {
+  ratio: string;
+  weight: number;
+}
+
+interface Photo {
+  key: string;
+  src: string;
+  fullSrc: string;
+  alt: string;
+}
+
+interface LoaderTile {
+  key: string;
+}
+
+type RowItem<T> = T & { layout: TileLayout };
+
+interface PocketBaseRecord {
+  id: string;
+  collectionId: string;
+  file: string;
+  title?: string;
+}
+
+interface PocketBaseListResponse {
+  items?: PocketBaseRecord[];
+}
+
+type GalleryState = "loading" | "error" | "empty" | "results";
+
 (() => {
-  const app = document.querySelector("#gallery-app");
+  const app = document.querySelector<HTMLElement>("#gallery-app");
   if (!app) return;
 
-  const loadingEl = app.querySelector("[data-gallery-loading]");
-  const loaderEl = app.querySelector("[data-gallery-loader]");
-  const errorEl = app.querySelector("[data-gallery-error]");
-  const emptyEl = app.querySelector("[data-gallery-empty]");
-  const resultsEl = app.querySelector("[data-gallery-results]");
-  const outputEl = app.querySelector("[data-gallery-output]");
-  const moreEl = app.querySelector("[data-gallery-more]");
-  const loadMoreButton = app.querySelector("[data-gallery-load-more]");
-  const countEl = app.querySelector("[data-gallery-count]");
+  const loadingEl = app.querySelector<HTMLElement>("[data-gallery-loading]");
+  const loaderEl = app.querySelector<HTMLElement>("[data-gallery-loader]");
+  const errorEl = app.querySelector<HTMLElement>("[data-gallery-error]");
+  const emptyEl = app.querySelector<HTMLElement>("[data-gallery-empty]");
+  const resultsEl = app.querySelector<HTMLElement>("[data-gallery-results]");
+  const outputEl = app.querySelector<HTMLElement>("[data-gallery-output]");
+  const moreEl = app.querySelector<HTMLElement>("[data-gallery-more]");
+  const loadMoreButton = app.querySelector<HTMLButtonElement>(
+    "[data-gallery-load-more]",
+  );
+  const countEl = app.querySelector<HTMLElement>("[data-gallery-count]");
 
   const POCKETBASE_URL = "https://cdn.gxbs.dev";
   const COLLECTION = "gallery";
   const CHUNK_SIZE = 12;
 
-  const ROW_PATTERNS = [
+  const ROW_PATTERNS: TileLayout[][] = [
     [
       { ratio: "1 / 1", weight: 1 },
       { ratio: "16 / 9", weight: 16 / 9 },
@@ -38,7 +71,7 @@
     ],
   ];
 
-  const getFallbackPattern = (remaining) => {
+  const getFallbackPattern = (remaining: number): TileLayout[] => {
     if (remaining === 1) return [{ ratio: "16 / 9", weight: 16 / 9 }];
     if (remaining === 2) {
       return [
@@ -53,8 +86,8 @@
     ].slice(0, remaining);
   };
 
-  const createRows = (items) => {
-    const rows = [];
+  const createRows = <T,>(items: T[]): RowItem<T>[][] => {
+    const rows: RowItem<T>[][] = [];
     let itemIndex = 0;
     let patternIndex = 0;
 
@@ -78,7 +111,7 @@
     return rows;
   };
 
-  const mapRecordToPhoto = (record) => {
+  const mapRecordToPhoto = (record: PocketBaseRecord): Photo => {
     const baseFileUrl =
       `${POCKETBASE_URL}/api/files/${record.collectionId}/${record.id}/${record.file}`;
     return {
@@ -100,7 +133,7 @@
   }
   loadingEl?.classList.toggle("loader-first-visit", firstVisit);
 
-  const LOADER_ROWS = createRows(
+  const LOADER_ROWS = createRows<LoaderTile>(
     Array.from({ length: 8 }, (_, index) => ({ key: `loader-${index}` })),
   );
 
@@ -129,9 +162,9 @@
     });
   };
 
-  let photos = [];
+  let photos: Photo[] = [];
   let visibleCount = CHUNK_SIZE;
-  let lightboxIndex = null;
+  let lightboxIndex: number | null = null;
 
   const backdrop = document.createElement("div");
   backdrop.className =
@@ -200,7 +233,7 @@
     document.body.style.overflow = "hidden";
   };
 
-  const openLightbox = (index) => {
+  const openLightbox = (index: number) => {
     lightboxIndex = index;
     renderLightbox();
   };
@@ -241,7 +274,7 @@
     if (!outputEl) return;
     outputEl.replaceChildren();
     const visible = photos.slice(0, visibleCount);
-    const rows = createRows(visible);
+    const rows = createRows<Photo>(visible);
 
     rows.forEach((row, rowIndex) => {
       const rowEl = document.createElement("div");
@@ -299,7 +332,7 @@
     renderPhotos();
   });
 
-  const showState = (state) => {
+  const showState = (state: GalleryState) => {
     loadingEl?.setAttribute("hidden", "");
     errorEl?.setAttribute("hidden", "");
     emptyEl?.setAttribute("hidden", "");
@@ -320,10 +353,10 @@
       if (!response.ok) {
         throw new Error(`PocketBase returned ${response.status}`);
       }
-      return response.json();
+      return response.json() as Promise<PocketBaseListResponse>;
     })
     .then((data) => {
-      photos = (data.items || []).map(mapRecordToPhoto);
+      photos = (data.items ?? []).map(mapRecordToPhoto);
       visibleCount = Math.min(CHUNK_SIZE, photos.length);
       if (!photos.length) {
         showState("empty");

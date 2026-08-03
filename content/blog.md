@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: Blog — Gabriel Cozma
 description: "Writing by Gabriel Cozma."
 canonical: "https://gxbs.dev/blog"
 layout: blog-index

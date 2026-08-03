@@ -48,8 +48,14 @@ theme/
   styles.css           # Tailwind entry and every site style
   layouts/            # Tau layouts
   components/         # shared Tau components
-  assets/             # browser scripts, fonts, and images
+  scripts/             # browser scripts, written in TypeScript (source of truth)
+  assets/             # fonts, images, and *generated* browser JS — don't hand-edit assets/*.js
 ```
+
+Browser scripts live in `theme/scripts/*.ts` and are transpiled (types stripped,
+no bundling) to `theme/assets/*.js` via `deno task build-assets`, which runs
+automatically before `dev`/`build`. `theme/assets/*.js` is gitignored — it's
+build output. Type-check the scripts with `deno task check`.
 
 The public site includes `/`, `/projects`, `/gallery`, `/partnerships`, and
 `/blog`. Studio and its server APIs are intentionally not part of the Steno

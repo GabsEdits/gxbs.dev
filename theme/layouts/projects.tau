@@ -2,19 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <title>{title}</title>
     <meta name="description" content="{description}" />
+    <meta property="og:title" content="{title}" />
+    <meta property="og:description" content="{description}" />
+    <meta property="og:url" content="{canonical | url}" />
     <link rel="canonical" href="{canonical | url}" />
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-light.svg" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
   </head>
   <body>
-    <main class="container mx-auto flex max-w-full flex-col items-center gap-14 p-4 font-serif lg:max-w-120 lg:py-24">
+    <main class="container mx-auto flex max-w-full flex-col items-center gap-12 p-4 font-serif lg:max-w-120 lg:py-24">
       <header class="flex w-full flex-col items-center gap-5 text-center">
         <div class="flex items-center justify-center gap-3 text-xl font-extrabold italic"><a href="/"><img src="/assets/ecliptic.svg" alt="" aria-hidden="true" class="h-6 dark:invert" /></a><span>/</span><a href="/projects">projects</a></div>
         <div class="contents [&>h1]:text-5xl [&>h1]:leading-none [&>h1]:italic sm:[&>h1]:text-6xl [&>p]:max-w-[75%] [&>p]:text-xl [&>p]:leading-relaxed [&>p]:font-extralight">{@html content}</div>
-        <p class="text-xs font-extralight uppercase tracking-[0.2em] opacity-45">19 projects listed</p>
         <hr class="divider w-full" />
       </header>
 
