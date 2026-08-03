@@ -1,21 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <title>{title}</title>
-    <meta name="description" content="{description}" />
-    <meta property="og:title" content="{title}" />
-    <meta property="og:description" content="{description}" />
-    <meta property="og:url" content="{canonical | url}" />
-    <link rel="canonical" href="{canonical | url}" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon-light.svg" media="(prefers-color-scheme: light)" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+    {@include "Head"}
     <link rel="alternate" type="application/rss+xml" title="Gabriel Cozma" href="/feed.xml" />
-    <link rel="stylesheet" href="/assets/tailwind.css" />
   </head>
   <body>
     <main class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center gap-12 px-4 py-10 font-serif sm:px-6 lg:max-w-120 lg:py-24">

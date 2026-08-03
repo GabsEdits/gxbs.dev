@@ -1,20 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <title>{title}</title>
-    <meta name="description" content="{description}" />
-    <meta property="og:title" content="{title}" />
-    <meta property="og:description" content="{description}" />
-    <meta property="og:url" content="{canonical | url}" />
-    <link rel="canonical" href="{canonical | url}" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon-light.svg" media="(prefers-color-scheme: light)" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
-    <link rel="stylesheet" href="/assets/tailwind.css" />
+    {@include "Head"}
     <script src="/assets/partnerships.js" defer></script>
   </head>
   <body>
@@ -77,7 +65,6 @@
       </section>
 
       <section class="flex min-h-[100svh] w-full flex-col items-center justify-center gap-6 bg-[#1A1A1A] px-8 py-16 text-center text-[#FDFDFB]" data-reveal>
-        <div class="flex items-center gap-2.5"><span class="inline-block h-2 w-2 animate-[pulse-dot_2.4s_ease-in-out_infinite] rounded-full bg-[#A34D32]" aria-hidden="true"></span><span class="font-neue text-[0.62rem] font-medium uppercase tracking-[0.22em] opacity-35">Available for new work</span></div>
         <p class="font-neue m-0 text-[0.62rem] font-medium uppercase tracking-[0.28em] opacity-25">READY TO BEGIN</p><h2 class="font-editorial m-0 text-[clamp(4rem,11vw,8.5rem)] leading-[0.9] font-extrabold tracking-[-0.03em] italic">Let's build<br>something.</h2><p class="font-neue mt-2 max-w-[34ch] text-[0.9375rem] leading-7 font-light opacity-35">Skip the estimator and share your goals directly for a custom proposal.</p><button type="button" data-open-form class="font-neue mt-3 border border-[rgba(255,255,255,0.2)] bg-transparent px-11 py-4 text-[0.75rem] font-medium uppercase tracking-[0.14em] transition-colors hover:border-[#A34D32] hover:bg-[#A34D32]">Start a conversation →</button>
       </section>
       <div class="mx-auto w-full max-w-5xl px-8 pb-20 lg:px-16"><Footer /></div>
