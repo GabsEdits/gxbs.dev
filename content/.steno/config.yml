@@ -15,6 +15,10 @@ plugins:
       title: "Gabriel Cozma"
       description: "Portfolio and blog by Gabriel Cozma."
       authorName: "Gabriel Cozma"
+  - package: "jsr:@steno/plugin-shiki"
+    mode: trusted
+    options:
+      theme: "vesper"
 
 contentDir: "content"
 output: "dist"
