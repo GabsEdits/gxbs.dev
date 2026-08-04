@@ -1,13 +1,12 @@
 {
   "imports": {
-    "steno": "jsr:@steno/steno@^0.10.0"
+    "steno": "jsr:@steno/steno@^0.11.0"
   },
   "tasks": {
-    "build-assets": "deno run -A scripts/build-assets.ts",
-    "build": "deno task build-assets && deno run -A --minimum-dependency-age=0 steno build && deno run -A scripts/write-robots.ts",
-    "dev": "deno task build-assets && deno run -A --minimum-dependency-age=0 steno dev",
+    "build": "deno run -A --minimum-dependency-age=0 steno build",
+    "dev": "deno run -A --minimum-dependency-age=0 steno dev",
     "preview": "deno run -A --minimum-dependency-age=0 steno preview",
     "doctor": "deno run -A --minimum-dependency-age=0 steno doctor",
-    "check": "deno check --config theme/scripts/deno.json theme/scripts/*.ts && deno check scripts/build-assets.ts scripts/write-robots.ts"
+    "check": "deno check --config theme/scripts/deno.json theme/scripts/*.ts"
   }
 }

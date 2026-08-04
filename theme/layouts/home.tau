@@ -4,7 +4,7 @@
     <title>{title}</title>
     {@include "Head"}
     <link rel="me" href="https://mastodon.online/@gabs" />
-    <script src="/assets/home.js" defer></script>
+    <script src="/assets/{assets?.['home.js']}" defer></script>
   </head>
   <body>
     <div class="relative grid h-screen w-full place-items-center overflow-hidden px-4">

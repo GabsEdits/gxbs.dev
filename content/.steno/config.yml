@@ -8,7 +8,7 @@ plugins:
     options:
       input: "./theme/styles.css"
       minify: false
-  - package: "jsr:@steno/plugin-seo@^0.7.0"
+  - package: "jsr:@steno/plugin-seo@^0.7.3"
     mode: trusted
     options:
       siteUrl: "https://gxbs.dev"
@@ -19,13 +19,17 @@ plugins:
     mode: trusted
     options:
       theme: "vesper"
+  - package: "jsr:@steno/plugin-og@^0.1.0"
+    mode: trusted
+    options:
+      siteName: "gxbs.dev"
+      siteUrl: "https://gxbs.dev"
 
 contentDir: "content"
 output: "dist"
 
-custom:
-  theme: "./theme"
-  shortUrls: true
+theme: "./theme"
+shortUrls: true
 
 collections:
   blog:

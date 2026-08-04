@@ -3,6 +3,7 @@
   "specifiers": {
     "jsr:@deno/cache-dir@0.13.2": "0.13.2",
     "jsr:@deno/emit@*": "0.46.0",
+    "jsr:@deno/emit@0.46.0": "0.46.0",
     "jsr:@deno/graph@~0.73.1": "0.73.1",
     "jsr:@feed/feed@^1.3.0": "1.3.0",
     "jsr:@std/assert@0.223": "0.223.0",
@@ -17,15 +18,15 @@
     "jsr:@std/path@1": "1.1.6",
     "jsr:@std/path@1.1.6": "1.1.6",
     "jsr:@std/path@^1.1.5": "1.1.6",
+    "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/toml@1.0.11": "1.0.11",
     "jsr:@std/yaml@1.1.2": "1.1.2",
-    "jsr:@steno/plugin-seo@0.7": "0.7.0",
+    "jsr:@steno/plugin-og@0.1": "0.1.0",
+    "jsr:@steno/plugin-seo@~0.7.3": "0.7.3",
     "jsr:@steno/plugin-shiki@*": "1.0.0",
     "jsr:@steno/plugin-tailwind@0.3": "0.3.0",
-    "jsr:@steno/steno@0.10": "0.10.0",
-    "jsr:@steno/steno@0.6": "0.6.0",
+    "jsr:@steno/steno@0.11": "0.11.0",
     "npm:marked@18.0.7": "18.0.7",
-    "npm:marked@latest": "18.0.7",
     "npm:shiki@^4.3.0": "4.3.1"
   },
   "jsr": {
@@ -105,12 +106,17 @@
     "@std/yaml@1.1.2": {
       "integrity": "de612653c036749ba2044165e316f52412b0f0698afffb7ee80b5331d6d2abae"
     },
-    "@steno/plugin-seo@0.7.0": {
-      "integrity": "83c962ccb8874700c0230d78913076affa1d7ea025d1724b0551cc88ce51fc39",
+    "@steno/plugin-og@0.1.0": {
+      "integrity": "f46ad2e40b6c71b336bfe9161e83e5471b595169f079d4ae9230c97e628040e4",
+      "dependencies": [
+        "jsr:@std/path@^1.1.6"
+      ]
+    },
+    "@steno/plugin-seo@0.7.3": {
+      "integrity": "65308c241d90d4aa50466e9b17867b6f9638a15f760f905e8d358cf11d0678c9",
       "dependencies": [
         "jsr:@feed/feed",
-        "jsr:@std/path@1",
-        "jsr:@steno/steno@0.6"
+        "jsr:@std/path@^1.1.6"
       ]
     },
     "@steno/plugin-shiki@1.0.0": {
@@ -126,22 +132,14 @@
         "jsr:@std/path@1"
       ]
     },
-    "@steno/steno@0.6.0": {
-      "integrity": "bcdb5a37e19f87b08514a70ae61a945a6521bce1d9ba9544c0e2684ee1ff9410",
+    "@steno/steno@0.11.0": {
+      "integrity": "d29a17dd78947ba71ba62332c213b5ee6a5e0f95ac0b12e1413182358dc1ba36",
       "dependencies": [
+        "jsr:@deno/emit@0.46.0",
         "jsr:@std/path@1.1.6",
         "jsr:@std/toml",
         "jsr:@std/yaml",
-        "npm:marked@latest"
-      ]
-    },
-    "@steno/steno@0.10.0": {
-      "integrity": "00d66f962032676df874f0fcab256746cab9f86f4eb9d3e4b121af2826d109a5",
-      "dependencies": [
-        "jsr:@std/path@1.1.6",
-        "jsr:@std/toml",
-        "jsr:@std/yaml",
-        "npm:marked@18.0.7"
+        "npm:marked"
       ]
     }
   },
@@ -415,7 +413,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@steno/steno@0.10"
+      "jsr:@steno/steno@0.11"
     ]
   }
 }

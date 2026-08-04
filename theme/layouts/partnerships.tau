@@ -3,7 +3,7 @@
   <head>
     <title>{title}</title>
     {@include "Head"}
-    <script src="/assets/partnerships.js" defer></script>
+    <script src="/assets/{assets?.['partnerships.js']}" defer></script>
   </head>
   <body>
     <main

@@ -3,7 +3,7 @@
   <head>
     <title>{title}</title>
     {@include "Head"}
-    <script src="/assets/gallery.js" defer></script>
+    <script src="/assets/{assets?.['gallery.js']}" defer></script>
   </head>
   <body class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center font-serif lg:max-w-120 lg:py-24">
     <header class="flex flex-col items-center gap-4 pt-10 text-center lg:pt-0">
