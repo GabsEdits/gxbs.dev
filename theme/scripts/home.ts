@@ -110,6 +110,21 @@ interface Point {
     time.classList.remove("animate-pulse");
   };
 
+  const spin = () => {
+    if (reducedMotion.matches) return;
+    icon.classList.remove("ecliptic-spin");
+    // Force reflow so the animation restarts on repeated clicks.
+    void icon.offsetWidth;
+    icon.classList.add("ecliptic-spin");
+  };
+  icon.addEventListener("click", spin);
+  icon.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      spin();
+    }
+  });
+
   render();
   // The hero name is set in a custom webfont loaded with font-display:
   // swap — it renders in a fallback font first, then swaps, shifting the

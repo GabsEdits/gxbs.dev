@@ -242,8 +242,18 @@
     1);
 }
 
-.ecliptic-hover-dark {
+.ecliptic-hover-light {
   display: none;
+}
+
+.ecliptic-icon.ecliptic-spin .ecliptic-base {
+  animation: ecliptic-spin 600ms linear;
+}
+
+@keyframes ecliptic-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .ecliptic-icon:hover .ecliptic-base,
@@ -624,11 +634,11 @@ button:focus-visible .photo-img {
     background-color: oklch(26.9% 0 0);
   }
 
-  .ecliptic-hover-light {
+  .ecliptic-hover-dark {
     display: none;
   }
 
-  .ecliptic-hover-dark {
+  .ecliptic-hover-light {
     display: block;
   }
 

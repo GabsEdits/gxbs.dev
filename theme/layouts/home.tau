@@ -19,7 +19,7 @@
     </div>
 
     <div data-floating-icon class="ecliptic-icon pointer-events-auto fixed top-0 left-0 z-40 cursor-pointer opacity-0 transition-opacity duration-300 will-change-transform" role="button" tabindex="0" title="Click to spin">
-      <img src="/assets/ecliptic.svg" alt="" class="ecliptic-base hover:animate-spin dark:invert" />
+      <img src="/assets/ecliptic.svg" alt="" class="ecliptic-base dark:invert" />
       <img src="/assets/agen-light.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-light" />
       <img src="/assets/agen-black.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-dark" />
     </div>
