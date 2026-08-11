@@ -6,7 +6,8 @@
     <link rel="alternate" type="application/rss+xml" title="Gabriel Cozma" href="/feed.xml" />
   </head>
   <body>
-    <main class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center gap-12 px-4 py-10 font-serif sm:px-6 lg:max-w-120 lg:py-24">
+    <SkipLink />
+    <main id="main-content" tabindex="-1" class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center gap-12 px-4 py-10 font-serif sm:px-6 lg:max-w-120 lg:py-24">
       <BlogHeader />
       <section class="flex w-full flex-col items-center justify-center gap-12 [&>h1]:text-center [&>h1]:text-3xl [&>p]:max-w-[80%] [&>p]:text-center [&>p]:text-2xl">
         {@html content}

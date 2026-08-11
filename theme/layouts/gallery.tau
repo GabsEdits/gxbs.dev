@@ -6,10 +6,11 @@
     <script src="/assets/{assets?.['gallery.js']}" defer></script>
   </head>
   <body class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center font-serif lg:max-w-120 lg:py-24">
+    <SkipLink />
     <header class="flex flex-col items-center gap-4 pt-10 text-center lg:pt-0">
       <div class="flex items-end justify-end gap-3 text-xl leading-4 font-extrabold italic"><a href="/"><img src="/assets/ecliptic.svg" alt="" aria-hidden="true" class="h-5 dark:invert" /></a><span>/</span><a href="/gallery">gallery</a></div>
     </header>
-    <main id="gallery-app" class="mx-auto flex w-full max-w-full flex-col gap-8 px-4 pt-10 pb-8 sm:px-6">
+    <main id="main-content" tabindex="-1" data-gallery-app class="mx-auto flex w-full max-w-full flex-col gap-8 px-4 pt-10 pb-8 sm:px-6">
       <div class="flex flex-col items-center justify-center gap-1.5 text-center [&>h1]:font-serif [&>h1]:text-2xl [&>h1]:italic md:[&>h1]:text-6xl [&>p]:font-sans [&>p]:text-sm">{@html content}</div>
 
       <div data-gallery-loading class="flex flex-col gap-6 pt-2 pb-4" aria-hidden="true">
