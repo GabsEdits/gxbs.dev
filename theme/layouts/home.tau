@@ -7,6 +7,7 @@
     <script src="/assets/{assets?.['home.js']}" defer></script>
   </head>
   <body>
+    <SkipLink />
     <div class="relative grid h-screen w-full place-items-center overflow-hidden px-4">
       <div class="relative inline-block max-w-full">
         <h1 class="hero-name text-center text-4xl leading-none transition-all sm:text-7xl">Gabriel <b class="italic">Cozma</b></h1>
@@ -24,7 +25,7 @@
       <img src="/assets/agen-black.png" alt="" aria-hidden="true" class="ecliptic-hover-image ecliptic-hover-dark" />
     </div>
 
-    <main data-reveal-root class="container mx-auto flex max-w-full flex-col items-center gap-12 p-4 font-serif lg:max-w-120 lg:py-24">
+    <main id="main-content" tabindex="-1" data-reveal-root class="container mx-auto flex max-w-full flex-col items-center gap-12 p-4 font-serif lg:max-w-120 lg:py-24">
       <div class="flex h-6 items-center justify-center"><div data-icon-end class="h-5.25 w-11.25" aria-hidden="true"></div></div>
 
       <div class="flex w-full flex-col items-center justify-center gap-12 [&>h1]:text-center [&>h1]:text-3xl [&>p]:max-w-[80%] [&>p]:text-center [&>p]:text-2xl">{@html content}<hr class="divider w-full" /></div>

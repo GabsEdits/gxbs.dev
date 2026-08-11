@@ -30,7 +30,7 @@ interface PocketBaseListResponse {
 type GalleryState = "loading" | "error" | "empty" | "results";
 
 (() => {
-  const app = document.querySelector<HTMLElement>("#gallery-app");
+  const app = document.querySelector<HTMLElement>("[data-gallery-app]");
   if (!app) return;
 
   const loadingEl = app.querySelector<HTMLElement>("[data-gallery-loading]");

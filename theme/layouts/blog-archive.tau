@@ -5,7 +5,8 @@
     {@include "Head"}
   </head>
   <body>
-    <main class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center gap-12 px-4 py-10 font-serif sm:px-6 lg:max-w-120 lg:py-24">
+    <SkipLink />
+    <main id="main-content" tabindex="-1" class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center gap-12 px-4 py-10 font-serif sm:px-6 lg:max-w-120 lg:py-24">
       <BlogHeader />
       <section class="flex w-full flex-col items-center justify-center gap-16">
         <div class="flex w-full flex-col items-center gap-3 text-center">

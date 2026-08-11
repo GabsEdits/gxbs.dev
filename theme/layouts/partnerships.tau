@@ -6,7 +6,9 @@
     <script src="/assets/{assets?.['partnerships.js']}" defer></script>
   </head>
   <body>
+    <SkipLink />
     <main
+      id="main-content" tabindex="-1"
       class="w-full overflow-x-hidden font-serif"
       data-design-core="{pricing.design.core}" data-design-presence="{pricing.design.presence}" data-design-system="{pricing.design.system}"
       data-development-core="{pricing.development.core}" data-development-presence="{pricing.development.presence}" data-development-system="{pricing.development.system}"
