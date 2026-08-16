@@ -1,6 +1,6 @@
 {
   "imports": {
-    "steno": "jsr:@steno/steno@^0.11.0"
+    "steno": "jsr:@steno/steno@^0.12.0"
   },
   "tasks": {
     "build": "deno run -A --minimum-dependency-age=0 steno build",
