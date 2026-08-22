@@ -5,7 +5,6 @@ WORKDIR /app
 COPY deno.json deno.lock ./
 COPY content ./content
 COPY theme ./theme
-COPY scripts ./scripts
 RUN deno task build
 
 FROM nginx:alpine
