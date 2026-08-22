@@ -4,19 +4,27 @@
     "jsr:@deno/cache-dir@0.13.2": "0.13.2",
     "jsr:@deno/emit@0.46.0": "0.46.0",
     "jsr:@deno/graph@~0.73.1": "0.73.1",
+    "jsr:@feed/feed@^1.3.0": "1.3.0",
     "jsr:@std/assert@0.223": "0.223.0",
     "jsr:@std/bytes@0.223": "0.223.0",
     "jsr:@std/collections@^1.1.3": "1.3.0",
     "jsr:@std/fmt@0.223": "0.223.0",
     "jsr:@std/fs@0.223": "0.223.0",
+    "jsr:@std/fs@1": "1.0.24",
     "jsr:@std/internal@^1.0.14": "1.0.14",
     "jsr:@std/io@0.223": "0.223.0",
     "jsr:@std/media-types@1.1.0": "1.1.0",
     "jsr:@std/path@0.223": "0.223.0",
+    "jsr:@std/path@1": "1.1.6",
     "jsr:@std/path@1.1.6": "1.1.6",
+    "jsr:@std/path@^1.1.5": "1.1.6",
+    "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/toml@1.0.11": "1.0.11",
     "jsr:@std/yaml@1.2.0": "1.2.0",
+    "jsr:@steno/plugin-og@0.1": "0.1.0",
+    "jsr:@steno/plugin-seo@~0.7.3": "0.7.3",
     "jsr:@steno/plugin-shiki@*": "1.0.0",
+    "jsr:@steno/plugin-tailwind@0.3": "0.3.0",
     "jsr:@steno/steno@0.12": "0.12.0",
     "npm:marked@18.0.9": "18.0.9",
     "npm:shiki@^4.3.0": "4.3.1"
@@ -27,7 +35,7 @@
       "dependencies": [
         "jsr:@deno/graph",
         "jsr:@std/fmt",
-        "jsr:@std/fs",
+        "jsr:@std/fs@0.223",
         "jsr:@std/io",
         "jsr:@std/path@0.223"
       ]
@@ -41,6 +49,9 @@
     },
     "@deno/graph@0.73.1": {
       "integrity": "cd69639d2709d479037d5ce191a422eabe8d71bb68b0098344f6b07411c84d41"
+    },
+    "@feed/feed@1.3.0": {
+      "integrity": "cc9b02b4050423532d333c13a37e7d4784b5132697e2cde2d1769e59da2f519c"
     },
     "@std/assert@0.223.0": {
       "integrity": "eb8d6d879d76e1cc431205bd346ed4d88dc051c6366365b1af47034b0670be24"
@@ -56,6 +67,13 @@
     },
     "@std/fs@0.223.0": {
       "integrity": "3b4b0550b2c524cbaaa5a9170c90e96cbb7354e837ad1bdaf15fc9df1ae9c31c"
+    },
+    "@std/fs@1.0.24": {
+      "integrity": "f3061b45b81673a2bece689da041df32d174be064c89eb6397fb5718d3fb7877",
+      "dependencies": [
+        "jsr:@std/internal",
+        "jsr:@std/path@^1.1.5"
+      ]
     },
     "@std/internal@1.0.14": {
       "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
@@ -91,10 +109,30 @@
     "@std/yaml@1.2.0": {
       "integrity": "20beb41e4983ba3437dbefac62b14061ab058e8a187596f19d28ff9035f6e6cf"
     },
+    "@steno/plugin-og@0.1.0": {
+      "integrity": "f46ad2e40b6c71b336bfe9161e83e5471b595169f079d4ae9230c97e628040e4",
+      "dependencies": [
+        "jsr:@std/path@^1.1.6"
+      ]
+    },
+    "@steno/plugin-seo@0.7.3": {
+      "integrity": "65308c241d90d4aa50466e9b17867b6f9638a15f760f905e8d358cf11d0678c9",
+      "dependencies": [
+        "jsr:@feed/feed",
+        "jsr:@std/path@^1.1.6"
+      ]
+    },
     "@steno/plugin-shiki@1.0.0": {
       "integrity": "8840d6303f6028c1c4bacf1e7c51365dc652d66c238096aa6bbf5e78c491b63c",
       "dependencies": [
         "npm:shiki"
+      ]
+    },
+    "@steno/plugin-tailwind@0.3.0": {
+      "integrity": "29d1a96202b0221398fb87dd600f30d488c3b7291853d2e070335c035f9d14ac",
+      "dependencies": [
+        "jsr:@std/fs@1",
+        "jsr:@std/path@1"
       ]
     },
     "@steno/steno@0.12.0": {
