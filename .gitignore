@@ -10,3 +10,6 @@ cache
 
 .DS_Store
 content/blog/posts/draft
+
+.dist.steno-backup
+build-cache.json
