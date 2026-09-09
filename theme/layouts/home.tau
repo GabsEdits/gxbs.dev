@@ -73,7 +73,7 @@
         <div class="flex w-full flex-col items-center gap-8">
           {#each skills as group}
             <div class="flex flex-col items-center gap-2">
-              <p class="text-sm font-sans font-medium tracking-[0.12em] uppercase opacity-50">{group.category}</p>
+              <p class="text-sm font-sans font-medium opacity-50">{group.category}</p>
               <p class="max-w-2xl text-center font-sans text-lg font-normal">
                 {#each group.items as skill}<span class="mx-1">{skill}</span>,{/each}
               </p>
