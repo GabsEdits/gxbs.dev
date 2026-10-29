@@ -1,8 +1,3 @@
-/* ------------------------------------------------------------
-         4-State Time-of-Day System
-         Boundaries shift with the season using a rough sunrise/sunset
-         model (fixed reference latitude, no geolocation, no network).
-         ------------------------------------------------------------ */
 const modes = [
   { id: "morning", greeting: "Good Morning" },
   { id: "afternoon", greeting: "Good Afternoon" },
@@ -10,8 +5,6 @@ const modes = [
   { id: "night", greeting: "Good Night" },
 ];
 
-// Generic mid-latitude reference so the curve is seasonal without
-// asking anyone where they are.
 const REFERENCE_LATITUDE = 45;
 
 function dayOfYear(date) {
@@ -20,13 +13,10 @@ function dayOfYear(date) {
   return Math.floor(diff / 86400000);
 }
 
-// Returns { sunrise, sunset } as decimal local hours (e.g. 5.5 = 5:30am).
-// Standard solar-declination / hour-angle approximation. Ignores the
-// equation of time and real longitude, so it's a vibe, not an almanac.
+// return { sunrise, sunset } as decimal local hours (e.g. 5.5 = 5:30am).
 function sunTimes(date) {
   const n = dayOfYear(date);
-  const declination = 23.44 *
-    Math.sin(((360 / 365) * (n + 284) * Math.PI) / 180);
+  const declination = 23.44 * Math.sin(((360 / 365) * (n + 284) * Math.PI) / 180);
   const latRad = (REFERENCE_LATITUDE * Math.PI) / 180;
   const decRad = (declination * Math.PI) / 180;
 
@@ -54,9 +44,7 @@ function setMode(index) {
   currentModeIndex = index % modes.length;
   const currentMode = modes[currentModeIndex];
 
-  modes.forEach((m) =>
-    document.documentElement.classList.remove(`mode-${m.id}`)
-  );
+  modes.forEach((m) => document.documentElement.classList.remove(`mode-${m.id}`));
   document.documentElement.classList.add(`mode-${currentMode.id}`);
 
   // Not every layout has the hero greeting (e.g. post pages) - the
@@ -91,10 +79,15 @@ function cycleMode() {
 
 document.addEventListener("keydown", function (event) {
   if (
-    event.code !== "Space" || event.repeat ||
-    event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
+    event.code !== "Space" ||
+    event.repeat ||
+    event.altKey ||
+    event.ctrlKey ||
+    event.metaKey ||
+    event.shiftKey ||
     event.target.closest("a, button, input, textarea, select, [contenteditable]")
-  ) return;
+  )
+    return;
   event.preventDefault();
   cycleMode();
 });
@@ -119,8 +112,7 @@ function initializeClouds() {
     const easing = 1 - Math.exp(-elapsed / 180);
     x += (targetX - x) * easing;
     y += (targetY - y) * easing;
-    const settled = Math.abs(targetX - x) < 0.02 &&
-      Math.abs(targetY - y) < 0.02;
+    const settled = Math.abs(targetX - x) < 0.02 && Math.abs(targetY - y) < 0.02;
     if (settled) {
       x = targetX;
       y = targetY;
@@ -137,13 +129,17 @@ function initializeClouds() {
     if (!frame) frame = requestAnimationFrame(animate);
   }
 
-  window.addEventListener("pointermove", (event) => {
-    if (!motion.matches || event.pointerType !== "mouse") return;
-    moveTo(
-      (event.clientX / window.innerWidth - 0.5) * -24,
-      (event.clientY / window.innerHeight - 0.5) * -16,
-    );
-  }, { passive: true });
+  window.addEventListener(
+    "pointermove",
+    (event) => {
+      if (!motion.matches || event.pointerType !== "mouse") return;
+      moveTo(
+        (event.clientX / window.innerWidth - 0.5) * -24,
+        (event.clientY / window.innerHeight - 0.5) * -16,
+      );
+    },
+    { passive: true },
+  );
 
   document.documentElement.addEventListener("pointerleave", () => {
     if (motion.matches) moveTo(0, 0);
@@ -187,9 +183,12 @@ function initializeContactSheet() {
     clearTimeout(closeTimer);
     closeTimer = setTimeout(() => {
       if (
-        trigger.matches(":hover") || sheet.matches(":hover") ||
-        document.activeElement === trigger || sheet.contains(document.activeElement)
-      ) return;
+        trigger.matches(":hover") ||
+        sheet.matches(":hover") ||
+        document.activeElement === trigger ||
+        sheet.contains(document.activeElement)
+      )
+        return;
       if (sheet.matches(":popover-open")) sheet.hidePopover();
     }, 90);
   }
@@ -263,9 +262,13 @@ function initializeContactSheet() {
   window.addEventListener("resize", () => {
     if (sheet.matches(":popover-open")) positionSheet();
   });
-  window.addEventListener("scroll", () => {
-    if (sheet.matches(":popover-open")) sheet.hidePopover();
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (sheet.matches(":popover-open")) sheet.hidePopover();
+    },
+    { passive: true },
+  );
 }
 
 /* ------------------------------------------------------------
@@ -318,22 +321,31 @@ function initializePage() {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   if (!reducedMotion.matches && "IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        entry.target.classList.remove("reveal-pending");
-        entry.target.classList.add("content-ready");
-        revealObserver.unobserve(entry.target);
-      }
-    }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.remove("reveal-pending");
+          entry.target.classList.add("content-ready");
+          revealObserver.unobserve(entry.target);
+        }
+      },
+      { threshold: 0, rootMargin: "0px 0px -24px 0px" },
+    );
 
     for (const target of revealTargets) {
+      const bounds = target.getBoundingClientRect();
+      if (bounds.top < window.innerHeight && bounds.bottom > 0) continue;
       target.classList.add("reveal-pending");
       revealObserver.observe(target);
-      target.addEventListener("focusin", () => {
-        target.classList.remove("reveal-pending");
-        revealObserver.unobserve(target);
-      }, { once: true });
+      target.addEventListener(
+        "focusin",
+        () => {
+          target.classList.remove("reveal-pending");
+          revealObserver.unobserve(target);
+        },
+        { once: true },
+      );
     }
 
     reducedMotion.addEventListener("change", (event) => {
