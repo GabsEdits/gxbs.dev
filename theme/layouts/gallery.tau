@@ -5,8 +5,9 @@
     {@include "Head"}
     <script src="/assets/{assets?.['gallery.js']}" defer></script>
   </head>
-  <body class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center font-serif lg:max-w-120 lg:py-24">
+  <body class="gallery-page mx-auto flex min-h-screen w-full max-w-full flex-col items-center font-serif lg:max-w-120 lg:py-24">
     <SkipLink />
+    {@include "TimeOfDayBackground"}
     <header class="flex flex-col items-center gap-4 pt-10 text-center lg:pt-0">
       <div class="flex items-end justify-end gap-3 text-xl leading-4 font-extrabold italic"><a href="/"><img src="/assets/ecliptic.svg" alt="" aria-hidden="true" class="h-5 dark:invert" /></a><span>/</span><a href="/gallery">gallery</a></div>
     </header>

@@ -4,7 +4,8 @@
     <title>{title}</title>
     {@include "Head"}
   </head>
-  <body>
+  <body class="post-page">
+    {@include "TimeOfDayBackground"}
     <main class="container mx-auto flex max-w-full flex-col items-center gap-12 p-4 font-serif lg:max-w-120 lg:py-24">
       <header class="flex w-full flex-col items-center gap-5 text-center">
         <div class="flex items-center justify-center gap-3 text-xl font-extrabold italic"><a href="/"><img src="/assets/ecliptic.svg" alt="" aria-hidden="true" class="h-6 dark:invert" /></a><span>/</span><a href="/projects">projects</a></div>

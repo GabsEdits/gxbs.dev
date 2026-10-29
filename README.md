@@ -1,41 +1,33 @@
 <div align="center">
   <h1>gxbs.dev</h1>
   <p>This is the source code of my personal website, were you're going to find my projects, who am I, and how to find me.<p>
-  <small>Powered by <a href="https://github.com/stenodevs/steno">Steno</a></small>
+  <small>Powered by <a href="https://github.com/stenodevs/steno">Steno</a> and Deno</small>
 </div>
 
-## Requirements
-
-- Deno 2
-
 ## Development
+
+The development command is:
 
 ```sh
 deno task dev
 ```
 
-Steno serves the site with live reload, normally at `http://localhost:5735`.
+Which steno serves the site with live reload, usually at `http://localhost:5735`.
 
-## Production build
+While you _obviously_ build it with:
 
 ```sh
-deno task doctor
 deno task build
-deno task preview
 ```
 
 The static site is written to `dist/`.
 
-The build uses the official Steno Tailwind and SEO plugins. The Tau layouts use
-Tailwind utilities directly; the theme stylesheet only initializes Tailwind,
-defines the bundled fonts and tokens, and contains interaction styles that need
-pseudo-elements or keyframes. Tailwind scans the generated HTML and writes
-`dist/assets/tailwind.css`. The SEO plugin writes `dist/sitemap.xml`,
-`dist/feed.xml`, and `dist/atom.xml`.
+Other cool commands are:
 
-The init README currently advertises Tailwind plugin `^0.8.0`, but that release
-is not available on JSR. This prototype uses the published, Steno-compatible
-`^0.3.0` line instead.
+```sh
+deno task doctor
+deno task preview
+```
 
 ## Structure
 
@@ -52,14 +44,7 @@ theme/
   assets/             # fonts, images, and *generated* browser JS — don't hand-edit assets/*.js
 ```
 
-Browser scripts live in `theme/scripts/*.ts` and are transpiled (types stripped,
-no bundling) to `theme/assets/*.js` via `deno task build-assets`, which runs
-automatically before `dev`/`build`. `theme/assets/*.js` is gitignored — it's
-build output. Type-check the scripts with `deno task check`.
-
-The public site includes `/`, `/projects`, `/gallery`, `/partnerships`, and
-`/blog`. Studio and its server APIs are intentionally not part of the Steno
-content tree or static output.
+I think it's clear why stuff are where they are.
 
 ## Blog posts
 

@@ -5,35 +5,30 @@
     {@include "Head"}
     <link rel="alternate" type="application/rss+xml" title="Gabriel Cozma" href="/feed.xml" />
   </head>
-  <body>
+  <body class="post-page">
     <SkipLink />
-    <main id="main-content" tabindex="-1" class="mx-auto flex min-h-screen w-full max-w-full flex-col items-center gap-12 px-4 py-10 font-serif sm:px-6 lg:max-w-120 lg:py-24">
-      <BlogHeader />
-      <section class="flex w-full flex-col items-center justify-center gap-12 [&>h1]:text-center [&>h1]:text-3xl [&>p]:max-w-[80%] [&>p]:text-center [&>p]:text-2xl">
-        {@html content}
-        <hr class="divider w-full" />
-      </section>
-      <section class="flex w-full flex-col items-center justify-center gap-16">
-        <h3 class="text-xl italic">Posts</h3>
-        <ul class="flex w-full flex-col gap-4">
+    {@include "TimeOfDayBackground"}
+    <main id="main-content" tabindex="-1" class="viewport post-viewport">
+      <div class="left-content post-content">
+        <a class="back-link" href="/">← Home</a>
+        <div class="post-header">
+          <h1>Blog</h1>
+          {@html content}
+        </div>
+        <ul class="post-list">
           {#each collections.blog.items as post}
             {#if !post.frontmatter.archived}
-              <li class="interactive-row flex w-full flex-row items-center justify-between gap-3 self-stretch">
-                <div class="flex min-w-0 flex-row items-center gap-4">
-                  <div class="flex w-full min-w-0 flex-col items-start gap-2">
-                    <a href="{post.url | url}" class="micro-link text-xl font-extrabold italic">{post.frontmatter.title}</a>
-                    <p class="text-lg">{#each post.frontmatter.tags as tag}<span class="mr-1">{tag}</span>{/each}</p>
-                  </div>
-                </div>
-                <p class="text-left font-sans text-lg font-normal sm:text-right">{post.frontmatter.displayDate}</p>
+              <li class="post-list-item">
+                <a href="{post.url | url}">{post.frontmatter.title}</a>
+                <time>{post.frontmatter.displayDate}</time>
               </li>
             {/if}
+          {:else}
+            <li class="post-list-empty">No posts yet.</li>
           {/each}
         </ul>
-        <a href="/blog/archive" class="micro-link text-lg">Archive <span class="arrow-nudge">→</span></a>
-        <hr class="divider w-full" />
-      </section>
-      <Footer />
+      </div>
     </main>
+    <Footer />
   </body>
 </html>

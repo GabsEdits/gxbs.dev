@@ -6,24 +6,26 @@
     <meta property="og:type" content="article" />
     <meta property="og:image" content="{image | url}" />
   </head>
-  <body>
+  <body class="post-page">
     <SkipLink />
-    <main id="main-content" tabindex="-1" class="mx-auto flex min-h-screen w-full max-w-full flex-col gap-16 px-4 py-10 font-serif sm:px-6 lg:max-w-160 lg:py-24">
-      <BlogHeader />
-      <article class="mx-auto flex w-full flex-col gap-12">
-        <div class="flex flex-col items-center gap-6 text-center">
-          <p class="font-sans text-sm font-normal opacity-70">{displayDate} · {#each tags as tag}<span>{tag} </span>{/each}</p>
-          <h1 class="text-4xl italic sm:text-5xl">{title}</h1>
-          <hr class="divider w-full" />
-        </div>
-        <div class="prose-article">{@html content}</div>
-        <hr class="divider w-full" />
-        <div class="flex w-full items-center justify-between">
-          <a href="/blog" class="micro-link text-lg">← Blog</a>
-          <p class="font-sans text-sm font-normal opacity-70">~by <b class="font-serif text-lg font-extrabold italic">Gabs</b></p>
+    {@include "TimeOfDayBackground"}
+    <main id="main-content" tabindex="-1" class="viewport post-viewport">
+      <article class="post-shell">
+        <header class="post-aside">
+          <a class="back-link" href="/blog">← All posts</a>
+          <h1>{title}</h1>
+          <div class="post-aside-meta">
+            {#if displayDate}<time>{displayDate}</time>{/if}
+            {#if tags}
+              <div class="post-tags">{#each tags as tag}<span class="tag">{tag}</span>{/each}</div>
+            {/if}
+          </div>
+        </header>
+        <div class="left-content post-content">
+          <article class="post-body">{@html content}</article>
         </div>
       </article>
-      <Footer />
     </main>
+    <Footer />
   </body>
 </html>

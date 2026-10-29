@@ -12,3 +12,6 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
 <link rel="stylesheet" href="/assets/tailwind.css" />
 <link rel="stylesheet" href="/assets/{assets?.['style.css']}" />
+<link rel="stylesheet" href="/assets/{assets?.['open-runde/open-runde.css']}" />
+<link rel="stylesheet" href="/assets/{assets?.['time-of-day.css']}" />
+<script src="/assets/{assets?.['time-of-day.js']}" defer></script>
