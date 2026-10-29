@@ -1,9 +1,9 @@
 <div class="sky" aria-hidden="true">
   <div class="sky-horizon"></div>
   <div class="sky-stars"></div>
-  <div class="cloud-layer cloud-layer-distant"><img src="/assets/{assets['clouds.png']}" alt="" decoding="async" /></div>
+  <div class="cloud-layer cloud-layer-distant"><img src="/assets/{assets['clouds.png']}" alt="" decoding="sync" /></div>
   <div class="cloud-layer cloud-layer-near">
-    <img class="cloud-detail" src="/assets/{assets['clouds.png']}" alt="" decoding="async" />
-    <img class="cloud-soft" src="/assets/{assets['clouds.png']}" alt="" decoding="async" />
+    <img class="cloud-detail" src="/assets/{assets['clouds.png']}" alt="" decoding="sync" />
+    <img class="cloud-soft" src="/assets/{assets['clouds.png']}" alt="" decoding="sync" />
   </div>
 </div>

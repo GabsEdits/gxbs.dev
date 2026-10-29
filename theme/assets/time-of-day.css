@@ -40,6 +40,10 @@ body {
     view-transition-name: none;
   }
 
+  .sky {
+    view-transition-name: sky;
+  }
+
   main {
     view-transition-name: page-content;
   }
@@ -64,6 +68,15 @@ body {
   ::view-transition-new(*) {
     animation: page-enter 140ms ease-out both;
     mix-blend-mode: normal;
+  }
+
+  ::view-transition-old(sky) {
+    opacity: 1;
+  }
+
+  ::view-transition-new(sky) {
+    animation: none;
+    opacity: 0;
   }
 
   @keyframes page-enter {
